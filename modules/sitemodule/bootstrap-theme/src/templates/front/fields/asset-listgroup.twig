@@ -1,0 +1,12 @@
+{% extends "fields/_field" %}
+{% import "_includes/macros" as macros %}
+
+{% block content %}
+    <ul class="list-group">
+        {% for asset in value %}
+            <li class="list-group-item">
+                {{ macros.renderLayout(asset.volume.layout, options.getViewMode(asset), asset) }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

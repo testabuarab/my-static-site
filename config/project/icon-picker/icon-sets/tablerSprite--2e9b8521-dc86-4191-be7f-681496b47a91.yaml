@@ -1,0 +1,7 @@
+enabled: true
+handle: tablerSprite
+name: 'tabler sprite'
+settings:
+  spriteFile: tabler-sprites.svg
+sortOrder: 6
+type: verbb\iconpicker\iconsets\SvgSprite

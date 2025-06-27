@@ -1,0 +1,166 @@
+changedFieldIndicator: 305436737
+field: 6c9ad64f-42c2-495a-8eb5-b06500a146d2 # Steps Table
+fieldLayouts:
+  dce78a62-9f33-487f-8ed0-d4137ef6dac6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 919b6950-669c-47c5-bcdf-21500a782d9d # Step Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3f3af1b-447e-4330-976a-926937d14229
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 534a104c-dc3e-46da-9be2-e521ec59f0bc # Step subtitle
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42331fa8-6b66-4279-9c0b-206f45ca79f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 209dd5e1-6b5c-45d0-a51a-abc4749644c0 # Step Content
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 81647a4e-faec-4c2e-8ee7-ec0e1a02c99b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c83a928e-aeb6-4c6b-82ba-6fafafadf542 # Step image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c0d59d16-cbc1-4bca-ac51-0a6dec6285ba
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4b0edf00-b801-4d20-9b0e-49e5c17fb5c9
+        userCondition: null
+fields:
+  209dd5e1-6b5c-45d0-a51a-abc4749644c0: # Step Content
+    columnSuffix: dszhoxew
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepContent
+    instructions: null
+    name: 'Step Content'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
+      purifyHtml: true
+      redactorConfig: null
+      removeEmptyTags: true
+      removeInlineStyles: true
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  534a104c-dc3e-46da-9be2-e521ec59f0bc: # Step subtitle
+    columnSuffix: bdahmmsj
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepSubtitle
+    instructions: null
+    name: 'Step subtitle'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  919b6950-669c-47c5-bcdf-21500a782d9d: # Step Title
+    columnSuffix: ixztpcve
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepTitle
+    instructions: null
+    name: 'Step Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c83a928e-aeb6-4c6b-82ba-6fafafadf542: # Step image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: stepImage
+    instructions: null
+    name: 'Step image'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: steps
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets

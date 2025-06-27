@@ -1,0 +1,30 @@
+{% extends '_layouts/cp' %}
+
+{% set crumbs = [
+    {
+        label: 'Blitz Diagnostics'|t('blitz'),
+        url: cpUrl('utilities/blitz-diagnostics'),
+    }
+]|merge(crumbs ?? []) %}
+
+{% block pageTitle %}
+    <h1 class="screen-title" title="{{ title }}">
+        {% if codeTitle ?? false %}
+            <code>{{ title }}</code>
+        {% else %}
+            {{ title }}
+        {% endif %}
+    </h1>
+    {% if craft.app.getIsMultiSite() and showSiteMenu ?? false %}
+        {% include '_elements/sitemenu' with {
+            selectedSiteId: siteId,
+            urlFormat: craft.app.request.pathInfo ~ '?site={handle}',
+        } only %}
+    {% endif %}
+{% endblock %}
+
+{% block main %}
+    <div class="blitz-diagnostics">
+        {{ parent() }}
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+columnSuffix: kqxurnea
+contentColumnType: text
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: categoryDescription
+instructions: null
+name: 'Category Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 3
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

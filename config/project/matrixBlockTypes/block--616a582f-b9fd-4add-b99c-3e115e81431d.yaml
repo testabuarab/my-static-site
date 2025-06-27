@@ -1,0 +1,113 @@
+field: 7a49efcf-af25-4f02-a7ae-7fb0ff650730 # Article Tags
+fieldLayouts:
+  62c3ded4-17da-4e70-9356-c08759a3afa4:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3b464cf2-3c24-4514-9ff6-10590d820408 # Tag Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83a60f0e-9d2c-4f87-9518-c4d87c906307
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0bc3f209-d651-478d-9359-f51c53386e58 # Tag Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f614a8d-1ca8-4308-887e-5b244f757001
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 57e2fe55-b3f0-41a3-8540-7dbf2a81e659
+        userCondition: null
+fields:
+  0bc3f209-d651-478d-9359-f51c53386e58: # Tag Title
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: tagTitle
+    instructions: null
+    name: 'Tag Title'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      branchLimit: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      selectionLabel: null
+      showSiteMenu: false
+      sources:
+        - 'section:applications'
+        - 'section:cdac5a8d-6727-4afa-b62b-abc3a32a2b3c' # Applications Categories
+        - 'section:1a3d3ff8-cc4d-4177-af1e-16b7c35c2cd0' # Applications Tags
+        - 'section:articles'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  3b464cf2-3c24-4514-9ff6-10590d820408: # Tag Type
+    columnSuffix: lugbbwhe
+    contentColumnType: string
+    fieldGroup: null
+    handle: tagType
+    instructions: null
+    name: 'Tag Type'
+    searchable: true
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Game
+            -
+              - value
+              - game
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - App
+            -
+              - value
+              - app
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Article
+            -
+              - value
+              - article
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: block
+name: Block
+sortOrder: 1

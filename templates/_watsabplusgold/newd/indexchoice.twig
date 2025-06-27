@@ -1,0 +1,7 @@
+{%if entry.pageType=='app'%}
+    {% include "watsabplusgold/newd/apps/homeapp"%}
+{%elseif entry.pageType=='article'%}
+    {% include "watsabplusgold/newd/apps/homearticle" %}
+{% else %}
+    {% include "watsabplusgold/newd/index" %}
+{%endif%}

@@ -1,0 +1,13 @@
+<style>#app-log-container .version-container label{    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;}#app-log-container .version-container{ border-radius: 5px;width: 100%;    color: #ffffff;       background: #b916c5;
+    padding: 10px;    margin: 5px auto;}#app-log-container .version{    color: #ffffff;}</style><div id="app-log-container">
+    {% for version in versions if version.versionApk|length > 0 %}
+        <a class="version-container" href="{{ version.versionApk[0].url }}" {%if version.lonKhlfyAlrabt%}style="background:{{version.lonKhlfyAlrabt}}"{%endif%}>
+          <label > {{ version.versionApk[0].asdarAlttbyk }}</label>
+		  <label >APK</label>
+			<label >{{ version.versionApk[0].size|filesize(1) }}</label>
+            <label class="date">{{ version.versionDate|date('Y-m-d', locale = "en-GB") }}</label>
+        </a>
+    {% endfor %}
+</div>

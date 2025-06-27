@@ -1,0 +1,46 @@
+columnSuffix: rqchlrrf
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: nthamAltshghl
+instructions: null
+name: 'نظام التشغل'
+searchable: false
+settings:
+  columnType: string
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Android
+        -
+          - value
+          - android
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Windows
+        -
+          - value
+          - windows
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - IOS
+        -
+          - value
+          - ios
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Dropdown

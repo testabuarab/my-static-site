@@ -1,0 +1,112 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{% set title ="Page not found."|t %}
+{%set disableCategorisAds=1%}
+{% block content %}
+    <div class="main-wrapper my-15">
+        <div class="content-wrapper">
+            <div class="error404">
+                <div class="error-inner">
+                    <div class="error-code">404</div>
+                </div>
+                <h2 class="error-title">{{"Page not found."|t}}</h2>
+                <div class="clear"></div>
+                <div class="error-body">
+                    <p>{{ "Sorry, the requested page does not exist. Try using the search engine:"|t }}</p>
+                    <div class="search-block-large" id="goog-wm">
+                        <form method="get" action="{{ alrabtAlasasyLlmokaa }}/search">
+                            <input type="text" size="40" name="query" id="goog-wm-qt" placeholder="{{ "Search"|t }}">
+                            <input type="submit" value="{{ "Search"|t }}" id="goog-wm-sb">
+                            <input type="hidden" name="_token" value="" autocomplete="off">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block css %}
+    <style type="text/css">
+        .error404{
+            padding: 30px;
+        }
+        .error404 .error-code {
+            font-size: 125px;
+            font-weight: bold;
+            color: #eee;
+            text-align: center;
+        }
+        .error-title{
+            margin-bottom: 10px;
+            font-size: 50px;
+            color: #333;
+            font-weight: normal;
+        }
+        .error-body{
+            word-wrap: break-word;
+            font-size: 17px;
+        }
+        .error-body p{
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .error-body, .error-title{
+            text-align: center;
+        }
+        #goog-wm input[type="text"] {
+            height: 50px;
+            line-height: 50px;
+            padding: 0;
+            width: 100%;
+            text-indent: 10px;
+            font-size: 18px;
+            background: #f2f2f2;
+            padding-right: 85px;
+        }
+        .ltr #goog-wm input[type="text"] {
+            padding-right: 0;
+            padding-left: 85px;
+        }
+        #goog-wm form{
+            width: 500px;
+            position: relative;
+            margin: auto;
+        }
+        #goog-wm input[type="submit"] {
+            border: none;
+            height: 50px;
+            line-height: 50px;
+            font-size: 17px;
+            padding: 0 20px;
+            color: #fff;
+            background-color: var(--primary-color);
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        #goog-wm input[type="submit"]:hover{
+            cursor: pointer;
+            background: var(--primary-color-deep);
+        }
+        @media only screen and (max-width: 560px){
+            .content-wrapper {
+                min-height: 400px;
+            }
+            .error404 .error-code {
+                font-size: 100px;
+            }
+            .error-title {
+                font-size: 20px;
+            }
+            #goog-wm input[type="text"] {
+                width: 100%;
+                font-size: 14px;
+            }
+            #goog-wm form {
+                width: 100%;
+            }
+        }
+    </style>
+{% endblock %}
+{% block script %}
+
+{% endblock %}

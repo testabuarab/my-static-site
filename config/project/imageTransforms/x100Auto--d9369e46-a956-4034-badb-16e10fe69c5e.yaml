@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: x100Auto
+height: 100
+interlace: none
+mode: crop
+name: '100x100 auto'
+position: center-center
+quality: 0
+upscale: true
+width: 100

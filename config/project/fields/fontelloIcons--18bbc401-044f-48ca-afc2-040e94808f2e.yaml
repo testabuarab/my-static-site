@@ -1,0 +1,16 @@
+columnSuffix: orlssgai
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: fontelloIcons
+instructions: null
+name: 'fontello Icons'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - e84dc887-c2f7-4835-be8e-198ee78eabbf
+  renderId: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

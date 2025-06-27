@@ -1,0 +1,10 @@
+{
+  "field/src/js/icon-picker.js": {
+    "file": "assets/icon-picker.cad9a5c0.js",
+    "src": "field/src/js/icon-picker.js",
+    "isEntry": true,
+    "css": [
+      "assets/icon-picker.731df519.css"
+    ]
+  }
+}

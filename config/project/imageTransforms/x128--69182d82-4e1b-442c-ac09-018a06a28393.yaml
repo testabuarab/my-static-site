@@ -1,0 +1,11 @@
+fill: null
+format: jpg
+handle: x128
+height: 128
+interlace: none
+mode: crop
+name: 128x128
+position: center-center
+quality: 0
+upscale: true
+width: 128

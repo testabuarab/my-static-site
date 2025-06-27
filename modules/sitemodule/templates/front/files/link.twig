@@ -1,0 +1,29 @@
+{% extends "files/_file" %}
+
+{% block content %}
+    {% set label = options.custom %}
+    {% if options.label == 'title' %}
+        {% set label = asset.title %}
+    {% elseif options.label == 'filename' %}
+        {% set label = asset.filename %}
+    {% endif %}
+    {% if options.displayAsButton %}
+        {% include "_components/button" with {
+            size: options.size,
+            outlined: options.outlined,
+            color: options.color,
+            label: label,
+            newTab: options.newTab,
+            link: asset.url,
+            download: options.download
+        } only %}
+    {% else %}
+        <a href="{{ asset.url }}"
+            {% if options.newTab ?? false %} target="_blank"{% endif %}
+            {% if options.download ?? false %} download{% endif %}
+            class="link-{{ options.color }}"
+        >
+            {{ label }}
+        </a>
+    {% endif %}
+{% endblock %}

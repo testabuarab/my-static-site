@@ -1,0 +1,32 @@
+{% set offset = offset ?? 0 %}
+{% set total = total ?? rows|length %}
+
+<div id="footer" class="flex flex-justify">
+    <div id="count-container" class="light">
+        <div class="flex pagination">
+            <nav class="flex">
+                {% if offset > 0 %}
+                    <button type="button" sprig s-val:offset="{{ offset - limit }}" class="page-link prev-page" title="Previous Page"></button>
+                {% else %}
+                    <button type="button" class="page-link prev-page disabled" title="Previous Page"></button>
+                {% endif %}
+                {% if offset + limit < total %}
+                    <button type="button" sprig s-val:offset="{{ offset + limit }}" class="page-link next-page" title="Next Page"></button>
+                {% else %}
+                    <button type="button" role="button" class="page-link next-page disabled" title="Next Page"></button>
+                {% endif %}
+            </nav>
+            <div class="page-info">
+                {% set maxVisible = rows|length + offset %}
+                {{ (maxVisible > 0 ? offset + 1 : 0)|number }}–{{ maxVisible|number }}
+                of {{ total|number }}
+                {{ (total == 1 ? displayName ?? 'page' : pluralDisplayName ?? 'pages')|lower }}
+            </div>
+        </div>
+    </div>
+    {% if exportButtons ?? false %}
+        <div id="export-container">
+            {{ exportButtons }}
+        </div>
+    {% endif %}
+</div>

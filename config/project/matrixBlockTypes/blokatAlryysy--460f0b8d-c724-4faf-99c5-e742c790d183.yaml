@@ -1,0 +1,185 @@
+field: 563f65f3-efa2-4c69-a6f6-4e3131fc8332 # محتوى الرئيسية
+fieldLayouts:
+  567837bf-210a-4d4b-97d5-cb2aaad382f6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 687cbc38-dd92-491b-8f38-a408af25fb1d # عنوان البلوك
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 568f482b-6fc1-457d-b995-a6bb6b63875a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9f4f7633-da55-4d7c-955a-27206cdf0829 # نوع التصميم 
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f7f8463e-1ef7-4019-842f-fd2c9853fa94
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d39d6aca-2d34-4a91-8a4c-def6a9953724 # التطبيقات المختارة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4f4d6050-6cd4-4041-8c3a-7564157bd79b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 579858bf-7541-4e5f-9959-984dd1be7214 # رابط المزيد
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6672b6b0-57bb-4cb6-81f0-ce15923f3a44
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a2d6ce1d-99f9-48c9-a906-5cbc3ad448b6
+        userCondition: null
+fields:
+  9f4f7633-da55-4d7c-955a-27206cdf0829: # نوع التصميم 
+    columnSuffix: bqzfphcj
+    contentColumnType: string
+    fieldGroup: null
+    handle: noaaAltsmym
+    instructions: null
+    name: 'نوع التصميم '
+    searchable: true
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - مربع+4مربعات
+            -
+              - value
+              - mrbaamrbaaat
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 4مربعات
+            -
+              - value
+              - mrbaaat
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - ايقونات
+            -
+              - value
+              - aykonat
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'سلايدر ايقونات'
+            -
+              - value
+              - slaydrAykonat
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  687cbc38-dd92-491b-8f38-a408af25fb1d: # عنوان البلوك
+    columnSuffix: phlgewug
+    contentColumnType: text
+    fieldGroup: null
+    handle: aanoanAlblok
+    instructions: null
+    name: 'عنوان البلوك'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  579858bf-7541-4e5f-9959-984dd1be7214: # رابط المزيد
+    columnSuffix: xohhkqgo
+    contentColumnType: text
+    fieldGroup: null
+    handle: fyAlblok
+    instructions: null
+    name: 'رابط المزيد'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  d39d6aca-2d34-4a91-8a4c-def6a9953724: # التطبيقات المختارة
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: alttbykatAlmkhtar
+    instructions: null
+    name: 'التطبيقات المختارة'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      branchLimit: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      selectionLabel: null
+      showSiteMenu: true
+      sources:
+        - 'section:79fc7573-4c20-47ac-ab84-cef54725f426' # Applications
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+handle: blokatAlryysy
+name: 'بلوكات الرئيسية'
+sortOrder: 1

@@ -1,0 +1,7 @@
+enabled: true
+handle: fontello
+name: fontello
+settings:
+  fontFile: fontello.woff
+sortOrder: 2
+type: verbb\iconpicker\iconsets\WebFont

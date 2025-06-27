@@ -1,0 +1,5 @@
+{% cacheflag flagged "applications|svg:#{siteId}" %}
+    {% minify html %}
+           {{ symbolss|raw  }}
+{% endminify %}
+{% endcacheflag %}

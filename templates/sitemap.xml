@@ -1,0 +1,19 @@
+{% set expiry = now|date_modify('+1 Hours') %}{% header "Cache-Control: public,max-age=" ~ (expiry.timestamp - now.timestamp) %}{% header "Expires: " ~ expiry|httpdate %}{% cache for 3 hours %}<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    {% set withSlash = "" %}
+    {% if general.withSlash %}
+    {% set withSlash = "/" %}
+    {% endif %}
+    {% paginate craft.entries({
+    section: 'applications'
+    }).limit(500).orderBy('dateUpdated desc, elements.id asc') as pageInfo, pageEntries	 %}
+    {% for report in pageEntries %}
+    <url>{% set akhrThdyth = report.dateUpdated|atom %}{%if report.akhrThdyth|length%}{% set akhrThdyth = report.akhrThdyth|atom %}{%endif%}
+        <loc>{{global.alrabtAlasasyLlmokaa}}/{{report.uri}}{{withSlash}}</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>{{akhrThdyth}}</lastmod>
+        <priority>0.8</priority>
+    </url>
+    {% endfor %}
+
+</urlset>{% endcache %}

@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: appPreviousVersions
+instructions: null
+name: 'App Previous Versions'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_apppreviousversions}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: none
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

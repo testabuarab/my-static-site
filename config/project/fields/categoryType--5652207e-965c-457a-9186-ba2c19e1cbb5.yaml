@@ -1,0 +1,255 @@
+columnSuffix: clhfksoy
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: categoryType
+instructions: null
+name: 'Category Type'
+searchable: false
+settings:
+  columnType: string
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Game Application'
+        -
+          - value
+          - gameApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Social Networking Application'
+        -
+          - value
+          - socialNetworkingApplication
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Travel Application'
+        -
+          - value
+          - travelApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Shopping Application'
+        -
+          - value
+          - shoppingApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Sports Application'
+        -
+          - value
+          - sportsApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Lifestyle Application'
+        -
+          - value
+          - lifestyleApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Business Application'
+        -
+          - value
+          - businessApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Design Application'
+        -
+          - value
+          - designApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Developer Application'
+        -
+          - value
+          - developerApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Driver Application'
+        -
+          - value
+          - driverApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Educational Application'
+        -
+          - value
+          - educationalApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Health Application'
+        -
+          - value
+          - healthApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Finance Application'
+        -
+          - value
+          - financeApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Security Application'
+        -
+          - value
+          - securityApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Browser Application'
+        -
+          - value
+          - browserApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Communication Application'
+        -
+          - value
+          - communicationApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'DesktopEnhancement Application'
+        -
+          - value
+          - desktopenhancementApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Entertainment Application'
+        -
+          - value
+          - entertainmentApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Multimedia Application'
+        -
+          - value
+          - multimediaApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Home Application'
+        -
+          - value
+          - homeApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Utilities Application'
+        -
+          - value
+          - utilitiesApplication
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Reference Application'
+        -
+          - value
+          - referenceApplication
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

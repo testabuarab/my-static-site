@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: x1080web
+height: 1080
+interlace: none
+mode: crop
+name: 1080x1080web
+position: center-center
+quality: 0
+upscale: true
+width: 1080

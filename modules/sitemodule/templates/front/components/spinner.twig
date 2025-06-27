@@ -1,0 +1,9 @@
+{% set color = color ?? 'primary' %}
+{% set type = type ?? 'border' %} {# border or grow #}
+{% set classes = classes ?? '' %}
+{% set small  = small ?? false %}
+{% set hiddenMessage  = hiddenMessage ?? 'Loading...' %}
+
+<div class="spinner-{{ type }}{% if small %} spinner-{{ type }}-sm{% endif %} text-{{ color }}{% if classes %} {{ classes }}{% endif %}" role="status">
+    <span class="visually-hidden">{{ hiddenMessage }}</span>
+</div>

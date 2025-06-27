@@ -1,0 +1,7 @@
+enabled: true
+handle: spritesRegular
+name: 'sprites Regular'
+settings:
+  spriteFile: regular-sprites.svg
+sortOrder: 4
+type: verbb\iconpicker\iconsets\SvgSprite

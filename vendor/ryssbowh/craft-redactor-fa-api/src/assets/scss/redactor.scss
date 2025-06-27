@@ -1,0 +1,59 @@
+.redactor-fa-modal {
+    position: relative;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    input[name=icon-class] {
+        margin-top: 10px;
+    }
+    .result-list-wrapper {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        max-height: 300px;
+        overflow-y: auto;
+        background: white;
+        width: 100%;
+        border: 1px solid lightgray;
+        border-top: none;
+    }
+    .result-list {
+        display: flex;
+        flex-direction: column;
+    }
+    .loading, .errors {
+        display: none;
+        padding: 10px;
+    }
+    .icon {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s;
+        cursor: pointer;
+        i {
+            font-size: 30px;
+        }
+        label {
+            transition: all 0.3s;
+            margin-left: 10px;
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 30px);
+            code {
+                font-size: 10px !important;
+            }
+        }
+        small {
+            font-size: 10px;
+        }
+        &:hover {
+            background-color: #007dff;
+            label {
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+{% extends 'watsabplusgold/newd/_layout' %}
+{% set title = entry.title %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+    {% set withSlash = "/" %}
+{% endif %}
+{% set currentBase = global.alrabtAlasasyLlmokaa %}
+{%set disableCategorisAds=0%}
+{% set contents %}
+    {%set lazyLoadCover=global.lazyloadImageApp[0].getURL("nnewfullsharedimage")%}
+    {%set lazyloadImage=lazyLoadCover%}
+    {% set homeblocks = entry.mhtoAlryysy
+        .with(['blokatAlryysy:alttbykatAlmkhtar'])
+        .all() %}
+    <div class="index-container">
+        <div class="app-page-container">
+
+            <div class="category-row{%if entry.fullWidth%} fullwidth{%endif%}">
+                <div class="main-side">
+                    <div class="app-container" >
+                        <div class="app-details">
+                    <div id="app-details-container">
+                       {# <div class="title">
+                            <h1>{{ title }}</h1>
+                        </div>#}
+                        <div class="container py-16"><h1 class="c-headline text-center [text-wrap:balance] font-bold text-3xl  ">
+                                {{ title }}</h1></div>
+        {{ include('_builders/_builderContent.twig', {
+            data: {
+                contentBuilder: entry.builderContent ?? null,
+            }
+        }, withContext = false) }}
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endset %}
+{% block content %}
+    {{ contents|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}
+{% block css %}
+    {% if general.imagesCdnHostname|length %}
+        <link rel="stylesheet" href="https://{{ general.imagesCdnHostname }}/assets/sw.min.css">
+    {% else %}
+        <link rel="stylesheet" href="/assets/sw.min.css">
+    {% endif %}
+{% endblock %}
+
+
+            {% block homecss %}
+
+
+            {% endblock %}
+{% block js %}
+    {% if general.imagesCdnHostname|length %}
+        <script defer src="https://{{ general.imagesCdnHostname }}/assets/js/sw.min.js?v=2"></script>
+    {% else %}
+        <script defer src="/assets/js/sw.min.js?v=1"></script>
+    {% endif %}
+    <script>
+        (async() => {
+            //  console.log("waiting for jQuery");
+
+            while(!window.hasOwnProperty("jQuery")) {
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+
+
+            const swiper = new Swiper('.cover-list .swiper-container', {
+                breakpoints: {
+                    320: {
+                        slidesPerView: "auto",
+                        spaceBetween: 5,
+                        //      autoHeight: true,
+                        allowTouchMove: true,
+                        cursor: "grab",
+                        pagination: {
+                            el: '.cover-list .swiper-pagination',
+                            // type: 'bullets',
+                            dynamicBullets: true,
+                            // dynamicMainBullets: 1,
+                        },
+                    },
+                    961: {
+                        //autoHeight: true,
+                        slidesPerView: "auto",
+                        spaceBetween: 0,
+                        allowTouchMove: false
+                    }
+                }
+            });
+            document.querySelectorAll('.latest-articles .swiper-container').forEach(function (elem) {
+                new Swiper(elem, {
+                    navigation: {
+                        nextEl: elem.nextElementSibling.nextElementSibling,
+                        prevEl: elem.nextElementSibling
+                    },
+                    spaceBetween: 10,
+                    slidesPerView: "auto",
+                    allowTouchMove: true,
+                    cursor: "grab"
+                });
+            });
+            document.querySelectorAll('.latest-updates .swiper-container').forEach(function (elem) {
+                new Swiper(elem, {
+                    navigation: {
+                        nextEl: elem.nextElementSibling.nextElementSibling,
+                        prevEl: elem.nextElementSibling
+                    },
+                    spaceBetween: 0,
+                    allowTouchMove: true,
+                    cursor: "grab"
+                });
+            });
+        })();
+        /*        window.onload = function() {
+                    /!*
+                                $(document).ready(function () {
+                    *!/
+                    if (window.jQuery) {
+                    }
+                }*/
+        /*
+    });*/
+    </script>
+{% endblock %}
+{% block meta %}
+    <meta itemprop="description" content="{{ entry.seoDescription }}">
+    <meta name="description" content="{{ entry.seoDescription }}">
+{% endblock %}

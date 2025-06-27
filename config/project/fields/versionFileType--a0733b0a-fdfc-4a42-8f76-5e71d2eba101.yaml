@@ -1,0 +1,35 @@
+columnSuffix: nsdavcbf
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: versionFileType
+instructions: null
+name: 'Version File Type'
+searchable: false
+settings:
+  columnType: string
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - APKS
+        -
+          - value
+          - apks
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'XAPK (APK Bundle)'
+        -
+          - value
+          - xapk
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\RadioButtons

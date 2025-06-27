@@ -1,0 +1,371 @@
+{% extends 'watsabplusgold/newd/_layout' %}
+{% set request = craft.app.request %}
+{% set entry = craft.entries.section("applications").slug(slug).one() %}
+{% set apksize = entry.hgmAlmlf %}
+{% if entry|length <= 0 %}
+    {% exit 404 %}
+{% endif %}
+{#
+{% do craft.upvote.disable(['css','js']) %}
+#}
+{%set incentrydownload=1%}
+{%set deferjs=1%}
+{% set title = entry.appTitle %}
+{% set appCategory = entry.appCategory.all() %}
+
+{%set lazyloadImage=global.lazyloadImageApp.one().getURL("nnewfullsharedimage")%}
+
+
+{% block content %}
+<style>
+.app-container .download-btn{
+}
+#circle {
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    z-index: 1;
+}
+#counter {
+    flex: 0 1 100px;
+    height: 80px;
+    margin-left: 0;
+    position: relative;
+}
+#counter .load {
+    position: absolute;
+    height: 68px;
+    width: 68px;
+    border-radius: 50%;
+    border: 6px solid #f2f2f2;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}.app-download-container .app-main-info .img{
+     height: 80px;
+     width: 80px;
+ }
+.app-container .app-main-info .title{
+    width: calc(100% - 106px);
+}
+#counter .load img {
+    opacity: .6;
+    border-radius: 50%;    width: 88%;
+}
+#counter.loaded img {
+    opacity: 1;
+}
+.ab-center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+</style>
+<style>.app-container .download-btn{    max-width: fit-content;    margin-bottom: 15px;}</style>
+    <div class="app-page-container">
+        <div class="breadcrumb specialScroll">
+            <ul>
+                <li><a href="{{ currentUrl }}">{{ "Home"|t }}</a></li>
+                {% for parent in appCategory %}
+                    <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ parent.uri }}">{{ parent.title }}</a></li>
+                {% endfor %}
+                <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ entry.uri }}">{{ entry.title }}</a></li>
+                <li><a href="{{global.alrabtAlasasyLlmokaa}}/download/{{entry.slug}}/latest">{{ "Download"|t }}</a></li>
+            </ul>
+        </div>
+        <div class="category-row">
+            <div class="main-side">
+                <div class="app-container">
+                    <div class="app-download-container">
+                        <div class="app-main-info down-page">
+                            <div class="title-container  ">
+                                <div class="img">
+                                    <div class="download-loader">
+                                        <div id="counter" class="loaded"><canvas id="circle" height="80" width="80"></canvas><div class="load">
+                                                <img  class="lazyload" src="{{ lazyloadImage }}" data-src="{{ entry.appIcon|length ? entry.appIcon[0].url }}" alt="{{ entry.title }}"></div>
+                                        </div>
+                                           <!--    <div id="progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="--value:0"></div>>-->
+                                    </div>
+                                  <!--  <img  class="lazyload" src="{{ lazyloadImage }}" data-src="{{ entry.appIcon|length ? entry.appIcon[0].url }}" alt="{{ entry.title }}">-->
+
+                                </div>
+                                <div class="title">
+                                    <h1>{{ entry.title }}</h1>
+                                    <p class="appLicense">{{ "Free Download"|t }}</p>
+
+                                        <p class="error"></p>
+
+
+
+                                </div>
+
+                            </div>
+                            {%if entry.downloadLinks|length%}
+                                <div class="downloadlinks" id="more-links" >
+                                    {%for link in entry.downloadLinks.all()%}
+                                        <a href="{{link.rabtAlthmylAlkhargy}}" {%if link.newTab%} target="_blank"{%endif%} {%if link.nofollow%} rel="nofollow"{%endif%} class="download-btn"{%if link.lonAlrabt%} style="background-color:{{link.lonAlrabt}};    border: 2px solid {{link.lonAlrabt}};"{%endif%}><span class="fa fa-cloud-download"></span><p><label>{{link.blockText}} </label></p></a>
+                                    {%endfor%}
+                                </div>
+                            {%endif%}
+                            <div class="download-meta">
+                                {% set apksize = '50MB'|t %}
+                                <div>{%if entry.hgmAlmlf%}
+                                        {% set apksize = entry.hgmAlmlf %}
+                                    {%endif%}
+                                    <label class="downloadLabel size">{{  apksize}}</label>
+                                    <label class="downloadLabel counter">{{ entry.totalDownloads }}</label>
+                                </div>
+                                <div>
+                                    <label class="h4">{{ "Does the link works?"|t }}</label>
+                                    <div class="works-container">
+
+                                      {% do craft.upvote.setIcons({
+                                          up   : '<label class="worksLabel white">' ~ "Yes"|t ~ '</label>'
+                                      }) %}
+
+
+                                      <div class="work-container up">
+                                            {{ craft.upvote.upvote(entry.id, 'works') }}
+										<label class="worksLabel">+{{ craft.upvote.totalUpvotes(entry.id, 'works') }}</label>
+
+                                      </div>
+
+                                      {% do craft.upvote.setIcons({
+                                          up : '<label class="worksLabel white">' ~ "No"|t ~ '</label>'
+                                      }) %}
+                                      <div class="work-container down">
+										{{ craft.upvote.upvote(entry.id, 'doesnotworks') }}
+										 <label class="worksLabel">-{{ craft.upvote.totalUpvotes(entry.id, 'doesnotworks') }}</label>
+
+                                      </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="link-holder" style="display: none;">{{ entry.downloadLinks[0].rabtAlthmylAlkhargy }}</button>
+                    </div>
+                    <div class="notifications-container">
+                        <h2>{{ "Get notified on new updates"|t }}</h2>
+                        <div>
+
+                            <div class="social-media">
+                                <h4>{{ "Follow Us"|t }}</h4>
+                                <ul>
+                                    {% for block in socialMedia %}
+                                        <li>
+                                            <a href="{{ block.link }}" class="{{ block.platform }}">
+                                                <i class="fa fa-{{ block.platform }}"></i>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondary-side cate-length-{{appCategory|length}}">
+			{%if global.aaalanAlhydr|length%}
+		{{global.aaalanSfhAlthmylAaAlysar|raw}}
+{%endif%}
+
+                {% if appCategory|length > 0 %}
+                    <div class="category-side">
+                        {% set sideList = craft.entries.section("applications").relatedTo(appCategory[0]).with(["appIcon"]).id("not "~entry.id).limit(10) %}
+                        {% if sideList|length %}
+                            {% do craft.viewCount.sort(sideList, "tDownloads") %}
+                            <h2>{{ "Most Downloaded"|t }}</h2>
+                            <ul class="trending-list">
+                                {% for app in sideList %}
+                                    {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")|replace("-"," ")%}
+                                    {%if app.asmAlttbykAarby%}
+                                        {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                                    {%endif%}
+                                    <li>
+                                        <a href="{{global.alrabtAlasasyLlmokaa}}/{{ app.uri }}">
+                                            <img class="img lazyload" src="{{ lazyloadImage }}" width="45" height="45" data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appSide") }}" alt="{{ app.title }}">
+                                            <div>
+                                                <p class="name">{{ appNamee }}</p>
+
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/js/swipebox/css/swipebox.min.css">
+    <style>
+        #more-links {
+            display: none;
+        }
+        .is-ready #more-links {
+            display: block;
+        }
+    </style>
+{% endblock %}
+{% block js %}
+{#
+    <script src="/assets/js/swipebox/js/jquery.swipebox.min.js"></script>
+#}
+{#	<script src="/view.js?key=tDownloads&en={{entry.id}}"></script>#}
+
+        {% if general.imagesCdnHostname|length %}
+            <script defer src="https://{{ general.imagesCdnHostname }}/assets/js/swipebox/js/jquery.swipebox.min.js?v=1"></script>
+        {% else %}
+            <script  defer src="/assets/js/swipebox/js/jquery.swipebox.min.js?v=1"></script>
+        {% endif %}
+
+    <script>
+        var download_link = "{{ entry.downloadLinks[0].rabtAlthmylAlkhargy }}";
+        var download_timer = 5;
+        var download_target = "show-link";
+        var link_target = "1";
+
+        var timer=typeof download_timer!=='undefined'?download_timer:5;
+        var target=typeof download_target!=='undefined'?download_target:'redirect-link';
+        var circle=document.querySelector('#circle');
+        if(circle){
+            var dpr=window.devicePixelRatio||1;
+            var rect=circle.getBoundingClientRect();circle.width=rect.width*dpr;circle.height=rect.height*dpr;var counter=circle.getContext('2d');counter.scale(dpr,dpr);var no=0;var pointToFill=4.72;
+            var cw=counter.canvas.width;var ch=counter.canvas.height;
+            var diff;var counterID=document.getElementById('counter');
+            var statusID=document.getElementById('status');
+            var downpage=document.getElementsByClassName('down-page')[0];function fillCounter(){
+                diff=((no/100)*Math.PI*2*10);counter.clearRect(0,0,cw,ch);counter.lineWidth=6;
+            counter.strokeStyle='{{ global.lonHoyAlmokaa }}';
+            counter.beginPath();
+            counter.arc(40,40,37,pointToFill,diff/10+pointToFill);counter.stroke();if(no>=100)
+        {
+            counterID.className='loaded';
+            clearTimeout(fill);
+            if(download_link!=undefined){
+          //  if(download_target==='redirect-link'){
+            //    statusID.innerHTML=trans('download-started');window.location.href=download_link;
+      //  }else{
+/*
+            var target=link_target!=undefined&&link_target==true?' target="_blank" ':'';console.log(link_target!=undefined&&link_target==true);var link='<a href="'+download_link+'"'+target+'rel="nofollow noopener noreferrer">'+trans('click-here')+'</a>';
+  statusID.innerHTML=trans('file-is-ready',{link:link});
+*/
+
+            downpage.classList.add('is-ready');
+        //}
+        }
+        }
+            no++;}
+            var fill=setInterval(fillCounter,10*timer);
+        }
+        window.onload = function() {
+            /*
+                        $(document).ready(function () {
+            */if (window.jQuery) {
+
+/*        incrementView({{entry.id}})
+        function incrementView(elementId) {
+
+            // Set view data
+            var data = {
+                'id': elementId,
+                'key': 'tDownloads'
+            };
+
+            // Append CSRF Token
+            data[window.csrfTokenName] = window.csrfTokenValue;
+
+            // Render search results
+            $.post(
+                '{{ global.alrabtAlasasyLlmokaa  }}/actions/view-count/increment',
+                data,
+                function (response) {
+                    // Handle response
+                }
+            );
+
+        }*/
+        }
+        }
+    </script>
+    <script  defer src="/assets/sizzle.js?v=16467035517"></script>
+    <script  src="/assets/superagent.js?v=1646703511617"></script>
+    <script  src="/assets/starratings.js?v=16467035161119"></script>
+    <script  src="/assets/upvote.js?v=16467035161119"></script>
+    <script  src="/assets/unvote.js?v=16467035161119"></script>
+{% endblock %}
+
+
+
+
+
+{% block meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchUrl = global.alrabtAlasasyLlmokaa~"/"~entry.uri%}
+    {% set searchDescription = entry.appSummary %}
+    {% set searchImage =global.alrabtAlasasyLlmokaa ~entry.seoImage.one().getUrl() %}
+<meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{ currentUrl }}"
+              },
+              {% for parent in appCategory %}
+                  {
+                    "@type": "ListItem",
+                    "position": "{{ loop.index + 1 }}",
+                    "name": "{{ parent.title }}",
+                    "item": "{{global.alrabtAlasasyLlmokaa}}/{{ parent.uri }}"
+                  }{{ loop.index < appCategory|length ? "," }}
+        {% endfor %}
+              ,{
+                "@type": "ListItem",
+                "position": "{{ appCategory|length + 2 }}",
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>
+{% endblock %}

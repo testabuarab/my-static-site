@@ -1,0 +1,120 @@
+[19-Mar-2024 13:15:38 America/Los_Angeles] An Error occurred while handling another error:
+TypeError: Twig\Environment::getTemplateClass(): Argument #1 ($name) must be of type string, null given, called in /home/watsabpl/vendor/twig/twig/src/Template.php on line 319 and defined in /home/watsabpl/vendor/twig/twig/src/Environment.php:259
+Stack trace:
+#0 /home/watsabpl/vendor/twig/twig/src/Template.php(319): Twig\Environment->getTemplateClass()
+#1 /home/watsabpl/storage/runtime/compiled_templates/52/52a71af9205e59377d2c4f6f665e04a3.php(63): Twig\Template->loadTemplate()
+#2 /home/watsabpl/vendor/twig/twig/src/Template.php(394): __TwigTemplate_68c1695438e80738897acbd71b8f96e8->doDisplay()
+#3 /home/watsabpl/vendor/twig/twig/src/Template.php(367): Twig\Template->displayWithErrorHandling()
+#4 /home/watsabpl/vendor/twig/twig/src/Template.php(379): Twig\Template->display()
+#5 /home/watsabpl/vendor/twig/twig/src/TemplateWrapper.php(40): Twig\Template->render()
+#6 /home/watsabpl/vendor/twig/twig/src/Environment.php(277): Twig\TemplateWrapper->render()
+#7 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(482): Twig\Environment->render()
+#8 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(535): craft\web\View->renderTemplate()
+#9 /home/watsabpl/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#10 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(1100): craft\web\TemplateResponseFormatter->format()
+#11 /home/watsabpl/vendor/craftcms/cms/src/web/Response.php(337): yii\web\Response->prepare()
+#12 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#13 /home/watsabpl/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#14 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(192): yii\web\ErrorHandler->renderException()
+#15 /home/watsabpl/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#16 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(66): yii\base\ErrorHandler->handleException()
+#17 [internal function]: craft\web\ErrorHandler->handleException()
+#18 {main}
+Previous exception:
+yii\web\NotFoundHttpException: لم يتم العثور على الصفحة in /home/watsabpl/vendor/craftcms/cms/src/web/Request.php:1353
+Stack trace:
+#0 /home/watsabpl/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/watsabpl/vendor/craftcms/cms/src/web/Application.php(292): yii\web\Application->handleRequest()
+#2 /home/watsabpl/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/watsabpl/public_html/index.php(12): yii\base\Application->run()
+#4 {main}
+[19-Mar-2024 13:22:56 America/Los_Angeles] An Error occurred while handling another error:
+TypeError: Twig\Environment::getTemplateClass(): Argument #1 ($name) must be of type string, null given, called in /home/watsabpl/vendor/twig/twig/src/Template.php on line 319 and defined in /home/watsabpl/vendor/twig/twig/src/Environment.php:259
+Stack trace:
+#0 /home/watsabpl/vendor/twig/twig/src/Template.php(319): Twig\Environment->getTemplateClass()
+#1 /home/watsabpl/storage/runtime/compiled_templates/52/52a71af9205e59377d2c4f6f665e04a3.php(63): Twig\Template->loadTemplate()
+#2 /home/watsabpl/vendor/twig/twig/src/Template.php(394): __TwigTemplate_68c1695438e80738897acbd71b8f96e8->doDisplay()
+#3 /home/watsabpl/vendor/twig/twig/src/Template.php(367): Twig\Template->displayWithErrorHandling()
+#4 /home/watsabpl/vendor/twig/twig/src/Template.php(379): Twig\Template->display()
+#5 /home/watsabpl/vendor/twig/twig/src/TemplateWrapper.php(40): Twig\Template->render()
+#6 /home/watsabpl/vendor/twig/twig/src/Environment.php(277): Twig\TemplateWrapper->render()
+#7 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(482): Twig\Environment->render()
+#8 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(535): craft\web\View->renderTemplate()
+#9 /home/watsabpl/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#10 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(1100): craft\web\TemplateResponseFormatter->format()
+#11 /home/watsabpl/vendor/craftcms/cms/src/web/Response.php(337): yii\web\Response->prepare()
+#12 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#13 /home/watsabpl/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#14 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(192): yii\web\ErrorHandler->renderException()
+#15 /home/watsabpl/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#16 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(66): yii\base\ErrorHandler->handleException()
+#17 [internal function]: craft\web\ErrorHandler->handleException()
+#18 {main}
+Previous exception:
+yii\web\NotFoundHttpException: لم يتم العثور على الصفحة in /home/watsabpl/vendor/craftcms/cms/src/web/Request.php:1353
+Stack trace:
+#0 /home/watsabpl/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/watsabpl/vendor/craftcms/cms/src/web/Application.php(292): yii\web\Application->handleRequest()
+#2 /home/watsabpl/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/watsabpl/public_html/index.php(12): yii\base\Application->run()
+#4 {main}
+[19-Mar-2024 13:23:48 America/Los_Angeles] An Error occurred while handling another error:
+TypeError: Twig\Environment::getTemplateClass(): Argument #1 ($name) must be of type string, null given, called in /home/watsabpl/vendor/twig/twig/src/Template.php on line 319 and defined in /home/watsabpl/vendor/twig/twig/src/Environment.php:259
+Stack trace:
+#0 /home/watsabpl/vendor/twig/twig/src/Template.php(319): Twig\Environment->getTemplateClass()
+#1 /home/watsabpl/storage/runtime/compiled_templates/52/52a71af9205e59377d2c4f6f665e04a3.php(63): Twig\Template->loadTemplate()
+#2 /home/watsabpl/vendor/twig/twig/src/Template.php(394): __TwigTemplate_68c1695438e80738897acbd71b8f96e8->doDisplay()
+#3 /home/watsabpl/vendor/twig/twig/src/Template.php(367): Twig\Template->displayWithErrorHandling()
+#4 /home/watsabpl/vendor/twig/twig/src/Template.php(379): Twig\Template->display()
+#5 /home/watsabpl/vendor/twig/twig/src/TemplateWrapper.php(40): Twig\Template->render()
+#6 /home/watsabpl/vendor/twig/twig/src/Environment.php(277): Twig\TemplateWrapper->render()
+#7 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(482): Twig\Environment->render()
+#8 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(535): craft\web\View->renderTemplate()
+#9 /home/watsabpl/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#10 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(1100): craft\web\TemplateResponseFormatter->format()
+#11 /home/watsabpl/vendor/craftcms/cms/src/web/Response.php(337): yii\web\Response->prepare()
+#12 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#13 /home/watsabpl/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#14 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(192): yii\web\ErrorHandler->renderException()
+#15 /home/watsabpl/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#16 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(66): yii\base\ErrorHandler->handleException()
+#17 [internal function]: craft\web\ErrorHandler->handleException()
+#18 {main}
+Previous exception:
+yii\web\NotFoundHttpException: لم يتم العثور على الصفحة in /home/watsabpl/vendor/craftcms/cms/src/web/Request.php:1353
+Stack trace:
+#0 /home/watsabpl/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/watsabpl/vendor/craftcms/cms/src/web/Application.php(292): yii\web\Application->handleRequest()
+#2 /home/watsabpl/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/watsabpl/public_html/index.php(12): yii\base\Application->run()
+#4 {main}
+[19-Mar-2024 13:23:52 America/Los_Angeles] An Error occurred while handling another error:
+TypeError: Twig\Environment::getTemplateClass(): Argument #1 ($name) must be of type string, null given, called in /home/watsabpl/vendor/twig/twig/src/Template.php on line 319 and defined in /home/watsabpl/vendor/twig/twig/src/Environment.php:259
+Stack trace:
+#0 /home/watsabpl/vendor/twig/twig/src/Template.php(319): Twig\Environment->getTemplateClass()
+#1 /home/watsabpl/storage/runtime/compiled_templates/52/52a71af9205e59377d2c4f6f665e04a3.php(63): Twig\Template->loadTemplate()
+#2 /home/watsabpl/vendor/twig/twig/src/Template.php(394): __TwigTemplate_68c1695438e80738897acbd71b8f96e8->doDisplay()
+#3 /home/watsabpl/vendor/twig/twig/src/Template.php(367): Twig\Template->displayWithErrorHandling()
+#4 /home/watsabpl/vendor/twig/twig/src/Template.php(379): Twig\Template->display()
+#5 /home/watsabpl/vendor/twig/twig/src/TemplateWrapper.php(40): Twig\Template->render()
+#6 /home/watsabpl/vendor/twig/twig/src/Environment.php(277): Twig\TemplateWrapper->render()
+#7 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(482): Twig\Environment->render()
+#8 /home/watsabpl/vendor/craftcms/cms/src/web/View.php(535): craft\web\View->renderTemplate()
+#9 /home/watsabpl/vendor/craftcms/cms/src/web/TemplateResponseFormatter.php(57): craft\web\View->renderPageTemplate()
+#10 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(1100): craft\web\TemplateResponseFormatter->format()
+#11 /home/watsabpl/vendor/craftcms/cms/src/web/Response.php(337): yii\web\Response->prepare()
+#12 /home/watsabpl/vendor/yiisoft/yii2/web/Response.php(340): craft\web\Response->prepare()
+#13 /home/watsabpl/vendor/yiisoft/yii2/web/ErrorHandler.php(136): yii\web\Response->send()
+#14 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(192): yii\web\ErrorHandler->renderException()
+#15 /home/watsabpl/vendor/yiisoft/yii2/base/ErrorHandler.php(152): craft\web\ErrorHandler->renderException()
+#16 /home/watsabpl/vendor/craftcms/cms/src/web/ErrorHandler.php(66): yii\base\ErrorHandler->handleException()
+#17 [internal function]: craft\web\ErrorHandler->handleException()
+#18 {main}
+Previous exception:
+yii\web\NotFoundHttpException: لم يتم العثور على الصفحة in /home/watsabpl/vendor/craftcms/cms/src/web/Request.php:1353
+Stack trace:
+#0 /home/watsabpl/vendor/yiisoft/yii2/web/Application.php(82): craft\web\Request->resolve()
+#1 /home/watsabpl/vendor/craftcms/cms/src/web/Application.php(292): yii\web\Application->handleRequest()
+#2 /home/watsabpl/vendor/yiisoft/yii2/base/Application.php(384): craft\web\Application->handleRequest()
+#3 /home/watsabpl/public_html/index.php(12): yii\base\Application->run()
+#4 {main}

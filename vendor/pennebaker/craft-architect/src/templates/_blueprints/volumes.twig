@@ -1,0 +1,42 @@
+<h1>{{ "Volumes"|t('app') }}</h1>
+<table class="data fullwidth collapsible">
+    <thead>
+    <tr>
+        <th>
+            <div class="field checkboxvolume">
+                <input type="checkbox" id="allVolumes" class="checkbox" name="allVolumes" value="all"><label
+                        for="allVolumes">&zwnj;</label>
+                {{ "Name"|t('app') }}
+            </div>
+        </th>
+        <th>{{ "Handle"|t('app') }}</th>
+        <th>{{ "Type"|t('app') }}</th>
+    </tr>
+    </thead>
+    <tbody class="volumes">
+    {% for volume in craft.app.volumes.getAllVolumes() %}
+        {% set utilizedFields = {} %}
+        {% for volumeTab in volume.getFieldLayout().getTabs() %}
+            <hr/>
+            {% for tabField in volumeTab.getElements() %}
+                {% if tabField.className == 'craft\\fieldlayoutelements\\CustomField' %}
+                    {% set utilizedFields = utilizedFields | merge([tabField.getField.id]) %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        <tr class="volume" data-id="{{ volume.id }}" data-name="{{ volume.name }}"
+            data-fields="{% for id in utilizedFields %}{{ id }} {% endfor %}" data-filesystem="{{ volume.fsHandle }}">
+            <th scope="row">
+                <input type="checkbox" id="volume{{ volume.id }}" class="checkbox" name="volumeSelection[]"
+                       value="{{ volume.id }}"> <label for="volume{{ volume.id }}">{{ volume.name }}</label>
+            </th>
+            <td>
+                <code>{{ volume.handle }}</code>
+            </td>
+            <td>
+                {{ className(volume) }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

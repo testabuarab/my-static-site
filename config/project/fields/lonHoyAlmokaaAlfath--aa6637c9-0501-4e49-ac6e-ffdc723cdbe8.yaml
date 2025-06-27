@@ -1,0 +1,12 @@
+columnSuffix: fpkhziud
+contentColumnType: char(7)
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: lonHoyAlmokaaAlfath
+instructions: null
+name: 'لون هوية الموقع الفاتح'
+searchable: false
+settings:
+  defaultColor: '#ffffff'
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Color

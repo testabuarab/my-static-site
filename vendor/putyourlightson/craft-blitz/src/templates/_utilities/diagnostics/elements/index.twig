@@ -1,0 +1,38 @@
+{% extends 'blitz/_utilities/diagnostics/layouts/base' %}
+
+{% set title = 'Tracked Elements'|t('blitz') %}
+{% set showSiteMenu = true %}
+{% set elementTypes = craft.blitz.diagnostics.getElementTypes(siteId) %}
+
+{% block content %}
+    <div class="elements">
+        <table class="data fullwidth">
+            <thead>
+                <tr>
+                    <th>
+                        {{ 'Element Type'|t('blitz') }}
+                    </th>
+                    <th>
+                        {{ 'Elements'|t('blitz') }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for elementType in elementTypes %}
+                    <tr>
+                        <td class="code">
+                            <a href="{{ url('blitz/diagnostics/elements/element-type', {
+                                elementType: elementType.type
+                            }) }}">
+                                {{ elementType.type }}
+                            </a>
+                        </td>
+                        <td>
+                            {{ elementType.count|number }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

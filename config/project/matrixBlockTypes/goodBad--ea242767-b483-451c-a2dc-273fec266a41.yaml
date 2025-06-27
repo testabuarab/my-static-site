@@ -1,0 +1,426 @@
+field: 1bf489cc-2fd1-4e7e-baa4-95efe35f3bba # Content Blocks
+fieldLayouts:
+  f08a198d-7481-4ec1-aeb4-e9685a78e5c6:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 46a22748-1baf-41f7-b8c5-c0c090dc8ab1 # image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e6985661-1afd-4644-bf4f-fcaf286453ce
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 265da68c-3c3a-41ba-9bbf-6919d200fb5b # Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c748d1ba-3853-48e7-a6e6-a7d3ebeb91b8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 97e06f56-8f14-4237-a092-1f98ad1107ad # Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54c1e2fc-a346-4382-b7c6-0f3fae00a5d8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 725faffc-fbca-4502-812d-89464acd1c6f # Good Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68e4081e-422c-4864-b919-837c1ac55e58
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a08b8c51-64b8-49ba-a295-6716c3232cdb # Bad Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dcb851ed-3c8a-4807-9000-d6289d02ce6d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 85aad299-492f-4efe-85f8-6dc6b03208f1 # Good Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2fee9793-2ff7-4f2d-ae2f-632f8eee4fec
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3dcb02db-8aab-4cac-99a4-a81cc526f212 # Good link txt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8316eadb-9219-4be2-b097-507fb0d6ab9e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6930d155-4967-4527-a625-269fd6b895a6 # Bad Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df0a72d1-7596-4b50-83b1-bf21fdd35dbf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d56579ec-a73e-4479-928a-58d52f2e5e65 # Bad Link txt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b98e688e-c6e3-4774-bc87-7c2f7bf765bf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 412aeaab-c67b-496a-838b-6d19df575bbf # End Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7e3a8608-2a91-4669-9d09-3f1b30c45071
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6a2a1ed2-076a-4097-8445-fd649d33e9df # End Link txt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1e3423f-9731-40e3-951f-6ac13a1cff9a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c39ad407-fd81-4eb1-9f8b-6ba5ff6e22c2
+        userCondition: null
+fields:
+  3dcb02db-8aab-4cac-99a4-a81cc526f212: # Good link txt
+    columnSuffix: zsxqlkya
+    contentColumnType: text
+    fieldGroup: null
+    handle: goodLinkTxt
+    instructions: null
+    name: 'Good link txt'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  6a2a1ed2-076a-4097-8445-fd649d33e9df: # End Link txt
+    columnSuffix: llhougvz
+    contentColumnType: text
+    fieldGroup: null
+    handle: endLinkTxt
+    instructions: null
+    name: 'End Link txt'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  46a22748-1baf-41f7-b8c5-c0c090dc8ab1: # image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: null
+    name: image
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources:
+        - 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  85aad299-492f-4efe-85f8-6dc6b03208f1: # Good Link
+    columnSuffix: swlzftlb
+    contentColumnType: text
+    fieldGroup: null
+    handle: goodLink
+    instructions: null
+    name: 'Good Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  97e06f56-8f14-4237-a092-1f98ad1107ad: # Price
+    columnSuffix: tjjxyhnv
+    contentColumnType: text
+    fieldGroup: null
+    handle: price
+    instructions: null
+    name: Price
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  265da68c-3c3a-41ba-9bbf-6919d200fb5b: # Title
+    columnSuffix: tnqcaqfz
+    contentColumnType: text
+    fieldGroup: null
+    handle: gbtitle
+    instructions: null
+    name: Title
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  412aeaab-c67b-496a-838b-6d19df575bbf: # End Link
+    columnSuffix: vbwsajoc
+    contentColumnType: text
+    fieldGroup: null
+    handle: endLink
+    instructions: null
+    name: 'End Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  725faffc-fbca-4502-812d-89464acd1c6f: # Good Table
+    columnSuffix: lfplpqur
+    contentColumnType: text
+    fieldGroup: null
+    handle: goodTable
+    instructions: null
+    name: 'Good Table'
+    searchable: true
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - ''
+                -
+                  - handle
+                  - ''
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+      maxRows: null
+      minRows: null
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  6930d155-4967-4527-a625-269fd6b895a6: # Bad Link
+    columnSuffix: hcjsahpb
+    contentColumnType: text
+    fieldGroup: null
+    handle: badLink
+    instructions: null
+    name: 'Bad Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a08b8c51-64b8-49ba-a295-6716c3232cdb: # Bad Table
+    columnSuffix: fxpnynfh
+    contentColumnType: text
+    fieldGroup: null
+    handle: badTable
+    instructions: null
+    name: 'Bad Table'
+    searchable: true
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - ''
+                -
+                  - handle
+                  - ''
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - singleline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+      maxRows: null
+      minRows: null
+      staticRows: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  d56579ec-a73e-4479-928a-58d52f2e5e65: # Bad Link txt
+    columnSuffix: eksakumt
+    contentColumnType: text
+    fieldGroup: null
+    handle: badLinkTxt
+    instructions: null
+    name: 'Bad Link txt'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: goodBad
+name: 'Good Bad'
+sortOrder: 5

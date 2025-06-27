@@ -1,0 +1,61 @@
+{% extends "_layouts/cp" %}
+
+{% do view.registerTranslations('translations-admin', [
+    "Saving",
+    "Save",
+    "translations",
+    "Translations saved",
+    "Translations not saved",
+    "Translation added",
+    "Translation not added",
+    "Translation deleted",
+    "Translation not deleted",
+    "Add",
+    "Delete",
+    "Key",
+    "Actions",
+    "Message",
+    "No results",
+    "All",
+    "Empty",
+    "Date Created",
+    "Columns",
+    "View",
+    "Export"
+]) %}
+
+{% block actionButton %}
+  {% if craft.app.user.checkPermission('addTranslations') %}
+    <save-translations></save-translations>
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {% if categories|length > 1 %}
+        <translations-menu :categories="{{ categories | json_encode }}"></translations-menu>
+    {% endif %}
+{% endblock %}
+
+{% block toolbar %}
+    <translations-toolbar
+      :add-permission="{{ craft.app.user.checkPermission('addTranslations') ? 'true' : 'false' }}"></translations-toolbar>
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <translations-list current-category="{{ category }}"></translations-list>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <translations-footer
+      :delete-permission="{{ craft.app.user.checkPermission('deleteTranslations') ? 'true' : 'false' }}"
+      :export-permission="{{ craft.app.user.checkPermission('exportTranslations') ? 'true' : 'false' }}"></translations-footer>
+{% endblock %}
+
+{% block foot %}
+    <script>
+    window.csrfTokenName = "{{ craft.app.config.general.csrfTokenName|e('js') }}";
+    window.csrfTokenValue = "{{ craft.app.request.csrfToken|e('js') }}";
+    </script>
+{% endblock %}

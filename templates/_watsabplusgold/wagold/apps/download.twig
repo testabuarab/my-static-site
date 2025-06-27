@@ -1,0 +1,281 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{% set entry = craft.entries.section("applications").slug(slug).one() %}
+{% if entry|length <= 0 %}
+    {% exit 404 %}
+{% endif %}
+
+{#
+{% do craft.upvote.disable(['css','js']) %}
+#}
+{% do craft.upvote.disable(['css','js']) %}
+{%set incentrydownload=1%}
+{%set deferjs=1%}
+{% set title = "Download Page"|t ~" "~entry.appTitle???entry.title %}
+{% set appCategory = entry.appCategory.all() %}
+
+{%set lazyloadImage=global.lazyloadImageApp.one().getURL("nnewfullsharedimage")%}
+{% set cattt = entry.appCategory[0] %}
+   {% set appName = entry.appTitle|replace(".html","")|replace("-"," ")%}
+{% block content %}
+    <div class="main-wrapper my-15">
+        {% cacheflag flagged "applications|download|entry:#{entry.id}" %}
+        <main class="content-wrapper">
+        <nav class="breadcrumb ellipsis">
+
+            <span><i class="icon-home"></i><a href="{{alrabtAlasasyLlmokaa}}">{{ "Home"|t }}</a></span>
+            <span><a href="{{alrabtAlasasyLlmokaa}}/{{ cattt.uri }}{{ withSlash }}">{{ cattt.title }}</a></span>
+            <span><a href="{{alrabtAlasasyLlmokaa}}/{{ entry.uri }}{{ withSlash }}">{{ appName???entry.title }}</a></span>
+            <span><a href="{{alrabtAlasasyLlmokaa}}/download/{{entry.slug}}/latest{{ withSlash }}">{{ "Download"|t }}</a></span>
+
+        </nav>
+            <div class="block">
+                <div class="app-down col-12">
+                    <div id="counter">
+                        <canvas id="circle" height="100" width="100"></canvas>
+                        <div class="load">
+                            <img class="ab-center lazyload" onerror="this.src='{{ lazyloadImage }}'" src="{{ entry.appIcon|length ? entry.appIcon[0].url }}" width="55" height="55">
+                        </div>
+                    </div>
+                    <section class="app-info f-row">
+                        <h1>{{ appName???entry.title }}</h1>
+                        <p class="excerpt" id="status">{{ "Your download will start in a few seconds..."|t }}
+                        </p>
+                        {%if entry.downloadLinks|length%}
+                            <div class="downloadlinks" id="dl-alternative" >
+                                {%for link in entry.downloadLinks.all()%}
+                                    <a href="{{link.rabtAlthmylAlkhargy}}" {%if link.newTab%} target="_blank"{%endif%} {%if link.nofollow%} rel="nofollow"{%endif%} class="download-btn download-link"{%if link.lonAlrabt%} style="background-color:{{link.lonAlrabt}};    border: 2px solid {{link.lonAlrabt}};"{%endif%}>
+                                        <i class="dicon icon-download-cloud"></i>
+                                        <span class="dtext">
+                  {{link.blockText}}
+                    </span>
+                                       </a>
+                                {%endfor%}
+                            </div>
+                        {%endif%}
+
+                    </section>
+                </div>
+            </div>
+
+    </main>   {% endcacheflag %}
+        {% if general.tfaaylAltsoytAalAlroabt %}
+        <section class="block my-20">
+            <div class="col-12 link-broken">
+
+                <div class="textbroken">{{ "Does the link works?"|t }}</div>
+                <div class="unbroken ">
+                    <div class="pill">
+                        <div class="ab-center report-active plus">  {{ craft.upvote.upvote(entry.id, 'works') }}</div>
+                        <i class="text icon-thumbs-up-alt"></i>
+                        <span class="count">+{{ craft.upvote.totalUpvotes(entry.id, 'works') }}</span>
+                    </div>
+                </div>
+                <div class="isbroken ">
+                    <div class="pill">
+                        <div class="ab-center report-active minus">{{ craft.upvote.upvote(entry.id, 'doesnotworks') }}</div>
+                        <i class="text icon-thumbs-down-alt"></i>
+                        <span class="count">-{{ craft.upvote.totalUpvotes(entry.id, 'doesnotworks') }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="rate-message show"></div>
+        </section>
+        {% endif %}
+        {% cacheflag flagged "global|socialMedia" %}
+        <div class="block mb-20 following">
+            {% for block in socialMedia %}
+
+            <div class="follow-wrapper" style="width:50%;">
+                <a class="follow " style="background:{{ block.lonAlrabt }};height:100px;" href="{{ block.platformLink }}" target="_blank" title="{{ block.nsAlrabt }}">
+                    <i class="icon icon-whatsapp" style="color:{{ block.lonAlkht }};font-size:30px;"></i>
+                    <span class="title" style="color:#FFFFFF;font-size:25px;">{{ block.nsAlrabt }}</span>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+        {% endcacheflag %}
+        {% if appCategory|length and (not general.akhfaaaTtbykatThatSl)%}
+        {% cacheflag flagged "applications|entry:#{entry.slug}" %}
+
+            {% set appsList = craft.entries.section("applications").relatedTo(appCategory).id("not "~entry.id).with(["appIcon", "appCategory"]).orderBy("postDate desc").limit(5).all() %}
+            {% if appsList|length %}
+                {% set appthumb = {
+                    mode: 'crop',
+                    width: 120,
+                    height: 120,
+                    position: 'center-center',
+                    format: 'webp'
+                } %}
+                <section class="col-12 py-20">
+                    <div class="block related-apps">
+                        <div class="block-header f-row-auto col-12">
+                            <span class="icon icon-flash"></span>
+                            <h2 class="title">{{ "Alternative apps"|t }}</h2>
+                        </div>
+                        <div class="block-content apps-list f-row f-col-12">
+                            <div class="app-list-wrapper">
+                                {% for app in appsList %}
+                                    {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")%}
+                                    {%if app.asmAlttbykAarby%}
+                                        {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                                    {%endif%}
+                                    {% set apksize = '50MB'|t %}
+                                    {%if app.hgmAlmlf%}
+                                        {% set apksize = app.hgmAlmlf %}
+                                    {%endif%}
+                                    {% set appVersion = '2024' %}
+                                    {%if app.appVersion%}
+                                        {% set appVersion = app.appVersion %}
+                                    {%endif%}
+                                    <div class="app medium square">
+                                        <a class="soft-target" href="{{alrabtAlasasyLlmokaa}}/{{ app.uri }}{{ withSlash }}" title="{{ app.title }}"><span class="hideable">{{ appNamee }}</span></a>
+                                        <div class="app-wrap">
+                                            <img class="cover lazyload" src="{{ lazyloadImage }}"  data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl(appthumb) }}" width="80" height="80" alt="{{ appNamee }}">
+
+                                            <div class="app-info my-20">
+                                                <h3 class="ellipsis name">
+                                                    {{ appNamee }}
+                                                </h3>
+                                                <p class="excerpt mt-10">{{ app.title }}</p>
+                                            </div>
+                                            <div class="app-meta">
+			<span class="spec version">
+				<i class="icon-spin3"></i>
+				<span>{{ appVersion }}</span>
+			</span>
+                                                <div class="sparator"></div>
+                                                <span class="spec size">
+				<i class="icon-download"></i>
+				<span>{{ apksize }}</span>
+			</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            {% endif %}
+        {% endcacheflag %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+
+{% block css %}
+    <style>
+        .link-broken .upvote-vote{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+{% endblock %}
+{% block js %}
+    <script>
+        var download_link = "{{ entry.downloadLinks[0].rabtAlthmylAlkhargy }}";
+        var download_timer = 5;
+        var download_target = "show-link";
+        var link_target = "1";
+
+        var timer=typeof download_timer!=='undefined'?download_timer:5;
+        var target=typeof download_target!=='undefined'?download_target:'redirect-link';
+        var circle=document.querySelector('#circle');
+        if(circle){
+            var dpr=window.devicePixelRatio||1;
+            var rect=circle.getBoundingClientRect();circle.width=rect.width*dpr;circle.height=rect.height*dpr;var counter=circle.getContext('2d');counter.scale(dpr,dpr);var no=0;var pointToFill=4.72;
+            var cw=counter.canvas.width;var ch=counter.canvas.height;
+            var diff;var counterID=document.getElementById('counter');
+            var statusID=document.getElementById('status');
+            var downpage=document.getElementsByClassName('downloadlinks')[0];function fillCounter(){
+                diff=((no/100)*Math.PI*2*10);counter.clearRect(0,0,cw,ch);counter.lineWidth=6;
+            counter.strokeStyle='{{ global.lonHoyAlmokaa }}';
+            counter.beginPath();
+            counter.arc(50,50,47,pointToFill,diff/10+pointToFill);counter.stroke();if(no>=100)
+        {
+            counterID.className='loaded';
+            clearTimeout(fill);
+            if(download_link!=undefined){
+
+
+            downpage.classList.add('show');
+
+        }
+        }
+            no++;}
+            var fill=setInterval(fillCounter,10*timer);
+        }
+
+    </script>
+    {% if general.tfaaylAltsoytAalAlroabt %}
+    <script  defer src="/assets/sizzle.js?v=16467035517"></script>
+    <script  src="/assets/superagent.js?v=1646703511617"></script>
+    <script  src="/assets/starratings.js?v=16467035161119"></script>
+    <script  src="/assets/upvote.js?v=16467035161119"></script>
+    <script  src="/assets/unvote.js?v=16467035161119"></script>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+{% block meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchUrl = global.alrabtAlasasyLlmokaa~"/"~entry.uri%}
+    {% set searchDescription = entry.appSummary %}
+    {% set searchImage =global.alrabtAlasasyLlmokaa ~entry.seoImage.one().getUrl() %}
+<meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{ currentUrl }}"
+              },
+              {% for parent in appCategory %}
+                  {
+                    "@type": "ListItem",
+                    "position": "{{ loop.index + 1 }}",
+                    "name": "{{ parent.title }}",
+                    "item": "{{global.alrabtAlasasyLlmokaa}}/{{ parent.uri }}"
+                  }{{ loop.index < appCategory|length ? "," }}
+        {% endfor %}
+              ,{
+                "@type": "ListItem",
+                "position": "{{ appCategory|length + 2 }}",
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>
+{% endblock %}

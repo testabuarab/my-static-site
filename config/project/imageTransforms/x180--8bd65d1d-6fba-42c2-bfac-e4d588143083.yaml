@@ -1,0 +1,11 @@
+fill: null
+format: jpg
+handle: x180
+height: 180
+interlace: none
+mode: crop
+name: 180x180
+position: center-center
+quality: 80
+upscale: true
+width: 180

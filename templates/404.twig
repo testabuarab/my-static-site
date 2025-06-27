@@ -1,0 +1,8 @@
+{% set requestPathInfo = craft.app.request.pathInfo %}
+{% set requestQueryString = craft.app.request.queryStringWithoutPath %}
+{% set requestQueryStringHash = requestQueryString|length ? craft.businessLogic.createHash(requestQueryString) : '' %}
+{% set cacheKey = (requestPathInfo|length ? '_' ~ requestPathInfo) ~ (requestQueryStringHash|length ? '_' ~ requestQueryStringHash) %}
+{% set cacheKeyHash = cacheKey %}
+{% cache using key now|date('Y-m-d') ~ cacheKeyHash if cacheEnabled %}
+{% include global.siteTemplate %}
+{% endcache %}

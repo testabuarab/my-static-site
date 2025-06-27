@@ -1,0 +1,791 @@
+fieldLayouts:
+  96fe0bf7-2074-4ee8-8498-145fb79fcc2f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 8d8e6ca4-14f8-4592-b978-dc8886b96270
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3d316da4-52a0-4fe6-a78c-8c147b01175d # old id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: efa2a235-eec9-47e5-9878-c443b1c0c1e5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 52496fe6-b464-4acb-a0b2-2a590ac0840d # old link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 097d3f57-390a-482f-94d9-3a3b15df1576
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 06218ac8-fc37-4a85-a3a0-b6bcbda0c7dd # رابط خاص
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fe31db21-7873-4c26-9082-e0af2268d63d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a8e85691-b03a-45a2-a908-604d8990f39f # old slug
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b121ddfe-9ca7-4de7-ba29-7ed42d9978f5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: bcfaecc1-0898-49aa-865e-dd0f77f1b5c0 # App Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 06affaf2-b822-442f-bbb6-19a8e6ab42ef
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 39b83964-3aeb-4bd3-bc7a-ee8b87bf4adf # App Download Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab82dfa2-ccb8-4f95-9688-5f92eca25f64
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 77062d3c-8a99-491c-8bb7-5d91646e08ed # App Summary
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7438d85e-90d0-4466-a293-baefe83cd738
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 884d616d-2bb7-40d9-abca-dce779eceb11 # App MOD
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 361dbc6c-ce24-471e-ab49-80f76e6a84fc
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: efc855da-e595-495c-a811-c484f2170d74 # App Package
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed2cbb8c-ef04-41de-90b3-14d311ae041d
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f0f50a70-b35c-4488-a159-4d1980023618 # App Version
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 690585fe-83be-414e-bd58-514ea3f0e73c
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 7f867550-904f-420d-9b05-af7e8b7d0795 # App Requirement
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 75847914-4610-4624-973c-0a3b43f2583d
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 5d7e28b1-0bdc-42c3-bb91-7d9cb01c3db5 # App Publisher
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1b2a57b4-2ef8-4620-bc2b-39477ab154a3
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: f0ca8e8d-de01-4398-8d9a-04641c49f0be # App Publisher Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6e3537be-04e9-4de8-a917-57a4579edcc2
+            userCondition: null
+            warning: null
+            width: 75
+          -
+            elementCondition: null
+            fieldUid: 9f0808ff-09b6-479e-a5a2-890d32abc89b # App Category
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c05b616d-2f62-4d66-856d-7fe1fcb152e2
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 94e034dc-7c8c-460c-ba7a-79c28745efeb # App Tags
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea7eeddf-0fec-4170-9dc2-09553d6e5b96
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: b36f2da1-45db-4e6d-9f9b-a5844762c973 # App Google Store Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a2b70fd-59fb-47a8-8ff0-8c18d5dcde91
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 56af8d23-8e36-4e78-92cf-05d9d55e5218 # App Sale Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 257669a0-5498-4490-963b-4f8f85fbf270
+            userCondition: null
+            warning: null
+            width: 25
+        name: Information
+        uid: 25127ff7-a6a9-4cf8-af69-36d9db0226bf
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 89c159af-23b3-49ee-886d-aae1933aa1c8 # آخر تحديث	
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5e86232-444e-4123-9d5a-a2c925aff257
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a2b4a3da-bef1-4760-b344-3c032376ca98 # حجم الملف
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1528881-a551-492e-9406-1268f7c5b9d4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 89186396-744a-4421-a85a-ad4165e9f56f # اسم التطبيق عربي
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 090db5d7-aa8b-4da1-ad82-0471e905d532
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fffa4d0a-945a-4ad5-9966-5466a847fac7 # Download Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6fc8c925-5282-488a-8b85-db05b5764625
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 216a87ab-8814-4b2a-85a2-197ef5b24e6d # App File
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d9ab07f-b349-49d1-9b6d-426a20b05435
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 052ef7e5-499f-4b2c-9a81-659f86e4b6f5 # App Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9ed19528-cef9-4ed5-92ff-5d27aab47bba
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 38aafefd-4eed-474d-bd99-ca68392878d7 # App Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10ea0a4e-5c3a-4829-9ac5-18fb521a476b
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: a9d77539-56fe-4696-a648-3d95fb3cd55c # App Gallery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5c85106-efaf-4f9f-9ae1-62dbfd4b97bc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ab15395e-7128-4aeb-9990-25e8933388c3 # App Gallery links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: acde0e7a-d8b0-4d17-9b19-38245f1354aa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3999637d-1389-4aff-9610-a18f36161364 # Related Videos
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e56a1594-e2ce-4378-b202-648915fd3ed7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 300f5847-b0f4-48ed-8bdb-9bb749f9f20d # لغة التطبيق
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0aa4dfe-d7e6-49b9-8cb2-3b4c7ef5408b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e7731afa-9aa6-4bbe-a27f-4d3257c95e31 # نظام التشغل
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1a7e02e-b340-4fea-b2a7-59828cbd979e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 05c15143-ceeb-4ece-bc4d-68fcfce87e5f # App Author Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5d3c5f3-8f8e-4c19-bf57-58bb7b5d539a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Assets
+        uid: bd4cb2c5-f9c5-45e8-af7a-b64d41864dd8
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9ee7cb83-82c2-44d7-b6a8-26a914740bd3 # images From Cdn
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d2d7b633-437a-4ce4-980e-955c0cc1c2a9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1bf489cc-2fd1-4e7e-baa4-95efe35f3bba # Content Blocks
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0b34addf-71bd-43a8-a936-09b1f935095f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 08a30ffa-c275-4fd7-a3bf-2d15e93b991f
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 2f1c2e44-0c12-4210-bb8c-ccd8f07e9d1b # تمكين الأرشفة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bce28711-f20a-4a33-b46a-fd7b09a2d723
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a5dae2bf-e4f7-41e0-a0ad-5e8d51c75ecd # إخفاء الوصف
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2ec27883-c91b-4818-9931-1db96ef5c00f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 894976c6-f567-4aea-9e51-110fe9d87356 # إخفاء عنوان الموقع
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80b3ac9f-0a67-48be-9c93-3d0324165a95
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1b4eebf8-34e1-4da9-a1e8-6d05971406ee # SEO - Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e65dc1d0-57d1-44d4-9ccf-b7ddd1e257b4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9edcf19e-bb62-4e69-8d4e-636342028aee # SEO - Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 53d077ed-bc0e-4379-aab0-91ebcba719c4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3b3652cf-b3cf-4f9e-908f-35ab685ee970 # SEO - Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f799c094-bf1b-450d-94a4-263f34ef28ac
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 54e4e51b-6e52-410d-8af8-44c31ca18806 # Editor's Choice
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fc9d82e1-aced-4f72-bbe5-6655fe4e547f
+            userCondition: null
+            warning: null
+            width: 100
+        name: SEO
+        uid: f166d25f-483a-4fc2-8f84-9583148d5f91
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: ed45a35e-a634-43b7-afcf-57132beb22d6 # إيقاف الاعلانات
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 141f26e6-7657-4fa0-9c0c-012bdf6a0200
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8801f82d-a387-433d-8c34-eec7e054bef9 # editors Rating
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1007eace-b0de-420f-add1-e8fbc52a1272
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 86a9ea9b-0af4-470c-b9cc-bcdcd6e76f0b # old app Rating Count
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0b10159-b6b7-407c-b9fe-f1d6508406fc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2a8e6fab-a9ef-4bbf-a578-96f9370411ea # اخفاء تطبيقات ذات صلة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d2657530-f812-46ad-a103-466273f8ddf3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d1a4b63e-55f6-4fea-b861-fc060f192df3 # لون خلفية صفحة التحميل
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b3ef2901-a2bd-4d16-bea0-135970f8f90d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4f1a391a-334d-407f-a397-9abcd318b17f # App Language
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d54ab1f-b7e0-49cd-ad5a-fd7c3a69830f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b43bada7-be37-411e-893b-01ec75621988 # App Alert
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 63686b0e-6e8c-4688-afd4-27eb27874f22
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0cb2554a-f6f8-4d36-bc40-31d2c720e3dd # تفعيل البادئة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5d25087-0b55-4581-ad11-59b817cda571
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ff72b814-822c-476f-a10d-fad6e106c1d1 # تفعيل اللاحقة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d46e57b-dc67-4ea1-b752-71f40eadacc0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e50b8ff-4b98-49b1-8bdf-b4088384adfe # تفعيل اسم الموقع
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 77194023-a601-495d-92fd-7aace82eab4b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c363879c-62ab-4b7d-867b-08b13098f9b9 # السماح بالتعليقات
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 936b38e1-7c7f-4fe2-955c-1c0727df657e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1739172a-3412-44a7-9044-20a676a2e6d3 # App Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 791274f2-985a-43ed-8b87-070dc7c080cb
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: bede8704-fe45-4bf1-b669-d9cf08b63250 # Total Views
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7904a0fe-3a4b-4e2d-bde3-51f89ecc08d1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e94105e4-9a2d-47da-b55a-6bd1cbb177a2 # Total Downloads
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b36a7f28-a1f2-4caf-a5e7-1fd9186d0091
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'إعدادات التطبيق'
+        uid: cef69368-4e90-44c4-ac11-a9cc00164cbe
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 22915390-7ec5-4947-b636-a2ead8de04d7 # App Previous Versions
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa3e7782-37e7-4244-bd98-e3f00d35bed9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f512ec40-1f2f-4a51-bbd0-aa768e1264ba # محتوى كامل
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e2be1049-9fd4-46c8-a4b3-8862c9cab6e8
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Previous Versions'
+        uid: 9a40e47e-8af3-41c7-a1e6-0368504e19c0
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: addf75a8-f41b-4ff6-b35a-9a9afdb523e5 # Full Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b805ca5b-edb1-4b1a-a90b-8c6483c09707
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fdb574ff-208d-4173-9d73-b014da44ec6a # Has Items
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80083725-3e7c-447d-a121-b9cb509f5e68
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4261523b-bc46-4b64-9c85-982ffd98de9c # has steps
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b871712e-c4cb-41d3-8327-d0f788ac7e84
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 05c98e04-1849-4372-a2c7-59d38e2c4784 # Has Faqs
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d39bb3e-e2c6-4787-9b27-f3ae1e059262
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'خيارات التصميم'
+        uid: d3231119-ea84-4303-afcb-f1eaeffc3f08
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 79fc7573-4c20-47ac-ab84-cef54725f426 # Applications
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

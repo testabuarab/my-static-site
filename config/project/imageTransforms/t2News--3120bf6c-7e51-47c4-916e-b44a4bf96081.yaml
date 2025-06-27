@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: t2News
+height: 450
+interlace: none
+mode: crop
+name: 'Templates 2 - News'
+position: center-center
+quality: 0
+upscale: true
+width: 800

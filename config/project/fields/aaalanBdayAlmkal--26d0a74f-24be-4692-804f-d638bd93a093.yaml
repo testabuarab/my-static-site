@@ -1,0 +1,19 @@
+columnSuffix: plzyjqnf
+contentColumnType: text
+fieldGroup: 039db95e-99b1-4a38-b655-0ae4de98723d # Global
+handle: aaalanBdayAlmkal
+instructions: null
+name: 'إعلان بداية المقال'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 10
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

@@ -1,0 +1,76 @@
+.fa-icon-lists {
+    background-image: url('data:image/svg+xml;utf8,<svg enable-background="new 0 0 512 512" focusable="false" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><circle cx="48" cy="96" r="48"/><circle cx="48" cy="256" r="48"/><circle cx="48" cy="416" r="48"/><path d="m390.5 138.9c-40.1 0-73.2-26-123.6-26-18.7 0-35.4 3.3-50.9 9 2.1-5.6 3.1-11.6 2.7-17.6-1.3-21.3-18.8-38.4-40.1-39.3-23.9-1-43.6 18.1-43.6 41.9 0 14.2 7.1 26.8 18 34.4v288.7c0 9.9 8 18 18 18h12c9.9 0 18-8 18-18v-70.6c21.2-9 47.6-16.5 85.6-16.5 40.1 0 73.2 26 123.6 26 36 0 64.8-12.2 91.6-30.6 6.5-4.5 10.4-11.8 10.4-19.7v-181.8c0-17.5-18.2-29.1-34-21.7-25.9 11.9-57.4 23.8-87.7 23.8z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+}
+
+.iconList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-block-start: 1em;
+    height: 380px;
+    overflow: auto;
+    align-items: flex-start;
+}
+
+.iconList__selectableCont {
+    position: relative;
+    display: flex;
+    height: min-content;
+}
+
+.iconList__selectable {
+    padding: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid transparent;
+    flex: 1 1 auto;
+}
+.iconList label.iconList__label {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.iconList__input:checked + .iconList__selectable {
+    border-color: #bbb;
+}
+.iconList__icon {
+    font-size: 1.5em;
+    color: #444;
+}
+.iconList__iconName{
+    font-size: .8em;
+    color: #999;
+    margin: .5em 0 0 0;
+    line-height: 1.2;
+    text-align: center;
+}
+.redactor-modal input[type=radio].iconList__input {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    z-index: -1;
+}
+
+body.ltr .redactor-box .redactor-styles .fa-ul {
+    list-style-type: none;
+    margin-left: 2.5em;
+    padding-left: 0;
+}
+body.ltr .redactor-box .redactor-styles .fa-ul>li {
+    position: relative;
+    list-style-type: none;
+}
+body.ltr .redactor-box .redactor-styles .fa-li {
+    left: -2em;
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    line-height: inherit;
+}

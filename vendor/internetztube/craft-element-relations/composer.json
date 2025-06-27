@@ -1,0 +1,47 @@
+{
+    "name": "internetztube/craft-element-relations",
+    "description": "Shows all relations of an element.",
+    "type": "craft-plugin",
+    "version": "2.0.2",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "element-relations"
+    ],
+    "support": {
+        "docs": "https://github.com/internetztube/craft-element-relations/blob/master/README.md",
+        "issues": "https://github.com/internetztube/craft-element-relations/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frederic Koeberl",
+            "homepage": "https://frederickoeberl.com/"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "craftcms/cms": "^4.0.0-alpha"
+    },
+    "autoload": {
+        "psr-4": {
+          "internetztube\\elementRelations\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Element Relations",
+        "handle": "element-relations",
+        "developer": "Frederic Koeberl",
+        "developerUrl": "https://frederickoeberl.com/",
+        "documentationUrl": "https://github.com/internetztube/craft-element-relations/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/internetztube/craft-element-relations/master/CHANGELOG.md",
+        "class": "internetztube\\elementRelations\\ElementRelations"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "craftcms/rector": "dev-main"
+    }
+}

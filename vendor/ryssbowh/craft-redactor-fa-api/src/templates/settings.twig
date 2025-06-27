@@ -1,0 +1,62 @@
+{% import "_includes/forms" as forms %}
+
+{% set errors = settings.getErrors() %}
+
+{{ forms.lightswitchField({
+    name: 'preventReplaceI',
+    label: 'Prevent redactor from changing i tags into em tags'|t('redactor-fa-api'),
+    on: settings.preventReplaceI,
+    fieldClass: 'first'
+    })
+}}
+
+{{ forms.lightswitchField({
+    name: 'useKit',
+    onLabel: 'Use a kit'|t('redactor-fa-api'),
+    offLabel: 'Use local disk'|t('redactor-fa-api'),
+    id: 'fa-usekit',
+    on: settings.useKit
+    })
+}}
+
+<div id="mode-kit-fields" {% if settings.mode == 'path' %}class="hidden"{% endif %}>
+    {{ forms.textField({
+        label: 'Kit url'|t('redactor-fa-api'),
+        name: 'kitUrl',
+        value: settings.kitUrl,
+        placeholder: 'https://kit.fontawesome.com/71sf4579b4.js',
+        errors: settings.getErrors('kitUrl'),
+        }) 
+    }}
+</div>
+
+<div id="mode-path-fields" {% if settings.mode == 'kit' %}class="hidden"{% endif %}>
+    {{ forms.textField({
+        label: 'Path'|t('redactor-fa-api'),
+        name: 'faPath',
+        instructions: 'This should be the base path, where css/all.css can be found'|t('redactor-fa-api'),
+        value: settings.faPath,
+        errors: settings.getErrors('faPath'),
+        }) 
+    }}
+
+    {{ forms.selectField({
+        label: 'Version'|t('redactor-fa-api'),
+        name: 'faVersion',
+        value: settings.faVersion,
+        options: faVersionOptions,
+        instructions: 'Must match the version of the defined path'|t('redactor-fa-api'),
+        errors: settings.getErrors('faVersion'),
+        }) 
+    }}
+
+    {{ forms.selectField({
+        label: 'License'|t('redactor-fa-api'),
+        name: 'faLicense',
+        value: settings.faLicense,
+        options: {free: "Free", pro: "Pro"},
+        instructions: 'Must match the license of the defined path'|t('redactor-fa-api'),
+        errors: settings.getErrors('faLicense'),
+        }) 
+    }}
+</div>

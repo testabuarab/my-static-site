@@ -1,0 +1,126 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{% set title = entry.title %}
+{% set currentBase = global.alrabtAlasasyLlmokaa %}
+{% set alrabtAlasasyLlmokaa = currentBase %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+    {% set withSlash = "/" %}
+{% endif %}
+
+            {% set appthumb = {
+                mode: 'crop',
+                width: 120,
+                height: 120,
+                position: 'center-center',
+                format: 'webp'
+            } %}
+{%set disableCategorisAds=0%}
+{% set pageClass = "homepage"%}
+{% set contents %}
+
+    <main class="f-container">
+        {% cacheflag flagged "applications|home" %}
+            {%set lazyloadImage=global.lazyloadImageApp.one().getURL()%}
+            {% set homeblocks = entry.mhtoAlryysy
+                .with(['blokatAlryysy:alttbykatAlmkhtar'])
+                .all() %}
+        {%for homblock in homeblocks%}
+        <section class="col-12 py-20">
+            <div class="block home-block">
+                <div class="block-header f-row-auto col-12">
+                    <span class="icon icon-flash"></span>
+                    <h2 class="title"> {{ homblock.aanoanAlblok }}</h2>
+                </div>
+                <div class="block-content apps-list f-row f-col-12">
+                    <div class="app-list-wrapper">
+                        {% set editorsChoice = homblock.alttbykatAlmkhtar.all() %}
+                        {% if editorsChoice|length %}
+                            {% for app in editorsChoice %}
+                                {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")%}
+                                {%if app.asmAlttbykAarby%}
+                                    {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                                {%endif%}
+                                {% set apksize = '50MB'|t %}
+                                {%if app.hgmAlmlf%}
+                                    {% set apksize = app.hgmAlmlf %}
+                                {%endif%}
+                         {#       {% set appVersion = 'Latest Version'|t %}#}
+                                {% set appVersion = '2024' %}
+                                {%if app.appVersion%}
+                                    {% set appVersion = app.appVersion %}
+                                {%endif%}
+                                <div class="app medium square">
+                                    <a class="soft-target" href="{{alrabtAlasasyLlmokaa}}/{{ app.uri }}{{ withSlash }}" title="{{ app.title }}"><span class="hideable">{{ appNamee }}</span></a>
+                                    <div class="app-wrap">
+                                        <img class="cover lazyload" src="{{ lazyloadImage }}"  data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl(appthumb) }}" width="80" height="80" alt="{{ appNamee }}">
+
+                                        <div class="app-info my-20">
+                                            <h3 class="ellipsis name">
+                                                {{ appNamee }}
+                                            </h3>
+                                            <p class="excerpt mt-10">{{ app.title }}</p>
+                                        </div>
+                                        <div class="app-meta">
+			<span class="spec version">
+				<i class="icon-spin3"></i>
+				<span>{{ appVersion }}</span>
+			</span>
+                                            <div class="sparator"></div>
+                                            <span class="spec size">
+				<i class="icon-download"></i>
+				<span>{{ apksize }}</span>
+			</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+{% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        {% endcacheflag %}
+    </main>
+{% endset %}
+{% block content %}
+    {{ contents|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}
+
+
+
+
+{% block meta %}
+    {% cacheflag flagged "home|meta" %}
+        {% set searchImage = ""%}
+        {%if entry.appCover|length%}
+            {% set searchImage = entry.appCover[0].getURL(thumb) %}
+
+        {%endif%}
+        {%if not searchImage|length%}
+            {% set searchImage = entry.seoImage[0].getURL(thumb) %}
+        {%endif%}
+        {%if not searchImage|length%}
+            {% set searchImage = entry.appIcon[0].getURL(thumb) %}
+        {%endif%}
+        {% set searchUrl = alrabtAlasasyLlmokaa %}
+        <link rel="canonical" href="{{ searchUrl }}" />
+        <meta name="description" content="{{ entry.seoDescription }}">
+        <meta itemprop="name" content="{{ searchTitle }}">
+        <meta itemprop="description" content="{{ entry.seoDescription }}">
+        <meta itemprop="image" content="{{ searchImage }}">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="{{ searchTitle }}">
+        <meta property="og:url" content="{{ searchUrl }}">
+        <meta property="og:title" content="{{ searchTitle }}">
+        <meta property="og:description" content="{{ searchDescription }}">
+        <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="{{ searchUrl }}">
+        <meta name="twitter:title" content="{{ searchTitle }}">
+        <meta name="twitter:description" content="{{ searchDescription }}">
+        <meta name="twitter:image" content="{{ searchImage }}"> 
+    {% endcacheflag %}
+{% endblock %}

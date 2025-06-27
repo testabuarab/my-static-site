@@ -1,0 +1,698 @@
+dateModified: 1715726652
+email:
+  fromEmail: abualialim@gmail.com
+  fromName: cmsweb
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  fonts:
+    hasUrls: true
+    name: Fonts
+    settings:
+      path: '@webroot/webfonts'
+    type: craft\fs\Local
+    url: '@web/webfonts'
+  icons:
+    hasUrls: true
+    name: Icons
+    settings:
+      path: '@webroot/nicon'
+    type: craft\fs\Local
+    url: '@web/nicon'
+  uploads:
+    hasUrls: true
+    name: Uploads
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: '@web/uploads'
+  wpContent:
+    hasUrls: true
+    name: wp-content
+    settings:
+      path: '@webroot/wp-content/uploads'
+    type: craft\fs\Local
+    url: '@web/wp-content/uploads'
+meta:
+  __names__:
+    0a26a6ae-06a8-44bd-ad97-b4143f377d6b: 'Template 1 - App - Side' # Template 1 - App - Side
+    0a260b31-8914-4411-80e4-dab434f5168c: 'Item image' # Item image
+    0bb7acb1-c961-4109-887f-995a72e5051f: 540x540 # 540x540
+    0bc3f209-d651-478d-9359-f51c53386e58: 'Tag Title' # Tag Title
+    0c970e96-e13b-4487-bdf6-9d3b2f2e34c9: 'Block Sub Menu ' # Block Sub Menu 
+    0cb2554a-f6f8-4d36-bc40-31d2c720e3dd: 'تفعيل البادئة' # تفعيل البادئة
+    0f4a91fe-487c-4942-b2d3-3480249429d6: 'franklin color' # franklin color
+    0fbfe7a8-2e70-4cbe-bde0-a01163e8e570: Block # Block
+    1a3d3ff8-cc4d-4177-af1e-16b7c35c2cd0: 'Applications Tags' # Applications Tags
+    1b4eebf8-34e1-4da9-a1e8-6d05971406ee: 'SEO - Title' # SEO - Title
+    1b5d68ca-d1a5-40ec-9d12-a4a832186505: 'Category Description' # Category Description
+    1b957c08-0620-4a3a-b948-908f61ce9c46: 'سكربت التتقييم' # سكربت التتقييم
+    1bb8b9c0-ce7b-47c4-80a4-49aa502af2d0: '140X100 web' # 140X100 web
+    1bf489cc-2fd1-4e7e-baa4-95efe35f3bba: 'Content Blocks' # Content Blocks
+    1cd60e39-8614-4033-b372-6485d5e1fa45: كلاس # كلاس
+    1ed9b784-2a49-40c7-adcc-529de3c9e5e7: 120X120 # 120X120
+    1f0a8304-055a-4ef3-b546-e4500e28d01b: 'icons Picker' # icons Picker
+    2a046f6a-0895-4a0c-9694-61e45190f503: 'Block Sub Text' # Block Sub Text
+    2a8e6fab-a9ef-4bbf-a578-96f9370411ea: 'اخفاء تطبيقات ذات صلة' # اخفاء تطبيقات ذات صلة
+    2d6939cc-127b-4e6d-bdaf-969d5e4a8956: '96X96 new' # 96X96 new
+    2e9b8521-dc86-4191-be7f-681496b47a91: 'tabler sprite' # tabler sprite
+    2e32aadc-4f5f-4927-961f-eaed7670e005: 'إعلان وسط المقال' # إعلان وسط المقال
+    2eddcc71-3f78-4905-8e86-9c72bc264e4b: 640x640web # 640x640web
+    2f1c2e44-0c12-4210-bb8c-ccd8f07e9d1b: 'تمكين الأرشفة' # تمكين الأرشفة
+    2ffad2f4-6667-4555-8f32-545b91c18d73: 'Material icons' # Material icons
+    3a071aa8-5021-42dd-9429-2f2fa5954c71: 'أيقونة المتطلبات' # أيقونة المتطلبات
+    3a56d10c-5d1d-4223-b8e5-5a504ff0bf82: 'Items design color' # Items design color
+    03b2e267-7385-4079-bad6-b049ba4cf12f: test2.watsabplus.gold # test2.watsabplus.gold
+    3b464cf2-3c24-4514-9ff6-10590d820408: 'Tag Type' # Tag Type
+    3b3652cf-b3cf-4f9e-908f-35ab685ee970: 'SEO - Description' # SEO - Description
+    3c69144a-eea4-41ae-ad47-16f750438a08: 'Item svg path' # Item svg path
+    3cadb5a8-c656-430d-b85c-94ba47156369: 'رابط الموقع القديم' # رابط الموقع القديم
+    3d74bf03-a3a2-4c1d-b3f7-fdd4262779d6: 'awesom icons' # awesom icons
+    3d316da4-52a0-4fe6-a78c-8c147b01175d: 'old id' # old id
+    3dcb02db-8aab-4cac-99a4-a81cc526f212: 'Good link txt' # Good link txt
+    3e1893d2-facf-46f0-95c0-01a95aef7f32: 'app Side' # app Side
+    4a9045bf-3352-4ee4-aa7d-25eea5f7fbce: 'sprites Solid' # sprites Solid
+    4a561190-b707-4668-b1ff-36e7189b05e3: pro # pro
+    4c868ae3-189d-4b19-8403-f6c414ad7918: wp-content # wp-content
+    4c930c4b-39b9-4c49-bda4-7b677f965eb4: 1440x1440 # 1440x1440
+    4d12b3b7-1e45-4021-add1-b55939e42fa2: 'Item Title' # Item Title
+    4d81160e-0a7f-4404-90c6-1b4bf2564942: 'Block Title Color' # Block Title Color
+    4dbbf82e-e208-4412-96d7-dacd5796432c: 'Google Analytics Code' # Google Analytics Code
+    4dd61c72-82d7-4b1b-b5a3-b5bae6d9f574: 'الرابط الأساسي للموقع' # الرابط الأساسي للموقع
+    4f1a391a-334d-407f-a397-9abcd318b17f: 'App Language' # App Language
+    04fbe23b-6cd5-4033-aceb-df2b5bafb3d0: newfullsharedimage # newfullsharedimage
+    4ff233dd-cf1d-49e7-b933-30994161daf8: 'نص الرابط' # نص الرابط
+    5b5ea881-f637-44f1-bae1-35ae00796ce7: Icons # Icons
+    5b2622ea-6477-40f1-ae8b-a6e0feac8329: Articles # Articles
+    5bc040c0-af77-43da-8538-7ebee5d49c5b: 'Category Icon Picker' # Category Icon Picker
+    5bcf2c83-47d6-44f0-91c3-93c7f42dc10e: 'Template 1 - Article - Page' # Template 1 - Article - Page
+    05c98e04-1849-4372-a2c7-59d38e2c4784: 'Has Faqs' # Has Faqs
+    05c15143-ceeb-4ece-bc4d-68fcfce87e5f: 'App Author Link' # App Author Link
+    5d7e28b1-0bdc-42c3-bb91-7d9cb01c3db5: 'App Publisher' # App Publisher
+    5deb19b0-44a7-4692-bd2c-779296764bd0: 'Template 1 - Article - Main 3' # Template 1 - Article - Main 3
+    5e085c16-b1dc-4673-a4a3-8246f5e8989e: 'لون الايقونة' # لون الايقونة
+    5e40bef9-6147-47dd-b858-8a23d77bdba9: 'تحديد عرض الاعلانات' # تحديد عرض الاعلانات
+    5eff44ee-8a9c-43da-9e5f-b11cf067a89e: Apps # Apps
+    5f37a37b-d287-46e1-ab4c-0b7f707fa5ab: 'Image Link' # Image Link
+    6a0f986e-5bb2-4ff5-8f3d-fc8581b09618: 'كود تلقرام' # كود تلقرام
+    6a2a1ed2-076a-4097-8445-fd649d33e9df: 'End Link txt' # End Link txt
+    6a80f3c0-91fc-4ea2-b150-1595fc962f5b: ٍSteps # ٍSteps
+    6aa6ff94-9558-4af0-8341-a67010001815: Default # Default
+    6c9ad64f-42c2-495a-8eb5-b06500a146d2: 'Steps Table' # Steps Table
+    6c24047d-a881-49ac-b590-00db86750206: 'Article Summary' # Article Summary
+    6d002b0d-6168-40bb-b77d-086516dcb79e: 'Template 2 - Article - Main 1' # Template 2 - Article - Main 1
+    06e0df5f-6918-4af7-bd59-437972244c88: Common # Common
+    6e7027a9-13f5-4c1a-bb06-6c4c047e3664: General # General
+    6ece2a25-24f5-4502-81ee-9e3369383cae: 'Google Verification Code' # Google Verification Code
+    7a49efcf-af25-4f02-a7ae-7fb0ff650730: 'Article Tags' # Article Tags
+    07ab656b-8809-443e-a1c3-0015b1a93d9d: 'تأخير الايقونة' # تأخير الايقونة
+    7cb492e9-8852-4246-abd1-e362c425e7d2: 384x384web # 384x384web
+    7d0dab66-5e2b-4133-a678-1b11015e6d8a: Block # Block
+    7ef20472-09d0-4e55-99bd-3662bc73787f: 2400x2400 # 2400x2400
+    7f867550-904f-420d-9b05-af7e8b7d0795: 'App Requirement' # App Requirement
+    8a992f3c-2f5a-4100-90e9-2518a111b19e: 256x256 # 256x256
+    08b9b8a1-3753-4c52-8b49-b65b5912737f: 'أيقونة النجمة' # أيقونة النجمة
+    8bd65d1d-6fba-42c2-bfac-e4d588143083: 180x180 # 180x180
+    8c1b97a1-85a9-470d-b12e-0ef9b6eb2494: 48X48 # 48X48
+    8c84845b-6e0b-4bca-90fa-3368f464fa36: 'Page type' # Page type
+    8de0da8e-fa31-4659-b07a-6fbe78cab490: 'Template 1 - App - Category' # Template 1 - App - Category
+    8e50b8ff-4b98-49b1-8bdf-b4088384adfe: 'تفعيل اسم الموقع' # تفعيل اسم الموقع
+    8e70f461-37e5-4eed-8ad8-a20e6e4bf370: 'with Slash' # with Slash
+    8f1cf9b7-78e6-4171-80ba-fd823ea1f939: Home # Home
+    8f296425-1137-4c47-8bcf-4ec4fc8ffeb6: 'Category Icon' # Category Icon
+    9a1e7713-3836-484d-936a-885d7a64c6fd: items # items
+    9aa0920d-72cb-475f-af59-246571cda52e: 'Template 1 - Site Logo' # Template 1 - Site Logo
+    9bf7fe22-2f49-4d5d-a77b-1ffa9eef715b: 'Item Text' # Item Text
+    9c4afbce-5f8c-4523-8842-8e0c908003fe: 'إعلان الفوتر' # إعلان الفوتر
+    9c5213f0-9c95-4dd8-828c-61d48d24d512: 'Video Link' # Video Link
+    9d8d70bd-4be6-4a64-8dc3-20671bef5431: 'تطبيق مميز' # تطبيق مميز
+    9d757ce5-a58b-49b4-a5df-34176d7adf03: 'رابط الخط العادي' # رابط الخط العادي
+    9d130894-540b-4872-8334-b4f17df61293: 640x640 # 640x640
+    9e6ce6d1-77d4-4cdd-b241-643ba613e8c5: 'Steps Summery' # Steps Summery
+    9edcf19e-bb62-4e69-8d4e-636342028aee: 'SEO - Image' # SEO - Image
+    9ee7cb83-82c2-44d7-b6a8-26a914740bd3: 'images From Cdn' # images From Cdn
+    9f0808ff-09b6-479e-a5a2-890d32abc89b: 'App Category' # App Category
+    9f4f7633-da55-4d7c-955a-27206cdf0829: 'نوع التصميم ' # نوع التصميم 
+    14cf1556-e751-4f83-8af8-7e470e4800e4: 1200x1200 # 1200x1200
+    15a08130-45ef-4895-9059-d0ac4e260abb: 'تعطيل الاعلانات في البحث' # تعطيل الاعلانات في البحث
+    17e6b6d9-d89d-4589-a193-847eb4c3b50a: 'New Tab' # New Tab
+    18bbc401-044f-48ca-afc2-040e94808f2e: 'fontello Icons' # fontello Icons
+    19e0ec65-3f8e-4345-9a8d-4080b69fb0e6: 'كلمات ممنوعة' # كلمات ممنوعة
+    23affefc-61eb-4f2e-a80c-9a2147d7ed1f: 'Items Layout' # Items Layout
+    23b5148b-e16f-471a-98e1-4e6b71dd5d30: 'ايقونة الاصدار' # ايقونة الاصدار
+    23e0d529-8ce4-45f9-a794-c22e56c1b036: 'ايقونة نظام التشغيل' # ايقونة نظام التشغيل
+    25b41f78-131f-484c-9344-8a86cc4c121e: 'Template 1 - Article - Main 2' # Template 1 - Article - Main 2
+    26d0a74f-24be-4692-804f-d638bd93a093: 'إعلان بداية المقال' # إعلان بداية المقال
+    27aa8ade-cbc1-452e-92e6-9b205293962c: 1200x1200web # 1200x1200web
+    29b9789e-38dc-4150-a6a5-6a557ed76918: favicon # favicon
+    29ebaa38-8749-4fb3-8b38-5826e084963f: 'Tag Type' # Tag Type
+    30ed502f-7398-41bb-8c24-9b4f0b83f04b: 143X143 # 143X143
+    30ef4d43-accb-4f11-9294-b8ada657d225: 'Block Text' # Block Text
+    31d18237-52a1-4a12-b35d-d2c9d50822ef: 'font cdn name' # font cdn name
+    33ff4f3d-439e-426b-ac44-88d113b25a68: 'لون العنصر' # لون العنصر
+    38aafefd-4eed-474d-bd99-ca68392878d7: 'App Cover' # App Cover
+    39b83964-3aeb-4bd3-bc7a-ee8b87bf4adf: 'App Download Title' # App Download Title
+    039db95e-99b1-4a38-b655-0ae4de98723d: Global # Global
+    41fa3e86-9e42-41b1-811a-729c4215c377: 2048x2048web # 2048x2048web
+    42e76fc9-580a-48ab-98b1-02b53c8109ec: 'لون الرابط' # لون الرابط
+    44d34eb4-8fd3-4535-80ba-da1806e48ee8: 'SEO Image' # SEO Image
+    46a22748-1baf-41f7-b8c5-c0c090dc8ab1: image # image
+    47fa49bf-d69c-468d-b418-a7077219a7bc: '270X270 ' # 270X270 
+    50cadb6d-68b5-4127-8882-336998457492: 'اسم رابط الموقع' # اسم رابط الموقع
+    052ef7e5-499f-4b2c-9a81-659f86e4b6f5: 'App Icon' # App Icon
+    54a0af4e-08d0-4fe9-b6db-23654bd577bc: Block # Block
+    54e4e51b-6e52-410d-8af8-44c31ca18806: 'Editor''s Choice' # Editor's Choice
+    55c8abcb-8f67-4643-9ea8-0bd7c9001b95: Root # Root
+    56af8d23-8e36-4e78-92cf-05d9d55e5218: 'App Sale Price' # App Sale Price
+    59ff3b9d-5591-4502-aa29-7d6a8b5bc559: 1920x1920 # 1920x1920
+    60d4c06c-98f6-4f3e-b584-51ed74bb80bf: Default # Default
+    61e3c234-8bc5-4bb6-8f8b-3f9a39d44b66: watsabplus # watsabplus
+    62f4961a-253c-4102-a142-1f93b56793b3: 'Block Text' # Block Text
+    63e68e9c-6d7d-40a2-ba35-ca11abdab1b9: 'Item Table' # Item Table
+    64ee50bb-5d33-4220-84e6-6e5a151b6628: 'Social Media Links' # Social Media Links
+    67c78fa6-4083-4da9-a0e4-14b9a683b9c6: 'Platform Username' # Platform Username
+    067d66b6-51e7-4281-bf9a-f0876f8e4abb: 141X250 # 141X250
+    69e04286-4620-4d31-a56a-bdec077b3156: 'Icons picker' # Icons picker
+    75c07dfc-6ba8-4ee7-af28-faf3db65f8d1: 'لون خلفية الهيدر' # لون خلفية الهيدر
+    75e9f207-c2dc-481e-ac30-d301fd1e26ab: 'Footer Navigation' # Footer Navigation
+    79fc7573-4c20-47ac-ab84-cef54725f426: Applications # Applications
+    81ec70f1-834f-4976-9777-a65e327a2cc6: 'إعلان الهيدر' # إعلان الهيدر
+    82f6dc79-bb76-4208-80cd-d6a380b42375: 1080x1080 # 1080x1080
+    85aad299-492f-4efe-85f8-6dc6b03208f1: 'Good Link' # Good Link
+    86a9ea9b-0af4-470c-b9cc-bcdcd6e76f0b: 'old app Rating Count' # old app Rating Count
+    87db1fcb-c872-4262-b8ae-798c6dffcef5: 'App Related Entries' # App Related Entries
+    89c159af-23b3-49ee-886d-aae1933aa1c8: "آخر تحديث\t" # آخر تحديث	
+    89d70ddb-f952-4d53-9eb8-2bddc9bbe843: 320X320 # 320X320
+    89f30e6c-3733-4767-ae07-436b5aebf074: Pages # Pages
+    92a3db78-d294-4259-aa84-d836243f9178: Block # Block
+    92c778ef-711b-4ec8-bb2c-76c2f9214aa7: 'Quiz Table' # Quiz Table
+    92e63e9a-e5df-46da-a546-65a46d63e6cb: 'شعار الموقع svg code' # شعار الموقع svg code
+    94c62cbb-5ed8-474c-a1bc-d4613a2ccae6: 'Block Text' # Block Text
+    94e034dc-7c8c-460c-ba7a-79c28745efeb: 'App Tags' # App Tags
+    97e06f56-8f14-4237-a092-1f98ad1107ad: Price # Price
+    99e061b8-737f-4cfe-87a3-8f7b2f9e14b7: 'Block Icon' # Block Icon
+    139d5f16-59e0-472d-aabc-d54efec291ec: 'Block Content' # Block Content
+    0144bc45-1468-4284-bda4-f3cf60592ad2: 48x48web # 48x48web
+    160f66ef-1f64-4f99-aba3-ed74bbe8736f: 'Block Link' # Block Link
+    194a8e5c-4e28-49e4-8f42-59db65aa26bc: 'google Analytics 4 Code' # google Analytics 4 Code
+    201baebf-31d5-4621-9115-9061ed27a2b2: 'أيقونة اسم التطبيق' # أيقونة اسم التطبيق
+    206f0c91-ed5c-499f-a55d-a075dc84de5d: 240X240 # 240X240
+    209dd5e1-6b5c-45d0-a51a-abc4749644c0: 'Step Content' # Step Content
+    216a87ab-8814-4b2a-85a2-197ef5b24e6d: 'App File' # App File
+    265da68c-3c3a-41ba-9bbf-6919d200fb5b: Title # Title
+    300f5847-b0f4-48ed-8bdb-9bb749f9f20d: 'لغة التطبيق' # لغة التطبيق
+    302d4233-55fe-46b5-8ca7-8f6982a527ff: 'Block Link' # Block Link
+    323aa011-9bb1-480c-ab31-491ca6d20be4: 'إخفاء مقدمة عنوان التاق' # إخفاء مقدمة عنوان التاق
+    357d0daa-3699-4376-a86b-c64a0a4fca03: 100X100 # 100X100
+    412aeaab-c67b-496a-838b-6d19df575bbf: 'End Link' # End Link
+    428e2763-a532-4c78-89b4-6fdfe942333e: 64x64 # 64x64
+    460f0b8d-c724-4faf-99c5-e742c790d183: 'بلوكات الرئيسية' # بلوكات الرئيسية
+    534a104c-dc3e-46da-9be2-e521ec59f0bc: 'Step subtitle' # Step subtitle
+    561ed6a8-0e5d-4d61-b66e-2f7131a5053f: 'Block Icon' # Block Icon
+    563f65f3-efa2-4c69-a6f6-4e3131fc8332: 'محتوى الرئيسية' # محتوى الرئيسية
+    575b3c65-6c06-41b4-936e-2ecbfa62f98f: 'Block Title' # Block Title
+    616a582f-b9fd-4add-b99c-3e115e81431d: Block # Block
+    633d93fe-0e1d-4902-9ce3-25ca2b819681: 'Copyrights Text' # Copyrights Text
+    687cbc38-dd92-491b-8f38-a408af25fb1d: 'عنوان البلوك' # عنوان البلوك
+    687ee13e-96e1-4a68-afdf-416d9a5189bb: 'تطبيق مميز على الرئيسية' # تطبيق مميز على الرئيسية
+    698e08c2-cb79-4da2-8c8b-6ce4f1a8a137: Quiz # Quiz
+    713b74be-9d4e-4177-b1dd-583a335d9a23: 'لون هوية الموقع' # لون هوية الموقع
+    717acf9b-fe27-41ef-8157-6a3f77254d27: 'Platform Link' # Platform Link
+    725faffc-fbca-4502-812d-89464acd1c6f: 'Good Table' # Good Table
+    753f2ef2-193a-4cba-b876-0aae77dbba90: Default # Default
+    799d3aa9-07a5-445f-8ce0-b39b011a1021: cmsweb # cmsweb
+    861abc90-4f49-42e3-9644-131295655fd5: 'Block Link' # Block Link
+    884d616d-2bb7-40d9-abca-dce779eceb11: 'App MOD' # App MOD
+    911b883e-05b1-4121-8a97-07d6046b3cf6: 'لون خط article' # لون خط article
+    919b6950-669c-47c5-bcdf-21500a782d9d: 'Step Title' # Step Title
+    943cddd5-55d8-4e15-9012-7b402a22b264: 'تعطيل اعلانات المكتبي' # تعطيل اعلانات المكتبي
+    946ad987-8c8f-4df9-b891-cba1ba0ad382: 'لون زر البحث' # لون زر البحث
+    961d8a02-d0d7-47d0-bc5f-c323c52dd37c: 188X188 # 188X188
+    977d3d7e-9e94-4891-ba28-2ad4a186037c: 'خلفية العنوان' # خلفية العنوان
+    01406bb7-246c-4cfd-b94c-f4f74dc4e554: 150X150 # 150X150
+    1508bea8-9c30-4bb5-ac15-5f336c095d63: Block # Block
+    1614c3aa-4637-407b-a9aa-e7d4cdcf793d: 72x72 # 72x72
+    3026b20e-bfdc-4669-b16b-3af6b826a8ef: 'Lazyload Image - App' # Lazyload Image - App
+    3120bf6c-7e51-47c4-916e-b44a4bf96081: 'Templates 2 - News' # Templates 2 - News
+    4442c034-b2c9-4f0b-b67d-04ae66884fb8: 'لون خلفية الموقع' # لون خلفية الموقع
+    4471ed81-02c5-4106-bd84-47cc329be896: 'Images cdn hostname' # Images cdn hostname
+    4504d769-ccf2-4644-8787-f51f755552c5: fontello # fontello
+    4807f3c6-539d-43e0-a4ea-300ac5777131: 'ايقونة التحميل' # ايقونة التحميل
+    4899cf15-d10d-4526-8889-f85186fe1f75: 96x96web # 96x96web
+    5289f50a-cdf6-4568-817a-9fcc7f5962c6: 'Block Sub Text' # Block Sub Text
+    06218ac8-fc37-4a85-a3a0-b6bcbda0c7dd: 'رابط خاص' # رابط خاص
+    6388cc6d-f78b-4b9a-a4a1-3026ff120d11: 'Analytics Codes' # Analytics Codes
+    6701ae40-04d2-4db4-a278-a14219eaf076: 'كود تحقق google' # كود تحقق google
+    6852cce0-594b-4472-9adc-03842efd94e7: 32X32 # 32X32
+    6930d155-4967-4527-a625-269fd6b895a6: 'Bad Link' # Bad Link
+    7415b618-fcd1-4f19-8410-dd747771eff5: 'Block Link' # Block Link
+    7707f964-1f2b-469d-81a4-8baf5d18ed49: 'لون الرابط' # لون الرابط
+    8801f82d-a387-433d-8c34-eec7e054bef9: 'editors Rating' # editors Rating
+    9050b030-b3d9-4f08-af57-f26667db07e1: 'لون الخط' # لون الخط
+    9058aad9-172b-4858-b308-1f07015c1698: 16x16 # 16x16
+    9454ff14-b852-444e-9482-a9d91328e32a: 'Template 1 - App - Page' # Template 1 - App - Page
+    9645a7c9-02ba-4392-9467-3cc18cd53b6e: 'القسمين المميزين' # القسمين المميزين
+    9817af7d-9387-4566-af23-b8e1abca3afc: 415x415 # 415x415
+    22796c3c-8097-4fb9-b932-b88256ec1d02: 330X160 # 330X160
+    26404b47-a1e5-4643-968e-0ea033b0ae79: 'Video Title' # Video Title
+    30894d92-6a1b-4011-9ef8-f009f7ae3b57: 'Faq Answer' # Faq Answer
+    45027c89-dd63-406c-8f77-519b8cefc989: 'كود ادسنس' # كود ادسنس
+    45812caf-96a9-4155-8d40-b8b9282537ab: 'لون الشادو' # لون الشادو
+    49317fef-5681-42b7-a24d-d3aa39e98cd8: 'لون الخلفية' # لون الخلفية
+    50456a95-32ba-4fad-978a-bb78fdbc615b: 'css link' # css link
+    52496fe6-b464-4acb-a0b2-2a590ac0840d: 'old link' # old link
+    056072da-23e1-42cc-965a-96fc793f5f86: 376x376web # 376x376web
+    059897d4-fc81-4745-9d7d-d23991b4e001: 'Article Category Tags' # Article Category Tags
+    69182d82-4e1b-442c-ac09-018a06a28393: 128x128 # 128x128
+    076960c4-c2a5-4051-9a81-058b64a15003: 'app Main4' # app Main4
+    77062d3c-8a99-491c-8bb7-5d91646e08ed: 'App Summary' # App Summary
+    82647b8e-ec71-4180-be14-9011fe39c570: 192X192 # 192X192
+    83433aca-82b6-4312-8572-b3a3b728f9ed: Links # Links
+    88996ecb-0be0-4948-a9b1-dc532a380375: 'تفعيل الليزي لود للاعلانات' # تفعيل الليزي لود للاعلانات
+    98024c76-a2f8-407b-878d-33ceebed4cc3: 'تعطيل الاعلانات في التاقات' # تعطيل الاعلانات في التاقات
+    207282f6-6dd1-4e0d-862b-70bfdec29f86: tw-bg-opacity # tw-bg-opacity
+    209298c0-02b5-4ddc-a4fa-2f050de13da6: '270X270 wbe' # 270X270 wbe
+    358121a3-1777-4eb9-b0c9-3a28e64053f4: 16x16web # 16x16web
+    388428d0-1d22-431a-91af-fbd647e092c6: 540x540web # 540x540web
+    433835da-c824-48a6-ac2c-d54b75b22492: 'Block Text' # Block Text
+    579858bf-7541-4e5f-9959-984dd1be7214: 'رابط المزيد' # رابط المزيد
+    718310df-cac7-4051-b035-362dd2f9d0ab: new180X180 # new180X180
+    726412c6-d13f-4a58-a96f-2db631cd300a: 'App Type' # App Type
+    0889790e-5077-4636-a1e6-27ef07371c77: 'عنوان الموقع' # عنوان الموقع
+    894976c6-f567-4aea-9e51-110fe9d87356: 'إخفاء عنوان الموقع' # إخفاء عنوان الموقع
+    1739172a-3412-44a7-9044-20a676a2e6d3: 'App Price' # App Price
+    2132176d-9a5a-461c-aa9a-6fd72df524f2: 'لون زر الدارك مود' # لون زر الدارك مود
+    3680660d-ec39-43e1-aed9-1d58596f8b80: 'google adsense ID' # google adsense ID
+    3999637d-1389-4aff-9610-a18f36161364: 'Related Videos' # Related Videos
+    4203715e-9f06-402c-9dcd-3bdf0ea912cf: 750x750web # 750x750web
+    4261523b-bc46-4b64-9c85-982ffd98de9c: 'has steps' # has steps
+    5652207e-965c-457a-9186-ba2c19e1cbb5: 'Category Type' # Category Type
+    9299898a-2bd5-4f5c-83a7-ab905d559672: 140X100 # 140X100
+    22915390-7ec5-4947-b636-a2ead8de04d7: 'App Previous Versions' # App Previous Versions
+    25289516-66ff-478a-8006-fd9b33a1c501: 'Block Title Type' # Block Title Type
+    26818240-46ec-472c-beb9-0610f3062cc5: 'font Cdn Name Bold' # font Cdn Name Bold
+    32457659-ebbf-4d1a-b8a1-c3c8b2f743dc: 'توسيط العنوان' # توسيط العنوان
+    42498427-9754-4e89-8825-34e1af73820b: 'Steps Title' # Steps Title
+    43172649-e4e3-4728-b06d-37147627c06b: 'imahes links' # imahes links
+    89186396-744a-4421-a85a-ad4165e9f56f: 'اسم التطبيق عربي' # اسم التطبيق عربي
+    a04a9504-ee34-4ea8-9ab0-f62b5bbb3d4d: 'Category Page Title' # Category Page Title
+    a0733b0a-fdfc-4a42-8f76-5e71d2eba101: 'Version File Type' # Version File Type
+    a08b8c51-64b8-49ba-a295-6716c3232cdb: 'Bad Table' # Bad Table
+    a2b4a3da-bef1-4760-b344-3c032376ca98: 'حجم الملف' # حجم الملف
+    a4a37a01-d60a-4429-8e8a-c822c01fd1fd: 'أيقونة البحث' # أيقونة البحث
+    a5dae2bf-e4f7-41e0-a0ad-5e8d51c75ecd: 'إخفاء الوصف' # إخفاء الوصف
+    a7e7ab8f-9527-4ba8-bb36-0b0959a3ae9b: 376x376 # 376x376
+    a8c0df52-299a-4e34-9b4a-e8ede140c2c7: 360X203 # 360X203
+    a8d5aac0-e7d3-4441-aa09-5da6afee39c9: 'app Slider' # app Slider
+    a8e85691-b03a-45a2-a908-604d8990f39f: 'old slug' # old slug
+    a9d77539-56fe-4696-a648-3d95fb3cd55c: 'App Gallery' # App Gallery
+    a10ca11e-1504-47b1-acd8-7517a60cb6df: 'Template 1 - Article - Category' # Template 1 - Article - Category
+    a16bb3c4-d2dc-4c51-acf1-bc2e5ad675d2: Answer # Answer
+    a29ffc8a-2f65-48cf-9e66-b2947aed15c2: 'رمز الايقونة' # رمز الايقونة
+    a42d034f-c8b7-421b-8124-d26ecaa7c294: 144x144 # 144x144
+    a152e9de-27a1-45c9-a716-294027454ac5: 1440x1440web # 1440x1440web
+    a1215ac2-061d-47ed-a066-eb7042b33cbd: 'sprites brands' # sprites brands
+    a3196dca-2b15-49ac-96d7-5ec68eabcc22: 'لون روابط المقال' # لون روابط المقال
+    a4921af6-af51-4ced-81f2-cfd44738b2fd: 'Header Navigation' # Header Navigation
+    a4382032-4896-4f48-822a-66b3264c26ae: 'الإعلان الثابت' # الإعلان الثابت
+    a8402738-13d3-4f97-ae67-54927a31d43e: 'Template 1 - Article - Main 1' # Template 1 - Article - Main 1
+    aa8d0abc-c0da-4513-97d1-779ddebaf673: 'أيقونة الحجم' # أيقونة الحجم
+    aa6637c9-0501-4e49-ac6e-ffdc723cdbe8: 'لون هوية الموقع الفاتح' # لون هوية الموقع الفاتح
+    ab15395e-7128-4aeb-9990-25e8933388c3: 'App Gallery links' # App Gallery links
+    abaaaa2c-8667-42c2-a1d3-47981daf564d: 60X60 # 60X60
+    abd519c4-33af-4c0a-b94b-282b528d8627: 'entry Custom H1' # entry Custom H1
+    abd949d8-2fbf-4368-a1b5-32b3227d0915: Block # Block
+    ac28608a-7c63-493a-977e-e881d8ee4252: 96x96 # 96x96
+    ad020b36-157a-46af-aaa4-2877d7d42f91: 'رابط ال cdn للمقع' # رابط ال cdn للمقع
+    ad2d3a5c-029f-40e7-ab90-b4b982a339e1: 'text Custom Title' # text Custom Title
+    ad78f016-7a68-4b4f-a7ca-3dabce31afb1: Block # Block
+    addf75a8-f41b-4ff6-b35a-9a9afdb523e5: 'Full Width' # Full Width
+    adf4fd75-c3da-43c3-82c7-d74a5e2c6f02: 256x256web # 256x256web
+    afc5e88f-c17c-44c3-8e9d-80261e96f6d6: 'ايقونة الترخيص' # ايقونة الترخيص
+    aff4cb25-7264-43a0-83ac-0daf5fcac1c9: 'Template 2 - Site Logo' # Template 2 - Site Logo
+    b0bd7bb1-1bb0-4f9f-9436-ea6a742f409e: 'Template 1 - Header Icon' # Template 1 - Header Icon
+    b0259483-aa02-478a-8e0f-972116a5b16c: 'مقالات مختارة' # مقالات مختارة
+    b2b5191c-1d1c-4117-a406-27acf8d483fe: SEO # SEO
+    b4ff1441-ce4d-4af4-ab8b-7a7932c80b61: 'لون خط الهيدر' # لون خط الهيدر
+    b5b47b47-8983-4a60-a9c9-d572f20df9e4: 'Video Cover' # Video Cover
+    b6a25d61-2d01-450b-bad6-cec6a7de6b6f: 'إعلان نهاية المقال' # إعلان نهاية المقال
+    b9e6fbfb-185a-4bf4-a1a1-6ad098531b1a: 'Top Apps' # Top Apps
+    b36f2da1-45db-4e6d-9f9b-a5844762c973: 'App Google Store Link' # App Google Store Link
+    b43bada7-be37-411e-893b-01ec75621988: 'App Alert' # App Alert
+    b53f1f8f-4a70-4a14-b700-2bb2358d3a96: 'font cdn typ' # font cdn typ
+    b85e6aa4-6405-43a5-ad87-55e9ae97a2b2: 2048x2048 # 2048x2048
+    b99f780c-8dd2-4ca5-b89e-3197618e4bf5: 'Version File Type' # Version File Type
+    b489d8de-1b6c-4147-a3ab-e057e3d7ad4f: 'ايقونة الفئة' # ايقونة الفئة
+    b4696630-2196-4391-9744-f7972a8c401d: 'Version Info' # Version Info
+    bb2492f2-2667-43fb-9d9e-a5711372974b: 'ايقونة  آخر تحديث' # ايقونة  آخر تحديث
+    bc37b837-971a-4c03-9e8e-d9ef5d687e7a: Platform # Platform
+    bcfaecc1-0898-49aa-865e-dd0f77f1b5c0: 'App Title' # App Title
+    bdde1175-a77f-4dc5-9931-af348b28e7ef: 'Version File' # Version File
+    be4b634c-f074-46a7-ab14-e1b5e9110dae: 1080x1080web # 1080x1080web
+    be49568a-a610-4553-82dd-9050d6409c72: Block # Block
+    bec13abd-7f9f-4197-ac7e-e8a9a793b7c7: 'كود اد ذيس' # كود اد ذيس
+    bede8704-fe45-4bf1-b669-d9cf08b63250: 'Total Views' # Total Views
+    c00c2afb-5629-41ac-9489-b09ab804f5c1: 'Version Number' # Version Number
+    c4b328d2-4983-4362-9ee8-b7178f821432: 415x415web # 415x415web
+    c5faa998-059e-4f2c-a75b-e74e9ddd14fd: 'علامة مائية' # علامة مائية
+    c8e7e6ad-7acb-477f-8b70-61b958804e18: 'Article Cover' # Article Cover
+    c8f602ab-63e9-4893-8805-27118f425716: 'ايقونة المطور' # ايقونة المطور
+    c9efae59-b3d1-49da-8de0-91df4f765b47: 'رابط الخط البولد' # رابط الخط البولد
+    c83a928e-aeb6-4c6b-82ba-6fafafadf542: 'Step image' # Step image
+    c228d487-d482-4807-8441-3b345e9e47fa: 384x384 # 384x384
+    c549e248-ce30-4eaf-a389-a682aecb8cf7: 'رابط التحميل' # رابط التحميل
+    c620cb9c-fe6f-4fde-9697-286ee14f2567: 'لون ازرار الموقع' # لون ازرار الموقع
+    c722e091-276a-4e4a-8164-660cf19b77ba: add.txt # add.txt
+    c7706cb4-fc5e-4c02-831c-f7b4e7319184: Global # Global
+    c25521ed-f033-42e4-b5a4-cf0a732e0d22: Home # Home
+    c363879c-62ab-4b7d-867b-08b13098f9b9: 'السماح بالتعليقات' # السماح بالتعليقات
+    caf4449a-53b4-4c1b-9412-1b5413257b43: Pages # Pages
+    cc9d579d-137e-4a01-bc22-f2c985c29fa0: Block # Block
+    cd4da5a7-1817-4da5-8624-5bee04b0cb31: 'Item Icon' # Item Icon
+    cdac5a8d-6727-4afa-b62b-abc3a32a2b3c: 'Applications Categories' # Applications Categories
+    ce09036b-1a38-45dd-9966-e06555e21b36: Faqs # Faqs
+    ceb3e547-6a3d-43f4-ad8e-adb1aeec00ff: 'رمز الايقونة' # رمز الايقونة
+    ceec9069-bfa4-402f-b38e-af0697ec8d89: Uploads # Uploads
+    cef166e9-4b81-4a45-9e7d-762e6adb812a: 122X122 # 122X122
+    cf55e8ab-f75c-4511-9c5e-b7aa6818aa9d: 'Lazyload Image - Gallery' # Lazyload Image - Gallery
+    cf9460bb-513e-4df5-ad25-587c33a2f0f3: 58X58 # 58X58
+    d0089704-cf6f-4541-b56b-ee1bb5b7aa37: 'Item Alienment' # Item Alienment
+    d0762fad-819e-4a65-83f7-a8f1f9e03cc5: wtsgold.app # wtsgold.app
+    d1a4b63e-55f6-4fea-b861-fc060f192df3: 'لون خلفية صفحة التحميل' # لون خلفية صفحة التحميل
+    d8d4af19-ec79-4aaf-a8dd-ee46154d05e0: Applications # Applications
+    d14e6616-fce3-46cd-9e30-08fae62764bf: 750x750 # 750x750
+    d38b322f-e04e-4a94-a2e6-fef67dc1dca9: 'seo Image 2' # seo Image 2
+    d39d6aca-2d34-4a91-8a4c-def6a9953724: 'التطبيقات المختارة' # التطبيقات المختارة
+    d54fff85-d4fc-4776-b513-beb61c9a15ec: Fonts # Fonts
+    d75e400c-42a6-4712-998f-d8ca62e11fcc: 'أيقونة القائمة' # أيقونة القائمة
+    d9369e46-a956-4034-badb-16e10fe69c5e: '100x100 auto' # 100x100 auto
+    d56579ec-a73e-4479-928a-58d52f2e5e65: 'Bad Link txt' # Bad Link txt
+    d3239754-6aaf-4b5c-bed3-6c92c08107f5: 'Custom css' # Custom css
+    d7973103-cfaa-4d2a-a8a2-7d6a31366b90: nofollow # nofollow
+    db949b33-ab9b-4a53-972a-ca333724b81e: 'Article Category' # Article Category
+    dc248c78-35e8-4fcf-b58e-a2f02e0c6532: 'نهاية الرئيسية' # نهاية الرئيسية
+    dcb15a91-b74a-465b-891c-f92a3bc567f3: 828x828web # 828x828web
+    e1c66909-2441-4e8e-bf25-b157c9c21a5f: 828x828 # 828x828
+    e1f03c09-eb88-44fc-91bc-be48cc36c3df: 'Block Code' # Block Code
+    e2bfe4b4-cbf6-49ae-8a59-fdae411548e1: 32x32web # 32x32web
+    e4c58b73-e0e0-46b9-bc51-0c6ee72cbd3d: 128x128web # 128x128web
+    e7c7bc6c-2582-4995-af63-f946dd2a3f50: 'تمكين الصفحة الرئيسية كمقال' # تمكين الصفحة الرئيسية كمقال
+    e9d06acc-77b3-4f7a-81df-98319e10add6: 'تشفير المحتوى' # تشفير المحتوى
+    e78fb518-2e81-4de2-b176-078872b5e172: 1920x1920web # 1920x1920web
+    e102cc5a-196b-478a-8cfa-b2a87dc6d3b0: 'New tab' # New tab
+    e688cc8b-15f3-493e-8d1a-424b6151a5f0: 'Tag Title' # Tag Title
+    e7731afa-9aa6-4bbe-a27f-4d3257c95e31: 'نظام التشغل' # نظام التشغل
+    e7865f9e-c3b3-44e6-b8d0-a54e55fb10c1: 'لون هوية الموقع الغامق' # لون هوية الموقع الغامق
+    e20083f1-ec80-4f2a-b540-695a91e6673f: 'alt Title From Image' # alt Title From Image
+    e94105e4-9a2d-47da-b55a-6bd1cbb177a2: 'Total Downloads' # Total Downloads
+    e1372818-94ed-492e-b422-a5b8757e8e69: 'Site Logo' # Site Logo
+    ea242767-b483-451c-a2dc-273fec266a41: 'Good Bad' # Good Bad
+    eaebe263-f40b-4e78-a886-fd2c834f44c4: 205X92 # 205X92
+    ed45a35e-a634-43b7-afcf-57132beb22d6: 'إيقاف الاعلانات' # إيقاف الاعلانات
+    edf1aa29-5907-41cc-a106-5067d6cda463: 'تعطيل الاعلانات في الفئات' # تعطيل الاعلانات في الفئات
+    ee08537f-448b-4c21-b238-126cc6756d2a: 'Icons font' # Icons font
+    ee2aae32-68a2-4755-80eb-dfb1da9fbf87: 'font cdn' # font cdn
+    ef5e6e16-b8b0-41c7-95d1-68a881fc2433: 'New tab' # New tab
+    ef7663bb-03ef-447b-91fb-1aede9487238: 'Faq Quiz' # Faq Quiz
+    efc855da-e595-495c-a811-c484f2170d74: 'App Package' # App Package
+    f0ca8e8d-de01-4398-8d9a-04641c49f0be: 'App Publisher Link' # App Publisher Link
+    f0f50a70-b35c-4488-a159-4d1980023618: 'App Version' # App Version
+    f05261d0-1ac4-4dfb-abee-b589c2e9be6b: 'تفعيل التصويت على الروابط' # تفعيل التصويت على الروابط
+    f09b3c3d-60ba-47f1-bab3-69e658339568: 'Block Title' # Block Title
+    f1da61d8-f923-4916-b9ae-1fc70d6dc504: 'Items Titel' # Items Titel
+    f5a9e749-328c-4b38-bf05-004d24a91608: 'Site Template' # Site Template
+    f5e44217-568c-40d8-af8c-98fc47f226c7: 'all Link Nofollow' # all Link Nofollow
+    f9efe69d-3a1c-4f1e-a44d-4235a8065c83: 64x64web # 64x64web
+    f51bd0fb-5d2b-4f68-a4ce-3e6f6a0d9ad2: 'ايقونة اللغة' # ايقونة اللغة
+    f70ff4bc-7fbb-4b46-8c9d-efb34d6edff9: 'Block Title Background Color' # Block Title Background Color
+    f512ec40-1f2f-4a51-bbd0-aa768e1264ba: 'محتوى كامل' # محتوى كامل
+    f879ebed-bead-4708-825e-fee8251f1e67: 'Template 1 - Editor''s Choice' # Template 1 - Editor's Choice
+    f987f327-53f8-427f-926f-cd7407eb5c2f: 'حجم الايقونة' # حجم الايقونة
+    f1056ed3-b9cc-46d9-9d2c-cbb92aaaaac2: 'دومين مسموح للاعلانات' # دومين مسموح للاعلانات
+    f6202c1f-2808-4540-8773-b88385d2138d: 'رابط التحميل الخارجي' # رابط التحميل الخارجي
+    f1231162-0f72-45ea-916f-3eaa1e963f21: 'sprites Regular' # sprites Regular
+    fb4a970f-4e1e-4950-81a7-28cf2ccc0756: 'post id' # post id
+    fcd1615b-547f-4514-9fec-6d3a74aa7682: 36X36 # 36X36
+    fd5f90c7-9ff8-4b0f-b993-4de3271c97b9: 2400x2400web # 2400x2400web
+    fdb574ff-208d-4173-9d73-b014da44ec6a: 'Has Items' # Has Items
+    ff72b814-822c-476f-a10d-fad6e106c1d1: 'تفعيل اللاحقة' # تفعيل اللاحقة
+    ffa996b5-98a8-4dc2-a5d9-651839424963: 'Design Type' # Design Type
+    fffa4d0a-945a-4ad5-9966-5466a847fac7: 'Download Links' # Download Links
+plugins:
+  abm-tinymce:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  architect:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  blitz:
+    edition: standard
+    enabled: false
+    licenseKey: IPJZWI078T9YJD214MID0DXO
+    schemaVersion: 4.11.1
+  cache-flag:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.2
+  cache-igniter:
+    edition: standard
+    enabled: false
+    licenseKey: V2SG59LLK1JJD8ZJTN7ANPVJ
+    schemaVersion: 1.0.0
+  code-mirror:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  colorit:
+    edition: standard
+    enabled: true
+    licenseKey: 34FHO2WNJ9AVCX7KZBKJW19V
+    schemaVersion: 1.0.3
+  comments:
+    edition: standard
+    enabled: true
+    licenseKey: VH7TYCXC19NRKRGOK3WGRTH4
+    schemaVersion: 1.1.7
+    settings:
+      allowFlagging: true
+      allowGuest: false
+      allowGuestFlagging: false
+      allowGuestVoting: false
+      allowVoting: true
+      autoCloseDays: null
+      closed: false
+      defaultQueryStatus:
+        - approved
+      downvoteCommentLimit: 5
+      enableGravatar: false
+      enableSpamChecks: true
+      flaggedCommentLimit: 5
+      guestNotice: null
+      guestRequireEmailName: true
+      guestShowEmailName: true
+      hideVotingForThreshold: false
+      indexSidebarGroup: true
+      indexSidebarIndividualElements: false
+      indexSidebarLimit: 25
+      maxReplyDepth: null
+      maxUserComments: null
+      moderatorExcluded: true
+      moderatorUserGroup: null
+      notificationAdminEnabled: false
+      notificationAuthorEnabled: true
+      notificationFlaggedEnabled: false
+      notificationModeratorApprovedEnabled: false
+      notificationModeratorEditEnabled: false
+      notificationModeratorEnabled: false
+      notificationReplyEnabled: true
+      notificationSubscribeAuto: false
+      notificationSubscribeCommentEnabled: false
+      notificationSubscribeDefault: true
+      notificationSubscribeEnabled: false
+      outputDefaultCss: true
+      outputDefaultJs: true
+      placeholderAvatar: null
+      recaptchaEnabled: false
+      recaptchaKey: null
+      recaptchaMinScore: 0.5
+      recaptchaSecret: null
+      requireModeration: true
+      securityBanned: null
+      securityFlooding: null
+      securityMatchExact: false
+      securityMaxLength: null
+      securityModeration: null
+      securitySpamlist: null
+      showAvatar: true
+      showCustomFieldInstructions: false
+      showCustomFieldNames: false
+      showTimeAgo: true
+      sortDefaultDirection: asc
+      sortDefaultKey: structure
+      structureUid: 8b3db364-4054-493b-8d28-b4bfe0482b9c
+      templateEmail: null
+      templateFolderOverride: null
+      useQueueForNotifications: false
+  cp-css:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  cp-js:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  element-relations:
+    edition: standard
+    enabled: false
+    licenseKey: DMASN0K30TPIVBYCMPPDYSBJ
+    schemaVersion: 1.0.3
+  empty-coalesce:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  feed-me:
+    edition: standard
+    enabled: true
+    schemaVersion: 5.1.0.0
+  first-image:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  icon-picker:
+    edition: standard
+    enabled: true
+    licenseKey: 12LIM58YLDTRN1FXANPF2N2U
+    schemaVersion: 1.2.3
+    settings:
+      enableCache: true
+      iconItemSize: 32
+      iconItemSizeLarge: 40
+      iconItemWrapperSize: 56
+      iconItemWrapperSizeLarge: 72
+      iconSetsPath: '@webroot/nicon/'
+      iconSetsUrl: '@web/nicon/'
+      redactorFieldHandle: iconsPicker
+  imager-x:
+    edition: lite
+    enabled: true
+    licenseKey: 3B44CL19YUZGNBF4VGOCH9IZ
+    schemaVersion: 4.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  nofollow:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  palette:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  redactor-anchors:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  redactor-custom-styles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor-fa-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor-fa-list:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor-tweaks:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  remarry-twig-filter:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  retcon:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  retour:
+    edition: standard
+    enabled: true
+    licenseKey: QU00CC14O70YRRF76WVV1JAK
+    schemaVersion: 3.0.12
+  scraper:
+    edition: standard
+    enabled: true
+    licenseKey: VEZXPDKVS6EGQN2BNI0SSIGH
+    schemaVersion: 0.0.0.0
+  star-ratings:
+    edition: standard
+    enabled: true
+    licenseKey: BN1FJRYSTI5R8NLONVNO5M4A
+    schemaVersion: 2.1.0
+    settings:
+      allowFontAwesome: true
+      allowRatingChange: true
+      enableGql: false
+      keepRatingLog: false
+      maxStarsAvailable: 5
+      requireLogin: false
+      starIncrements: half
+  super-table:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  tablemaker:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0
+  translations-admin:
+    edition: standard
+    enabled: true
+    licenseKey: YW3CACKMCWOWQM4HXKKGXTP6
+    schemaVersion: 1.1.0
+  upvote:
+    edition: standard
+    enabled: true
+    licenseKey: B1XM37Z4TTPCYK1KD2JYDIUH
+    schemaVersion: 2.0.0
+    settings:
+      allowDownvoting: true
+      allowFontAwesome: true
+      allowVoteRemoval: true
+      keepVoteLog: false
+      preload: true
+      requireLogin: false
+  venveo-bulk-edit:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.0
+  view-count:
+    edition: standard
+    enabled: true
+    licenseKey: N6P361HXUBSW8T150DUP6KYD
+    schemaVersion: 1.0.0
+system:
+  edition: solo
+  live: true
+  name: watsabplus.gold
+  retryDuration: null
+  schemaVersion: 4.5.3.0
+  timeZone: Asia/Aden
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

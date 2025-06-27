@@ -1,0 +1,56 @@
+{% set static = static ?? false %}
+{% set fade = fade ?? true %}
+{% set id = id ?? ('modal-' ~ random(10000, 99999)) %}
+{% set keyboard = keyboard ?? true %}
+{% set scrollable = scrollable ?? false %}
+{% set vcentered = vcentered ?? false %}
+{% set size = size ?? false %} {# xl lg or sm #}
+{% set fullscreen = fullscreen ?? false %} {# true, sm, md, lg, xl or xxl #}
+{% set title = title ?? 'Modal Title' %}
+{% set close_label = close_label ?? 'Close' %}
+{% if fullscreen %}
+    {% if fullscreen is same as (true) %}
+        {% set fullscreen = 'modal-fullscreen' %}
+    {% else %}
+        {% set fullscreen = 'modal-fullscreen-' ~ fullscreen ~ '-down' %}
+    {% endif %}
+{% endif %}
+{% set header = header ?? block('header') ?? null %}
+{% set body = body ?? block('body') ?? null %}
+{% set footer = footer ?? block('footer') ?? null %}
+
+<div class="modal{% if fade %} fade{% endif %}" tabindex="-1"
+    {% if id %}id="{{ id }}"{% endif %}
+    {% if static %}data-bs-backdrop="static"{% endif %}
+    {% if not keyboard %}data-bs-keyboard="false"{% endif %}
+    aria-hidden="true"
+>
+    <div class="modal-dialog{% if scrollable %} modal-dialog-scrollable{% endif %}{% if vcentered %} modal-dialog-centered{% endif %}{% if size %} modal-{{ size }}{% endif %}{% if fullscreen %} {{ fullscreen }}{% endif %}">
+        <div class="modal-content">
+            {% if header is same as false %}
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ title }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="{{ close_label }}"></button>
+                </div>
+            {% elseif header is not same as null %}
+                <div class="modal-header">
+                    {{ header|raw }}
+                </div>
+            {% endif %}
+            {% if body is not same as null %}
+                <div class="modal-body">
+                    {{ body|raw }}
+                </div>
+            {% endif %}
+            {% if footer is same as false %}
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ close_label }}</button>
+                </div>
+            {% elseif footer is not same as null %}
+                <div class="modal-footer">
+                    {{ footer|raw }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{% apply spaceless %}
+    <p>
+        The variable
+        <code>{{ name }}</code> is {{ isArray ? 'an array that contains' }} one or more {{ isElement ? 'elements' : 'objects' }} of type
+        <code>{{ className }}</code>, which cannot be passed into a Sprig component. Allowed types are:
+        <em>strings</em>, <em>numbers</em>, <em>booleans</em> and
+        <em>arrays</em> (primitives).
+    </p>
+    {% if isElement %}
+        {# @var value \craft\base\ElementInterface #}
+        {% if isArray %}
+            <p>
+                Instead of passing in an array of {{ value.pluralLowerDisplayName }}, consider passing in an array of {{ value.lowerDisplayName }} IDs.
+            </p>
+            <pre><code>
+                {{- '{{' }} sprig('{{ componentName }}', { {{ value.lowerDisplayName }}Ids: [1, 2, 3] }) {{ '}}' -}}
+            </code></pre>
+            <p>
+                Then in your component you can fetch the elements using the IDs.
+            </p>
+            {% if isCraftElement %}
+                <pre><code>{{ '{%' }} set {{ name }} = craft.{{ value.pluralDisplayName|camel }}.id({{ value.lowerDisplayName }}Ids).all() {{ '%}' }}</code></pre>
+            {% endif %}
+        {% else %}
+            <p>
+                Instead of passing in an {{ value.lowerDisplayName }}, consider passing in an {{ value.lowerDisplayName }} ID.
+            </p>
+            <pre><code>
+                {{- '{{' }} sprig('{{ componentName }}', { {{ value.lowerDisplayName }}Id: {{ value.lowerDisplayName }}.id }) {{ '}}' -}}
+            </code></pre>
+            <p>
+                Then in your component you can fetch the {{ value.lowerDisplayName }} using the ID.
+            </p>
+            {% if isCraftElement %}
+                <pre><code>{{ '{%' }} set {{ name }} = craft.{{ value.pluralDisplayName|camel }}.id({{ value.lowerDisplayName }}Id).one() {{ '%}' }}</code></pre>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endapply %}

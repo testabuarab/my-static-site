@@ -1,0 +1,101 @@
+{% macro alert(options) %}
+    {% include "components/alert" with options %}
+{% endmacro %}
+
+{% macro badge(options) %}
+    {% include "components/badge" with options %}
+{% endmacro %}
+
+{% macro button(options) %}
+    {% include "components/button" with options %}
+{% endmacro %}
+
+{% macro modal(options) %}
+    {% include "components/modal" with options %}
+{% endmacro %}
+
+{% macro navItem(options) %}
+    {% include "components/nav-item" with options %}
+{% endmacro %}
+
+{% macro navItems(items) %}
+    {% for item in items %}
+        {{ _self.navItem(item) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro nav(options) %}
+    {% include "components/nav" with options %}
+{% endmacro %}
+
+{% macro offCanvas(options) %}
+    {% include "components/offcanvas" with options %}
+{% endmacro %}
+
+{% macro paginationItem(options) %}
+    {% include "components/pagination-item" with options %}
+{% endmacro %}
+
+{% macro paginationItems(items) %}
+    {% for item in items %}
+        {{ _self.paginationItem(item) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro pagination(options) %}
+    {% include "components/pagination" with options %}
+{% endmacro %}
+
+{% macro progressBar(options) %}
+    {% include "components/progressbar" with options %}
+{% endmacro %}
+
+{% macro spinner(options) %}
+    {% include "components/spinner" with options %}
+{% endmacro %}
+
+{% macro toast(options) %}
+    {% include "components/toast" with options %}
+{% endmacro %}
+
+{% macro breadcrumbItem(options) %}
+    {% include "components/breadcrumb-item" with options %}
+{% endmacro %}
+
+{% macro breadcrumbItems(items) %}
+    {% for item in items %}
+        {{ _self.breadcrumbItem(item) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro breadcrumbs(options) %}
+    {% include "components/breadcrumbs" with options %}
+{% endmacro %}
+
+{% macro listGroupItem(options) %}
+    {% include "components/list-group-item" with options %}
+{% endmacro %}
+
+{% macro listGroupItems(items) %}
+    {% for item in items %}
+        {{ _self.listGroupItem(item) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro listGroup(options) %}
+    {% include "components/list-group" with options %}
+{% endmacro %}
+
+{% macro dropdownItem(options) %}
+    {% include "components/dropdown-item" with options %}
+{% endmacro %}
+
+{% macro dropdownItems(items) %}
+    {% for item in items %}
+        {{ _self.dropdownItem(item) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro dropdown(options) %}
+    {% include "components/dropdown" with options %}
+{% endmacro %}

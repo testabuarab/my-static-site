@@ -1,0 +1,10 @@
+{% extends "blocks/block" %}
+
+{% block content %}
+    <div class="{{ classes|raw }}" {{ attributes|raw }}>
+        <div class="row">
+            {% include "_components/alert" with {type: 'primary', message: block.flashNotice} only %}
+            {% include "_components/alert" with {type: 'danger', message: block.flashError} only %}
+        </div>
+    </div>
+{% endblock %}

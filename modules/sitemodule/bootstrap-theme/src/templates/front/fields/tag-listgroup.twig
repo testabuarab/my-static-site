@@ -1,0 +1,14 @@
+{% extends "fields/_field" %}
+{% import "_includes/macros" as macros %}
+
+{% set show_field = options.viewMode is not null %}
+
+{% block content %}
+    <ul class="list-group">
+        {% for tag in value %}
+            <li class="list-group-item">
+                {{ macros.renderLayout(displayer.tagLayout, options.viewMode, tag) }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

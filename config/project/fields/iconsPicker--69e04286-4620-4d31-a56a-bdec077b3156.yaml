@@ -1,0 +1,20 @@
+columnSuffix: koonmncv
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: iconsPicker
+instructions: null
+name: 'Icons picker'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 4504d769-ccf2-4644-8787-f51f755552c5 # fontello
+    - a1215ac2-061d-47ed-a066-eb7042b33cbd # sprites brands
+    - f1231162-0f72-45ea-916f-3eaa1e963f21 # sprites Regular
+    - 4a9045bf-3352-4ee4-aa7d-25eea5f7fbce # sprites Solid
+    - 2e9b8521-dc86-4191-be7f-681496b47a91 # tabler sprite
+  renderId: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

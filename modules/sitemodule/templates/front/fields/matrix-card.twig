@@ -1,0 +1,26 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    {% for index, matrixBlock in value %}
+        {% set header_fields = field.getFieldsByUids(matrixBlock, options['disposition-' ~ matrixBlock.type.uid]['header'] ?? []) %}
+        {% set content_fields = field.getFieldsByUids(matrixBlock, options['disposition-' ~ matrixBlock.type.uid]['content'] ?? []) %}
+        {% set footer_fields = field.getFieldsByUids(matrixBlock, options['disposition-' ~ matrixBlock.type.uid]['footer'] ?? []) %}
+        <div class="card">
+            <div class="card-header">
+                {% for header_field in header_fields %}
+                    {{ header_field.render(matrixBlock[header_field.handle])|raw }}
+                {% endfor %}
+            </div>
+            <div class="card-body">
+                {% for content_field in content_fields %}
+                    {{ content_field.render(matrixBlock[content_field.handle])|raw }}
+                {% endfor %}
+            </div>
+            <div class="card-footer">
+                {% for footer_field in footer_fields %}
+                    {{ footer_field.render(matrixBlock[footer_field.handle])|raw }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

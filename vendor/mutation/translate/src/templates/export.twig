@@ -1,0 +1,23 @@
+{% extends "_layouts/cp" %}
+
+{% import "_includes/forms" as forms %}
+
+{% block actionButton %}
+    {% if fullPageForm %}
+        <input type="submit" class="btn submit" value="{{ 'Export' | t('translations-admin') }}">
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {{ actionInput('translations-admin/export/export') }}
+
+    {{ forms.selectField({
+        first: true,
+        label: "Category" | t('translations-admin'),
+        instructions: "Choose which category to export your translations" | t('translations-admin'),
+        id: 'category',
+        name: 'category',
+        value: '',
+        options: categories
+    }) }}
+{% endblock %}

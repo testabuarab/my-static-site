@@ -1,0 +1,189 @@
+{% extends 'watsabplusgold/newd/_layout' %}
+{% set title = entry.title %}
+{% set apposystem = entry.osystem.one() %}
+{%set disableCategorisAds=0%}
+{% if  global.taatylAlaaalanatFyAlfyat or entry.aykafAlaaalanat%}
+    {%set disableCategorisAds=1%}
+{% endif %}
+{% do craft.starRatings.disable(['css','js'])  %}
+{% do craft.upvote.disable(['css','js']) %}
+{% set filter = craft.app.request.getQueryParam("filter") %}
+{% set contents %}
+    {%set lazyloadImage=global.lazyloadImageApp.one().getURL()%}
+    <div class="category-container">
+
+
+        <div class="breadcrumb">
+            <ul>
+                <li><a href="{{ currentUrl }}">{{ "Home"|t }}</a></li>
+               {%if apposystem|length%} <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ apposystem.uri }}">{{ apposystem.title }}</a></li> {%endif%}
+                {%if entry.categoryParent|length%}
+                    <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ entry.categoryParent.one().uri }}">{{ entry.categoryParent.one().title }}</a></li>
+                {%endif%}
+                <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ entry.uri }}">{{ entry.title }}</a></li>
+            </ul>
+        </div>
+        <div class="category-row">
+            <div class="main-side">
+                <div class="category-list">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <div class="icon {{ entry.slug }}"><img width="45" height="45" class="lazyload" src="{{ lazyloadImage }}" data-src="{{ entry.appIcon|length ? entry.appIcon[0].getUrl() }}" alt=""></div>
+                            <div class="info">
+                                <h1 class="title">{{ entry.title }}</h1>
+                                <p>{{ "Download free {categoryTitle} software"|t({categoryTitle: entry.title}) }}</p>
+                            </div>
+                        </div>
+                        <div class="category-filter">
+                            <div class="filter-container">
+                                <button class="trigger" aria-label="filter-apps">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M73.7,21.7H36.6c-1-3-3.9-5.2-7.3-5.2s-6.2,2.2-7.3,5.2h-5.8c-1.3,0-2.4,1.1-2.4,2.4s1.1,2.4,2.4,2.4h5.8 c1,3,3.9,5.2,7.3,5.2s6.2-2.2,7.3-5.2h37.1c1.3,0,2.4-1.1,2.4-2.4S75,21.7,73.7,21.7z M29.4,26.9c-1.5,0-2.8-1.2-2.8-2.8 c0-1.5,1.2-2.8,2.8-2.8c1.5,0,2.8,1.2,2.8,2.8S30.9,26.9,29.4,26.9z M73.7,42.6h-5.8c-1-3-3.9-5.2-7.3-5.2c-3.4,0-6.2,2.2-7.3,5.2H16.3c-1.3,0-2.4,1.1-2.4,2.4c0,1.3,1.1,2.4,2.4,2.4h37.1 c1,3,3.9,5.2,7.3,5.2s6.2-2.2,7.3-5.2h5.8c1.3,0,2.4-1.1,2.4-2.4C76.1,43.7,75,42.6,73.7,42.6z M60.6,47.8c-1.5,0-2.8-1.2-2.8-2.8 s1.2-2.8,2.8-2.8s2.8,1.2,2.8,2.8S62.2,47.8,60.6,47.8z M73.7,63.4H47c-1-3-3.9-5.2-7.3-5.2s-6.2,2.2-7.3,5.2H16.3c-1.3,0-2.4,1.1-2.4,2.4c0,1.3,1.1,2.4,2.4,2.4h16.2 c1,3,3.9,5.2,7.3,5.2s6.2-2.2,7.3-5.2h26.7c1.3,0,2.4-1.1,2.4-2.4C76.1,64.5,75,63.4,73.7,63.4z M39.8,68.6c-1.5,0-2.8-1.2-2.8-2.8 c0-1.5,1.2-2.8,2.8-2.8c1.5,0,2.8,1.2,2.8,2.8C42.6,67.4,41.3,68.6,39.8,68.6z"/></svg>
+
+                                </button>
+                                <div class="filters-list">
+                                    <form method="get" class="web-form" action="{{global.alrabtAlasasyLlmokaa}}/{{ entry.uri }}" accept-charset="UTF-8">
+                                        <h3>{{ "Sort By"|t }}</h3>
+                                        <ul>
+                                            <li>
+                                                <input type="radio" name="filter" value="new" id="filterNew" {{ filter|length == 0 or (filter|length and filter == "new") ? "checked" }}>
+                                                <label for="filterNew" class="radioLabel"><i></i></label>
+                                                <label for="filterNew" class="radioText">{{ "New"|t }}</label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="filter" value="mostDownloaded" id="filterMostDownloaded" {{ filter|length and filter == "mostDownloaded" ? "checked" }}>
+                                                <label for="filterMostDownloaded" class="radioLabel"><i></i></label>
+                                                <label for="filterMostDownloaded" class="radioText">{{ "Most Downloaded"|t }}</label>
+                                            </li>
+                                        </ul>
+                                        <button type="submit">{{ "Submit"|t }}</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% set appsList = craft.entries.section("applications").relatedTo(entry).with(["appIcon", "appCategory"]).orderBy("postDate desc").limit(20) %}
+                    {% if filter|length and filter == "mostDownloaded" %}
+                        {% do craft.viewCount.sort(appsList, "tDownloads") %}
+                    {% endif %}
+                    {% paginate appsList as queryInfo,apps %}
+                    {% if queryInfo.total > 0 %}
+                        <ul class="apps-list">
+                            {% for app in apps %}
+                                <li class="app">
+                                    <a href="{{global.alrabtAlasasyLlmokaa}}/{{ app.uri }}">
+                                        <img class="img lazyload" src="{{ lazyloadImage }}" data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appMain4") }}" alt="{{ app.title }}">
+                                        <p class="name">{{ app.title }}</p>
+                                        <div class="rating">
+                                            {{ craft.starRatings.stars(app.id, null, false) }}
+                                        </div>
+                                        <label class="link">{{ "Download"|t }}</label>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="pagination">
+                            <div>
+                                {% if queryInfo.prevUrl %}
+                                    <a href="{{ queryInfo.prevUrl }}" class="prev-page"></a>
+                                {% endif %}
+                            </div>
+                            <span class="current-page">{{ queryInfo.currentPage }} / <span>{{ queryInfo.totalPages }}</span></span>
+                            <div>
+                                {% if queryInfo.nextUrl %}
+                                    <a href="{{ queryInfo.nextUrl }}" class="next-page"></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% else %}
+                        <p class="emptyResults">{{ "No Results Found"|t }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="secondary-side">
+                <div class="category-side">
+                    {% set sideList = craft.entries.section("applications").relatedTo(entry).with(["appIcon"]).limit(10) %}
+                    {% if sideList|length %}
+                        {% do craft.viewCount.sort(sideList, "tDownloads") %}
+                        <h2>{{ "Most Downloaded"|t }}</h2>
+                        <ul class="trending-list">
+                            {% for app in sideList.all() %}
+                                <li>
+                                    <a href="{{global.alrabtAlasasyLlmokaa}}/{{ app.uri }}">
+                                        <img class="img lazyload" src="{{ lazyloadImage }}" data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appSide") }}" alt="{{ app.title }}">
+                                        <div>
+                                            <p class="name">{{ app.title }}</p>
+                                            <p class="description">{{ app.appSummary|slice(0,100) }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endset %}
+{% block content %}
+    {{ contents|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}
+{% set meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchUrl = global.alrabtAlasasyLlmokaa ~"/"~entry.uri %}
+    {% set searchDescription = entry.seoDescription %}
+    {% set searchImage = craft.dev.getSeoImage(entry) %}{% set searchImage = ""%}
+    {%if entry.seoImage|length%}
+        {% set searchImage = entry.seoImage[0].getURL(thumb) %}
+    {%endif%}
+    {%if not searchImage|length%}
+        {% set searchImage = entry.appIcon[0].getURL(thumb) %}
+
+    {%endif%}
+    {% if not entry.tmkynAlarshf %}
+        <meta name="robots" content="noindex,follow">
+    {% else %}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    {% endif %}
+
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{ currentUrl }}"
+              },{
+                "@type": "ListItem",
+                "position": 2,
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>
+{% endset %}
+{% block meta %}
+    {{ meta|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}

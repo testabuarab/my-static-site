@@ -1,0 +1,42 @@
+<body class="{{ classes|raw }}"{% if attributes.size() %} {{ attributes|raw }}{% endif %}>
+    <header class="py-3 py-lg-5 bg-header">
+        <div class="container">
+            <div class="row">
+                {{ layout.getRegion('before-header').render()|raw }}
+                {{ layout.getRegion('header-left').render()|raw }}
+                {{ layout.getRegion('header-middle').render()|raw }}
+                {{ layout.getRegion('header-right').render()|raw }}
+                {{ layout.getRegion('after-header').render()|raw }}
+            </div>
+        </div>
+    </header>
+    <main class="py-3 py-lg-5">
+        {{ layout.getRegion('banner').render()|raw }}
+        <div class="container">
+            <div class="row">
+                {% set col = 'col-12' %}
+                {% if layout.getRegion('sidebar').hasVisibleBlocks() %}
+                    {% set col = col ~ ' col-md-8 col-lg-9' %}
+                    <div class="col-12 col-md-4 col-lg-3">
+                        {{ layout.getRegion('sidebar').render()|raw }}
+                    </div>
+                {% endif %}
+                <div class="{{ col }}">
+                    {{ layout.getRegion('content').render()|raw }}
+                </div>
+                {{ layout.getRegion('after-content').render()|raw }}
+            </div>
+        </div>
+    </main>
+    <footer class="py-2 bg-footer">
+        <div class="container">
+            <div class="row align-items-center">
+                {{ layout.getRegion('before-footer').render()|raw }}
+                {{ layout.getRegion('footer-left').render()|raw }}
+                {{ layout.getRegion('footer-middle').render()|raw }}
+                {{ layout.getRegion('footer-right').render()|raw }}
+                {{ layout.getRegion('after-footer').render()|raw }}
+            </div>
+        </div>
+    </footer>
+</body>

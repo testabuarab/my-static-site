@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: x128web
+height: 128
+interlace: none
+mode: crop
+name: 128x128web
+position: center-center
+quality: 0
+upscale: true
+width: 128

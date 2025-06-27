@@ -1,0 +1,33 @@
+{% set active = active ?? false %}
+{% set disabled = disabled ?? false %}
+{% set toggle = '' %}
+{% set dropdown = (dropdown ?? block('dropdown') ?? '')|trim %}
+{% set link = link ?? '' %}
+{% set label = label ?? '' %}
+{% set tag = tag ?? 'li' %}
+{% set link_tag = link_tag ?? 'a' %}
+{% set target = target ?? '' %}
+{% set classes = classes ?? '' %}
+{% set id = id ?? '' %}
+{% if dropdown %}
+    {% set toggle = 'dropdown' %}
+{% endif %}
+
+<{{ tag }} class="nav-item{% if dropdown %} dropdown{% endif %}">
+    <{{ link_tag }} 
+        class="nav-link{% if active %} active{% endif %}{% if disabled %} disabled{% endif %}{% if dropdown %} dropdown-toggle{% endif %}{% if classes %} {{ classes }}{% endif %}" 
+        href="{{ link }}"
+        {% if disabled %}aria-disabled="true" tabindex="-1"{% endif %}
+        {% if toggle %}data-bs-toggle="{{ toggle }}"{% endif %}
+        {% if dropdown %}role="button" aria-expanded="false"{% endif %}
+        {% if target %}data-bs-target="{{ target }}"{% endif %}
+        {% if id %}id="{{ id }}"{% endif %}
+    >
+        {{ label }}
+    </{{ link_tag }}>
+    {% if dropdown %}
+        <ul class="dropdown-menu">
+            {{ dropdown|raw }}
+        </ul>
+    {% endif %}
+</{{ tag }}>

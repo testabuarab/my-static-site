@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+//Resources
+@import "mixins.scss";
+@import "resources.scss";
+
+//Npm Libraries
+@import "~bootstrap/scss/bootstrap.scss";
+
+//App
+@import "components/main.scss";
+@import "components/header.scss";
+@import "components/fields.scss";
+@import "components/footer.scss";
+@import "components/forms.scss";
+@import "components/blocks.scss";

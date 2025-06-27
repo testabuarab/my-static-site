@@ -1,0 +1,137 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{% set title = entry.title %}
+{%set disableCategorisAds=0%}
+ {% set alrabtAlasasyLlmokaa = global.alrabtAlasasyLlmokaa %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+    {% set withSlash = "/" %}
+{% endif %}
+{% if  global.taatylAlaaalanatFyAltakat or entry.aykafAlaaalanat%}
+{%set disableCategorisAds=1%}
+{% endif %}
+{% set filter = craft.app.request.getQueryParam("filter") %}
+    {% set pageClass = "tag"%}
+{% block content %}
+{%set lazyloadImage=global.lazyloadImageApp.one().getURL()%}
+    <div class="main-wrapper">
+        <main class="content-wrapper pb-0">
+            <nav class="breadcrumb ellipsis">
+
+                <span><i class="icon-home"></i><a href="{{alrabtAlasasyLlmokaa}}">{{ "Home"|t }}</a></span>
+                <span>{{ entry.title }}</span>
+
+            </nav>
+
+            {% cacheflag flagged "applicationstags|entry:#{entry.id}" %}
+
+            {% set appsList = craft.entries.section("applications").relatedTo(entry).with(["appIcon", "appCategory"]).orderBy("postDate desc").limit(20).all() %}
+            {% if appsList|length %}
+                {% set appthumb = {
+                    mode: 'crop',
+                    width: 120,
+                    height: 120,
+                    position: 'center-center',
+                    format: 'webp'
+                } %}
+                <section class="col-12 py-20">
+                    <div class="block related-apps">
+                        <div class="block-header f-row-auto col-12">
+                            <span class="icon icon-hashtag"></span>
+                            <h1 class="title">{{ entry.title }}</h1>
+                        </div>
+                        <div class="block-content apps-list f-row f-col-12">
+                            <div class="app-list-wrapper">
+                                {% for app in appsList %}
+                                    {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")%}
+                                    {%if app.asmAlttbykAarby%}
+                                        {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                                    {%endif%}
+                                    {% set apksize = '50MB'|t %}
+                                    {%if app.hgmAlmlf%}
+                                        {% set apksize = app.hgmAlmlf %}
+                                    {%endif%}
+                                    {% set appVersion = '2024' %}
+                                    {%if app.appVersion%}
+                                        {% set appVersion = app.appVersion %}
+                                    {%endif%}
+                                    <div class="app medium square">
+                                        <a class="soft-target" href="{{alrabtAlasasyLlmokaa}}/{{ app.uri }}{{ withSlash }}" title="{{ app.title }}"><span class="hideable">{{ appNamee }}</span></a>
+                                        <div class="app-wrap">
+                                            <img class="cover lazyload" src="{{ lazyloadImage }}"  data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl(appthumb) }}" width="80" height="80" alt="{{ appNamee }}">
+
+                                            <div class="app-info my-20">
+                                                <h3 class="ellipsis name">
+                                                    {{ appNamee }}
+                                                </h3>
+                                                <p class="excerpt mt-10">{{ app.title }}</p>
+                                            </div>
+                                            <div class="app-meta">
+			<span class="spec version">
+				<i class="icon-spin3"></i>
+				<span>{{ appVersion }}</span>
+			</span>
+                                                <div class="sparator"></div>
+                                                <span class="spec size">
+				<i class="icon-download"></i>
+				<span>{{ apksize }}</span>
+			</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            {% endif %}
+            {% endcacheflag %}
+        </main>
+    </div>
+
+{% endblock %}
+{% set meta %}
+    {% set searchTitle = entry.title %}
+
+    {% set searchUrl = alrabtAlasasyLlmokaa~'/'~entry.uri ~withSlash%}
+    {% set searchDescription = entry.seoDescription %}
+    {% set searchImage = ""%}
+    {% set searchImage = ""%}
+    {%if entry.seoImage|length%}
+        {% set searchImage = entry.seoImage[0].getURL(thumb) %}
+    {%endif%}
+    {%if not searchImage|length and entry.appIcon%}
+        {% set searchImage = entry.appIcon[0].getURL(thumb) %}
+
+    {%endif%}
+    {% if not entry.tmkynAlarshf %}
+        <meta name="robots" content="noindex,follow">
+    {% else %}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    {% endif %}
+
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+
+{% endset %}
+{% block meta %}
+    {{ meta|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}

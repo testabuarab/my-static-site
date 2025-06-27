@@ -1,0 +1,16 @@
+columnSuffix: gjqscpsz
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: aykonAlmttlbat
+instructions: null
+name: 'أيقونة المتطلبات'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 4504d769-ccf2-4644-8787-f51f755552c5 # fontello
+  renderId: null
+  showLabels: false
+translationKeyFormat: null
+translationMethod: site
+type: verbb\iconpicker\fields\IconPickerField

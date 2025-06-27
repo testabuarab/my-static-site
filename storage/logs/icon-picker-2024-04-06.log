@@ -1,0 +1,90 @@
+2024-04-06 01:27:34 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:27:34 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:27:34 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:27:34 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:27:34 [INFO] Request context:
+$_GET = [
+    'p' => 'privacy-policy'
+]
+
+$_POST = []
+2024-04-06 01:27:35 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:27:35 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:27:35 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:27:35 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:27:35 [INFO] Request context:
+$_GET = [
+    'p' => 'terms-of-use'
+]
+
+$_POST = []
+2024-04-06 01:36:36 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:36:36 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:36:36 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:36:36 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:36:36 [INFO] Request context:
+$_GET = [
+    'p' => 'whatsapp-gold/'
+]
+
+$_POST = []
+2024-04-06 01:38:38 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:38:38 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:38:38 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:38:38 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:38:38 [INFO] Request context:
+$_GET = [
+    'p' => 'whatsapp-gold/'
+]
+
+$_POST = []
+2024-04-06 01:50:30 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:50:30 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:50:30 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:50:30 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:50:30 [INFO] Request context:
+$_GET = [
+    'p' => 'whatsapp-gold/'
+]
+
+$_POST = []
+2024-04-06 01:51:03 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 01:51:03 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 01:51:03 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 01:51:03 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 01:51:03 [INFO] Request context:
+$_GET = [
+    'p' => 'privacy-policy'
+]
+
+$_POST = []
+2024-04-06 02:00:43 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 02:00:43 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 02:00:43 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 02:00:43 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 02:00:43 [INFO] Request context:
+$_GET = [
+    'p' => 'whatsapp-gold/'
+]
+
+$_POST = []
+2024-04-06 02:07:12 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 02:07:12 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 02:07:12 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 02:07:12 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 02:07:12 [INFO] Request context:
+$_GET = [
+    'p' => 'terms-of-use'
+]
+
+$_POST = []
+2024-04-06 02:07:16 [ERROR] Error getting file content for https://whatsagold.app/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/regular-sprites.svg
+2024-04-06 02:07:16 [ERROR] Error getting file content for https://whatsagold.app/nicon/brands-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/brands-sprites.svg
+2024-04-06 02:07:16 [ERROR] Error getting file content for https://whatsagold.app/nicon/solid-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/solid-sprites.svg
+2024-04-06 02:07:16 [ERROR] Error getting file content for https://whatsagold.app/nicon/tabler-sprites.svg: cURL error 6: Could not resolve host: whatsagold.app (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://whatsagold.app/nicon/tabler-sprites.svg
+2024-04-06 02:07:16 [INFO] Request context:
+$_GET = [
+    'p' => 'call-us'
+]
+
+$_POST = []

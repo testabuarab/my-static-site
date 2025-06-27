@@ -1,0 +1,43 @@
+{% import "_includes/forms" as forms %}
+
+<h1>{{ "Cached Files"|t('blitz') }}</h1>
+
+{% set cols = {
+    heading: {
+        type: 'heading',
+        heading: "Site"|t('blitz'),
+    },
+    cacheFolderPath: {
+        type: 'html',
+        heading: "Cache Folder Path"|t('blitz'),
+        class: 'code',
+    },
+    pages: {
+        type: 'html',
+        heading: "Pages"|t('blitz'),
+    },
+    includes: {
+        type: 'html',
+        heading: "Includes"|t('blitz'),
+    },
+} %}
+
+{% set rows = [] %}
+{% for site in sites %}
+    {% set rows = rows|merge([{
+        heading: site.name,
+        cacheFolderPath: site.path,
+        pages: site.pageCount,
+        includes: site.includeCount,
+    }]) %}
+{% endfor %}
+
+{{ forms.editableTableField({
+    name: 'cachedSites',
+    id: 'cachedSites',
+    cols: cols,
+    rows: rows,
+    staticRows: true,
+}) }}
+
+<br>

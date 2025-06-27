@@ -1,0 +1,19 @@
+columnSuffix: pmmbrjke
+contentColumnType: text
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: asmRabtAlmokaa
+instructions: null
+name: 'اسم رابط الموقع'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

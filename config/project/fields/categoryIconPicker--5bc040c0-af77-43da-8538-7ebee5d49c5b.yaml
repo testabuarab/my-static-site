@@ -1,0 +1,18 @@
+columnSuffix: tdumtqnq
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: categoryIconPicker
+instructions: null
+name: 'Category Icon Picker'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - d3bbe925-dd35-462d-8fed-6ed3272f7d08
+    - 1c41b2b8-54b9-41b9-8476-160b1d8beb0e
+    - bb3fc30a-9643-46b1-8af7-fb9074255246
+  renderId: null
+  showLabels: false
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

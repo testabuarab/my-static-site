@@ -1,0 +1,193 @@
+{%set iconsdotclasess=""%}
+
+{%set oldSiteLink=global.oldSiteLink%}
+{%set alllinks=newcontent|retconOnly( 'a' ) %}
+
+
+
+{% set newlinks = alllinks|split('</a>') %}
+{%for link in newlinks%}
+{%if link|length %}
+{%set llink=link|parseAttr %}
+{%if 'href' in llink%}
+{% set entryy = craft.entries.section("applications").oldLink(llink.href).one() %}
+{%if entryy%}
+{% set newcontent = newcontent|replace(llink.href,entryy.url)%}
+{%else%}
+{%if oldSiteLink in llink.href%}
+{%set datar="data-r='removed'"%}
+{%set sholdremove=llink.href ~'"'~ datar%}
+{% set newcontent = newcontent|replace(llink.href,sholdremove)%}
+{%endif%}
+{%endif%}
+{%endif%}
+{%endif%}
+{%endfor%}
+
+{% set newcontent = newcontent|retconAttr( 'a[data-r]', { 'href' : false,'rel' : false ,'target' : false,'height' : false,'class':false} )%}
+{% set newcontent = newcontent|retconChange( 'a[data-r]', 'span' )%}
+{% set newcontent = newcontent|retconRemoveEmpty( 'a[name]' )%}
+{% set newcontent = newcontent|retconRemoveEmpty( 'span' )%}
+
+{% set newcontent = newcontent|retconUnwrap( 'span[data-r] b span')%}
+{% set newcontent = newcontent|retconUnwrap( 'span[data-r] span')%}
+{% set newcontent = newcontent|retconAttr( 'span[data-r]', { 'data-r' : false,'rel' : false ,'target' : false,'height' : false,'class':false} )%}
+{% set paragraphs = newcontent|split('</picture>') %}
+
+{% set newcontent = newcontent|retconWrap( 'picture','span.imgspan')%}
+
+{#{% set newcontent = newcontent|retconAttr( 'img', { 'data-image' : false,'alt' : false ,'width' : false,'height' : false} )%}#}
+{% set newcontent = newcontent|retconWrap( 'span.imgspan','div.div-duet-media-content-warning-relative')%}
+{% set newcontent = newcontent|retconWrap( 'div.div-duet-media-content-warning-relative', 'div')%}
+{% set newcontent = newcontent|retconWrap( 'iframe','div.frame')%}
+{% set newcontent = newcontent|retconWrap( 'div.frame','div.framecontainer')%}
+{% set newcontent = newcontent|retconWrap( 'blockquote','div.duet--article--article-pullquote-mb-20')%}
+
+{% set newcontent = newcontent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+
+{% set newcontent = newcontent|retconWrap( 'div.duet--article--article-pullquote-mb-20','div.duet--article--article-body-component-clear-both-block-md-float-left-md-mr-30-md-w-320px-ml-100')%}
+{% set newcontent = newcontent|retconAttr( 'div.duet--article--article-pullquote-mb-20',{class:'duet--article--article-pullquote mb-20'})%}
+{% set newcontent = newcontent|replace('<div class="duet--article--article-pullquote mb-20"><blockquote>','<div class="duet--article--article-pullquote mb-20"><div class="mb-10 h-[22px] w-[65px] bg-franklin"></div><blockquote class="duet--article--dangerously-set-cms-markup relative bg-repeating-lines-dark bg-[length:1px_1.2em] pb-8 font-polysans text-28 font-medium leading-120 tracking-1 selection:bg-franklin-20 dark:bg-repeating-lines-light dark:text-white dark:selection:bg-blurple">')%}
+    {% set newcontent = newcontent|retconAttr( 'blockquote',{class:'duet--article--dangerously-set-cms-markup relative bg-repeating-lines-dark bg-[length:1px_1.2em] pb-8 font-polysans text-28 font-medium leading-120 tracking-1 selection:bg-franklin-20  dark:bg-repeating-lines-light dark:text-white dark:selection:bg-blurple'})%}
+    {% set newcontent = newcontent|retconChange( 'blockquote strong', false  )%}
+    {% set newcontent = newcontent|retconAttr( 'div.duet--article--article-body-component-clear-both-block-md-float-left-md-mr-30-md-w-320px-ml-100',{class:'duet--article--article-body-component clear-both block md:float-left md:mr-30 md:w-[320px] lg:-ml-100'})%}
+    {% set newcontent = newcontent|retconAttr( 'div.frame', {style:'left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;'})%}
+    {% set newcontent = newcontent|retconWrap( 'div.framecontainer','div.duet--media--embed-mb-20-w-full')%}
+    {% set newcontent = newcontent|retconAttr( 'div.duet--media--embed-mb-20-w-full', {class:'duet--media--embed mb-20 w-full'})%}
+    {% set newcontent = newcontent|retconAttr( 'iframe', {class:'lazyload',allowfullscreen:true,scrolling:'no',allow:'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;',style:'top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;'})%}
+    {% set newcontent = newcontent|retconRenameAttr('iframe', {
+    src: 'data-src'
+    })%}
+    {%set imgswidth=[]%}
+    {#{% set newcontent = newcontent|retconChange( 'blockquote', 'p' )%}#}
+    {% set newcontent = newcontent| retconChange( 'blockquote br', false )%}
+    {% set newcontent = newcontent|replace({"h1":"h2","h4":"h3","h5":"h3","h6":"h3"})%}
+    {%for icon in paragraphs%}
+    {%if icon|length>10%}
+    {%set imgsrc=icon|getFirstImage%}
+    {%if imgsrc|length%}
+    {%set picid=''%}
+    {%set paddingratio='50'%}
+    {%set paddingratioid=''%}
+    {% set imgebyname = '' %}
+    {%set imgwidth=''%}
+    {%set imgheight=''%}
+    {% set srcname = imgsrc|split('/')|last|split('.')[0]|kebab %}
+    {%if srcname!="." and srcname%}
+    {%set picid='p'~ srcname~'-pp'%}
+    {%set imgname=imgsrc|split('/')|last %}
+    {% set imgebyname = craft.assets()
+    .filename(imgname)
+    .one() %}
+    {%if imgebyname|length%}
+    {%set imgwidth=imgebyname.width%}
+    {% set imgswidth = imgswidth|merge([imgwidth]) %}
+    {%set imgheight=imgebyname.height%}
+    {%set paddingratio=imgheight/imgwidth*100%}
+    {%set paddingratioid=imgheight~imgwidth%}
+    {%endif%}
+    {%set beforrepimgsrce='<figure><div><div class="div-duet-media-content-warning-relative"><span class="imgspan"><picture><img src="'~imgsrc~'"' %}
+                    {%set repimgsrce='<figure style="max-width:'~imgwidth~'px;"><div><div class="div-duet-media-content-warning-relative" id="p'~paddingratioid~'" ><span class="imgspan"><picture><source src="'~imgsrc~'" type="image/webp"><img src="'~imgsrc~'" width="'~imgwidth~'"  height="'~imgheight~'" id="'~srcname~'"'  %}
+                    {% set newcontent = newcontent|replace( beforrepimgsrce, repimgsrce )%}
+                    {#{% set newcontent = newcontent|replace( '<picture>', '<picture id="'~ picid~'">')%}#}
+
+
+                            {#{% set newcontent = newcontent|retconInject( '#'~picid, '<source srcset="'~imgsrc~'" type="image/webp"></source>' )%}#}
+
+                            {%set beforremedia='<div class="div-duet-media-content-warning-relative">' %}
+                                {%set afterremedia='<div class="div-duet-media-content-warning-relative" id="p'~paddingratioid~'">' %}
+                                    {#{% set newcontent = newcontent|replace( beforremedia, afterremedia )%}#}
+
+
+
+{%endif%}
+                    {%endif%}
+                            {#{%set newpicid=picid|slice(0,5)%}#}
+                            {#{%set pictureid=newcontent|raw| between( start=newpicid, end='pp' )%}#}
+  {%endif%}
+                    {%endfor%}
+
+
+
+
+                                    {% set newcontent = newcontent|retconAttr( 'span.imgspan',{style:"box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"})%}
+
+                                    {% set newcontent = newcontent|retconAttr( '.div-duet-media-content-warning-relative', {class:'relative'})%}
+                                    {#{% set newcontent = newcontent|retconAttr( '#p'~paddingratioid, {class:'duet--media--content-warning relative',style:'padding-top:'~paddingratio~'%;'})%}#}
+
+                      {%if imgswidth|length and imgswidth[0]>750 %}
+                        {% set newcontent = newcontent|retconSrcset(
+                            [
+                            {width: 384},
+                            {width: 415},
+                            {width: 750}
+                            ],
+                            'img',
+                            'auto',
+                            true,
+                            {format: 'jpg'}
+                            )|retconRenameAttr('img', {
+                            srcset: 'data-srcset',
+                            sizes: 'data-sizes'
+                            })|retconAttr('img', {
+                            class: 'lazyload'
+                            })%}
+                            {% set newcontent = newcontent|retconSrcset(
+                            [
+                            {width: 384},
+                            {width: 415},
+                            {width: 750}
+                            ],
+                            'source',
+                            'auto',
+                            true,
+                            {format: 'webp'}
+                            )|retconRenameAttr('source', {
+                            srcset: 'data-srcset',
+                            sizes: 'data-sizes'
+                            })|retconAttr('img', {
+                            class: 'lazyload'
+                            })%}
+                        {%else%}
+ {% if imgswidth|length%}
+                 {% set newcontent = newcontent|retconRenameAttr('img', {
+                            src: 'data-src'
+                            })|retconAttr('img', {
+                            class: 'lazyload'
+                            })%}
+                              {%else%}
+                            {% set newcontent = newcontent|retconRenameAttr('img', {
+                            src: 'data-src'
+                            })|retconAttr('img', {
+                            class: 'lazyload',
+                               width : '750',
+                        height : '430',
+                        id : false,
+                        'data-image' : false
+                            })%}
+                        {%endif%}
+{%endif%}
+                            {% set newcontent = newcontent|retconWrap( ['p','ul'], 'div.duet--article--article-body-component')%}
+                            {#{% set newcontent = newcontent|retconAttr( ['ul'], {class:'duet--article--unordered-list my-20 list-disc pl-18 marker:text-blurple/100 selection:bg-franklin-20 dark:text-white dark:selection:bg-blurple [&_a]:shadow-underline-black dark:[&_a]:shadow-underline-white [&_a:hover]:shadow-highlight-franklin dark:[&_a:hover]:shadow-highlight-franklin'})%}#}
+                            {#{% set newcontent = newcontent|retconAttr( ['li'], {class:'duet--article--dangerously-set-cms-markup mb-16 pl-12 font-fkroman text-18 leading-160 -'})%}#}
+                            {% set newcontent = newcontent|retconAttr( ['p'], {class:'duet--article--dangerously-set-cms-markup duet--article--standard-paragraph mb-20 font-fkroman text-18 leading-160 - selection:bg-franklin-20 dark:text-white dark:selection:bg-blurple [&_a]:shadow-underline-black dark:[&_a]:shadow-underline-white [&_a:hover]:shadow-highlight-franklin dark:[&_a:hover]:shadow-highlight-blurple'})%}
+                            {% set newcontent = newcontent|retconAttr( ['3'], {class:'duet--article--dangerously-set-cms-markup duet--article--standard-heading mt-40 mb-20 font-polysans text-26 font-medium leading-110 selection:bg-franklin-20 dark:text-white dark:selection:bg-blurple md:text-30 [&>a:hover]:shadow-highlight-franklin dark:[&>a:hover]:shadow-highlight-franklin [&>a]:shadow-underline-black dark:[&>a]:shadow-underline-white'})%}
+                       {# {% set newcontent = newcontent|retconAttr( 'figure', {class:'transition-all duration-300 ease-in-out lg:mx-0 cursor-zoom-in'})%}#}
+
+
+                        {#{% set newcontent = newcontent|retconWrap( 'figure.transition-all.duration-300.ease-in-out.cursor-zoom-in','div.visible-z-30-w-full-origin-center-transition-all-duration-300-ease-in-out')%}#}
+                            {% set newcontent = newcontent|retconWrap( 'div.visible-z-30-w-full-origin-center-transition-all-duration-300-ease-in-out','div.transition-all-duration-300-ease-in-out')%}
+                            {% set newcontent = newcontent|retconWrap( 'div.transition-all-duration-300-ease-in-out','div.my-9')%}
+                            {% set newcontent = newcontent|retconWrap( 'div.my-9','div.duet--article--article-body-component-clear-both-block')%}
+                            {% set newcontent = newcontent|retconAttr( 'div.duet--article--article-body-component-clear-both-block', {class:'duet--article--article-body-component clear-both block'})%}
+                            {% set newcontent = newcontent|retconAttr( 'div.transition-all-duration-300-ease-in-out', {class:'transition-all duration-300 ease-in-out'})%}
+                        {% set newcontent = newcontent|retconAttr( 'div.visible-z-30-w-full-origin-center-transition-all-duration-300-ease-in-out', {class:'visible z-30 w-full origin-center transition-all duration-300 ease-in-out'})%}
+                        {% set newcontent = newcontent|retconAttr( 'picture img',{style:"position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%;object-fit:cover"})%}
+						 {% set newcontent = newcontent|retconAttr( 'img', {'alt':alttitle} )|retconAttr( 'source', { 'src' : false } )|replace({'<h2><br></h2>':'','<h2></h2>':''})|replace('<div class="duet--article--article-body-component clear-both block"><div class="my-9"><div class="transition-all duration-300 ease-in-out"><div class="visible z-30 w-full origin-center transition-all duration-300 ease-in-out"><figure class="transition-all duration-300 ease-in-out lg:mx-0 cursor-zoom-in"></figure></div></div></div></div>','')%}
+					{% set newcontent = newcontent|retconAttr('.imgspan',{ 'style' : false })|retconAttr('.imgspan img',{ 'style' : false })|replace({'duet--article--article-body-component':'daabc','duet--article--dangerously-set-cms-markup duet--article--standard-paragraph':'dadscm dasp','font-fkroman text-18 leading-160 - selection:bg-franklin-20 dark:text-white dark:selection:bg-blurple [&amp;_a]:shadow-underline-black dark:[&amp;_a]:shadow-underline-white [&amp;_a:hover]:shadow-highlight-franklin dark:[&amp;_a:hover]:shadow-highlight-blurple':''})%}
+                  {% set newcontent = newcontent|retconAttr('*',{ 'dir' : false })|retconUnwrap([ 'p', 'blockquote' ])|retconAttr('p',{ 'class' : false })|retconAttr('blockquote',{ 'class' : false })%}
+				 {% set newcontent = newcontent|retconRemoveEmpty('.bg-franklin')|retconRemove('figure strong')|retconRemove('figure br')|retconUnwrap('blockquote')|retconUnwrap('figure .relative')|retconRemoveEmpty('figcaption')%}
+ {% set newcontent = newcontent|replace('<figure></figure>','')|retconUnwrap('.daabc li p')|retconUnwrap('.daabc ul p')|retconUnwrap('.daabc p')|retconRemoveEmpty('ul li',true)|retconRemoveEmpty('ul',true)|retconRemoveEmpty('.daabc',true)|retconUnwrap('.daabc ul')|retconUnwrap('.su-note-inner')%}
+				    {% set newcontent=newcontent|retconAttr( 'svg', {  style:'height:'~blockhgmAlaykon~';padding-inline-end: 5px;color:'~block.lonAlaykon } )%}
+					{{newcontent|replace('beta.kynews2.com','www.kynews2.com')|retconUnwrap('.imgspan')|raw}}
+

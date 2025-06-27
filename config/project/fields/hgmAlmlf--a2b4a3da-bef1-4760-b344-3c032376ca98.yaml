@@ -1,0 +1,19 @@
+columnSuffix: pjrjxana
+contentColumnType: text
+fieldGroup: 5eff44ee-8a9c-43da-9e5f-b11cf067a89e # Apps
+handle: hgmAlmlf
+instructions: null
+name: 'حجم الملف'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

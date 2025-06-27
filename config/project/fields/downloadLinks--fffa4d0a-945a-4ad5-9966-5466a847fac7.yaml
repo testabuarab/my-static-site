@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 5eff44ee-8a9c-43da-9e5f-b11cf067a89e # Apps
+handle: downloadLinks
+instructions: null
+name: 'Download Links'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_downloadlinks}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: none
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

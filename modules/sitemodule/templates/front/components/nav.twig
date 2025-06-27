@@ -1,0 +1,17 @@
+{% set alignment = alignment ?? 'start' %} {# start, center or end #}
+{% set vertical = vertical ?? false %}
+{% set tabs = tabs ?? false %}
+{% set pills = pills ?? false %}
+{% set fill = fill ?? false %}
+{% set justified = justified ?? false %}
+{% set classes = classes ?? '' %}
+{% set tag = tag ?? 'ul' %}
+{% set id = id ?? '' %}
+{% set items = (items ?? block('items') ?? '')|trim %}
+
+<{{ tag }} 
+    class="nav justify-content-{{ alignment }}{% if vertical %} flex-column{% endif %}{% if tabs %} nav-tabs{% endif %}{% if pills %} nav-pills{% endif %}{% if fill %} nav-fill{% endif %}{% if justified %} nav-justified{% endif %}{% if classes %} {{ classes }}{% endif %}"
+    {% if id %}id="{{ id }}"{% endif %}
+>
+    {{ items|raw }}
+</{{ tag }}>

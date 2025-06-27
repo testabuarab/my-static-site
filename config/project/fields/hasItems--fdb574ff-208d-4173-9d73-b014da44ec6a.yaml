@@ -1,0 +1,14 @@
+columnSuffix: xzaoufpp
+contentColumnType: boolean
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: hasItems
+instructions: null
+name: 'Has Items'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

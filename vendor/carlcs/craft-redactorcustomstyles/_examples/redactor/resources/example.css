@@ -1,0 +1,192 @@
+/* Deleted, inserted, marked */
+:root .redactor-styles del {
+    text-decoration: line-through;
+}
+
+:root .redactor-styles ins {
+    border-bottom: 1px dotted rgba(0, 0, 0, .5);
+    text-decoration: none;
+}
+
+:root .redactor-styles mark {
+    font-family: inherit;
+    font-size: 1em !important;
+    background-color: #FDFFAD;
+}
+
+:root .redactor-dropdown-item-deleted span {
+    text-decoration: line-through;
+}
+
+:root .redactor-dropdown-item-inserted span {
+    margin-left: 4px;
+    padding: 0;
+    border-bottom: 1px dotted rgba(0, 0, 0, .5);
+    border-radius: 0;
+}
+
+:root .redactor-dropdown-item-inserted:hover span {
+    border-color: #FFF;
+}
+
+:root .redactor-dropdown-item-marked span {
+    background-color: #FDFFAD;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Quote, source citation */
+:root .redactor-styles q,
+:root .redactor-dropdown-item-quote span {
+    quotes: '«\A0' '\A0»';  /* FR */
+    quotes: '„' '“' '‚' '‘'; /* DE */
+    quotes: '“' '”' '‘' '’'; /* EN_US */
+}
+
+:root .redactor-styles q,
+:root .redactor-styles q:before,
+:root .redactor-styles q:after,
+:root .redactor-styles cite {
+    font-style: italic;
+    color: rgba(0, 0, 0, .5);
+}
+
+:root .redactor-styles q:before {
+    content: open-quote;
+}
+
+:root .redactor-styles q:after {
+    content: close-quote;
+}
+
+:root .redactor-dropdown-item-quote span,
+:root .redactor-dropdown-item-quote span:before,
+:root .redactor-dropdown-item-quote span:after,
+:root .redactor-dropdown-item-sourceCitation span {
+    position: relative;
+    font-style: italic;
+    color: rgba(0, 0, 0, .5);
+}
+
+:root .redactor-dropdown-item-quote span:before,
+:root .redactor-dropdown-item-quote span:after {
+    position: absolute;
+    top: 0;
+}
+
+:root .redactor-dropdown-item-quote span:before {
+    content: open-quote;
+    left: -0.2em;
+}
+
+:root .redactor-dropdown-item-quote span:after {
+    content: close-quote;
+    right: -0.2em;
+}
+
+/* Superscript, subscript, small print */
+:root .redactor-styles sup,
+:root .redactor-styles sub,
+:root .redactor-dropdown-item-superscript span,
+:root .redactor-dropdown-item-subscript span {
+    font-size: 0.8em;
+}
+
+:root .redactor-styles small,
+:root .redactor-dropdown-item-smallPrint span {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.7em !important;
+}
+
+/* Code, variable, keyboard shortcut */
+:root .redactor-styles pre,
+:root .redactor-styles code,
+:root .redactor-styles var,
+:root .redactor-styles kbd,
+:root .redactor-dropdown-item-code span,
+:root .redactor-dropdown-item-variable span,
+:root .redactor-dropdown-item-shortcut span {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9em;
+}
+
+:root .redactor-styles pre,
+:root .redactor-styles code,
+:root .redactor-dropdown-item-code span {
+    background: rgba(0, 0, 0, .05);
+}
+
+:root .redactor-dropdown-item-code span {
+    border: 1px solid #F3F3F3;
+}
+
+:root .redactor-styles var,
+:root .redactor-dropdown-item-variable span {
+    color: rgba(0, 0, 0, .5);
+}
+
+:root .redactor-dropdown-item-shortcut span {
+    padding: 0.25em;
+    border: 1px solid #e5e7e9;
+    white-space: nowrap;
+}
+
+/* Alignment */
+:root .redactor-styles .align-left {
+    text-align: left;
+}
+
+:root .redactor-styles .align-center {
+    text-align: center;
+}
+
+:root .redactor-styles .align-right {
+    text-align: right;
+}
+
+:root .redactor-styles .align-justify {
+    text-align: justify;
+}
+
+/* Text color */
+:root .redactor-styles .color-red,
+:root .redactor-dropdown-item-red span {
+    color: #DA5B47;
+}
+
+:root .redactor-styles .color-green,
+:root .redactor-dropdown-item-green span {
+    color: #3CB371;
+}
+
+:root .redactor-dropdown-item-red:hover span,
+:root .redactor-dropdown-item-green:hover span {
+    color: #FFF;
+}
+
+:root .redactor-styles span.favorite,
+:root .redactor-dropdown-item-favorite span {
+    border-radius: 2px;
+    padding: 0.125em 0.25em;
+    background-color: #FFEBEB;
+}
+
+/* Link style */
+:root .redactor-styles a.button-primary,
+:root .redactor-styles a.button-secondary {
+    display: inline-block;
+    padding: 7px 14px;
+    border: 2px solid;
+    border-radius: var(--large-border-radius);
+    text-decoration: none;
+}
+
+:root .redactor-styles a.button-primary {
+    color: var(--blue-800);
+    border-color: var(--blue-600);
+}
+
+:root .redactor-styles a.button-secondary {
+    color: var(--gray-500);
+    border-color: var(--gray-300);
+}

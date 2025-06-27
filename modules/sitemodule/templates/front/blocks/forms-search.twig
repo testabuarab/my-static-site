@@ -1,0 +1,10 @@
+{% extends "blocks/block" %}
+
+{% block content %}
+    <form action="/{{ block.options.action }}">
+        <div class="input-group">
+            <input name="{{ block.options.inputName }}" class="form-control" placeholder="Search">
+            <button type="submit" class="btn btn-outline-secondary">{{ 'Search'|t('site') }}</button>
+        </div>
+    </form>
+{% endblock %}

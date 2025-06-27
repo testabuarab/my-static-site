@@ -1,0 +1,10 @@
+siteUid: null
+sortOrder: 1
+template: watsabplusgold/wagold/apps/download.twig
+uriParts:
+  - download/
+  -
+    - slug
+    - '[^\/]+'
+  - /latest
+uriPattern: 'download/<slug:[^\/]+>/latest'

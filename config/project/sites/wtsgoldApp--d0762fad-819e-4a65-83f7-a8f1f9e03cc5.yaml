@@ -1,0 +1,9 @@
+baseUrl: 'https://wtsgold.app/'
+enabled: '1'
+handle: wtsgoldApp
+hasUrls: true
+language: ar
+name: wtsgold.app
+primary: false
+siteGroup: 4a561190-b707-4668-b1ff-36e7189b05e3 # pro
+sortOrder: 2

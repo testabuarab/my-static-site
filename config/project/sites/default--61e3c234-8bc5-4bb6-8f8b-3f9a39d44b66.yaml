@@ -1,0 +1,9 @@
+baseUrl: 'https://watsabplus.gold/'
+enabled: true
+handle: default
+hasUrls: true
+language: ar
+name: watsabplus
+primary: true
+siteGroup: 4a561190-b707-4668-b1ff-36e7189b05e3 # pro
+sortOrder: 1

@@ -1,0 +1,30 @@
+{
+	"name": "abmat/craft-tinymce",
+	"description": "TinyMCE Field for Craft CMS",
+	"type": "craft-plugin",
+	"license": "MIT",
+	"authors": [
+	  {
+		"name": "ABM Feregyhazy & Simon GmbH",
+		"homepage": "https://www.abm.at"
+	  }
+	],
+	"require": {
+	  "craftcms/cms": "^4.0.0",
+	  "craftcms/html-field": "^2.0.0",
+	  "tinymce/tinymce": "^6.7.3"
+	},
+	"support": {
+		"issues": "https://github.com/abm-werbeagentur/craft-tinymce/issues",
+    	"source": "https://github.com/abm-werbeagentur/craft-tinymce"
+	},
+	"autoload": {
+	  "psr-4": {
+		"abmat\\tinymce\\": "src/"
+	  }
+	},
+	"extra": {
+	  "name": "TinyMCE editor field",
+	  "handle": "abm-tinymce"
+	}
+}

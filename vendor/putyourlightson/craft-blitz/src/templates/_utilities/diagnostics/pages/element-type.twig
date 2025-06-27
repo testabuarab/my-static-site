@@ -1,0 +1,22 @@
+{% extends 'blitz/_utilities/diagnostics/layouts/page' %}
+
+{% set page = craft.blitz.diagnostics.getPage() %}
+{% set element = craft.blitz.diagnostics.getElementOfType(page.id) %}
+{% set title = 'Tracked ' ~ element.pluralDisplayName %}
+{% set crumbs = [
+    {
+        label: page.uri,
+        url: cpUrl('blitz/diagnostics/pages/page?pageId=' ~ page.id),
+    },
+] %}
+
+{% block content %}
+    {{ sprig('blitz/_utilities/diagnostics/components/elements', {
+        siteId: siteId,
+        pageId: page.id,
+        elementType: className(element),
+        displayName: element.displayName,
+        pluralDisplayName: element.pluralDisplayName,
+        hasUris: element.hasUris,
+    }) }}
+{% endblock %}

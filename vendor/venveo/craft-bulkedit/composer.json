@@ -1,0 +1,48 @@
+{
+    "name": "venveo/craft-bulkedit",
+    "description": "Bulk edit Craft CMS element fields",
+    "type": "craft-plugin",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "bulk edit"
+    ],
+    "support": {
+        "docs": "https://github.com/venveo/craft-bulkedit/blob/master/README.md",
+        "issues": "https://github.com/venveo/craft-bulkedit/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Venveo",
+            "homepage": "https://venveo.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^4.0.0",
+        "php": "^8.0.2"
+    },
+    "autoload": {
+        "psr-4": {
+          "venveo\\bulkedit\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Bulk Edit",
+        "handle": "venveo-bulk-edit",
+        "changelogUrl": "https://raw.githubusercontent.com/venveo/craft-bulkedit/master/CHANGELOG.md",
+        "class": "venveo\\bulkedit\\Plugin"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    }
+}

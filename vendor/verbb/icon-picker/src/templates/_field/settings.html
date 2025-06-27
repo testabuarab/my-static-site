@@ -1,0 +1,31 @@
+{% import '_includes/forms' as forms %}
+
+{{ forms.lightswitchField({
+    label: 'Show Labels' | t('icon-picker'),
+    instructions: 'Whether to show labels for each icon in the selection dropdown.' | t('icon-picker'),
+    name: 'showLabels',
+    on: field.showLabels,
+}) }}
+
+{% set iconSetOptions = [] %}
+
+{% for iconSet in iconSets %}
+    {% set iconSetOptions = iconSetOptions | merge([{ label: iconSet.name, value: iconSet.uid }]) %}
+{% endfor %}
+
+{% if not iconSetOptions | length %}
+    {{ forms.checkboxSelectField({
+        label: 'Available Icon Sets' | t('icon-picker'),
+        instructions: 'Select which icon sets should be available for this field. Manage these through [Icon Sets]({url}).' | t('icon-picker', { url: cpUrl('icon-picker/settings/icon-sets') }),
+        warning: 'You must create at least one icon set to proceed.',
+    }) }}
+{% else %}
+    {{ forms.checkboxSelectField({
+        label: 'Available Icon Sets' | t('icon-picker'),
+        instructions: 'Select which icon sets should be available for this field. Manage these through [Icon Sets]({url}).' | t('icon-picker', { url: cpUrl('icon-picker/settings/icon-sets') }),
+        name: 'iconSets',
+        options: iconSetOptions,
+        values: field.iconSets ?? (field.id ? '' : '*'),
+        showAllOption: true,
+    }) }}
+{% endif %}

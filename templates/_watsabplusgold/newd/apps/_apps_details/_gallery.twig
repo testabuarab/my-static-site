@@ -1,0 +1,20 @@
+<div id="app-gallery-container">  {% set sssymbolss = ['whatsapp']%}{%set symbolss=""%}
+    {%set lazyloadImage=lazyLoadCover%}
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for img in entry.appGallery.all() %}
+			{% set watermarkedImage = craft.imagerx.transformImage(img, {
+	width: 600,
+	watermark: { image: lazyloadImage, width: 174, height: 70, position: { left: 10, bottom: 10 }, opacity: 0.75, blendMode: 'multiply' }
+}) %}
+                <div class="swiper-slide">
+                    <a href="{{ watermarkedImage }}" class="swipebox" title="{{ entry.title }}">
+                        <img class="img lazyload" src="{{ lazyloadGallery }}" data-src="{{ watermarkedImage }}" alt="{{ entry.title }}" itemprop="screenshot">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>

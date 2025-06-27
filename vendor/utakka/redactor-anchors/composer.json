@@ -1,0 +1,55 @@
+{
+    "name": "utakka/redactor-anchors",
+    "license": "MIT",
+    "type": "craft-plugin",
+    "description": "Support for anchors in Craft CMS Redactor",
+    "keywords": [
+        "craft",
+        "craftcms",
+        "craft-plugin",
+        "redactoranchors",
+        "redactor",
+        "anchor"
+    ],
+    "authors": [
+        {
+            "name": "Lars Heidkämper",
+            "homepage": "https://github.com/heidkaemper"
+        }
+    ],
+    "support": {
+        "docs": "https://github.com/heidkaemper/craft-redactor-anchors/blob/master/README.md",
+        "issues": "https://github.com/heidkaemper/craft-redactor-anchors/issues"
+    },
+    "require": {
+        "craftcms/cms": "^3.1|^4.0",
+        "craftcms/redactor": "^2.3|^3.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.39"
+    },
+    "autoload": {
+        "psr-4": {
+            "heidkaemper\\redactoranchors\\": "dist/"
+        }
+    },
+    "scripts": {
+        "phpcs": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --dry-run --verbose --diff",
+        "phpcs:fix": "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes"
+    },
+    "extra": {
+        "name": "Redactor Anchors",
+        "handle": "redactor-anchors",
+        "schemaVersion": "2.0",
+        "class": "heidkaemper\\redactoranchors\\RedactorAnchors",
+        "documentationUrl": "https://github.com/heidkaemper/craft-redactor-anchors/blob/master/README.md"
+    },
+    "config": {
+        "allow-plugins": {
+            "craftcms/plugin-installer": true,
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

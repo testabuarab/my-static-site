@@ -1,0 +1,51 @@
+{% set tag = tag ?? 'a' %}
+{% set link = link ?? false %}
+{% set size = size ?? 'normal' %} {# bg or sm #}
+{% set color = color ?? 'primary' %}
+{% set outlined = outlined ?? false %}
+{% set newTab = newTab ?? false %}
+{% set download = download ?? false %}
+{% set label = label ?? '' %}
+{% set tooltip = tooltip ?? false %}
+{% set popover_title = popover_title ?? false %}
+{% set popover_content = popover_content ?? false %}
+{% set html_tooltip = html_tooltip ?? true %}
+{% set popover = popover_content or popover_title %}
+{% if tooltip and popover %}
+    {% set popover = false %} {# Can't have both #}
+{% endif %}
+{% if popover %}
+    {% set tag = 'button' %}
+{% endif %}
+{% set placement = placement ?? 'right' %} {# right, left, top or bottom #}
+{% set dismiss_popover_on_click = dismiss_popover_on_click ?? false %}
+
+<{{ tag }}
+    {% if link %} href="{{ link }}"{% endif %}
+    class="btn {{ size != 'normal' ? ('btn-' ~ size) : ''}} btn-{{ outlined ? 'outline-' : '' }}{{ color }}"
+    {% if newTab %} target="_blank"{% endif %}
+    {% if download %} download{% endif %}
+    {% if popover %}
+        data-bs-toggle="popover"
+        data-bs-placement="{{ placement }}"
+        {% if dismiss_popover_on_click %}
+            data-bs-trigger="focus"
+        {% endif %}
+        {% if popover_title %}
+            title="{{ popover_title|raw }}"
+        {% endif %}
+        {% if popover_content %}
+            data-bs-content="{{ popover_content|raw }}"
+        {% endif %}
+    {% endif %}
+    {% if tooltip %}
+        data-bs-toggle="tooltip"
+        data-bs-placement="{{ placement }}"
+        title="{{ tooltip }}"
+        {% if html_tooltip %}
+            data-bs-html="true"
+        {% endif %}
+    {% endif %}
+>
+    {{ label }}
+</{{ tag }}>

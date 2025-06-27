@@ -1,0 +1,46 @@
+columnSuffix: miuzipuc
+contentColumnType: string(7)
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: pageType
+instructions: null
+name: 'Page type'
+searchable: false
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - default
+        -
+          - value
+          - default
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - App
+        -
+          - value
+          - app
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - article
+        -
+          - value
+          - article
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Dropdown

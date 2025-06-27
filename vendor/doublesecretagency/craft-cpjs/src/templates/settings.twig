@@ -1,0 +1,46 @@
+{% import 'codeeditor/codeEditor' as codeEditor %}
+{% import '_includes/forms' as forms %}
+
+{% macro configWarning(setting, docsUrl) -%}
+    {{ "This is being overridden by the {setting} config setting."|t('app', {
+        setting: '<a href="'~docsUrl~'" target="_blank">'~setting~'</a>'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
+<p>Your custom JavaScript will be applied to the entire Control Panel.</p>
+
+{{ forms.autosuggestField({
+    label: "JavaScript File(s)"|t,
+    instructions: "Enter the path to a separate JS file. Multiple paths may be separated with commas. You may use aliases (ie: @web) in your filepath."|t,
+    id: 'jsFile',
+    name: 'jsFile',
+    suggestEnvVars: true,
+    suggestAliases: true,
+    value: settings.jsFile,
+    disabled: 'jsFile' in overrideKeys,
+    warning: 'jsFile' in overrideKeys ? configWarning('jsFile', docsUrl)
+}) }}
+
+{% set monacoOptions = {
+    language: 'javascript',
+    theme: 'vs-dark',
+    lineNumbers: 'on',
+    lineNumbersMinChars: 4,
+    lineDecorationsWidth: 6,
+    folding: true,
+} %}
+
+{% set codeEditorOptions = {
+    wrapperClass: 'monaco-editor-background-frame'
+} %}
+
+{{ codeEditor.textareaField({
+    label: "Additional JavaScript"|t,
+    instructions: "Enter any additional JavaScript here."|t,
+    id: 'additionalJs',
+    name: 'additionalJs',
+    value: settings.additionalJs,
+    rows: 15
+}, 'CodeField', monacoOptions, codeEditorOptions) }}

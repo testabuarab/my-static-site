@@ -1,0 +1,50 @@
+{% extends "fields/_field" %}
+
+{% macro render(asset, field, options) %}
+    {% set viewMode = options.getViewMode(asset) %}
+    {% set layout = asset.volume.layout %}
+    {% if viewMode and layout %}
+        {{ layout.render(asset, viewMode.handle)|raw }}
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    <div id="carousel-{{ field.id }}" 
+        class="carousel slide {{ options.fadeAnimation ? 'carousel-fade' : '' }}"
+        {% if options.autoStart %}
+            data-bs-interval="{{ options.interval }}"
+            data-bs-ride="carousel" 
+        {% else %}
+            data-bs-interval="false"
+        {% endif %}
+        {{ options.disableTouch ? ' data-bs-touch="false"' : '' }}
+        {{ not options.infinite ? ' data-bs-wrap="false"' : '' }}
+        {{ not options.pause ? ' data-bs-pause="false"' : '' }}
+        {{ options.disableKeyboard ? ' data-bs-keyboard="false"' : '' }}
+    >
+        {% if options.showIndicators %}
+            <ol class="carousel-indicators">
+                {% for i, asset in value %}
+                    <li data-bs-target="#carousel-{{ field.id }}" data-bs-slide-to="{{ i }}"{{ i == 0 ? ' class="active"' : '' }} aria-label="{{ asset.title }}"></li>
+                {% endfor %}
+            </ol>
+        {% endif %}
+        <div class="carousel-inner">
+            {% for i, asset in value %}
+                <div class="carousel-item {{ i==0 ? 'active' : '' }}">
+                    {{ _self.render(asset, field, options) }}
+                </div>
+            {% endfor %}
+        </div>
+        {% if options.showControls %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ field.id }}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ field.id }}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        {% endif %}
+    </div>
+{% endblock %}

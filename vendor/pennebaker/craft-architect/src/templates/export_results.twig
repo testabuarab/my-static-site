@@ -1,0 +1,39 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Architect plugin for Craft CMS 3.x
+ *
+ * Architect import.twig
+ *
+ * @author    Pennebaker
+ * @copyright Copyright (c) 2018 Pennebaker
+ * @link      https://pennebaker.com
+ * @package   Architect
+ * @since     2.0.0
+ */
+#}
+
+{% extends "architect/_layouts/base" %}
+{% import "_includes/forms" as forms %}
+
+{% set selectedSubnavItem = 'export' %}
+
+{% block actionButton %}
+    <input type="button" class="btn submit" value="{{ 'Copy'|t('app') }}" data-clipboard-target="#importData">
+{% endblock %}
+
+{# The content of the CP SectionProcessor #}
+{% set content %}
+    <h2>{{ "Export"|t('architect') }}</h2>
+
+    {{ forms.textareaField({
+        label: "JSON Data"|t('architect'),
+        id: 'importData',
+        class: 'code',
+        name: 'importData',
+        readonly: true,
+        value: dump,
+        rows: 30
+    }) }}
+
+{% endset %}

@@ -1,0 +1,9 @@
+.bg-footer {
+    background-color: $primary;
+}
+
+@media all and (max-width: map-get($grid-breakpoints, lg)) {
+    .block[data-handle=bootstrap-footer-menu] .navbar-collapse {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,150 @@
+changedFieldIndicator: 1506468002
+field: 75e9f207-c2dc-481e-ac30-d301fd1e26ab # Footer Navigation
+fieldLayouts:
+  d96a97f7-2916-42a4-bc53-f25b0152adcd:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 561ed6a8-0e5d-4d61-b66e-2f7131a5053f # Block Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b4b5c6a-eee8-46d0-b298-d076a8aa1401
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 83433aca-82b6-4312-8572-b3a3b728f9ed # Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d081eda8-6214-4f8f-856e-2d7fdd2f6254
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f09b3c3d-60ba-47f1-bab3-69e658339568 # Block Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a09aacb7-135f-45cd-b17f-089da928469f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ef5e6e16-b8b0-41c7-95d1-68a881fc2433 # New tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4c58fe84-5a62-4a67-94cf-1fb17801269e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e579e095-30fa-4d6d-b569-19178633461f
+        userCondition: null
+fields:
+  561ed6a8-0e5d-4d61-b66e-2f7131a5053f: # Block Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockIcon
+    instructions: null
+    name: 'Block Icon'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  83433aca-82b6-4312-8572-b3a3b728f9ed: # Links
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: links
+    instructions: null
+    name: Links
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_links}}'
+      maxBlocks: null
+      minBlocks: null
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  ef5e6e16-b8b0-41c7-95d1-68a881fc2433: # New tab
+    columnSuffix: jxrhcqxl
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: null
+    name: 'New tab'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  f09b3c3d-60ba-47f1-bab3-69e658339568: # Block Title
+    columnSuffix: zjyxuwex
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockTitle
+    instructions: null
+    name: 'Block Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

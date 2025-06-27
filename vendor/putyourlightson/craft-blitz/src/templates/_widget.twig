@@ -1,0 +1,51 @@
+{% import "_includes/forms" as forms %}
+
+{{ driverHtml|raw }}
+
+{% set rows = [] %}
+{% for action in actions %}
+    <div class="action">
+        <div class="heading">
+            <span class="icon">{{ action.icon|raw }}</span>
+            {{ action.instructions }}
+        </div>
+        <div class="form hidden">
+            <form method="post" accept-charset="UTF-8">
+                <input type="hidden" name="action" value="blitz/cache/{{ action.id }}">
+                <input type="hidden" name="utility" value="1">
+                {{ csrfInput() }}
+
+                {% if action.id == 'refresh-urls' %}
+                    {{ forms.editableTableField({
+                        name: 'urls',
+                        id: 'urls',
+                        cols: [{
+                            type: 'singleline',
+                            heading: 'URLs'|t('blitz'),
+                            placeholder: siteUrl('page'),
+                            info: 'The `*` wildcard is supported.'|t('blitz'),
+                            code: true,
+                        }],
+                        rows: [''],
+                        minRows: 1,
+                        addRowLabel: "Add a URL"|t('blitz'),
+                        allowAdd: true,
+                        allowDelete: true,
+                        allowReorder: true,
+                        first: true,
+                    }) }}
+                {% elseif action.id == 'refresh-site' %}
+                    {{ forms.selectField({
+                        name: 'siteId',
+                        id: 'siteId',
+                        class: 'fullwidth',
+                        options: action.options,
+                        first: true,
+                    }) }}
+                {% endif %}
+
+                <input type="submit" class="btn submit fullwidth" value="{{ action.label }}">
+            </form>
+        </div>
+    </div>
+{% endfor %}

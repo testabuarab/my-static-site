@@ -1,0 +1,83 @@
+/*
+*  CP section header/branding
+*
+*/
+
+#cacheFlag-flagsTitle {
+    font-size: 18px;
+}
+
+.cacheFlag-targetTitle {
+    font-size: 16px;
+}
+
+/*
+* flags table
+*
+*/
+.cacheFlag-table {
+    width: 100%;
+    float: left;
+    clear: both;
+    margin-bottom: 40px;
+}
+
+.cacheFlag-form {
+    margin-bottom: 10px;
+}
+
+.cacheFlag-header {
+    margin-bottom: 50px;
+    padding-top: 20px;
+}
+
+.cacheFlag-pointName {
+    width: 30%;
+}
+
+.cacheFlag-flagsInput form {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.cacheFlag-flagsInput {
+    width: 33.3333%;
+    max-width: 250px;
+}
+
+.cacheFlag-flagsInput input {
+    margin-right: 5px;
+}
+
+.cacheFlag-flagsInput .btn {
+    width: auto;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.cacheFlag-flagsInput input.text {
+    width: 100%;
+    float: left;
+    font-family: Menlo, monospace;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.cacheFlag-clearCachesByFlagsForm .submit,
+.cacheFlag-clearAllCachesForm .submit {
+    background-color: #333F4D;
+}
+
+/*
+*  CP section footer
+*
+*/
+#cacheFlag-colophone {
+    width: 100%;
+    float: left;
+    clear: both;
+    font-size: 11px;
+    color: #8f98a3;
+    text-align: right;
+    margin-top: 40px;
+}

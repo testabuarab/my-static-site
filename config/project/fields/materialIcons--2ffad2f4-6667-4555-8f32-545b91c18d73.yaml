@@ -1,0 +1,16 @@
+columnSuffix: zwahvqfg
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: materialIcons
+instructions: null
+name: 'Material icons'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 47c0775d-739f-4642-be7c-73a3e70b83d0
+  renderId: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

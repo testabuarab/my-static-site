@@ -1,0 +1,19 @@
+columnSuffix: ttnjovpb
+contentColumnType: text
+fieldGroup: 5b2622ea-6477-40f1-ae8b-a6e0feac8329 # Articles
+handle: articleSummary
+instructions: null
+name: 'Article Summary'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

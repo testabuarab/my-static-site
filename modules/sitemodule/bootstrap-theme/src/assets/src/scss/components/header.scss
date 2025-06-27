@@ -1,0 +1,39 @@
+.bg-header {
+    background-color: $primary;
+}
+
+header {
+    position: relative;
+}
+
+.block[data-handle=bootstrap-main-menu] .navbar-toggler {
+    z-index: 1101;
+}
+
+@media all and (max-width: map-get($grid-breakpoints, lg)) {
+    .block[data-handle=bootstrap-main-menu] {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        .container-fluid {
+            padding: 0;
+        }
+    }
+    #region-header-left {
+        margin-bottom: 1rem;
+    }
+    #mainMenu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $primary;
+        z-index: 1100;
+        .navbar-nav {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+    }
+}

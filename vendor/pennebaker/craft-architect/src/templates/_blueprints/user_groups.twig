@@ -1,0 +1,30 @@
+<h1>{{ "User Groups"|t('app') }}</h1>
+<table class="data fullwidth collapsible">
+    <thead>
+    <tr>
+        <th>
+            <div class="field checkboxusergroup">
+                <input type="checkbox" id="allUserGroups" class="checkbox" name="allUserGroups" value="all"><label
+                        for="allUserGroups">&zwnj;</label>
+                {{ "Name"|t('app') }}
+            </div>
+        </th>
+        <th>{{ "Handle"|t('app') }}</th>
+    </tr>
+    </thead>
+    <tbody class="userGroups">
+    {% if craft.app.userGroups is not null %}
+        {% for userGroup in craft.app.userGroups.getAllGroups() %}
+            <tr class="userGroup" data-id="{{ userGroup.id }}" data-name="{{ userGroup }}">
+                <th scope="row">
+                    <input type="checkbox" id="userGroup{{ userGroup.id }}" class="checkbox" name="userGroupSelection[]"
+                           value="{{ userGroup.id }}"> <label for="userGroup{{ userGroup.id }}">{{ userGroup }}</label>
+                </th>
+                <td>
+                    <code>{{ userGroup.handle }}</code>
+                </td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+    </tbody>
+</table>

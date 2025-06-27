@@ -1,0 +1,92 @@
+fieldLayouts:
+  74d643b7-1afb-4abf-bb77-8e0b432e2548:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 19647473-8f54-4c42-a077-b830dfe588c8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ad2d3a5c-029f-40e7-ab90-b4b982a339e1 # text Custom Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab32b070-a5d1-4a88-b59c-19e00d85eafa
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3d316da4-52a0-4fe6-a78c-8c147b01175d # old id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1f482047-5592-4d5b-9c03-2533dee00b0d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fb4a970f-4e1e-4950-81a7-28cf2ccc0756 # post id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d860183-2d2a-400b-90b9-8fbe716cc4e5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3b3652cf-b3cf-4f9e-908f-35ab685ee970 # SEO - Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4faa68dd-fa27-4286-bfc0-ba80f601360a
+            userCondition: null
+            warning: null
+            width: 100
+        name: المحتوى
+        uid: d108d811-524b-4016-8e5f-67e309140897
+        userCondition: null
+fs: uploads
+handle: uploads
+name: Uploads
+sortOrder: 1
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

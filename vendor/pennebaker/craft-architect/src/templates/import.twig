@@ -1,0 +1,73 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Architect plugin for Craft CMS 3.x
+ *
+ * Architect import.twig
+ *
+ * @author    Pennebaker
+ * @copyright Copyright (c) 2018 Pennebaker
+ * @link      https://pennebaker.com
+ * @package   Architect
+ * @since     2.0.0
+ */
+#}
+
+{% extends "architect/_layouts/base" %}
+{% import "_includes/forms" as forms %}
+
+{% set selectedSubnavItem = 'import' %}
+
+{% set fullPageForm = true %}
+
+{% block actionButton %}
+    <input type="submit" class="btn submit" value="{{ 'Import'|t('architect') }}">
+{% endblock %}
+
+{# The content of the CP Section #}
+{% set content %}
+    <h2>{{ "Import"|t('architect') }}</h2>
+
+    {# {% if importData is not defined %} #}
+    {# {% set importData = source('architect/test.json') %} #}
+    {# {% endif %} #}
+
+    {% if invalidJSON %}
+        <p class="error">JSON:
+            {% switch invalidJSON -%}
+            {%- case 1 -%}
+                {{ "The maximum stack depth has been exceeded."|t('architect') }}
+            {%- case 2 -%}
+                {{ "Invalid or malformed JSON."|t('architect') }}
+            {%- case 3 -%}
+                {{ "Control character error, possibly incorrectly encoded."|t('architect') }}
+            {%- case 4 -%}
+                {{ "Syntax error."|t('architect') }}
+            {%- case 5 -%}
+                {{ "Malformed UTF-8 characters, possibly incorrectly encoded."|t('architect') }}
+            {%- case 6 -%}
+                {{ "One or more recursive references in the value to be encoded."|t('architect') }}
+            {%- endswitch -%}
+        </p>
+        <p class="error">YAML: {{ invalidYAML }}</p>
+    {% endif %}
+
+    {{ forms.checkboxField({
+        label: "Allow updating existing items."|t('architect'),
+        instructions: "Supported is currently limited to: [ fields ] . Not all fields have been fully tested.",
+        id: 'updateExisting',
+        name: 'updateExisting',
+        checked: (updateExisting is defined) ? updateExisting : false
+    }) }}
+
+    {{ forms.textareaField({
+        label: "JSON/YAML Data"|t('architect'),
+        instructions: "Put your json/yaml import data here."|t('architect'),
+        id: 'importData',
+        class: 'code',
+        name: 'importData',
+        value: (importData is defined) ? importData : '',
+        rows: 30
+    }) }}
+
+{% endset %}

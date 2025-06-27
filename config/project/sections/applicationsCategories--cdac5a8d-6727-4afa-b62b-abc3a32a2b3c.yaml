@@ -1,0 +1,25 @@
+defaultPlacement: end
+enableVersioning: true
+handle: applicationsCategories
+name: 'Applications Categories'
+propagationMethod: none
+siteSettings:
+  03b2e267-7385-4079-bad6-b049ba4cf12f: # test2.watsabplus.gold
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold/wagold/apps/cate.twig
+    uriFormat: 'category/{%if parent %}{parent.slug}/{slug}{%else%}{slug}{%endif%}'
+  61e3c234-8bc5-4bb6-8f8b-3f9a39d44b66: # watsabplus
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold/wagold/apps/cate.twig
+    uriFormat: 'category/{%if parent %}{parent.slug}/{slug}{%else%}{slug}{%endif%}'
+  d0762fad-819e-4a65-83f7-a8f1f9e03cc5: # wtsgold.app
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold/wagold/apps/cate.twig
+    uriFormat: 'category/{%if parent %}{parent.slug}/{slug}{%else%}{slug}{%endif%}'
+structure:
+  maxLevels: null
+  uid: 53f584a4-9864-450a-bfba-6c7b1f68d281
+type: structure

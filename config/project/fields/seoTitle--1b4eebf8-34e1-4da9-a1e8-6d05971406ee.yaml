@@ -1,0 +1,19 @@
+columnSuffix: hjyrvfqi
+contentColumnType: text
+fieldGroup: b2b5191c-1d1c-4117-a406-27acf8d483fe # SEO
+handle: seoTitle
+instructions: null
+name: 'SEO - Title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

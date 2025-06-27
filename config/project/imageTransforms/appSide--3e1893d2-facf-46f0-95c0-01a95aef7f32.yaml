@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: appSide
+height: 45
+interlace: none
+mode: crop
+name: 'app Side'
+position: center-center
+quality: 0
+upscale: true
+width: 45

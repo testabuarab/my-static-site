@@ -1,0 +1,429 @@
+{% extends 'watsabplusgold/newd/_layout' %}
+{% set title = entry.title %}
+{% do craft.starRatings.disable(['css','js'])  %}
+{% do craft.upvote.disable(['css','js']) %}
+{%if entry.tfaaylAlbady%}
+
+{% set title = global.badyAanoanAlmkal ~" "~ title %}
+{%endif%}
+{%if entry.tfaaylAllahk%}
+{% set title =   title ~" "~ global.lahkAanoanAlmkal%}
+{%endif%}
+
+{%if entry.tfaaylAsmAlmokaa%}
+{% set title =   title ~" - "~ global.aanoanAlmokaa%}
+{%endif%}
+{% set appCategory = entry.appCategory.all() %}
+{% set cattt = entry.appCategory.one() %}
+{% set apksize = '50MB'|t %}
+{% set nthamAltshghl = 'Android'|t %}
+{% set appVersion = 'Latest Version'|t %}
+{% set appName = entry.appTitle|replace(".html","")%}
+{% set appLanguage = 'Multi-languages'|t %}
+{%if entry.hgmAlmlf%}
+{% set apksize = entry.hgmAlmlf %}
+{%endif%}
+{%if entry.appLanguage%}
+    {% set appLanguage = entry.appLanguage %}
+{%endif%}
+{%if entry.nthamAltshghl%}
+    {% set nthamAltshghl = entry.nthamAltshghl %}
+{%endif%}
+{%if entry.appVersion%}
+    {% set appVersion = entry.appVersion %}
+{%endif%}
+{%if entry.asmAlttbykAarby%}
+    {% set appName = entry.asmAlttbykAarby|replace(".html","") %}
+{%endif%}
+    {%set contentclasses=""%}
+{%set iccccco='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"> <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/> </svg>'|raw%}
+{%set iccccco2='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"> <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/> </svg><\/i>'|raw%}
+{%set iccccco3='<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"> <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/> </svg><\/i>'|raw%}
+{% do craft.starRatings.setIcons({
+    '0/4': iccccco,
+    '1/4': iccccco2,
+    '2/4': iccccco2,
+    '3/4': iccccco2,
+    '4/4': iccccco2,
+}) %}
+{% block content %}
+    {%set lazyloadImage=global.lazyloadImageApp.one().getURL("nnewfullsharedimage")%}
+    <div class="app-page-container">
+        <div class="breadcrumb specialScroll">
+            <ul>
+                <li><a href="{{global.alrabtAlasasyLlmokaa}}">{{ "Home"|t }}</a></li>
+                    <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ cattt.uri }}/">{{ cattt.title }}</a></li>
+                <li><a href="{{global.alrabtAlasasyLlmokaa}}/{{ entry.uri }}/">{{ entry.title }}</a></li>
+            </ul>
+        </div>
+        <div class="category-row{%if entry.fullWidth%} fullwidth{%endif%}">
+            <div class="main-side">
+                <div class="app-container" itemscope itemtype="https://schema.org/{{ appCategory|length ? (nthamAltshghl == "Android" ? "MobileApplication" : "SoftwareApplication")}}">
+                    <div class="app-main-info">
+                        <div class="title-container">
+                            <div class="img">
+                                <img class="lazyload" width="70" height="61" src="{{ lazyloadImage }}" data-src="{{ entry.appIcon|length ? entry.appIcon[0].getUrl() }}" alt="{{ entry.title }}" itemprop="image">
+                            </div>
+                            <div class="title">
+                                    <h1>{{ entry.title }}</h1>
+								<p itemprop="name">{{ appName }}</p>
+                                <p>{{ entry.appSummary|striptags  }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            {% if entry.downloadLinks|length %}
+								    <a href="{{global.alrabtAlasasyLlmokaa}}/download/{{entry.slug}}/latest/" rel="noopener noreferrer" class="download-btn">
+                                    <span class="fa fa-cloud-download"></span>
+                                    <p>
+                                        <label>{{ "Free Download"|t }}</label>
+                                        <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                                    </p>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="app-rating-info" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                        <div class="rating-container editors">
+                            <p>{{ "Editors Rating"|t }}</p>
+                            <div>
+                                {% for i in 1..5 %}
+                                    <span class="fa fa-star {{ i <= entry.editorsRating|round ? "checked" }}"></span>
+                                {% endfor %}
+                            </div>
+                            <p>({{ entry.editorsRating|default(0) }})</p>
+                        </div>
+                        <div class="rating-container">
+                            <p>{{ "Users Rating"|t }}</p>
+                            <div>
+                                {{ craft.starRatings.stars(entry.id)| retconInject( '.fa-star-o', iccccco )|retconInject( '.fa-star', iccccco2 ) |retconInject( '.fa-star-half-empty', iccccco3 ) }}
+
+                            </div>
+                            <p>(<span itemprop="ratingValue">{{ craft.starRatings.avgRating(entry.id)|default(0)|number_format(1, ".", "") }}</span>)</p>
+                        </div>
+                        <div class="rate-form">
+                            {% do craft.upvote.setIcons({
+                                up   : '<i class="fa fa-thumbs-up"></i>',
+                                down : '<i class="fa fa-thumbs-down"></i>',
+                            }) %}
+                            <div>
+							<span data-id="{{entry.id}}" class="upvote-el upvote-vote upvote-upvote upvote-upvote-{{entry.id}}" onclick="starRatings.rate({{entry.id}}, null, 5, true)"><i class="fa fa-thumbs-up"></i></span></div>
+                            <div><span data-id="{{entry.id}}" class="upvote-el upvote-tally upvote-tally-{{entry.id}}" itemprop="ratingCount">{{ craft.starRatings.totalVotes(entry.id)+entry.oldAppRatingCount }}</span></div>
+                            <div><span data-id="{{entry.id}}" class="upvote-el upvote-vote upvote-downvote upvote-downvote-{{entry.id}}" onclick="starRatings.rate({{entry.id}}, null, 1, true)"><i class="fa fa-thumbs-down"></i></span></div>
+
+
+                        </div>
+                    </div>
+                    <div class="app-details">
+                        <div class="tab-nav specialScroll">
+                            <button class="active" data-target=".tab-details">{{ "Details"|t }}</button>
+                            <button data-target=".tab-comments">{{ "Comments"|t }}</button>
+                            <button data-target=".tab-download">{{ "Download"|t }}</button>
+                            <button data-target=".tab-gallery">{{ "Gallery"|t }}</button>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab tab-details active">{% include "watsabplusgold/newd/apps/_apps_details/_details" %}</div>
+                            <div class="tab tab-comments">{% include "watsabplusgold/newd/apps/_apps_details/_comments" %}</div>
+                            <div class="tab tab-download">
+
+                                   	    <a href="{{global.alrabtAlasasyLlmokaa}}/download/{{entry.slug}}/latest/" rel="noopener noreferrer" class="download-btn">
+                                    <span class="fa fa-cloud-download"></span>
+                                    <p>
+                                        <label>{{ "Free Download"|t }}</label>
+                                        <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                                    </p>
+                                </a>
+
+                            </div>
+                            <div class="tab tab-gallery">{% include "watsabplusgold/newd/apps/_apps_details/_gallery" %}</div>
+                        </div>
+                    </div>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display: none;">
+                        <meta itemprop="price" content="0" />
+                        <meta itemprop="priceCurrency" content="USD" />
+                    </div>
+
+					   <meta itemprop="fileSize" content="{{ apksize }}"/>
+                    <meta itemprop="softwareVersion" content="{{entry.appVersion}}"/>
+
+                    <meta itemprop="dateModified" content="{{ entry.dateUpdated|date("Y-m-d", locale="en-GB") }}"/>
+
+
+                </div>
+                {% if appCategory|length > 1 %}
+                    <div class="category-list">
+                        <div class="category-header">
+                            <div class="category-title">
+                                <div class="icon {{ appCategory[0].slug }}"></div>
+                                <div class="info">
+                                    <h1 class="title">{{ "Alternative apps"|t }}</h1>
+                                    <p>{{ "Alternative apps to "|t ~ entry.title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="apps-list">
+                            {% set relatedApps = craft.entries.section("applications").relatedTo(appCategory|last).with(["appIcon"]).id("not "~entry.id).orderBy("postDate desc").limit(5).all() %}
+                            {% for relatedApp in relatedApps %}
+                                <li class="app">
+                                    <a href="{{global.alrabtAlasasyLlmokaa}}/{{ relatedApp.uri }}/">
+                                        <img class="img lazyload" src="{{ lazyloadImage }}" data-src="{{ relatedApp.appIcon|length ? relatedApp.appIcon[0].getUrl("appMain4") }}" alt="{{ relatedApp.title }}">
+                                        <p class="name">{{ relatedApp.asmAlttbykAarby }}</p>
+                                        <div class="rating">
+                                            {{ craft.starRatings.stars(relatedApp.id, null, false) }}
+                                        </div>
+                                        <label class="link">{{ "Download"|t }}</label>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            </div>
+            {% if appCategory|length and (not entry.fullWidth)%}
+                <div class="secondary-side">
+                    {% set sideList = craft.entries.section("applications").relatedTo(appCategory[0]).with(["appIcon"]).id("not "~entry.id).limit(10) %}
+                    {% if sideList|length %}
+                        <div class="category-side">
+
+                            {% do craft.viewCount.sort(sideList, "downloadedFile") %}
+                            <h2>{{ "Most Downloaded"|t }}</h2>
+                            <ul class="trending-list">
+                                {% for app in sideList.all() %}
+                                    <li>
+                                        <a href="{{global.alrabtAlasasyLlmokaa}}/{{ app.uri }}/">
+                                            <img class="img lazyload" src="{{ lazyloadImage }}" width="45" height="45" data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appSide") }}" alt="{{ app.title }}">
+                                            <div>
+                                                <p class="name">{{ app.asmAlttbykAarby }}</p>
+                                              
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="/assets/js/swipebox/css/swipebox.min.css">
+
+    <link rel="stylesheet" href="/assets/sw.min.css">
+    <style>.sr-ratable{cursor:pointer}.sr-avg-rating{color:#d1202a}.sr-user-rating{color:#e5cf4b}.sr-unrated{color:#cdcdcd}.upvote-vote{color:#cdcdcd;cursor:pointer}.upvote-vote-match{color:#d1202a}#app-details-container .meta-description li{word-break:unset;}.su-note {
+                                                                             margin: 0 0 1.5em;
+                                                                             border-width: 1px;
+                                                                             border-style: solid;
+                                                                         }
+        #app-details-container .meta-description  figure{
+            max-width: 100%;
+        }
+        #app-details-container .meta-description img{
+            height: auto;}
+        .su-note-inner {
+            padding: 1em;
+            border-width: 1px;
+            border-style: solid;
+        }
+        .success {
+            padding: 15px;
+            background: #ecf8ea;
+            color: #0f9c6d!important;
+            border-right: 3px solid #0f9c6d;
+        }
+        .info {
+            background: #e5f5fd;
+            color: #008dc0!important;
+            padding: 15px;
+            border-right: 3px solid #008dc0;
+        }
+        .custom {
+            padding: 10px;
+            border-radius: 5px;
+            color: #272829!important;
+            background-color: #f2f5f9;
+        }
+        #app-details-container .meta-description > *{
+            text-align: justify;
+        }
+        abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video{
+            font-size: revert;
+        }
+        .app-container .download-btn{
+            margin-bottom:20px;}
+    </style>
+{% endblock %}
+{% block js %}
+    <script src="/assets/js/swipebox/js/jquery.swipebox.min.js?v=1"></script>
+
+    <script src="/assets/js/sw.min.js?v=1"></script>
+<script defer src="{{ global.alrabtAlasasyLlmokaa  }}/view.js?en={{entry.id}}"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+	//	incrementView({{entry.id}})
+function incrementView(elementId) {
+
+    // Set view data
+    var data = {
+        'id': elementId
+    };
+
+    // Append CSRF Token
+    data[window.csrfTokenName] = window.csrfTokenValue;
+
+    // Render search results
+    $.post(
+        '{{ global.alrabtAlasasyLlmokaa  }}/actions/view-count/increment',
+        data,
+        function (response) {
+            // Handle response
+        }
+    );
+
+}
+            $(document).on("click", ".ratingForm button", function (e){
+                e.preventDefault();
+                e.stopPropagation();
+                $(this).siblings("input[name='rating']").val($(this).data("rating"));
+                $(".form-overlay").addClass("active");
+                var label = $(this).siblings(".ratingLabel");
+                $.ajax({
+                    context: this,
+                    type: "post",
+                    dataType: 'json',
+                    data: $(this).parents(".ratingForm").serializeArray(),
+                    url: '',
+                    success: function (response) {
+                        $(".form-overlay").removeClass("active");
+                        label.text(parseInt(label.text())+1);
+                    }
+                });
+            });
+            $(document).on("submit", ".appCommentForm", function (e){
+                e.preventDefault();
+                e.stopPropagation();
+                $(".form-overlay").addClass("active");
+                $(".appCommentFormAlert").removeClass("success").removeClass("error").text("");
+                $.ajax({
+                    context: this,
+                    type: "post",
+                    dataType: 'json',
+                    data: $(this).serializeArray(),
+                    url: '',
+                    success: function (response) {
+                        $(".form-overlay").removeClass("active");
+                        if(response.success){
+                            $(".appCommentFormAlert").addClass("success").text("{{ "Thank you for you feedback!"|t }}");
+                        }else{
+                            $(".appCommentFormAlert").addClass("error").text("{{ "An error occurred. Please try again later"|t }}");
+                        }
+                    }
+                });
+            });
+
+            $( '.swipebox' ).swipebox();
+            const swiper = new Swiper('#app-gallery-container .swiper-container', {
+                spaceBetween: 16,
+                slidesPerView: 2.5,
+                allowTouchMove: true,
+                cursor: "grab",
+                navigation: {
+                    nextEl: '#app-gallery-container .swiper-button-next',
+                    prevEl: '#app-gallery-container .swiper-button-prev',
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2.5,
+                    },
+                    768: {
+                        slidesPerView: 3.5,
+                    },
+                    1025: {
+                        slidesPerView: 2.5,
+                    }
+                }
+            });
+        });
+    </script>
+	<script defer src="/assets/sizzle.js?v=16467035517"></script>
+	<script  src="/assets/superagent.js?v=1646703511617"></script>
+	<script  src="/assets/starratings.js?v=16467035161118"></script>
+	<!--<script src="https://app.watsabplusgold.com/v/upvote.js?v=16485724120"></script>
+	<script src="https://app.watsabplusgold.com/v/unvote.js?v=1648415674"></script>-->
+
+	<script>starRatings.starIcons["0/4"] = `<i class=\"fa fa-star-o\">
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"> <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/> </svg><\/i>`;
+starRatings.starIcons["1/4"] = `<i class=\"fa fa-star-o\">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"> <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/> </svg><\/i>`;
+starRatings.starIcons["2/4"] = `<i class=\"fa fa-star-half-empty\">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"> <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/> </svg><\/i>`;
+starRatings.starIcons["3/4"] =`<i class=\"fa fa-star-half-empty\">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16"> <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/> </svg><\/i>`;
+starRatings.starIcons["4/4"] = `<i class=\"fa fa-star\">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16"> <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/> </svg><\/i>`;
+starRatings.ratingChangeAllowed = true;
+</script>
+{% endblock %}
+
+
+{% block meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchUrl = global.alrabtAlasasyLlmokaa~'/'~entry.uri~'/' %}
+    {% set searchDescription = entry.appSummary %}
+    {% set searchImage =global.alrabtAlasasyLlmokaa ~entry.seoImage.one().getUrl() %}
+
+
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{global.alrabtAlasasyLlmokaa}}"
+              },
+              {% for parent in appCategory %}
+                  {
+                    "@type": "ListItem",
+                    "position": "{{ loop.index + 1 }}",
+                    "name": "{{ parent.title }}",
+                    "item": "{{global.alrabtAlasasyLlmokaa}}/{{ parent.uri }}/"
+                  }{{ loop.index < appCategory|length ? "," }}
+        {% endfor %}
+              ,{
+                "@type": "ListItem",
+                "position": "{{ appCategory|length + 2 }}",
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>
+{% endblock %}

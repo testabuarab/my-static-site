@@ -1,0 +1,64 @@
+{% cache using key 'header' ~ siteId %}
+{% set aykonAlbhthClass = global.aykonAlbhth.getGlyphName()%}
+    {% set aykonAlbhthCode= global.aykonAlbhth.getGlyph(('hex'))  %}
+    {%set cssClasses=cssClasses~'.icon-'~    aykonAlbhthClass~':before {content:"\\'~aykonAlbhthCode~'"\;     color: #d4d4d4;                   }' %}
+
+
+    {% set aykonAlkaym= global.aykonAlkaym %}
+    {% set aykonAlkaymClass = aykonAlkaym.getGlyphName()%}
+    {% set aykonAlkaymCode= aykonAlkaym.getGlyph(('hex'))  %}
+    {%set cssClassess=cssClassess~'.icon-'~    aykonAlkaymClass~':before {content:"\\'~aykonAlkaymCode~'"\;       font-size: 30px;       color: var(--main);  }' %}
+
+    {% set aykonAlngm= global.aykonAlngm %}
+    {% set aykonAlngmClass = aykonAlngm.getGlyphName()%}
+    {% set aykonAlngmCode= aykonAlngm.getGlyph(('hex'))  %}
+<header>
+    <div class="row site-width">
+        <div class="column">
+            <button class="phone-menu-trigger" aria-label="navigation-menu"><i class="open-menu icon-{{ aykonAlkaymClass }}"></i></button>
+            <div class="logo">
+                <a href="{{ global.alrabtAlasasyLlmokaa  }}/">
+                    <img src="{{ siteLogo }}" alt="{{ currentName }}" width="50" height="50">
+                </a>
+            </div>
+            <div class="nav">
+                <button class="close-button" aria-label="close-menu"><i class="open-menu icon-cancel"></i></button>
+                <nav>
+
+                    {% for link in global.headerNavigation %}
+                        {% set class= "" %}
+        {% if link.iconsPicker|length %}
+                        {% set class= link.iconsPicker.getGlyphName()  %}
+                        {% set ff= link.iconsPicker.getGlyph(('hex'))  %}
+                        {%set cssClasses=cssClasses~'.icon-'~    class~':before {content:"\\'~ff~'"\;                    }' %}
+
+                        <a href="{{ link.blockLink }}" class="{{  ff}} icon-{{class}}">{{ link.blockText }}</a>
+            {% else %}
+                        <a href="{{ link.blockLink }}">{{ link.blockText }}</a>
+        {% endif %}
+                    {% endfor %}
+                </nav>
+            </div>
+        </div>
+        <div class="column">
+            <div class="search-form">
+                <form action="{{ global.alrabtAlasasyLlmokaa  }}/search" accept-charset="UTF-8" method="get">
+                    <div class="container">
+                        <button type="submit" aria-label="submit-search icon-{{ aykonAlbhthClass }}"><i class="icon-{{ aykonAlbhthClass }}"></i>
+                        </button>
+                        <label>
+                            <input type="search" name="q" placeholder="{{ "App Name ..."|t }}">
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="language-switcher">
+
+            </div>
+        </div>
+    </div>
+
+</header>
+         {% minify css %}
+        <style>{{cssClasses|raw  }}{{ cssClassess|raw }}</style> {% endminify %}
+{% endcache %}

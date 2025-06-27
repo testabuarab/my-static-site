@@ -1,0 +1,14 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    {% set viewMode = options.getViewMode() %}
+    {% for index, user in value %}
+        {% include "_includes/card" with {
+            viewMode: viewMode,
+            headerDisplaysUids: options['disposition']['header'] ?? [],
+            footerDisplaysUids: options['disposition']['footer'] ?? [],
+            contentDisplaysUids: options['disposition']['content'] ?? [],
+            element: user
+        } only %}
+    {% endfor %}
+{% endblock %}

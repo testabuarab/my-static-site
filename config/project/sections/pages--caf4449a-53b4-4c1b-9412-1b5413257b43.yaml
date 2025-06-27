@@ -1,0 +1,17 @@
+defaultPlacement: end
+enableVersioning: true
+handle: pages
+name: Pages
+propagationMethod: none
+siteSettings:
+  61e3c234-8bc5-4bb6-8f8b-3f9a39d44b66: # watsabplus
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold\newd\apps\page.html
+    uriFormat: '{slug}'
+  d0762fad-819e-4a65-83f7-a8f1f9e03cc5: # wtsgold.app
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold\newd\apps\page.html
+    uriFormat: '{slug}'
+type: channel

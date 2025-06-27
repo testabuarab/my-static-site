@@ -1,0 +1,14 @@
+columnSuffix: vmpetjnz
+contentColumnType: boolean
+fieldGroup: 039db95e-99b1-4a38-b655-0ae4de98723d # Global
+handle: tfaaylAllyzyLodLlaaalanat
+instructions: null
+name: 'تفعيل الليزي لود للاعلانات'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

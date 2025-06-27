@@ -1,0 +1,222 @@
+{
+  "buttons": [
+    "redactoranchors",
+    "html",
+    "format",
+    "bold",
+    "italic",
+    "lists",
+        "clips",
+    "link",
+    "file",
+    "image",
+    "blockcode",
+    "horizontalrule"
+  ],
+  "plugins": [
+    "pagebreak",
+          "counter",
+         "nofollow",
+	"falist",
+	"fontawesome",
+    "customstyles",
+    "alignment",
+    "properties",
+    "fontcolor",
+    "table",
+    "fontsize",
+    "textexpander",
+    "video",
+    "filemanager",
+    "imagemanager",
+    "redactoranchors"
+  ],
+
+   "formattingAdd": {
+    "p-redactor": {
+      "title": "success ",
+      "api": "module.block.format",
+      "args": {
+          "class": "success"
+      }
+    },
+     "a-redactor": {
+      "title": "shortc-button-large-green",
+      "api": "module.block.format",
+      "args": {
+          "class": "shortc-button large green",
+        "type" : "toggle",
+        "tag": "p a"
+      }
+    },
+        "in-redactor": {
+      "title": "info",
+      "api": "module.block.format",
+      "args": {
+          "class": "infor"
+      }
+    },
+        "golden-redactor": {
+      "title": "golden",
+      "api": "module.block.format",
+      "args": {
+          "class": "golden"
+      }
+    },
+            "red-p-remove": {
+                "title": "success Remove",
+                "api": "module.block.format",
+                "args": {
+                    "type": "remove"
+                }
+            }
+  },
+  "customStyles": {
+    "style": {
+      "dropdown": {
+        "marked": {
+          "args": "mark"
+        },
+         "final": {
+          "args": {
+          "tag": "div p",
+          "class": "final"
+      }
+        },
+        "shortc-button-large-green": {
+          "args": {
+            "tag": "a",
+            "class": "shortc-button large green"
+          }
+        },
+        "shortc-button-large-maroon": {
+          "args": {
+            "tag": "a",
+            "class": "shortc-button large maroon"
+          }
+        },
+        "shortc-button-large-red": {
+          "args": {
+            "tag": "a",
+            "class": "shortc-button large red"
+          }
+        },
+        "shortc-button-large-blue": {
+          "args": {
+            "tag": "a",
+            "class": "shortc-button large blue"
+          }
+        },
+        "shortc-button-large-gold": {
+          "args": {
+            "tag": "a",
+            "class": "shortc-button large gold"
+          }
+        },
+        "code": {
+          "args": "code"
+        },
+        "variable": {
+          "args": "var"
+        },
+        "shortcut": {
+          "args": "kbd"
+        },
+        "deleted": {
+          "args": "del"
+        },
+        "inserted": {
+          "args": "ins"
+        },
+        "superscript": {
+          "args": "sup"
+        },
+        "subscript": {
+          "args": "sub"
+        },
+        "quote": {
+          "args": "q"
+        },
+        "sourceCitation": {
+          "args": "cite"
+        },
+        "smallPrint": {
+          "args": "small"
+        },
+        "clearStyles": {
+          "api": "module.inline.clearformat"
+        }
+      }
+    },
+    "textColor": {
+      "dropdown": {
+        "red": {
+          "args": {
+            "tag": "span",
+            "class": "color-red",
+            "type": "toggle"
+          }
+        },
+        "green": {
+          "args": {
+            "tag": "span",
+            "class": "color-green",
+            "type": "toggle"
+          }
+        }
+      }
+    },
+    "quote": {
+      "args": "q"
+    },
+    "marked": {
+      "args": "mark"
+    },
+    "favorite": {
+      "args": {
+        "tag": "span",
+        "class": "favorite",
+        "type": "toggle"
+      }
+    },
+    "clearStyles": {
+      "api": "module.inline.clearformat"
+    },
+    "align": {
+      "dropdown": {
+        "alignLeft": {
+          "api": "module.block.format",
+          "args": "p"
+        },
+        "alignRight": {
+          "api": "module.block.format",
+          "args": {
+            "tag": "p",
+            "class": "align-right"
+          }
+        },
+        "alignCenter": {
+          "api": "module.block.format",
+          "args": {
+            "tag": "p",
+            "class": "align-center"
+          }
+        },
+        "alignJustify": {
+          "api": "module.block.format",
+          "args": {
+            "tag": "p",
+            "class": "align-justify"
+          }
+        }
+      }
+    }
+  },
+  "linkNofollow": false,
+  "linkNewTab": true,
+  "shortcodes": false,
+  "toolbarFixed": true,
+  "direction": ["rtl"]
+
+
+}

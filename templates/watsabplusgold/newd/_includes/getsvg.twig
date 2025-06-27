@@ -1,0 +1,8 @@
+{% cache using key 'sprites' ~ entryid %}
+{% set sssymbolss=sssymbolss|unique  %}
+            {{ craft.iconPicker.spritesheet('/regular-sprites.svg')|retconOnly( sssymbolss ) }}
+            {{ craft.iconPicker.spritesheet('/brands-sprites.svg')|retconOnly( sssymbolss )  }}
+            {{ craft.iconPicker.spritesheet('/solid-sprites.svg') |retconOnly( sssymbolss ) }}
+            {{ craft.iconPicker.spritesheet('/tabler-sprites.svg') |retconOnly( sssymbolss ) }}
+            {{ symbolss|raw  }}
+{% endcache %}

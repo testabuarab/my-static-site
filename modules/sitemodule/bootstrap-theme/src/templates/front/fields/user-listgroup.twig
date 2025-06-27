@@ -1,0 +1,12 @@
+{% extends "fields/_field" %}
+{% import "_includes/macros" as macros %}
+
+{% block content %}
+    <ul class="list-group">
+        {% for user in value %}
+            <div class="list-group-item">
+                {{ macros.renderLayout(displayer.userLayout, viewMode, user) }}
+            </div>
+        {% endfor %}
+    </ul>
+{% endblock %}

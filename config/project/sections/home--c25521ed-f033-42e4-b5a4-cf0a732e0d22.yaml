@@ -1,0 +1,22 @@
+defaultPlacement: end
+enableVersioning: true
+handle: home
+name: Home
+propagationMethod: all
+siteSettings:
+  03b2e267-7385-4079-bad6-b049ba4cf12f: # test2.watsabplus.gold
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold\wagold\indexchoice.twig
+    uriFormat: __home__
+  61e3c234-8bc5-4bb6-8f8b-3f9a39d44b66: # watsabplus
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold\wagold\indexchoice.twig
+    uriFormat: __home__
+  d0762fad-819e-4a65-83f7-a8f1f9e03cc5: # wtsgold.app
+    enabledByDefault: true
+    hasUrls: true
+    template: watsabplusgold\wagold\indexchoice.twig
+    uriFormat: __home__
+type: single

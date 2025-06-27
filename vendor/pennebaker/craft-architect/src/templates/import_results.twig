@@ -1,0 +1,83 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Architect plugin for Craft CMS 3.x
+ *
+ * Architect import.twig
+ *
+ * @author    Pennebaker
+ * @copyright Copyright (c) 2018 Pennebaker
+ * @link      https://pennebaker.com
+ * @package   Architect
+ * @since     2.0.0
+ */
+#}
+
+{% extends "architect/_layouts/base" %}
+{% import "_includes/forms" as forms %}
+
+{% set selectedSubnavItem = 'import' %}
+
+{% set iconUrlSuccess = view.getAssetManager().getPublishedUrl('@pennebaker/architect/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{# The content of the CP Section #}
+{% set content %}
+    <h2>{{ "Import Results"|t('architect') }}</h2>
+
+    {% if not noErrors and backupLocation %}
+        <p class="error">{{ 'Architect encountered errors performing an import, there is a database backup located at: {backup}'|t('architect', {backup: ''}) }}</p>
+        <code>{{ backupLocation }}</code>
+    {% endif %}
+
+    <div class="elements">
+        <div class="tableview">
+            <table class="data fullwidth importresults">
+                <thead>
+                <tr>
+                    <th scope="col" data-attribute="name" class="orderable">Name</th>
+                    <th scope="col" data-attribute="handle">Handle</th>
+                    <th scope="col" data-attribute="errors">Errors</th>
+                    <th class="thin" data-attribute="success">Success</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for type, typeResults in results %}
+                    <tr>
+                        <th class="section" colspan="4">{{ type }}</th>
+                    </tr>
+                    {% for result in typeResults %}
+                        <tr>
+                            <td>{{ (result.item.name is defined) ? result.item.name : (result.item.siteId is defined) ? result.item.siteId : '' }}</td>
+                            <td class="code">{{ ('handle' in result.item|keys) ? result.item.handle : ('uriPattern' in result.item|keys) ? result.item.uriPattern : '' }}</td>
+                            <td>
+                                <ul class="error-list code">
+                                    {% for type, errors in result.errors %}
+                                        <li class="heading">type: {{ type }}</li>
+                                        {% for error in errors %}
+                                            <li>{{ error|raw }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>
+                                <span class="icon{{ (result.success) ? ' success' : ' failure' }}">{{ svg('@pennebaker/architect/assetbundles/indexcpsection/dist/img/' ~ ((result.success) ? 'check' : 'times') ~ '.svg') }}</span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+
+            {{ forms.textareaField({
+                label: "JSON Data"|t('architect'),
+                instructions: "This is the json/yaml data that was submitted."|t('architect'),
+                id: 'importData',
+                class: 'code',
+                value: importData,
+                readonly: true,
+                name: 'importData',
+                rows: 30
+            }) }}
+        </div>
+    </div>
+{% endset %}

@@ -1,0 +1,134 @@
+{% extends 'newd/_layout' %}
+{% set title = entry.title %}
+{% set appCategory = entry.alfy.all() %}
+
+
+{% block content %}
+    <div class="app-page-container">
+        <div class="breadcrumb specialScroll">
+            <ul>
+                <li><a href="{{ currentUrl }}">{{ "Home"|t }}</a></li>
+          
+                <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+            </ul>
+        </div>
+		
+        <div class="category-row">
+            <div class="main-side">
+                <div class="app-container" >
+                    
+                      <div id="app-details-container" >
+                    <div class="app-details">
+                            <div class="meta-description" >
+							 <h1>{{ entry.title }}</h1>
+      	{% set contentBlocks = entry.contentBlocks.type("block").all() %}
+     {% for block in contentBlocks %}
+		{% if block.syghAlaanoan.value and block.alaanoan|length%}{% if block.khlfyAlaanoan.value!='def'%}<{{block.syghAlaanoan.value}} style="{%if block.hgmKhtAlaanoan|length%}font-size:{{block.hgmKhtAlaanoan}};{%endif%}{%if block.tosytAlaanoan%}text-align: center;{%endif%}" class="{{block.khlfyAlaanoan.value}}"><span class="ez-toc-section" id="{{block.alaanoan|replace(' ','_')}}"></span><strong><b><span style="color:{{block.lonAlaanoan}}">{{block.alaanoan}}</span></b></strong><span class="ez-toc-section-end"></span></{{block.syghAlaanoan.value}}>{%else%}<{{block.syghAlaanoan.value}}><span class="ez-toc-section" id="{{block.alaanoan|replace(' ','_')}}"></span><strong><b><span style="color: #000000;">{{block.alaanoan}}</span></b></strong><span class="ez-toc-section-end"></span></{{block.syghAlaanoan.value}}>{%endif%}{%elseif  block.alaanoan|length%}<h2><span class="ez-toc-section" id="{{block.alaanoan|replace(' ','_')}}"></span><strong><b><span style="color: #000000;">{{block.alaanoan}}</span></b></strong><span class="ez-toc-section-end"></span></h2>{%endif%}
+      		{%if block.lonAlkhlfy|length and block.lonAlkhlfy!="#ffffff"%}<div class="su-note" id="" style="border-color:{{block.lonAlkhlfy}};border-radius:12px;-moz-border-radius:12px;-webkit-border-radius:12px;"><div class="su-note-inner su-u-clearfix su-u-trim" style="background-color:{{block.lonAlkhlfy}};border-color:#dddddd;color:#333333;border-radius:12px;-moz-border-radius:12px;-webkit-border-radius:12px;">
+			{{ block.entryContent|retconRenameAttr('img', {src: 'data-src'})| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')|raw }}
+			</div></div>
+			{%else%}
+			{{ block.entryContent|retconRenameAttr('img', {src: 'data-src'})| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')|raw }}
+			{% endif %}
+      	{% endfor %}
+        
+    </div>
+                    </div>
+                    
+
+
+                </div>
+  </div>
+            </div>
+                <div class="secondary-side">
+                    {% set sideList = craft.entries.section("applications").with(["appIcon"]).id("not "~entry.id).limit(10) %}
+                    {% if sideList|length %}
+                        <div class="category-side">
+
+                            {% do craft.viewCount.sort(sideList, "downloadedFile") %}
+                            <h2>{{ "Most Downloaded"|t }}</h2>
+                            <ul class="trending-list">
+                                {% for app in sideList.all() %}
+                                    <li>
+                                        <a href="{{ app.url }}">
+                                            <img class="img" src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appSide") }}" alt="{{ app.title }}">
+                                            <div>
+                                                <p class="name">{{ app.title }}</p>
+                                                <p class="description">{{ app.appSummary }}</p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+                    {% endif %}
+                </div> 
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block css %}
+   
+{% endblock %}
+{% block js %}
+    
+{% endblock %}
+
+
+{% block meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchUrl = entry.url %}
+    {% set searchDescription = entry.appSummary %}
+    {% set searchImage =currentUrl|trim('/')~entry.seoImage.one().getUrl() %}
+
+
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <link rel="alternate" hreflang="ar" href="{{ searchUrl }}"/>
+
+
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{ currentUrl }}"
+              },
+              {% for parent in appCategory %}
+                  {
+                    "@type": "ListItem",
+                    "position": "{{ loop.index + 1 }}",
+                    "name": "{{ parent.title }}",
+                    "item": "{{ parent.url }}"
+                  }{{ loop.index < appCategory|length ? "," }}
+        {% endfor %}
+              ,{
+                "@type": "ListItem",
+                "position": "{{ appCategory|length + 2 }}",
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>
+{% endblock %}

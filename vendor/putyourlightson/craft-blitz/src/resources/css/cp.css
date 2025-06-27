@@ -1,0 +1,152 @@
+table th.thin, table td.thin {
+    white-space: nowrap;
+}
+
+.blitz-welcome {
+    position: relative;
+    text-align: center;
+    padding: 30px;
+    background: #ECF8FF;
+    border-radius: 7px;
+}
+
+.blitz-welcome .logo {
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+    width: 120px;
+}
+
+@media (max-width: 768px) {
+    .blitz-welcome .logo {
+        display: none;
+    }
+}
+
+.blitz-welcome .main {
+    position: relative;
+}
+
+.blitz-welcome .icon {
+    height: 130px;
+}
+
+.blitz-welcome.bottom {
+    margin-top: 30px;
+}
+
+.spaced {
+    margin: 20px 0 30px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    margin: 30px 0;
+    padding-right: 15px;
+    text-align: center;
+}
+
+.step-3 {
+    align-self: flex-start;
+}
+
+.step .number {
+    font-size: 20px;
+    font-weight: bold;
+    background: #ECF8FF;
+    border-radius: 100%;
+    width: 33px;
+    height: 33px;
+    line-height: 32px;
+    margin-bottom: 3px;
+}
+
+.info-hud {
+    max-width: 485px;
+}
+
+.info-hud li {
+    margin: 2px 0;
+}
+
+.info-hud code {
+    padding: 4px 5px;
+    background: #ececec;
+    border-radius: 3px;
+}
+
+table.editable tbody tr td {
+    text-align: left;
+}
+
+table.editable th.code {
+    font-family: inherit;
+    font-size: inherit !important;
+}
+
+.blitz-diagnostics #header {
+    padding: 0;
+}
+
+.blitz-diagnostics > h1 {
+    padding-top: var(--s);
+    line-height: 34px;
+}
+
+.blitz-diagnostics .search-container {
+    margin-bottom: 1rem;
+}
+
+.blitz-diagnostics .chip {
+    background-color: transparent;
+}
+
+#footer {
+    margin: 1px;
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .front .pane {
+    padding: 0;
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget h2 {
+    padding: 24px 24px 6px 24px;
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action {
+    border-top: 1px solid var(--hairline-color);
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action:hover {
+    background: var(--gray-050);
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action .heading {
+    cursor: pointer;
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action .form {
+    border-top: 1px dotted var(--hairline-color);
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action .heading,
+.putyourlightson\\blitz\\widgets\\cachewidget .action .form {
+    padding: 20px 24px;
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action .heading .icon {
+    float: left;
+    width: 20px;
+    margin-right: 8px;
+    color: var(--ui-control-color);
+}
+
+.putyourlightson\\blitz\\widgets\\cachewidget .action:hover .heading .icon {
+    color: inherit;
+}

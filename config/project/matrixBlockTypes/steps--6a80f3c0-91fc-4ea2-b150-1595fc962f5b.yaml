@@ -1,0 +1,142 @@
+field: 1bf489cc-2fd1-4e7e-baa4-95efe35f3bba # Content Blocks
+fieldLayouts:
+  11891a09-70db-49fb-974c-fd9e802a1038:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 42498427-9754-4e89-8825-34e1af73820b # Steps Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ace0e769-edb2-44e6-bfd4-c5b8151e7156
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9e6ce6d1-77d4-4cdd-b241-643ba613e8c5 # Steps Summery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05417c4f-71cd-444d-9a77-d5529e67edbe
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6c9ad64f-42c2-495a-8eb5-b06500a146d2 # Steps Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d51c3ea8-48d9-4998-adf3-a9842f1e59e4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 38e7d3bb-93e6-400e-9e7e-6fe2e57f00f4
+        userCondition: null
+fields:
+  6c9ad64f-42c2-495a-8eb5-b06500a146d2: # Steps Table
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: stepsTable
+    instructions: null
+    name: 'Steps Table'
+    searchable: true
+    settings:
+      blockTypeFields: 0
+      changedFieldIndicator: 1574705813
+      columns:
+        __assoc__:
+          -
+            - 4defbd9d-7475-47e8-a16b-987d5c41e44e
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 61144299-be64-41b5-ac02-7f30f7b0fa16
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 5c54f7d2-90b8-4f67-a68b-17761e591494
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 204d5fb4-5cf2-4987-b2fb-f2307efd62dc
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_stepstable}}'
+      fieldLayout: matrix
+      maxRows: null
+      minRows: null
+      propagationKeyFormat: null
+      propagationMethod: all
+      selectionLabel: null
+      staticField: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: verbb\supertable\fields\SuperTableField
+  9e6ce6d1-77d4-4cdd-b241-643ba613e8c5: # Steps Summery
+    columnSuffix: fdqopvie
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepsSummery
+    instructions: null
+    name: 'Steps Summery'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: true
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  42498427-9754-4e89-8825-34e1af73820b: # Steps Title
+    columnSuffix: caxdtfie
+    contentColumnType: text
+    fieldGroup: null
+    handle: stepsTitle
+    instructions: null
+    name: 'Steps Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: steps
+name: ٍSteps
+sortOrder: 3

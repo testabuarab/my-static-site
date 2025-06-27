@@ -1,0 +1,131 @@
+fieldLayouts:
+  875ebed4-d908-4394-afe7-e5d23548c233:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 663a61e7-e879-416e-9d1b-7be9f70c8a2a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f512ec40-1f2f-4a51-bbd0-aa768e1264ba # محتوى كامل
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 11d326b7-9688-430a-b804-f40c3e843aa1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3b3652cf-b3cf-4f9e-908f-35ab685ee970 # SEO - Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2f7398b9-5d18-4b43-bcea-b490d4c4cb20
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9edcf19e-bb62-4e69-8d4e-636342028aee # SEO - Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f4dfac0-54fb-4ee5-9874-d9d63650060f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3d316da4-52a0-4fe6-a78c-8c147b01175d # old id
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1ff6dc6-f3c1-49b6-8390-593e3ba1f5d0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 52496fe6-b464-4acb-a0b2-2a590ac0840d # old link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 969eb64f-925e-43d1-900c-d506ff30db7e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a8e85691-b03a-45a2-a908-604d8990f39f # old slug
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc08bcc6-aea8-4560-bda5-654bb9f91d8e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ed45a35e-a634-43b7-afcf-57132beb22d6 # إيقاف الاعلانات
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ebe9c9b5-53f8-4695-a95c-643c8bc5e4a3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6be38fc8-5e26-4f5d-bb4b-b03d604d94d9
+        userCondition: null
+handle: pages
+hasTitleField: true
+name: Pages
+section: caf4449a-53b4-4c1b-9412-1b5413257b43 # Pages
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

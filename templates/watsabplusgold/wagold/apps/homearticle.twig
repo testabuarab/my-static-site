@@ -1,0 +1,1423 @@
+{% extends 'watsabplusgold/newd/_layout' %}
+{% set title = entry.title %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+{% set withSlash = "/" %}
+{% endif %}
+{% do craft.starRatings.disable(['css','js'])  %}
+{% do craft.upvote.disable(['css','js']) %}
+    {%set disableCategorisAds=0%}
+    {%set hasgalary=0%}
+	{% if entry.appGallery|length%}
+	 {%set hasgalary=1%}
+	 {% endif %}
+    {% if  entry.aykafAlaaalanat%}
+        {%set disableCategorisAds=1%}
+    {% endif %}
+{%set incentry=1%}
+ {% set alrabtAlasasyLlmokaa = global.alrabtAlasasyLlmokaa %}
+
+{#{%if entry.tfaaylAlbady%}
+
+    {% set title = global.badyAanoanAlmkal ~" "~ title %}
+{%endif%}
+{%if entry.tfaaylAllahk%}
+    {% set title =   title ~" "~ global.lahkAanoanAlmkal%}
+{%endif%}#}
+
+{%if entry.tfaaylAsmAlmokaa%}
+    {% set title =   title ~" - "~ global.aanoanAlmokaa%}
+{%endif%}
+{% set appthumb = {
+    mode: 'crop',
+    width: 70,
+    height: 61,
+    quality: 100,
+    position: 'center-center',
+    format: 'jpg'
+} %}
+{% set title =  title|replace("&#8211;","")|raw %}
+    {%set lazyLoadCover=global.lazyloadImageApp[0].getURL("nnewfullsharedimage")%}
+                                    {%set lazyloadImage=lazyLoadCover%}
+                                    {%set lazyloadGallery=lazyLoadCover%}
+{% set appCategory = entry.appCategory.all() %}
+{% set cattt = entry.appCategory[0] %}
+
+{% set nthamAltshghl = 'Android'|t %}
+{% set appVersion = 'Latest Version'|t %}
+
+{% set appLanguage = 'Multi-languages'|t %}
+{% set apksize = '50MB'|t %}
+    {%if entry.hgmAlmlf%}
+        {% set apksize = entry.hgmAlmlf %}
+    {%endif%}
+{%if entry.appLanguage%}
+    {% set appLanguage = entry.appLanguage %}
+{%endif%}
+{%if entry.nthamAltshghl%}
+    {% set nthamAltshghl = entry.nthamAltshghl %}
+{%endif%}
+{%if entry.appVersion%}
+    {% set appVersion = entry.appVersion %}
+{%endif%}
+{% set appName = entry.appTitle|replace(".html","")|replace("-"," ")%}
+{%if entry.asmAlttbykAarby%}
+    {% set appName = entry.asmAlttbykAarby|replace(".html","") %}
+{%endif%}
+{% set sssymbolss = ['whatsapp']%}{%set symbolss=""%}
+
+    {% set isHomepage = entry is defined and entry.uri == "__home__" ? true : false %}
+    {% set searchUrl = alrabtAlasasyLlmokaa~'/'~entry.uri ~ withSlash %}
+    {% if isHomepage %}
+        {% set searchUrl = alrabtAlasasyLlmokaa %}
+    {% endif %}
+    {%set cssClassess=""%}
+{% set aykonAlasdar= global.aykonAlasdar %}
+{% set aykonAlasdarClass = aykonAlasdar.getGlyphName()%}
+{% set aykonAlasdarCode= aykonAlasdar.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAlasdarClass~':before {content:"\\'~aykonAlasdarCode~'"\;               }' %}
+
+{% set aykonAkhrThdyth= global.aykonAkhrThdyth %}
+{% set aykonAkhrThdythClass = aykonAkhrThdyth.getGlyphName()%}
+{% set aykonAkhrThdythCode= aykonAkhrThdyth.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAkhrThdythClass~':before {content:"\\'~aykonAkhrThdythCode~'"\;               }' %}
+
+{% set aykonAlfy= global.aykonAlfy %}
+{% set aykonAlfyClass = aykonAlfy.getGlyphName()%}
+{% set aykonAlfyCode= aykonAlfy.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAlfyClass~':before {content:"\\'~aykonAlfyCode~'"\;               }' %}
+
+{% set aykonAlthmyl= global.aykonAlthmyl %}
+{% set aykonAlthmylClass = aykonAlthmyl.getGlyphName()%}
+{% set aykonAlthmylCode= aykonAlthmyl.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAlthmylClass~':before {content:"\\'~aykonAlthmylCode~'"\;               }' %}
+
+{% set aykonAlmtor= global.aykonAlmtor %}
+{% set aykonAlmtorClass = aykonAlmtor.getGlyphName()%}
+{% set aykonAlmtorlCode= aykonAlmtor.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAlmtorClass~':before {content:"\\'~aykonAlmtorlCode~'"\;               }' %}
+
+{% set aykonAlhgm= global.aykonAlhgm %}
+{% set aykonAlhgmClass = aykonAlhgm.getGlyphName()%}
+{% set aykonAlhgmlCode= aykonAlhgm.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAlhgmClass~':before {content:"\\'~aykonAlhgmlCode~'"\;               }' %}
+
+{% set aykonAllgh= global.aykonAllgh %}
+{% set aykonAllghClass = aykonAllgh.getGlyphName()%}
+{% set aykonAllghlCode= aykonAllgh.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonAllghClass~':before {content:"\\'~aykonAllghlCode~'"\;               }' %}
+
+{% set aykonNthamAltshghyl= global.aykonNthamAltshghyl %}
+{% set aykonNthamAltshghylClass = aykonNthamAltshghyl.getGlyphName()%}
+{% set aykonNthamAltshghylCode= aykonNthamAltshghyl.getGlyph('hex')  %}
+{%set cssClassess=cssClassess~'.icon-'~    aykonNthamAltshghylClass~':before {content:"\\'~aykonNthamAltshghylCode~'"\;               }' %}
+
+{% set aykonAltrkhys= global.aykonAltrkhys %}
+{% set aykonAltrkhyslClass = aykonAltrkhys.getGlyphName()%}
+{% set aykonAltrkhyslCode= aykonAltrkhys.getGlyph('hex')  %}
+{% set cssClassess=cssClassess~'.icon-'~    aykonAltrkhyslClass~':before {content:"\\'~aykonAltrkhyslCode~'"\;               }' %}
+
+{% set contents %}
+    <div class="app-page-container">
+        <div class="breadcrumb specialScroll">
+            <ul>
+                <li><a href="{{alrabtAlasasyLlmokaa}}{{ withSlash }}">{{ "Home"|t }}</a></li>
+                <li><a href="{{alrabtAlasasyLlmokaa}}/{{ cattt.uri }}{{ withSlash }}">{{ cattt.title }}</a></li>
+                <li><a href="{{alrabtAlasasyLlmokaa}}/{{ entry.uri }}{{ withSlash }}">{{ entry.title }}</a></li>
+            </ul>
+        </div>
+        <div class="category-row{%if entry.fullWidth%} fullwidth{%endif%}">
+            <div class="main-side">
+                <div class="app-container" itemscope itemtype="https://schema.org/{{ appCategory|length ? (nthamAltshghl == "Android" ? "MobileApplication" : "SoftwareApplication")}}">
+                    <div class="app-main-info">
+                        <div class="title-container">
+                            <div class="img">
+                                <img class="lazyload" width="70" height="61" src="{{ lazyloadImage }}" data-src="{{ entry.appIcon|length ? entry.appIcon[0].getUrl(appthumb) }}" alt="{{ entry.title }}" itemprop="image">
+                            </div>
+                            <div class="title">
+                                <h1>{{ title }}</h1>
+                                <p itemprop="name">{{ appName }}</p>
+                                <p>{{ entry.appSummary|striptags  }}</p>
+                            </div>
+                        </div>
+                        <div>
+                            {% if entry.downloadLinks|length %}
+                                {%set downloadurl= alrabtAlasasyLlmokaa ~"/apps/download/"~ entry.slug~"/" %}
+                                {%if entry.tfaaylDomynFraayLsfhAlthmyl%}
+                                    {%set downloadurl= downloadurl|replace({"www.":"download.",'testt.':'download.'}) %}
+                                {%endif%}
+                                <a href="{{downloadurl}}" rel="noopener noreferrer" class="download-btn">
+                                    <span class="bicon icon-download pull-right"></span>
+                                    <p>
+                                        <label>{{ "Free Download"|t }}</label>
+                                        <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                                    </p>
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="app-rating-info" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+                        <div class="rating-container editors">
+                            <p>{{ "Editors Rating"|t }}</p>
+                            <div>
+                                {% for i in 1..5 %}
+                                    <span class="fa fa-star {{ i <= entry.editorsRating|round ? "checked" }}"></span>
+                                {% endfor %}
+                            </div>
+                            <p>({{ entry.editorsRating|default(0) }})</p>
+                        </div>
+                        <div class="rating-container">
+                            <p>{{ "Users Rating"|t }}</p>
+                            <div>{{ craft.starRatings.stars(entry.id) }}</div>
+                            <p>(<span itemprop="ratingValue">{{ craft.starRatings.avgRating(entry.id)|default(0)|number_format(1, ".", "") }}</span>)</p>
+                        </div>
+                        <div class="rate-form">
+                            <div>
+                                <span data-id="{{entry.id}}" class="upvote-el upvote-vote upvote-upvote upvote-upvote-{{entry.id}}" onclick="starRatings.rate({{entry.id}}, null, 5, true)"><i class="upvote icon-like"></i></span></div>
+                            <div><span data-id="{{entry.id}}" class="upvote-el upvote-tally upvote-tally-{{entry.id}}" itemprop="ratingCount">{{ craft.starRatings.totalVotes(entry.id)+entry.oldAppRatingCount }}</span></div>
+                            <div><span data-id="{{entry.id}}" class="upvote-el upvote-vote upvote-downvote upvote-downvote-{{entry.id}}" onclick="starRatings.rate({{entry.id}}, null, 1, true)"><i class="downvote icon-dislike"></i></span></div>
+
+
+                        </div>
+                    </div>
+                    <div class="app-details">
+                        <div class="tab-nav specialScroll">
+                            <button class="active" data-target=".tab-details">{{ "Details"|t }}</button>
+                            {% if entry.alsmahBaltaalykat%}   <button data-target=".tab-comments">{{ "Comments"|t }}</button>       {% endif %}
+{#
+                            <button data-target=".tab-download">{{ "Download"|t }}</button>
+#}
+                            {% if hasgalary%}   <button data-target=".tab-gallery">{{ "Gallery"|t }}</button>  {% endif %}
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab tab-details active">
+                                {#    {% include "watsabplusgold/newd/apps/_apps_details/__details" %}#}
+                                <div id="app-details-container">
+
+
+                                    {% set locale = currentSite.language %}
+                                    {% set pulright ="pull-right"%}
+                                    {% set pulleft ="pull-left"%}
+                                    {#{% do craft.starRatings.disable(['css','js']) %}#}
+                                    {%if locale == 'ar'%}
+                                        {% set pulright ="pull-right"%}
+                                    {%endif%}
+                                    <div class="meta-data">
+                                        <ul>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAltrkhyslClass }}"></i>{{ "License"|t }}</label>
+                                                <label>{{ "Free"|t }}</label>
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonNthamAltshghylClass }}"></i>{{ "Operating system"|t }}</label>
+                                                <label>{{ nthamAltshghl}}<span style="display: none;" itemprop="operatingSystem">{{ nthamAltshghl}}</span> </label>
+
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAlfyClass }}"></i>{{ "Category"|t }}</label>
+                                                {% if appCategory|length %}
+                                                    <a href="{{alrabtAlasasyLlmokaa}}/{{ (appCategory[0]).uri }}{{ withSlash }}">{{ appCategory[0].title }}</a>
+                                                    <meta itemprop="applicationCategory" content="https://schema.org/{{ (appCategory[0]).categoryType.label|replace(" ", "") }}"/>
+                                                {% endif %}
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAlhgmClass }}"></i>{{ "File size"|t }}</label>
+
+                                                <label>{{apksize}}</label>
+
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAlasdarClass }}"></i>{{ "Version"|t }}</label>
+                                                <label>{{ appVersion }}</label>
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAkhrThdythClass }}"></i>{{ "Release date"|t }}</label>
+                                                <label>{{ entry.akhrThdyth ? entry.akhrThdyth|date("Y-m-d", locale="en-GB"):entry.dateUpdated|date("Y-m-d", locale="en-GB") }}</label>
+                                            </li>
+                                            <li>
+                                                <label class="head"><i class="icon-{{ aykonAllghClass }}"></i>{{ "Language"|t }}</label>
+                                                <label>{{ appLanguage }}</label>
+                                            </li>
+                                            {%if entry.appPublisher|length%}  <li>
+
+
+                                                <label class="head"><i class="icon-{{ aykonAlmtorClass }}"></i>{{ "Author"|t }}</label>
+                                                <a itemprop="publisher" itemscope itemtype="http://schema.org/Organization" href="{%if entry.appPublisherLink|length%}{{ entry.appPublisherLink }}{% else %}#{% endif %}" rel="nofollow noopener noreferrer" target="_blank">
+                                                    <span itemprop="name">{{ entry.appPublisher }}</span></a>
+
+                                            </li>  {%endif%}
+                                        </ul>
+                                    </div>
+                                    <div class="meta-description" itemprop="description">
+                                        {%if global.aaalanBdayAlmkal|length and (not disableCategorisAds)%}
+                                            <div class="site-ilan-begin">
+                                            {{global.aaalanBdayAlmkal|raw}}
+                                            </div>{%endif%}
+                                        {%set alttitle=entry.title%}
+                                        {% set contentBlocks = entry.contentBlocks.all() %}
+                                        {%set blockhgmAlaykon='18px'%}
+                                        {%if contentBlocks|length%}
+
+                                        {% for block in contentBlocks %}
+
+                                        {%if block.hgmAlaykon%}
+                                            {%set blockhgmAlaykon=block.hgmAlaykon%}
+                                        {%endif%}
+                                        {%if block.type=="block"%}
+                                        {%set iconscontent=block.blockContent | retconOnly( [ '.fa-solid', '.fa-regular','.fa-brands' ] ) %}
+                                        {%if block.blockTitle|length%}
+                                            {%set alttitle=block.blockTitle%}
+
+                                        {%endif%}
+                                        {%if false%}
+                                            {% set immage =global.aalamMayy[0]  %}
+                                            {%set blockblockContent=block.blockContent|retconTransform( {
+                                                watermark: { image: immage.getURL(), width: immage.width, height: immage.height, position: { right: 10, bottom: 3 }, opacity: 0.40, blendMode: 'multiply' }
+                                            })|retconRemove( 'ins' )|replace("download-whatsapp-gold","whatsapp-plus-gold")|replace("beta.3ssem.com","www.3ssem.com")|retconAttr( 'img', {'width' : '750', 'height' : '430' ,'alt':alttitle} )|raw |retconAttr( '.fa-regular', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconAttr( '.fa-brands', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconAttr( '.fa-solid', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconRenameAttr('iframe', {src: 'data-src'})|retconAttr('iframe', { class: 'lazyload' })|retconRenameAttr('img', {src: 'data-src'})| retcon( 'autoAlt' )| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')%}
+                                        {%else%}
+                                            {%set blockblockContent=block.blockContent|retconChange( 'ol', 'ul' )
+                                                |retconAttr( '.fa-regular', { style : 'color:'~block.lonAlaykon ~';'} )
+                                                |retconAttr( '.fa-brands', { style : 'color:'~block.lonAlaykon ~';'} )
+                                                |retconAttr( '.fa-solid', { style : 'color:'~block.lonAlaykon ~';' })
+                                            %}
+                                            {%set allconent=blockblockContent|retconChange( 'em', 'i' )%}
+                                            {% if global.oldSiteLink|length and general.imagesCdnHostname|length and entry.imagesFromCdn%}
+                                            {% set allconent = allconent|replace('src="'~global.oldSiteLink,'src="https://'~general.imagesCdnHostname)%}
+                                            {% endif %}
+                                            {% set allconent = allconent|retconAttr( 'figure', { 'style' : false} )%}
+                                            {% set allconent = allconent|replace('segoe ui roboto oxygen ubuntu cantarell sans neue sans-serif font-optical-sizing: inherit font-kerning: font-feature-settings: font-variation-settings: vertical-align: baseline display: block outline:','')%}
+                                            {% set allconent = allconent|replace('position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: none white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+                                            {% set allconent = allconent|replace('none position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+
+                                            {%set iconsclassess=""%}
+                                            {%set idd=""%}
+                                            {%set iconsdotclasess=""%}
+                                            {%set iconscontent=iconscontent|retconChange( 'em', 'i' )%}
+                                            {% set paragraphs = iconscontent|split('</i>') %}
+                                            {%set class=paragraphs|first|slice(10,paragraphs|length)|replace('"','')|replace('/','')|replace(">","")|trim%}
+                                            {%for icon in paragraphs%}
+                                                {%set class=icon|slice(10,icon|length)|replace('"','')|replace('/','')|replace(">","")|trim%}
+
+                                                {%set iconsdotclasess="."~class|replace({"fa-solid":"","fa-regular":"","fa-brands":""})%}
+                                                {%set iconsdotclasess=iconsdotclasess|replace({". ":"."})%}
+                                                {%set iconsnoclasess=class|replace({"fa-solid":"","fa-regular":"","fa-brands":""})%}
+                                                {%set iconsnoclasess=iconsnoclasess|trim%}
+                                                {%set iconsnoclasess=iconsnoclasess|replace({"fa-":""})%}
+                                                {%set iconsnoclasess=class|replace(iconsnoclasess,"")|replace({"fa-":""})|trim%}
+                                                {%set iconname=iconsdotclasess|replace({"fa-":""})%}
+                                                {%if iconname!="."%}
+                                                    {%set idd=iconname|replace(".","")%}
+                                                    {%set idd="content-"~idd%}
+                                                    {%set icopath='@webroot/nicon/svgs/'~iconsnoclasess|trim~'/'~iconname|replace(".","")~'.svg'%}
+                                                    {%set svgicon=svg(icopath)|attr({ class: 'svg-inline--fa' ,style:'height:'~blockhgmAlaykon})%}
+                                                    {%set svgicon=svgicon|retconAttr( 'path', { fill : 'currentColor'} )%}
+                                                    {%if not (idd in sssymbolss)%}
+                                                        {%set viewBoxxx=svgicon  %}
+
+                                                        {%set viewBoxxx=viewBoxxx|retconOnly( 'svg' ) %}
+
+                                                        {%set viewBoxxx=viewBoxxx|parseAttr.viewBox %}
+                                                        {%set symbolss=symbolss~'<symbol id="'~idd~'" viewBox="'~viewBoxxx~'">'%}
+
+                                                        {% set paragraphss = svgicon|split('</path>') %}
+
+                                                        {%for iconn in paragraphss%}
+                                                            {%set symbolss=symbolss~iconn|retconUnwrap( 'path' )%}
+                                                        {%endfor%}
+                                                        {%set symbolss=symbolss~'</path></symbol>'%}
+                                                    {%endif%}
+                                                    {% set sssymbolss = sssymbolss|merge([idd]) %}
+                                                    {% set svgicon=svgicon|retconInject( 'svg', 'usessss' )  %}
+                                                    {% set svgicon=svgicon|replace( {'usessss': '<use xlink-href="#'~idd~'"></use>'}  )  %}
+                                                    {% set svgicon=svgicon|retconRemove( 'path' )  %}
+
+                                                 {#   {%set allconent=allconent|retconAttr( iconsdotclasess, { 'data-src' : icopath} )%}#}
+                                                    {%set allconent=allconent|retconInject( iconsdotclasess, svgicon , true )%}
+                                                {% endif %}
+
+                                            {%endfor%}
+
+                                        {%endif%}
+
+
+                                        {% set allconent=allconent|replace( {'xlink-href': 'xlink:href'}  )  %}
+                                        {% set allconentt%}
+                                            {% minify html %}
+                                                {{allconent|raw}}
+                                            {% endminify  %}
+                                        {% endset  %}
+                                        {% set allconent=allconentt %}
+                                        {%if  block.allLinkNofollow%}
+                                            {%set blockblockContent=blockblockContent|retconAttr( 'a',{'rel':'nofollow','target':'_blank'})%}
+                                            {%set allconent=allconent|retconAttr( 'a',{'rel':'nofollow','target':'_blank'})%}
+                                        {%endif%}
+
+                                        {%if  block.blockTitleType|length and block.blockTitle|length%}
+
+                                        {% set type = block.blockTitleType %}
+                                        <{{type}} id="{{block.blockTitle|replace(' ','_')}}" {% if block.khlfyAlaanoan.value!='def'%}class="{{block.khlfyAlaanoan.value}}" {%endif%} style="{%if block.blockTitleBackgroundColor|length%}background-color:{{block.blockTitleBackgroundColor}};    padding: 10px;{%endif%}color: {{ block.blockTitleColor|length ? block.blockTitleColor : "#000000" }};{%if block.tosytAlaanoan%}    text-align: center;{%endif%}">{{ block.blockTitle }}</{{type}}>
+                                    {%endif%}
+
+                                    {%if block.lonAlkhlfy|length and block.lonAlkhlfy!="#ffffff"%}
+                                        <div class="su-note-inner" style="background-color:{{block.lonAlkhlfy}};">
+
+
+                                            {#{{ allconent|retconAutoAlt|raw}}#}
+                                            {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+                                            {% set allconent = allconent|retconWrap( 'img', 'picture')%}
+                                            {%if block.altTitleFromImage%}
+                                                {% include 'watsabplusgold/newd/apps/filtercontent2.html' with {
+                                                    newcontent: allconent
+                                                } %}
+                                            {%else%}
+                                                {% include 'watsabplusgold/newd/apps/filtercontent.html' with {
+                                                    newcontent: allconent,
+                                                    alttitle:alttitle
+                                                } %}
+                                            {%endif%}
+                                            {%if block.rabtAlthmyl|length%}{%if block.rabtAlthmyl[0].nsAlrabt|length%}{% for row in block.rabtAlthmyl %}	<p style="text-align:center;"><a {%if row.tfaaylAlaadad%} id="zirtashgeel" onclick="trrrigrrbtn(event,this)" {%else%}href="{{row.alrabt}}"{%endif%} {% if row.nofollow %} rel="nofollow noreferrer noopener" {%endif%} target="_blank" class="dlink" style="color:{{row.lonAlrabt}};background-color:{{row.lonAlkhlfy}}"><span style="color:{{row.lonAlrabt}}" class="fa fa-download pull-left"><svg class="svg-inline--fa fa-arrow-down-to-bracket"  focusable="false" data-prefix="fas" data-icon="arrow-down-to-bracket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M448 416v-64c0-17.67-14.33-32-32-32s-32 14.33-32 32v64c0 17.67-14.33 32-32 32H96c-17.67 0-32-14.33-32-32v-64c0-17.67-14.33-32-32-32s-32 14.33-32 32v64c0 53.02 42.98 96 96 96h256C405 512 448 469 448 416zM246.6 342.6l128-128c12.51-12.51 12.49-32.76 0-45.25c-12.5-12.5-32.75-12.5-45.25 0L256 242.8V32c0-17.69-14.31-32-32-32S192 14.31 192 32v210.8L118.6 169.4c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25l128 128C213.9 355.1 234.1 355.1 246.6 342.6z"></path></svg></span><span class=" dtext {{pulright}}">{{row.nsAlrabt}}</span></a></p>{%endfor%}{%endif%}{%endif%}
+                                        </div>
+                                    {%else%}
+                                        {#{{ allconent|retconAutoAlt|raw}}#}
+                                        {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+                                        {% set allconent = allconent|retconWrap( 'img', 'picture')%}
+                                        {%if block.altTitleFromImage%}
+                                            {% include 'watsabplusgold/newd/apps/filtercontent2.html' with {
+                                                newcontent: allconent
+                                            } %}
+                                        {%else%}
+                                            {% include 'watsabplusgold/newd/apps/filtercontent.html' with {
+                                                newcontent: allconent,
+                                                alttitle:alttitle
+                                            } %}
+                                        {%endif%}
+
+                                        {%if block.rabtAlthmyl|length%}{%if block.rabtAlthmyl[0].nsAlrabt|length%}{% for row in block.rabtAlthmyl %}	<p style="text-align:center;"><a {%if row.tfaaylAlaadad%} id="zirtashgeel" onclick="trrrigrrbtn(event,this)" {%else%}href="{{row.alrabt}}"{%endif%} {% if row.nofollow %} rel="nofollow noreferrer noopener" {%endif%} target="_blank" class="dlink" style="color:{{row.lonAlrabt}};background-color:{{row.lonAlkhlfy}}"><span style="color:{{row.lonAlrabt}}" class="fa fa-download pull-left"><svg class="svg-inline--fa fa-arrow-down-to-bracket"  focusable="false" data-prefix="fas" data-icon="arrow-down-to-bracket" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M448 416v-64c0-17.67-14.33-32-32-32s-32 14.33-32 32v64c0 17.67-14.33 32-32 32H96c-17.67 0-32-14.33-32-32v-64c0-17.67-14.33-32-32-32s-32 14.33-32 32v64c0 53.02 42.98 96 96 96h256C405 512 448 469 448 416zM246.6 342.6l128-128c12.51-12.51 12.49-32.76 0-45.25c-12.5-12.5-32.75-12.5-45.25 0L256 242.8V32c0-17.69-14.31-32-32-32S192 14.31 192 32v210.8L118.6 169.4c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25l128 128C213.9 355.1 234.1 355.1 246.6 342.6z"></path></svg></span><span class=" dtext {{pulright}}">{{row.nsAlrabt}}</span></a></p>{%endfor%}{%endif%}{%endif%}
+                                    {% endif %}
+                                {%elseif block.type == "items" and block.designType==1%}
+                                    {%set itemscount=block.itemTable|length%}
+                                    {%set cols=block.itemsLayout%}
+                                    {%set counter=0%}
+                                    {%set colsgroups=itemscount/cols%}
+                                    {%if block.itemsTitel|length%}<h2 class="h22" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}><span>{{block.itemsTitel}}</span></h2>{%endif%}
+                                    <div class="is-layout-flex wp-container-8 wp-block-columns are-vertically-aligned-center">
+                                        {% for i in 1..cols %}
+                                            <div class="is-layout-flow wp-block-column is-vertically-aligned-center">
+                                                {% for j in 1..colsgroups %}
+                                                    <p class="text-center ff" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};"{%endif%}>
+                                                        {%if block.itemTable|length%}
+                                                        {%if block.itemTable[counter].itemSvgPath|length%}
+                                                            <i  >
+                                                                {%set icopath='@webroot/'~block.itemTable[counter].itemSvgPath|trim%}
+                                                                {%set filenamee= icopath|split('/')|last%}
+                                                                {%set ddownloadiconid= filenamee|replace(".svg","")%}
+                                                                {%set svgicon=svg(icopath)|attr({ class: 'svg-inline--fa' ,style:'height:'~blockhgmAlaykon})%}
+                                                                {%set viewBox="0 0 512 512"%}
+
+                                                                {%if '0 0 24 24' in svgicon%}
+                                                                    {%set viewBox="0 0 24 24"%}
+                                                                {%endif%}
+                                                                {%set svgicon=svgicon|retconAttr( 'path', { fill : 'currentColor'} )%}
+
+                                                                {%if not (ddownloadiconid in sssymbolss)%}
+                                                                    {%set viewBoxxx=svgicon  %}
+
+                                                                    {%set viewBoxxx=viewBoxxx|retconOnly( 'svg' ) %}
+                                                                {%if 'viewBox' in viewBoxxx%}
+                                                                    {%set viewBoxxx=viewBoxxx|parseAttr.viewBox %}
+                                                                    {%set symbolss=symbolss~'<symbol id="'~ddownloadiconid~'" viewBox="'~viewBoxxx~'">'%}
+                                                                    {% else %}
+                                                                        {%set symbolss=symbolss~'<symbol id="'~ddownloadiconid~'" viewBox="'~viewBox~'">'%}
+                                                                {%endif%}
+                                                                    {% set paragraphss = svgicon|split('</path>') %}
+                                                                    {%for iconn in paragraphss%}
+                                                                        {%set symbolss=symbolss~iconn|retconUnwrap( 'path' )%}
+                                                                    {%endfor%}
+                                                                    {%set symbolss=symbolss~'</path></symbol>'%}
+                                                                    {%set symbolss=symbolss| retconRemove( 'title' )%}
+                                                                {%endif%}
+                                                                {% set sssymbolss = sssymbolss|merge([ddownloadiconid]) %}
+
+                                                                {% set svgicon=svgicon|retconInject( 'svg', 'susessss' )  %}
+                                                                {% set svgicon=svgicon|replace( {'susessss': '<use xlink-href="#'~ddownloadiconid~'"></use>'}  )  %}
+                                                                {% set svgicon=svgicon|retconRemove( 'path' )  %}
+                                                                {% set svgicon=svgicon|replace( {'xlink-href': 'xlink:href'}  ) | retconRemove( 'title' ) %}
+                                                                {{svgicon|raw}}
+                                                            </i>
+                                                        {%else%}
+                                                            <i class="{{block.itemTable[counter].itemIcon}}" ></i>
+                                                        {%endif%}
+                                                        {{block.itemTable[counter].itemTitle}}</p>{%endif%}
+                                                    {%set counter=counter+1%}{%endfor%}
+                                            </div>
+
+                                        {%endfor%}
+                                    </div>
+                                {%elseif block.type == "items" and block.designType==2%}
+                                    {%set itemscount=block.itemTable|length%}
+                                    {%set cols=block.itemsLayout%}
+                                    {%set counter=0%}
+                                    {%set containernumber=12%}
+                                    {%set colsgroups=itemscount/cols%}
+                                    {%if block.itemsTitel|length%}<h2 class="h22" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}><span>{{block.itemsTitel}}</span></h2>{%endif%}
+                                    {% for i in 1..cols %}<div class="is-layout-flex wp-container-{{containernumber}} wp-block-columns">
+                                        {%set containernumber=containernumber+4%}
+                                        {% for j in 1..colsgroups %}
+                                        <div class="is-layout-flow wp-block-column yocont" {%if block.itemsDesignColor|length and block.itemsDesignColor!="000000"%}style="border-color:{{block.itemsDesignColor}};"{%endif%}>
+                                            <h3 class="text-center mod1" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}>{{block.itemTable[counter].itemTitle}}</h3>
+                                            {% set appthumdbb = {
+                                                mode: 'crop',
+                                                width: 150,
+                                                height: 151,
+                                                quality: 100
+                                            } %}
+                                            <figure class="aligncenter size-full is-resized"><img  src="{{ lazyloadImage }}"  data-src="{{block.itemTable[counter].itemImage[0].getURL(appthumdbb)|replace('https://beta.kynews2.com',alrabtAlasasyLlmokaa)}}" alt="{{block.itemTable[counter].itemTitle}}" class="wp-image-144 lazyload" width="150" height="150" ></figure>
+                                            <p class="text-center">{{block.itemTable[counter].itemText|raw}}</p>
+                                            </div>{%set counter=counter+1%}
+                                        {%endfor%}
+                                        </div>
+                                    {%endfor%}
+                                {%elseif block.type == "steps"%}
+                                    <section style="
+    margin: 20px auto;
+">
+                                        <h2 class="h22"><span>{{block.stepsTitle}}</span></h2>
+                                        <div class="steps" id="steps">
+                                            {%set counttt=1%}
+                                            {%for step in block.stepsTable%}
+                                                <button class="stepsbtn {%if counttt==1%}active{%endif%}" data-step="{{counttt}}" >{{step.stepTitle}}</button>
+                                                {%if counttt<block.stepsTable|length%} <div></div>{%endif%}
+                                                {%set counttt=counttt+1%}
+                                            {%endfor%}
+                                        </div>
+
+                                        <div class="contents" id="contents">
+                                            {%set countttt=1%}
+                                            {%for step in block.stepsTable%}
+                                                <div class="scontent {%if countttt==1%}active{%endif%}" data-step="{{countttt}}">
+                                                    <p class="tab-pane-title" >{{step.stepSubtitle}}</p>
+                                                    <img alt="{{step.stepSubtitle}}" width="750" height="430" data-src="{{step.stepImage[0].getURL()}}" class="lazyload">
+                                                    <div class="content__box">
+                                                        {{step.stepContent|retconChange( 'ol', 'ul' )|raw}}
+                                                    </div>
+                                                </div>
+                                                {%set countttt=countttt+1%}
+                                            {%endfor%}
+
+                                        </div>
+                                    </section>
+                                {%elseif block.type == "faqs"%}
+                                    <div class="container">
+                                        <h3 class="alert success" style="padding: 20px;margin: 20px auto 10px;background: unset;border-right: 3px solid;">{{block.quiz}}</h3>
+                                        <div class="accordion">
+                                            {%for faq in block.quizTable%}
+                                                <div class="accordion-item">
+                                                    <button id="accordion-button-{{loop.index}}" aria-expanded="false">
+                                                        <span class="accordion-title">{{faq.faqQuiz}}</span>
+                                                        <span class="icon" ></span>
+                                                    </button>
+                                                    <div class="accordion-content">
+                                                        <p>
+                                                            {{faq.faqAnswer}}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            {%endfor%}
+
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+
+                                    {%if global.aaalanNhayAlmkal|length%}
+                                        <div class="site-ilan-end">
+                                        {{global.aaalanNhayAlmkal|retconAttr( 'img', { 'width' : '750', 'height' : '430' } )|retconRenameAttr('img', {src: 'data-src'})| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')|raw}}
+                                        </div>{%endif%}
+                                    {% else %}
+                                        {%set blockblockContent=entry.mhtoKaml|retconChange( 'ol', 'ul' )                  %}
+                                        {%set allconent=blockblockContent|retconChange( 'em', 'i' )%}
+                                        {% set allconent = allconent|retconAttr( 'figure', { 'style' : false} )%}
+                                        {% set allconent = allconent|replace('segoe ui roboto oxygen ubuntu cantarell sans neue sans-serif font-optical-sizing: inherit font-kerning: font-feature-settings: font-variation-settings: vertical-align: baseline display: block outline:','')%}
+                                        {% set allconent = allconent|replace('position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: none white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+                                        {% set allconent = allconent|replace('none position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+
+                                        {%  if entry.imagesFromCdn%}
+                                        {% set allconent = allconent|replace('src="'~global.oldSiteLink,'src="https://'~general.imagesCdnHostname)%}
+                                        {%endif%}
+                                        {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+
+                                        {%set alttitle=entry.title%}
+                                        {% include 'watsabplusgold/newd/kamel.html' with {
+                                            newcontent: allconent,
+                                            alttitle:alttitle
+                                        } %}
+
+                                    {%endif%}
+                                </div>
+                                {% if entry.downloadLinks|length %}
+                                    <div class="second-download-btn">
+                                        <div>
+                                            <a href="{{ downloadurl }}"  class="download-btn">
+                                                <span class="bicon icon-download pull-right"></span>
+                                                <p>
+                                                    <label>{{ "Free Download"|t }}</label>
+                                                    <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                                                </p>
+                                            </a>
+                                        </div>
+                                        <div class="text-btn">
+                                            <a href="{{ alrabtAlasasyLlmokaa }}/download/{{entry.slug}}/latest{{ withSlash }}" >
+                                                {{"Download"|t}} {{entry.appTitle}} {{"Direct Link"|t}}
+                                            </a>
+                                        </div>
+                                    </div>
+                                {%endif%}
+
+                            </div>
+
+                        </div>
+                        {% if entry.alsmahBaltaalykat%}  <div class="tab tab-comments"> {% include "watsabplusgold/newd/apps/_apps_details/_comments" %}</div>  {% endif %}
+               {#         <div class="tab tab-download">
+
+                            <a href="{{alrabtAlasasyLlmokaa}}/download/{{entry.slug}}/latest{{ withSlash }}" rel="noopener noreferrer" class="download-btn">
+                                <span class="bicon icon-download pull-right"></span>
+                                <p>
+                                    <label>{{ "Free Download"|t }}</label>
+                                    <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                                </p>
+                            </a>
+
+                        </div>#}
+                        {% if hasgalary%}
+                            <div class="tab tab-gallery">{% include "watsabplusgold/newd/apps/_apps_details/_gallery"
+                                    with {
+                                        lazyloadGallery: lazyloadGallery,
+                                        lazyLoadCover:lazyLoadCover
+                                    } %}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="display: none;">
+                    <meta itemprop="price" content="0" />
+                    <meta itemprop="priceCurrency" content="USD" />
+                </div>
+
+                <meta itemprop="fileSize" content="{{ apksize }}"/>
+                <meta itemprop="softwareVersion" content="{{entry.appVersion}}"/>
+
+                <meta itemprop="dateModified" content="{{ entry.akhrThdyth ? entry.akhrThdyth|date("Y-m-d", locale="en-GB"):entry.dateUpdated|date("Y-m-d", locale="en-GB") }}"/>
+
+
+            </div>
+            {% if appCategory|length > 1 %}
+                 <div class="category-list">
+                    <div class="category-header">
+                        <div class="category-title">
+                            <!--<div class="icon {{ appCategory[0].slug }} icon-android"></div>-->
+                            <div >
+                                <strong class="title">{{ "Alternative apps"|t }}</strong>
+
+                                <p>{{ "Alternative apps to "|t ~ appName }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="apps-list">
+                        {% set relatedApps = craft.entries.section("applications").relatedTo(appCategory).with(["appIcon"]).id("not "~entry.id).orderBy("postDate desc").limit(5).all() %}
+                        {% for relatedApp in relatedApps %}
+                            {% set appNamee = relatedApp.appTitle|replace(".html","")|replace("-"," ")%}
+                            {%if relatedApp.asmAlttbykAarby%}
+                                {% set appNamee = relatedApp.asmAlttbykAarby|replace(".html","") %}
+                            {%endif%}
+                            <li class="app">
+                                <a href="{{alrabtAlasasyLlmokaa}}/{{ relatedApp.uri }}{{ withSlash }}">
+                                    <img class="img lazyload" src="{{ lazyloadImage }}" data-src="{{ relatedApp.appIcon|length ? relatedApp.appIcon[0].getUrl("appMain4") }}" alt="{{ relatedApp.title }}" height="75" width="75" alt="{{ appNamee }}">
+                                    <p class="name">{{ appNamee }}</p>
+                                    <div class="rating">
+                                        {{ craft.starRatings.stars(relatedApp.id, null, false) }}
+                                    </div>
+                                    <label class="link">{{ "Download"|t }}</label>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        </div>
+        {% if appCategory|length and (not entry.fullWidth)%}
+            <div class="secondary-side">
+                {% set sideList = craft.entries.section("applications").with(["appIcon"]).id("not "~entry.id).limit(10) %}
+                {% if sideList|length %}
+                    <div class="category-side">
+
+                        {% do craft.viewCount.sort(sideList, "tDownloads") %}
+                        <h2>{{ "Most Downloaded"|t }}</h2>
+                        <ul class="trending-list">
+                            {% for app in sideList.all() %}
+                                {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")|replace("-"," ")%}
+                                {%if app.asmAlttbykAarby%}
+                                    {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                                {%endif%}
+                                <li>
+                                    <a href="{{alrabtAlasasyLlmokaa}}/{{ app.uri }}{{ withSlash }}">
+                                        <img class="img lazyload" src="{{ lazyloadImage }}" width="45" height="45" data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl("appSide") }}" alt="{{ app.title }}">
+                                        <div>
+                                            <p class="name">{{ appNamee }}</p>
+
+                                        </div>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+    </div>
+{% endset %}
+{% block content %}
+    {{ contents|replace({'cdn.3ssem.com':general.imagesCdnHostname})|raw }}
+
+{% endblock %}
+
+
+{% block css %}
+    {% minify css %}
+        <style>
+            {%if entry.hasFaqs%}
+            .accordion .accordion-item {
+                border-radius: 5px;
+                overflow: hidden;
+                border: 1px solid #e2e2e2;
+                margin-bottom:10px !important;
+            }
+
+            .accordion .accordion-item button[aria-expanded='true'] {
+            }
+
+            .accordion button {
+                position: relative;
+                display: block;
+                text-align-last: start;
+                width: 100%;
+                padding: 1em 18px;
+                color: #000000;
+                font-size: 1.15rem;
+                font-weight: bold;
+                border: none;
+                outline: none;
+                background: #eee;
+                padding-inline-start: 15px;
+            }
+            .accordion .accordion-item h3{
+                margin:0;}
+            .accordion button:hover,
+            .accordion button:focus {
+                cursor: pointer;
+            }
+
+            .accordion button:hover::after,
+            .accordion button:focus::after {
+                cursor: pointer;
+            }
+
+
+            .accordion button .icon {
+                display: inline-block;
+                position: absolute;
+                top: 18px;
+                left: 10px;
+                width: 22px;
+                height: 22px;
+                border-radius: 22px;
+            }
+
+            .accordion button .icon::before {
+                display: block;
+                position: absolute;
+                content: '';
+                top: 10px;
+                left: 5px;
+                width: 12px;
+                height: 4px;
+                background: currentColor;
+            }
+            .accordion button .icon::after {
+                display: block;
+                position: absolute;
+                content: '';
+                top: 5px;
+                inset-inline-end: 14px;
+                width: 4px;
+                height: 14px;
+                background: currentColor;
+            }
+
+
+            .accordion button[aria-expanded='true'] .icon::after {
+                width: 0;
+            }
+            .accordion button[aria-expanded='true'] + .accordion-content {
+                opacity: 1;
+                max-height: fit-content;
+                transition: all 200ms linear;
+                will-change: opacity, max-height;
+            }
+            .accordion .accordion-content {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity 200ms linear, max-height 200ms linear;
+                will-change: opacity, max-height;
+                padding: 0 15px;
+                margin: auto !important;
+            }
+            .accordion .accordion-content p {
+                margin: 2em 0;
+            }
+
+            {%endif%}
+            /*.icon-download:before {
+                content: "\e800"
+            }
+
+            .icon-size:before {
+                content: "\e801"
+            }
+
+            .icon-clock:before {
+                content: "\e802"
+            }
+
+          !*  .icon-search:before {
+                content: "\e803"
+            }*!
+
+            .icon-star:before {
+                content: "\e804"
+            }
+
+            .icon-link:before {
+                content: "\e805"
+            }
+
+            .icon-cancel:before {
+                content: "\e806"
+            }
+
+            .icon-users:before {
+                content: "\e807"
+            }
+
+            .icon-folder:before {
+                content: "\e808"
+            }
+
+            .icon-star-empty:before {
+                content: "\e809"
+            }
+
+            .icon-tags:before {
+                content: "\e80a"
+            }
+
+            .icon-user:before {
+                content: "\e80b"
+            }
+
+            .icon-commen:before {
+                content: "\e80c"
+            }
+
+            .icon-edit-1:before {
+                content: "\e80d"
+            }
+
+            .icon-ok:before {
+                content: "\e80e"
+            }
+
+            .icon-plus:before {
+                content: "\e80f"
+            }
+
+            .icon-minus:before {
+                content: "\e810"
+            }
+
+            .icon-home:before {
+                content: "\e811"
+            }
+
+            .icon-th-list:before {
+                content: "\e812"
+            }
+
+            .icon-version:before {
+                content: "\e832"
+            }
+
+            .icon-spin:before {
+                content: "\e834"
+            }
+
+            .icon-twitter:before {
+                content: "\f099"
+            }
+
+            .icon-facebook:before {
+                content: "\f09a"
+            }
+
+            .icon-certificate:before {
+                content: "\f0a3"
+            }
+
+            .icon-menu:before {
+                content: "\f0c9";
+            }
+
+            .icon-angle-left:before {
+                content: "\f104"
+            }
+
+            .icon-angle-right:before {
+                content: "\f105"
+            }
+
+            .icon-angle-down:before {
+                content: "\f107"
+            }
+
+            .icon-desktop:before {
+                content: "\f108"
+            }
+
+            .icon-laptop:before {
+                content: "\f109"
+            }
+
+            .icon-quote-left:before {
+                content: "\f10d"
+            }
+
+            .icon-quote-right:before {
+                content: "\f10e"
+            }
+
+            .icon-reply:before {
+                content: "\f112"
+            }
+
+            .icon-unlink:before {
+                content: "\f127"
+            }
+
+            .icon-like:before {
+                content: "\f164"
+            }
+
+            .icon-dislike:before {
+                content: "\f165"
+            }
+
+            .icon-youtube:before {
+                content: "\f16a"
+            }
+
+            .icon-instagram:before {
+                content: "\f16d"
+            }
+
+            .icon-left:before {
+                content: "\f177"
+            }
+
+            .icon-apple:before {
+                content: "\f179"
+            }
+
+            .icon-windows:before {
+                content: "\f17a"
+            }
+
+            .icon-android:before {
+                content: "\f17b"
+            }
+
+            .icon-linux:before {
+                content: "\f17c"
+            }
+
+            .icon-language:before {
+                content: "\f1ab"
+            }
+
+            .icon-sliders:before {
+                content: "\f1de"
+            }
+
+            .icon-newspaper:before {
+                content: "\f1ea"
+            }
+
+            .icon-badge:before {
+                content: "\f2c1"
+            }
+
+            .icon-telegram:before {
+                content: "\f2c6"
+            }*/
+            .sr-ratable{cursor:pointer}.sr-avg-rating{color:#d1202a}.sr-user-rating{color:#e5cf4b}.sr-unrated{color:#cdcdcd}.upvote-vote{color:#cdcdcd;cursor:pointer}.upvote-vote-match{color:#d1202a}#app-details-container .meta-description li{word-break:unset;}.su-note {
+                                                                                                                                                                                                                                                                         margin: 0 0 1.5em;
+                                                                                                                                                                                                                                                                         border-width: 1px;
+                                                                                                                                                                                                                                                                         border-style: solid;
+                                                                                                                                                                                                                                                                     }
+            #app-details-container .meta-description  figure{
+                max-width: 100%;
+            }
+            #app-details-container .meta-description img{
+                height: auto;}
+            .su-note-inner .fa-check:before,.meta-description .fa-check:before{
+                display: none;
+            }
+            .su-note-inner {
+                padding: 1em;
+                border-width: 1px;
+                border-style: solid;
+                border-color:#dddddd;color:#333333;border-radius:12px;-moz-border-radius:12px;-webkit-border-radius:12px;
+            }
+            .su-note-inner blockquote, .su-note-inner q {
+                background-color:unset;
+				    margin: 5px;
+    padding: 0;
+            }
+            .success {
+                padding: 15px;
+                background: #ecf8ea;
+                color: #0f9c6d!important;
+                border-right: 3px solid #0f9c6d;
+            }
+            .info {
+                background: #e5f5fd;
+                color: #008dc0!important;
+                padding: 15px;
+                border-right: 3px solid #008dc0;
+            }
+            .golden {
+                background: #f6eabe;
+                color: #7f5b00!important;
+                padding: 15px;
+                border-right: 3px solid #daa520;
+            }
+            .custom {
+                padding: 10px;
+                border-radius: 5px;
+                color: #272829!important;
+                background-color: #f2f5f9;
+            }
+
+            abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video{
+                font-size: revert;
+            }
+            .app-container .download-btn{
+                margin-bottom:20px;}
+            .checklist ul li:before, .removelist ul li:before, .starlist ul li:before {
+                float: right;
+                font-family: fontello;
+                margin-left: 10px;
+                position: relative;
+            }
+            .fas{
+                font-family: fontello;
+            }
+            .fa-check:before {
+                content: "\e80e";
+            }
+            .dlink {
+                height: 45px;
+                border-radius: 4px;
+                overflow: hidden;
+                margin-top: 0;
+                opacity: 1;
+                transition: all .2s ease;
+                background-color: {{global.lonHoyAlmokaa}};
+                color: #fff;
+                float: unset;
+                text-align: center;
+                max-width: unset;
+                margin-bottom: 20px;
+                display: block;
+                margin: auto;
+                width: fit-content;
+                padding-inline-end: 10px;
+            }
+
+            .dlink span {
+                display: inline-block;
+                color: #fff;
+                height: 45px;
+                line-height: 45px;
+            }
+
+            .dlink .fa {
+
+                padding: 0 12.5px;
+            }
+            .dlink .dtext {
+                border-right: 1px solid;
+                min-width: 150px;
+                text-align: center;
+                font-size: 15px;
+                color: #fff;
+                padding-inline-start: 5px;
+
+
+            }
+            .svg-inline--fa {
+                display: var(--fa-display,inline-block);
+                height: 1em;
+                overflow: visible;
+                vertical-align: middle;
+                padding-inline-end: 10px;
+            }
+            .meta-description  {
+                padding-inline-end: 10px;
+            }
+            .meta-description  .dlink .svg-inline--fa{
+                padding-inline-end: 0;
+            }
+            svg:not(:host).svg-inline--fa, svg:not(:root).svg-inline--fa {
+                overflow: visible;
+                box-sizing: content-box;
+            }
+            #app-details-container  .meta-description img,    #app-details-container .meta-description p ,  #app-details-container .meta-description div{
+                margin: 1rem auto;
+                line-height: 36px;
+            }
+            {%if entry.hasItems%}
+
+            body .is-layout-flex {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+            .wp-block-columns {
+                display: flex;
+                margin-bottom: 1.75em;
+                box-sizing: border-box;
+                flex-wrap: wrap!important;
+                align-items: normal!important;
+            }
+            .app-details .wp-block-columns img{
+                max-width: 150px !important;
+            }
+            body .is-layout-flex > * {
+                margin: 0;
+            }
+            :where(.is-layout-flex) {
+                gap: 0.5em;
+            }
+            :where(.wp-block-columns.is-layout-flex) {
+                gap: 2em
+            }
+            :where(.wp-block-columns.is-layout-flex) {
+                gap: 2em;
+            }
+            .wp-block-columns.wp-container-2, .wp-block-columns.wp-container-8, .wp-block-columns.wp-container-12, .wp-block-columns.wp-container-16, .wp-block-columns.wp-container-20, .wp-block-columns.wp-container-44 {
+                flex-wrap: nowrap;
+            }
+            .wp-block-column.is-vertically-aligned-center {
+                align-self: center;
+            }
+            .wp-block-column.is-vertically-aligned-bottom, .wp-block-column.is-vertically-aligned-center, .wp-block-column.is-vertically-aligned-top {
+                width: 100%;
+            }
+            .post-description > [class*="wp-block-"]:not(:last-child) {
+                margin-bottom: 1.5em;
+            }
+            .h22 {
+                font-weight: 600;
+                font-size: 23px;
+                background: #fff;
+                color: {{global.lonHoyAlmokaaAlghamk}};
+                padding: 5px;
+                line-height: 1.7em;
+                box-shadow: 0 2px 15px 0 rgb(146 145 145 / 20%);
+                text-align: center !important;
+                border-bottom: 2px solid {{global.lonHoyAlmokaaAlghamk}};
+            }
+            .ff {
+                color: {{global.lonHoyAlmokaaAlghamk}};
+                background: #fff;
+                padding: 5px 15px;
+                margin: 10px;
+                border: 1px solid;
+                user-select: none;
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 18px!important;
+            }
+            .wp-block-column {
+                flex-grow: 1;
+                min-width: 0;
+                word-break: break-word;
+                overflow-wrap: break-word;
+            }
+            .yocont {
+                border-radius: 16px;
+                border-style: solid;
+                border-width: 3px;
+                border-color: {{global.lonHoyAlmokaaAlghamk}};
+                padding: 8px;
+                text-align: center;
+                margin-bottom: 20px;
+                box-shadow: 0px 8px 13px 0px rgb(0 0 0 / 11%);
+            }
+            .mod1 {
+                font-weight: 600;
+                font-size: 18px;
+                background: #fff;
+                color: {{global.lonHoyAlmokaaAlghamk}};
+                padding: 5px;
+                line-height: 1.7em;
+                box-shadow: 0 2px 15px 0 rgb(146 145 145 / 20%);
+                text-align: center;
+                border-right: 5px solid {{global.lonHoyAlmokaaAlghamk}};
+                border-left: 5px solid {{global.lonHoyAlmokaaAlghamk}};
+                border-radius: 55px;
+            }
+
+            .aligncenter {
+                clear: both;
+                display: block;
+                margin: 0 auto;
+            }
+            .size-auto, .size-full, .size-large, .size-medium, .size-thumbnail {
+                max-width: 100%;
+                height: auto;
+            }
+
+            .wp-block-columns figure{
+                border: unset;}
+            .wp-block-table table{
+                border-collapse: collapse;
+                width: 100%;}
+            .wp-block-table td, .wp-block-table th {
+                border: 1px solid;
+                padding: 0.5em;
+            }
+            .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column p i svg{
+                padding-inline-end: 10px;
+            }
+            @media (min-width: 782px){
+                .wp-block-columns {
+                    flex-wrap: nowrap!important;
+                }
+                .wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+                    flex-basis: 0;
+                    flex-grow: 1;
+                }
+
+            }
+            {%endif%}
+        </style>
+    {% endminify %}
+{% endblock %}
+{% block js %}
+    {% minify js %}
+
+        <script>
+            window.onload = function() {
+             if (window.jQuery) {
+
+                $(document).on("click", ".ratingForm button", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $(this).siblings("input[name='rating']").val($(this).data("rating"));
+                    $(".form-overlay").addClass("active");
+                    var label = $(this).siblings(".ratingLabel");
+                    $.ajax({
+                        context: this,
+                        type: "post",
+                        dataType: 'json',
+                        data: $(this).parents(".ratingForm").serializeArray(),
+                        url: '',
+                        success: function (response) {
+                            $(".form-overlay").removeClass("active");
+                            label.text(parseInt(label.text()) + 1);
+                        }
+                    });
+                });
+                $(document).on("submit", ".appCommentForm", function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $(".form-overlay").addClass("active");
+                    $(".appCommentFormAlert").removeClass("success").removeClass("error").text("");
+                    $.ajax({
+                        context: this,
+                        type: "post",
+                        dataType: 'json',
+                        data: $(this).serializeArray(),
+                        url: '',
+                        success: function (response) {
+                            $(".form-overlay").removeClass("active");
+                            if (response.success) {
+                                $(".appCommentFormAlert").addClass("success").text("{{ "Thank you for you feedback!"|t }}");
+                            } else {
+                                $(".appCommentFormAlert").addClass("error").text("{{ "An error occurred. Please try again later"|t }}");
+                            }
+                        }
+                    });
+                });
+
+            }}
+
+        {%if entry.hasSteps or entry.alsmahBaltaalykat or entry.hasItems or entry.hasFaqs%}
+
+            {%if entry.hasSteps %}
+            //class StepsComponent {
+            //constructor(stepsSelector, contentsSelector) {
+            current = 1;
+            stepsNode = document.querySelector("#steps");
+            contentsNode = document.querySelector("#contents");
+
+            totalSteps = stepsNode.children.length;
+
+            stepsNode.querySelectorAll("button.stepsbtn").forEach((step) => {
+                step.addEventListener("click", (e) => {
+                    const targetStep = parseInt(e.target.dataset.step);
+
+                    contentsNode
+                        .querySelectorAll(".scontent")
+                        .forEach((content) => content.classList.remove("active"));
+                    stepsNode
+                        .querySelectorAll("button.stepsbtn")
+                        .forEach((content) => content.classList.remove("active"));
+
+                    contentsNode
+                        .querySelector(`.scontent[data-step="${targetStep}"]`)
+                        .classList.add("active");
+                    stepsNode
+                        .querySelector(`button.stepsbtn[data-step="${targetStep}"]`)
+                        .classList.add("active");
+
+                    stepsNode
+                        .querySelectorAll("div")
+                        .forEach((content) => content.classList.remove("active"));
+                    if (targetStep - 1 > 0) {
+                        const num = targetStep - 1;
+                        for (let i = 1; i <= num; i++) {
+                            stepsNode
+                                .querySelector(`div:nth-of-type(${i})`)
+                                .classList.add("active");
+                        }
+                    }
+                });
+            });
+            //}
+            //}
+            {%endif%}
+            {%if entry.hasFaqs %}
+            const items = document.querySelectorAll('.accordion button');
+
+            function toggleAccordion() {
+                const itemToggle = this.getAttribute('aria-expanded');
+
+                for (i = 0; i < items.length; i++) {
+                    items[i].setAttribute('aria-expanded', 'false');
+                }
+
+                if (itemToggle == 'false') {
+                    this.setAttribute('aria-expanded', 'true');
+                }
+            }
+
+            items.forEach((item) => item.addEventListener('click', toggleAccordion));
+
+            {%endif%}
+            //new StepsComponent("#steps", "#contents");
+            {%if entry.alsmahBaltaalykat%}
+            function loadmores(){var elementcom=document.getElementsByClassName("hiddencomments");var morbtn=document.getElementById("loadmores");for(var i=0;i<elementcom.length;i++){elementcom[i].classList.remove("hidden");}
+                morbtn.style.display="none";}
+            {%endif%}
+        {%endif%}
+</script>
+    {% endminify %}
+{% endblock %}
+
+{% set meta %}
+    {% set searchTitle = entry.title %}
+    {% set searchDescription = entry.appSummary %} {%if not searchDescription|length%} {% set searchDescription = entry.seoDescription %} {%endif%} {%if not searchDescription|length%} {% set searchDescription = title %} {%endif%}
+    {% set thumb = {
+        mode: 'crop',
+        width: 1200,
+        height: 630,
+        quality: 100,
+        position: 'center-center',
+        format: 'jpg'
+    } %}
+    {% set searchImage = ""%}
+    {%if entry.seoImage|length%}
+        {% set searchImage = entry.seoImage[0].getURL(thumb) %}
+    {%endif%}
+    {%if not searchImage|length%}
+        {% set searchImage = global.seoImage[0].getURL(thumb) %}
+    {%else%}{% set searchImage = entry.appIcon[0].getURL(thumb) %}
+    {%endif%}
+
+
+    {% if not (entry.tmkynAlarshf and global.tmkynAlarshf) %}
+        <meta name="robots" content="noindex,follow">
+    {% else %}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    {% endif %}
+    <link rel="canonical" href="{{ searchUrl }}" />
+    <meta name="description" content="{{ searchDescription }}">
+    <meta itemprop="name" content="{{ searchTitle }}">
+    <meta itemprop="description" content="{{ searchDescription }}">
+    <meta itemprop="image" content="{{ searchImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ searchTitle }}">
+    <meta property="og:url" content="{{ searchUrl }}">
+    <meta property="og:title" content="{{ searchTitle }}">
+    <meta property="og:description" content="{{ searchDescription }}">
+    <meta property="og:image" itemprop="image" content="{{ searchImage }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ searchUrl }}">
+    <meta name="twitter:title" content="{{ searchTitle }}">
+    <meta name="twitter:description" content="{{ searchDescription }}">
+    <meta name="twitter:image" content="{{ searchImage }}">
+    {% minify js %}  <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{alrabtAlasasyLlmokaa}}"
+              },
+              {% for parent in appCategory %}
+                  {
+                    "@type": "ListItem",
+                    "position": "{{ loop.index + 1 }}",
+                    "name": "{{ parent.title }}",
+                    "item": "{{alrabtAlasasyLlmokaa}}/{{ parent.uri }}{{ withSlash }}"
+                  }{{ loop.index < appCategory|length ? "," }}
+        {% endfor %}
+              ,{
+                "@type": "ListItem",
+                "position": "{{ appCategory|length + 2 }}",
+                "name": "{{ searchTitle }}",
+                "item": "{{ searchUrl }}"
+              }
+            ]
+        }
+        </script>{% endminify %}
+{% endset %}
+{% block meta %}
+   {{ meta|replace({'cdn.3ssem.com':general.imagesCdnHostname})|raw }}
+{% endblock %}

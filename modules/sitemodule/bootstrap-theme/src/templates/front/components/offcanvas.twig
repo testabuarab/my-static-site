@@ -1,0 +1,32 @@
+{% set position = position ?? 'start' %} {# start, end, top or bottom #}
+{% set title = title ?? 'Offcanvas' %}
+{% set id = id ?? ('offcanvas-' ~ random(10000, 99999)) %}
+{% set body_scrolling = body_scrolling ?? false %}
+{% set body_backdrop = body_backdrop ?? true %}
+{% set label_id = label_id ?? (id ~ '-label') %}
+{% set header = header ?? block('header') ?? null %}
+{% set body = body ?? block('body') ?? null %}
+
+<div class="offcanvas offcanvas-{{ position }}" 
+    tabindex="-1"
+    aria-labelledby="{{ label_id }}"
+    id="{{ id }}"
+    {% if not body_backdrop %}data-bs-backdrop="false"{% endif %}
+    {% if body_scrolling %}data-bs-scroll="true"{% endif %}
+>
+    {% if header is same as false %}
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="{{ label_id }}">{{ title }}</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    {% elseif header is not same as null %}
+        <div class="offcanvas-header">
+            {{ header|raw }}
+        </div>
+    {% endif %}
+    {% if body is not same as null %}
+        <div class="offcanvas-body">
+            {{ body|raw }}
+        </div>
+    {% endif %}
+</div>

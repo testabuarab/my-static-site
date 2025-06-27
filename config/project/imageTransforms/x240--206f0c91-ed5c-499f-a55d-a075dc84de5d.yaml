@@ -1,0 +1,11 @@
+fill: null
+format: jpg
+handle: x240
+height: 240
+interlace: none
+mode: crop
+name: 240X240
+position: center-center
+quality: 0
+upscale: true
+width: 240

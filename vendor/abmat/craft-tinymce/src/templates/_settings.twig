@@ -1,0 +1,9 @@
+{% import '_includes/forms.twig' as forms %}
+
+{{ forms.lightswitchField({
+    first: true,
+    id: 'linkToVariants',
+    name: 'linkToVariants',
+    label: 'Show "Link to Variants" in TinyMCE Editor' | t('abm-tinymce'),
+    on: settings.linkToVariants
+}) }}

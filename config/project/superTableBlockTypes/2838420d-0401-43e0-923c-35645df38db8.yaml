@@ -1,0 +1,189 @@
+changedFieldIndicator: 1004759664
+field: 63e68e9c-6d7d-40a2-ba35-ca11abdab1b9 # Item Table
+fieldLayouts:
+  eb5aeb37-b314-4f3c-b06c-af7cc5b63919:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 3c69144a-eea4-41ae-ad47-16f750438a08 # Item svg path
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 92bb56b0-0f02-4981-9a5e-6e082ecd6c6c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0a260b31-8914-4411-80e4-dab434f5168c # Item image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f552fcae-1262-486a-a50d-d151928ffd48
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cd4da5a7-1817-4da5-8624-5bee04b0cb31 # Item Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42ce4429-8dce-41d6-ba9b-85b0049441f6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9bf7fe22-2f49-4d5d-a77b-1ffa9eef715b # Item Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d4c26ece-13f0-4095-b1c1-12e16f531fcc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4d12b3b7-1e45-4021-add1-b55939e42fa2 # Item Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed0a120c-dd7c-4cf1-8ff8-e20ec844fb7f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 61eacd41-4fc3-4798-b752-3ac7d362c7bb
+        userCondition: null
+fields:
+  0a260b31-8914-4411-80e4-dab434f5168c: # Item image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: itemImage
+    instructions: null
+    name: 'Item image'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: null
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  3c69144a-eea4-41ae-ad47-16f750438a08: # Item svg path
+    columnSuffix: zoiudjyk
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemSvgPath
+    instructions: null
+    name: 'Item svg path'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4d12b3b7-1e45-4021-add1-b55939e42fa2: # Item Title
+    columnSuffix: asuuyfms
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemTitle
+    instructions: null
+    name: 'Item Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9bf7fe22-2f49-4d5d-a77b-1ffa9eef715b: # Item Text
+    columnSuffix: ukbaffze
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemText
+    instructions: null
+    name: 'Item Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  cd4da5a7-1817-4da5-8624-5bee04b0cb31: # Item Icon
+    columnSuffix: kaunoofa
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemIcon
+    instructions: null
+    name: 'Item Icon'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

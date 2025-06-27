@@ -1,0 +1,30 @@
+{% extends "colorit/_layouts/base" %}
+
+{% set title = "Colorit"|t('colorit') %}
+
+{% set navItems = {
+    'fieldtype': { heading: "Fieldtype"|t('colorit') },
+    'presets': { title: "Presets"|t('colorit') },
+    'general': { heading: "General"|t('colorit') },
+    'settings': { title: "General"|t('colorit') },
+    'about': { title: "About"|t('colorit') },
+} %}
+
+{% set selectedItemHandle = selectedItem ?? craft.app.request.getSegment(2)~(craft.app.request.getSegment(3) ? '/'~craft.app.request.getSegment(3)) %}
+{% set docTitle = ((navItems[selectedItemHandle] ?? false) ? navItems[selectedItemHandle].title ~' - ')~title %}
+
+{% block sidebar %}
+    <nav>
+        <ul>
+            {% for handle, item in navItems %}
+                {% if item.heading is defined %}
+                    <li class="heading"><span>{{ item.heading }}</span></li>
+                {% else %}
+                    <li>
+                        <a href="{{ url('colorit/'~handle) }}"{% if handle == selectedItemHandle %} class="sel"{% endif %}>{{ item.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+{% endblock %}

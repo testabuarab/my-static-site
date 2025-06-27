@@ -1,0 +1,56 @@
+fieldLayouts:
+  0041a628-15ed-4927-a42e-a1a35a7d4c48:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 39201894-3948-4b4b-accc-cdc12845fed3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ad2d3a5c-029f-40e7-ab90-b4b982a339e1 # text Custom Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e0d98705-a77f-4a16-bf5c-7dac2bdd53d4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c278d285-1b95-4f2e-a98b-74b5ec919d80
+        userCondition: null
+fs: wpContent
+handle: wpContent
+name: wp-content
+sortOrder: 4
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

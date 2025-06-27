@@ -1,0 +1,26 @@
+2024-03-21 00:16:22 [ERROR] Error getting file content for https://watsabplus.gold/nicon/regular-sprites.svg: Client error: `GET https://watsabplus.gold/nicon/regular-sprites.svg` resulted in a `403 Forbidden` response:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class (truncated...)
+
+2024-03-21 00:16:22 [ERROR] Error getting file content for https://watsabplus.gold/nicon/brands-sprites.svg: Client error: `GET https://watsabplus.gold/nicon/brands-sprites.svg` resulted in a `403 Forbidden` response:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class (truncated...)
+
+2024-03-21 00:16:22 [ERROR] Error getting file content for https://watsabplus.gold/nicon/solid-sprites.svg: Client error: `GET https://watsabplus.gold/nicon/solid-sprites.svg` resulted in a `403 Forbidden` response:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class (truncated...)
+
+2024-03-21 00:16:22 [ERROR] Error getting file content for https://watsabplus.gold/nicon/tabler-sprites.svg: Client error: `GET https://watsabplus.gold/nicon/tabler-sprites.svg` resulted in a `403 Forbidden` response:
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class (truncated...)
+
+2024-03-21 00:16:22 [INFO] Request context:
+$_GET = [
+    'p' => 'whatsapp-gold/'
+]
+
+$_POST = []

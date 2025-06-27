@@ -1,0 +1,27 @@
+{% set fade = fade ?? true %}
+{% set show = show ?? true %}
+{% set id = id ?? ('toast-' ~ random(10000, 99999)) %}
+{% set header = header ?? block('header') ?? null %}
+{% set body = body ?? block('body') ?? null %}
+
+<div class="toast{% if fade %} fade{% endif %}{% if show %} show{% endif %}"
+    role="alert" 
+    aria-live="assertive" 
+    aria-atomic="true"
+    {% if id %}id="{{ id }}"{% endif %}
+>
+    {% if header is same as false %}
+        <div class="toast-header">
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="{{ close_label }}"></button>
+        </div>
+    {% elseif header is not same as null %}
+        <div class="toast-header">
+            {{ header|raw }}
+        </div>
+    {% endif %}
+    {% if body is not same as null %}
+        <div class="toast-body">
+            {{ body|raw }}
+        </div>
+    {% endif %}
+</div>

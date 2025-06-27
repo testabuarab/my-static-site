@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: x140Web
+height: 100
+interlace: none
+mode: crop
+name: '140X100 web'
+position: center-center
+quality: 0
+upscale: true
+width: 140

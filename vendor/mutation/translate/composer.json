@@ -1,0 +1,42 @@
+{
+  "name": "mutation/translate",
+  "description": "Translate messages in the control panel",
+  "type": "craft-plugin",
+  "support": {
+    "docs": "https://github.com/MutationDigitale/craft3-translate/blob/master/README.md",
+    "issues": "https://github.com/MutationDigitale/craft3-translate/issues"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mutation Digitale",
+      "homepage": "https://mutation.io/"
+    }
+  ],
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.0.2",
+    "craftcms/cms": "^4.0.0-alpha",
+    "phpoffice/phpspreadsheet": "^1.22.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "mutation\\translate\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Translations admin",
+    "handle": "translations-admin",
+    "hasCpSettings": true,
+    "hasCpSection": true,
+    "schemaVersion": "1.1.0",
+    "changelogUrl": "https://raw.githubusercontent.com/MutationDigitale/craft3-translate/master/CHANGELOG.md",
+    "class": "mutation\\translate\\Translate"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}

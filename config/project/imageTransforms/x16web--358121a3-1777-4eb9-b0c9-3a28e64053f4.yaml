@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: x16web
+height: 0
+interlace: none
+mode: crop
+name: 16x16web
+position: center-center
+quality: 0
+upscale: true
+width: 16

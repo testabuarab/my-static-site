@@ -1,0 +1,12 @@
+{#{% cache using key 'sprites' ~ entry.id?? null ~"-"~currentSite.id %}#}
+{% cacheflag flagged "applications|svg:#{siteId}" %}
+    {% minify html %}
+{% set sssymbolss=sssymbolss|unique  %}
+            {{ craft.iconPicker.spritesheet('/regular-sprites.svg')|retconOnly( sssymbolss ) }}
+            {{ craft.iconPicker.spritesheet('/brands-sprites.svg')|retconOnly( sssymbolss )  }}
+            {{ craft.iconPicker.spritesheet('/solid-sprites.svg') |retconOnly( sssymbolss ) }}
+            {{ craft.iconPicker.spritesheet('/tabler-sprites.svg') |retconOnly( sssymbolss ) }}
+            {{ symbolss|raw  }}
+{#{% endcache %}#}
+{% endminify %}
+{% endcacheflag %}

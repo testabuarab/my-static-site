@@ -1,0 +1,17 @@
+{% set request = craft.app.request %}
+{% set uriWithQueryString = request.fullUri ~ request.queryStringWithoutPath %}
+{% cache globally using key uriWithQueryString %}{% header "Content-Type: text/plain; charset=utf-8" %}{%if  global.tmkynAlarshf and  not(craft.app.request.hostName=="test.watsabplus.gold" )%}
+User-agent: *
+Disallow: /cpresources/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /cache/
+{%else%}
+User-agent: * 
+Disallow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+Disallow: /actions/
+{%endif%}
+{% endcache %}

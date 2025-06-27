@@ -1,0 +1,9 @@
+{% set color = color ?? 'primary' %}
+{% set body = (body ?? block('body') ?? '')|trim %}
+{% set pill = pill ?? false %}
+{% set tag = tag ?? 'span' %}
+{% set classes = classes ?? false %}
+
+{% if label %}
+    <{{ tag }} class="badge bg-{{ color }}{% if pill %} rounded-pill{% endif %}{% if classes %} {{ classes }}{% endif %}">{{ body }}</{{ tag }}>
+{% endif %}

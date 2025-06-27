@@ -1,0 +1,16 @@
+columnSuffix: vtfqijkd
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: aykonAsmAlttbyk
+instructions: null
+name: 'أيقونة اسم التطبيق'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - 4504d769-ccf2-4644-8787-f51f755552c5 # fontello
+  renderId: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: site
+type: verbb\iconpicker\fields\IconPickerField

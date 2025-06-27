@@ -1,0 +1,16 @@
+{% extends "fields/_field" %}
+{% import "components/_components" as components %}
+
+{% block content %}
+    <ul class="tag-list {% if options.displayAsBadge %}p-0{% endif %}">
+        {% for tag in value %}
+            {{ components.badge({
+                color: options['bg-color'],
+                pill: options.pill,
+                classes: 'py-2 px-3',
+                label: tag.title,
+                tag: 'li'
+            }) }}
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+columnSuffix: cjrellah
+contentColumnType: char(7)
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: lonKhlfySfhAlthmyl
+instructions: null
+name: 'لون خلفية صفحة التحميل'
+searchable: false
+settings:
+  defaultColor: '#b3acd7'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

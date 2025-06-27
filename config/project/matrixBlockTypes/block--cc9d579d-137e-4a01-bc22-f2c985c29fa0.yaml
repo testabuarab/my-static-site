@@ -1,0 +1,46 @@
+field: 6388cc6d-f78b-4b9a-a4a1-3026ff120d11 # Analytics Codes
+fieldLayouts:
+  c9acacc7-727d-4fd4-bee2-fffbd860dabe:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: e1f03c09-eb88-44fc-91bc-be48cc36c3df # Block Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ccc1d97-a062-4a10-9af0-e5f8bb3fbaee
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ca886590-48aa-47b8-a6d6-9f4f87ec5d0c
+        userCondition: null
+fields:
+  e1f03c09-eb88-44fc-91bc-be48cc36c3df: # Block Code
+    columnSuffix: bkmefnrv
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockCode
+    instructions: null
+    name: 'Block Code'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: true
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: block
+name: Block
+sortOrder: 1

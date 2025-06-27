@@ -1,0 +1,20 @@
+columnSuffix: htcsghkr
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: shaaarAlmokaaSvgCode
+instructions: null
+name: 'شعار الموقع svg code'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - d3bbe925-dd35-462d-8fed-6ed3272f7d08
+    - 1c41b2b8-54b9-41b9-8476-160b1d8beb0e
+    - bb3fc30a-9643-46b1-8af7-fb9074255246
+    - 45b3e5da-1ef3-4e82-a839-cec71d17fe60
+    - 11456b92-a7bf-4f6a-b5b6-89c2e51b4949
+  renderId: null
+  showLabels: false
+translationKeyFormat: null
+translationMethod: site
+type: verbb\iconpicker\fields\IconPickerField

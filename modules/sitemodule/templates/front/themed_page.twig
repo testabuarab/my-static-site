@@ -1,0 +1,31 @@
+{% block doctype %}
+    <!DOCTYPE html>
+{% endblock %}
+{% block html_tag %}
+    <html lang="{{ currentSite.language }}">
+{% endblock %}
+    {% block head %}
+        <head>
+            {% block http_equiv %}
+                <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            {% endblock %}
+            {% block charset %}
+                <meta charset="utf-8" />
+            {% endblock %}
+            {% block viewport %}
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+            {% endblock %}
+            {% block refererr %}
+                <meta name="referrer" content="origin-when-cross-origin" />
+            {% endblock %}
+            {% block favicon %}
+                <link rel="icon" href="{{ craft.themes.current.settings.faviconUrl }}">
+            {% endblock %}
+            {% block head_extra %}
+            {% endblock %}
+        </head>
+    {% endblock %}
+    {% block body %}
+        {{ layout.renderRegions()|raw }}
+    {% endblock %}
+</html>

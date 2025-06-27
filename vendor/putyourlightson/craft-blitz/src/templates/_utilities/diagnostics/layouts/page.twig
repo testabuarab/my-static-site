@@ -1,0 +1,14 @@
+{% extends 'blitz/_utilities/diagnostics/layouts/base' %}
+
+{% set page = craft.blitz.diagnostics.getPage() %}
+{% if page is null %}
+    {% redirect 'utilities/blitz-diagnostics' %}
+{% endif %}
+
+{% set crumbs = [
+    {
+        label: 'Tracked Pages',
+        url: cpUrl('blitz/diagnostics/pages'),
+    },
+]|merge(crumbs ?? []) %}
+

@@ -1,0 +1,142 @@
+.colorit--palette {}
+
+.colorit--palette .colorit--palette-color {
+    color: #FFFFFF !important;
+    margin: 0 3px 0 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 0;
+    position: relative;
+    display: inline-block !important;
+    cursor: pointer;
+    overflow: hidden;
+}
+.colorit--palette .colorit--palette-color:last-child {
+    margin: 0 !important;
+}
+
+.colorit--palette .colorit--palette-selectedIcon {
+    opacity: 0.5;
+    width: 20px;
+    height: 20px;
+    top: 6px;
+    left: 6px;
+    position: absolute;
+    z-index: 10;
+    display: none;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.colorit--palette .colorit--palette-color.colorit--palette-colorIsSelected .colorit--palette-selectedIcon {
+    display: block;
+}
+.colorit--palette .colorit--palette-color.colorit--palette-colorIsSelected::after {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJub25lIj48Y2lyY2xlIGZpbGwtb3BhY2l0eT0iLjIiIGZpbGw9IiMwMDAiIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIvPjxwYXRoIGQ9Ik0xNy43ODMgOS4yNDJsLTEuMDUzLTEuMDNBLjcyNS43MjUgMCAwMDE2LjIwNCA4YS43MjUuNzI1IDAgMDAtLjUyNy4yMTJMMTAuNiAxMy4xOWwtMi4yNzYtMi4yMzRhLjcyNS43MjUgMCAwMC0uNTI3LS4yMTMuNzI1LjcyNSAwIDAwLS41MjYuMjEzbC0xLjA1MyAxLjAzQS42OTQuNjk0IDAgMDA2IDEyLjVjMCAuMjAyLjA3Mi4zNzQuMjE3LjUxNWwyLjgwMiAyLjc0MyAxLjA1MyAxLjAzYy4xNDUuMTQxLjMyLjIxMi41MjcuMjEyLjIwNiAwIC4zODItLjA3LjUyNi0uMjEybDEuMDUzLTEuMDMgNS42MDUtNS40ODVBLjY5NC42OTQgMCAwMDE4IDkuNzU4YS42OTQuNjk0IDAgMDAtLjIxNy0uNTE2eiIgZmlsbD0iI0ZGRiIvPjwvZz48L3N2Zz4=');
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin: 3px auto 0;
+    z-index: 9;
+}
+.colorit--palette .colorit--palette-color.colorit--palette-colorIsTransparent::before {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4IiB2aWV3Qm94PSIwIDAgMzIgMzIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUxLjIgKDU3NTE5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJHcm91cCIgZmlsbC1ydWxlPSJub256ZXJvIj4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgZmlsbD0iI0VBRUNFRSIgeD0iMCIgeT0iMCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIj48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtQ29weSIgZmlsbD0iI0Q1RDhERCIgeD0iMCIgeT0iMCIgd2lkdGg9IjgiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLUNvcHktNiIgZmlsbD0iI0Q1RDhERCIgeD0iMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS1Db3B5LTQiIGZpbGw9IiNENUQ4REQiIHg9IjgiIHk9IjgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZS1Db3B5LTciIGZpbGw9IiNENUQ4REQiIHg9IjgiIHk9IjI0IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtQ29weS01IiBmaWxsPSIjRDVEOEREIiB4PSIyNCIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLUNvcHktOCIgZmlsbD0iI0Q1RDhERCIgeD0iMjQiIHk9IjI0IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUtQ29weS0yIiBmaWxsPSIjRDVEOEREIiB4PSIxNiIgeT0iMCIgd2lkdGg9IjgiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlLUNvcHktOSIgZmlsbD0iI0Q1RDhERCIgeD0iMTYiIHk9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4Ij48L3JlY3Q+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=');
+    content: '';
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+.colorit--palette .colorit--palette-opacity,
+.colorit--palette .colorit--palette-customColor {
+    position: relative;
+    margin-top: -6px;
+}
+
+.colorit--palette .colorit--palette-opacity input,
+.colorit--palette .colorit--palette-customColor input {
+    height: 34px;
+    border-radius: 3px;
+}
+.colorit--palette .colorit--palette-customColor input {
+    width: 130px;
+}
+.colorit--palette .colorit--palette-customColorWithPicker input {
+    width: 160px;
+    padding-left: 42px;
+}
+
+.colorit--palette .colorit--palette-opacity input {
+    width: 64px;
+}
+
+.colorit--palette .colorit--palette-customColor .colorit--palette-customColorSwatch {
+    height:34px;
+    width:34px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 3px 3px 0;
+    display:none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.colorit--palette .colorit--palette-customColor.colorit--palette-colorIsSelected .colorit--palette-customColorSwatch {
+    display: block;
+}
+.colorit--palette .colorit--palette-customColor.colorit--palette-colorIsSelected::after {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSJub25lIj48Y2lyY2xlIGZpbGwtb3BhY2l0eT0iLjIiIGZpbGw9IiMwMDAiIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIvPjxwYXRoIGQ9Ik0xNy43ODMgOS4yNDJsLTEuMDUzLTEuMDNBLjcyNS43MjUgMCAwMDE2LjIwNCA4YS43MjUuNzI1IDAgMDAtLjUyNy4yMTJMMTAuNiAxMy4xOWwtMi4yNzYtMi4yMzRhLjcyNS43MjUgMCAwMC0uNTI3LS4yMTMuNzI1LjcyNSAwIDAwLS41MjYuMjEzbC0xLjA1MyAxLjAzQS42OTQuNjk0IDAgMDA2IDEyLjVjMCAuMjAyLjA3Mi4zNzQuMjE3LjUxNWwyLjgwMiAyLjc0MyAxLjA1MyAxLjAzYy4xNDUuMTQxLjMyLjIxMi41MjcuMjEyLjIwNiAwIC4zODItLjA3LjUyNi0uMjEybDEuMDUzLTEuMDMgNS42MDUtNS40ODVBLjY5NC42OTQgMCAwMDE4IDkuNzU4YS42OTQuNjk0IDAgMDAtLjIxNy0uNTE2eiIgZmlsbD0iI0ZGRiIvPjwvZz48L3N2Zz4=');
+    content: '';
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    right: 5px;
+    left: auto;
+    bottom: 5px;
+    z-index: 9;
+}
+.colorit--palette .colorit--palette-customColor.colorit--palette-colorIsSelected .colorit--palette-selectedIcon {
+    display: block;
+    top: 2px;
+    left: 2px;
+}
+
+.colorit--palette .colorit--palette-opacity input:focus,
+.colorit--palette .colorit--palette-customColor input:focus { outline: 0; }
+
+.colorit--palette-description, .colorit--custom-description, .colorit--opacity-description {
+    font-size: 12px;
+    margin-bottom: 2px;
+    opacity: 0.7;
+}
+[data-custom-color-picker-trigger] {
+    height:34px;
+    width:34px;
+    border: 1px solid #d7dfe7;
+    border-radius: 3px 0 0 3px;
+    background-color: #f3f7fc;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+[data-custom-color-picker-trigger]:hover {
+    background-color: #eef4fa;
+}
+[data-custom-color-picker-trigger] img {
+    height:14px;
+    width:14px;
+    margin: 9px auto 0;
+}
+[data-custom-color-picker-trigger]:hover img {
+    filter: brightness(80%);
+}

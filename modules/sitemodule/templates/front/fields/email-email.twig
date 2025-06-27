@@ -1,0 +1,18 @@
+{% extends "fields/_field" %}
+{% import "components/_components" as components %}
+
+{% block content %}
+    {% if options.displayAsButton and options.linked %}
+        {{ components.button({
+            size: options.size,
+            outlined: options.outlined,
+            color: options.color,
+            label: options.label ? options.label : value,
+            link: 'mailto:' ~ value,
+        }) }}
+    {% elseif options.linked %}
+        <a href="mailto:{{ value }}">{{ options.label ? options.label : value }}</a>
+    {% else %}
+        {{ options.label ? options.label : value }}
+    {% endif %}
+{% endblock %}

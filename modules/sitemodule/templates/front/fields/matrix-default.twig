@@ -1,0 +1,13 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    <div class="row">
+        {% for matrixBlock in value %}
+            <div class="matrix-block {{ matrixBlock.type.handle }} col-12 col-lg-4">
+                {% for matrixField in field.visibleFields(matrixBlock) %}
+                    {{ matrixField.render(matrixBlock[matrixField.handle])|raw }}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

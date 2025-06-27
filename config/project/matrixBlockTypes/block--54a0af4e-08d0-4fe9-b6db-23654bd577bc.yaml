@@ -1,0 +1,273 @@
+field: 64ee50bb-5d33-4220-84e6-6e5a151b6628 # Social Media Links
+fieldLayouts:
+  d94d7ed1-5e6a-4f4b-9cb1-3c8100e0692d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bc37b837-971a-4c03-9e8e-d9ef5d687e7a # Platform
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 390fa129-842e-4f76-9a2c-349fc954ff0d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 67c78fa6-4083-4da9-a0e4-14b9a683b9c6 # Platform Username
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ae255cf1-baad-4b54-8498-add2e8712244
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 717acf9b-fe27-41ef-8157-6a3f77254d27 # Platform Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1aa5cf74-9bdb-4c31-8a8e-1436fbd4a277
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1cd60e39-8614-4033-b372-6485d5e1fa45 # كلاس
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1cabdce7-e47f-421a-bf6e-7d1a150e4458
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4ff233dd-cf1d-49e7-b933-30994161daf8 # نص الرابط
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 413e0c93-cd3d-431e-bf2c-a2ff1d26ec48
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 42e76fc9-580a-48ab-98b1-02b53c8109ec # لون الرابط
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8d316a6d-c525-4462-8593-2e214084bae3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9050b030-b3d9-4f08-af57-f26667db07e1 # لون الخط
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 76aac5fa-c177-46be-a401-7100e1e8b55a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 7e883a86-93fe-4f7f-8d51-2e51817fcdeb
+        userCondition: null
+fields:
+  1cd60e39-8614-4033-b372-6485d5e1fa45: # كلاس
+    columnSuffix: deepbrgr
+    contentColumnType: text
+    fieldGroup: null
+    handle: klas
+    instructions: null
+    name: كلاس
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  4ff233dd-cf1d-49e7-b933-30994161daf8: # نص الرابط
+    columnSuffix: hwhgcsju
+    contentColumnType: text
+    fieldGroup: null
+    handle: nsAlrabt
+    instructions: null
+    name: 'نص الرابط'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  42e76fc9-580a-48ab-98b1-02b53c8109ec: # لون الرابط
+    columnSuffix: tpnhwsxq
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: lonAlrabt
+    instructions: null
+    name: 'لون الرابط'
+    searchable: false
+    settings:
+      defaultColor: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  67c78fa6-4083-4da9-a0e4-14b9a683b9c6: # Platform Username
+    columnSuffix: dgzptnsp
+    contentColumnType: text
+    fieldGroup: null
+    handle: platformUsername
+    instructions: null
+    name: 'Platform Username'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  717acf9b-fe27-41ef-8157-6a3f77254d27: # Platform Link
+    columnSuffix: bwincgca
+    contentColumnType: text
+    fieldGroup: null
+    handle: platformLink
+    instructions: null
+    name: 'Platform Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9050b030-b3d9-4f08-af57-f26667db07e1: # لون الخط
+    columnSuffix: xbxwdakh
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: lonAlkht
+    instructions: null
+    name: 'لون الخط'
+    searchable: false
+    settings:
+      defaultColor: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  bc37b837-971a-4c03-9e8e-d9ef5d687e7a: # Platform
+    columnSuffix: vhtctura
+    contentColumnType: string
+    fieldGroup: null
+    handle: platform
+    instructions: null
+    name: Platform
+    searchable: true
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Facebook
+            -
+              - value
+              - facebook
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twitter
+            -
+              - value
+              - twitter
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Instagram
+            -
+              - value
+              - instagram
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - YouTube
+            -
+              - value
+              - youtube
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Telegram
+            -
+              - value
+              - telegram
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: block
+name: Block
+sortOrder: 1

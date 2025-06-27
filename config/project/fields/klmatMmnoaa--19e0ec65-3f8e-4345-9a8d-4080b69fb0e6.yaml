@@ -1,0 +1,19 @@
+columnSuffix: eqhyhcio
+contentColumnType: text
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: klmatMmnoaa
+instructions: null
+name: 'كلمات ممنوعة'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 7
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

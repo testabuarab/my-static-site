@@ -1,0 +1,67 @@
+{
+  "require": {
+    "abmat/craft-tinymce": "1.0.8",
+    "belniakmedia/remarry-twig-filter": "2.1.1",
+    "by/first-image": "2.0.0",
+    "carlcs/craft-redactorcustomstyles": "4.0.3",
+    "cbp/redactor-fa-list": "2.0.1",
+    "codemonauts/craft-redactor-nofollow": "2.1.0",
+    "craftcms/cms": "4.7.3",
+    "craftcms/feed-me": "5.3.0",
+    "craftcms/redactor": "3.0.4",
+    "doublesecretagency/craft-cpcss": "2.6.0",
+    "doublesecretagency/craft-cpjs": "2.6.0",
+    "doublesecretagency/craft-starratings": "2.3.3",
+    "doublesecretagency/craft-upvote": "^2.3",
+    "doublesecretagency/craft-viewcount": "1.2.2",
+    "internetztube/craft-element-relations": "2.0.2",
+    "luwes/craft-codemirror": "^2.0",
+    "mmikkel/cache-flag": "^1.4",
+    "mmikkel/cp-field-inspect": "^1.4",
+    "mmikkel/retcon": "2.7.5",
+    "mutation/translate": "3.2.2",
+    "nystudio107/craft-emptycoalesce": "^4.0",
+    "nystudio107/craft-minify": "^4.0",
+    "nystudio107/craft-retour": "4.1.15",
+    "pennebaker/craft-architect": "4.0.1",
+    "presseddigital/colorit": "4.0.0",
+    "putyourlightson/craft-blitz": "4.11.1",
+    "putyourlightson/craft-cache-igniter": "^1.1",
+    "ryssbowh/craft-redactor-fa-api": "2.0.2",
+    "spacecatninja/imager-x": "4.3.1",
+    "topshelfcraft/scraper": "^4.0",
+    "trendyminds/craft-palette": "3.2.2",
+    "utakka/redactor-anchors": "1.4.3",
+    "venveo/craft-bulkedit": "4.0.1",
+    "verbb/comments": "2.0.10",
+    "verbb/icon-picker": "^2.0",
+    "verbb/redactor-tweaks": "3.0.1",
+    "verbb/super-table": "3.0.12",
+    "verbb/tablemaker": "^4.0",
+    "vlucas/phpdotenv": "^5.4.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.0.2"
+    }
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example.dev', '.env');\""
+    ]
+  }
+}

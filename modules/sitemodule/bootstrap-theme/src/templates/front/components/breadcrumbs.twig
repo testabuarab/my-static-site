@@ -1,0 +1,8 @@
+{% set divider = divider ?? false %}
+{% set items = items ?? block('body') ?? null %}
+
+<nav{% if divider %} style="--bs-breadcrumb-divider: {{ divider|raw }};"{% endif %} aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {{ items }}
+    </ol>
+</nav>

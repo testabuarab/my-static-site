@@ -1,0 +1,160 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+    {% set withSlash = "/" %}
+{% endif %}
+{%if not entry%}
+{% set entry = craft.entries.section("applications").oldSlug(slug).one() %}
+{%if  entry%}
+{%redirect global.alrabtAlasasyLlmokaa ~'/'~ entry.uri~withSlash 301 %}
+{%endif%}
+{%endif%}
+{%if not entry%}
+{%set abss=craft.app.request.getAbsoluteUrl()%}
+{% set entry = craft.entries.section("pages").oldSlug(abss).one() %}
+{%if not entry%}
+{%set abssa="\/p\/"~slug%}
+{% set entry = craft.entries.section("pages").search('oldSlug:'~abssa).one() %}
+{%endif%}
+{%if not entry%}
+{% set slug=craft.app.request.getSegment(2) %}
+{% set entry = craft.entries.section("pages").search('oldSlug:'~slug).one() %}
+{%endif%}
+{%if not entry%}
+{% set entry = craft.entries.section("pages").search('oldSlug:'~slug).one() %}
+{%endif%}
+{%if not entry%}
+{%exit 404%}
+{%endif%}
+{%redirect global.alrabtAlasasyLlmokaa ~'/'~ entry.uri~withSlash 301 %}
+{%endif%}
+{%if entry.redirect|length%}
+{%redirect entry.redirect 301 %}
+{%endif%}
+{% set title = entry.seoTitle %}
+{%if not title|length%}
+{% set title = entry.title %}
+{%endif%}
+{%set lazyLoadImage=global.lazyloadImageApp.one().getURL("x122")%}
+{% set thumb = {
+mode: 'crop',
+width: 1200,
+height: 630,
+quality: 100,
+position: 'center-center',
+format: 'jpg'
+} %}
+{% set searchImage = ""%}
+{% set contentBlocks = null%}
+{%if entry.seoImage|length%}
+{% set searchImage = entry.seoImage[0].getURL(thumb) %}
+{%endif%}
+{%if not searchImage|length%}
+{% set searchImage = global.seoImage[0].getURL(thumb) %}
+{%else%}{% set searchImage = entry.appIcon[0].getURL(thumb) %}
+{%endif%}
+{% set  entryimage=searchImage %}
+
+
+{#{% set searchImage = craft.imagerx.transformImage(searchImage, {width: 400,height:300, format: 'jpg' }) %}#}
+{#{% do craft.viewCount.increment(entry.id) %}#}
+
+{% set isHomepage = entry is defined and entry.uri == "__home__" ? true : false %}
+{% set searchUrl = global.alrabtAlasasyLlmokaa~'/'~entry.uri~withSlash %}
+{% if isHomepage %}
+{% set searchUrl = global.alrabtAlasasyLlmokaa %}
+{% endif %}
+
+{% do craft.starRatings.disable(['css','js']) %}
+{%set bodyclasses="rtl privacy-policy page-template-default page page-id-3 template-none-sidebar"%}
+{%set contentclasses="content page"%}
+{%set disableCategorisAds=0%}
+{% if  entry.aykafAlaaalanat%}
+{%set disableCategorisAds=1%}
+{% endif %}
+{% block content %}
+{% cache  %} {%apply spaceless%}<div class="main-wrapper my-15">
+        <main class="content-wrapper">
+            <nav aria-label="{{ "You Are in " }}" class="breadcrumb ellipsis">
+
+                <span>      <i class="icon-home"></i>  <a href="{{global.alrabtAlasasyLlmokaa}}">{{ "Home"|t }}</a> </span>
+                <span class="current">{{ entry.title }} </span>
+
+            </nav>
+            <article class="post-body">
+                <header class="app-header clear">
+                    <h1 class="entry-title ellipsis">
+                        {{ entry.title }}
+                    </h1>
+                </header>
+                <section class="entry">
+                   {{ entry.mhtoKaml|raw }}
+                </section>
+            </article>
+        </main>
+    </div>
+
+ {%endapply%}
+{% endcache %}
+{% endblock %}
+
+
+
+{% set meta %}
+    {% cache  %}
+{% set searchTitle = entry.title %}
+{#{% set searchUrl = global.alrabtAlasasyLlmokaa ~'/'~ entry.uri %}#}
+{% set searchDescription = entry.appSummary %}
+{%if not searchDescription|length%}
+{% set searchDescription = entry.seoDescription %}
+{%endif%}
+{%if not searchDescription|length%}
+{% set searchDescription = title %}
+{%endif%}
+
+<meta name="robots" content="all">
+<link rel="canonical" href="{{ searchUrl }}" />
+
+<meta name="description" content="{{ searchDescription }}">
+{%if entry.appTags|length%}
+{% for tagg in entry.appTags.all()%}
+<meta property="article:tag" content="{{tagg.title}}">
+{%endfor%}
+{%endif%}
+<meta itemprop="name" content="{{ searchTitle }}">
+<meta itemprop="description" content="{{ searchDescription }}">
+<meta itemprop="image" content="{{ searchImage }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ searchTitle }}">
+<meta property="og:url" content="{{ searchUrl }}">
+<meta property="og:title" content="{{ searchTitle }}">
+<meta property="og:description" content="{{ searchDescription }}">
+<meta property="og:image" itemprop="image" content="{{ searchImage }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ searchUrl }}">
+<meta name="twitter:title" content="{{ searchTitle }}">
+<meta name="twitter:description" content="{{ searchDescription }}">
+<meta name="twitter:image" content="{{ searchImage }}">
+{% minify js%}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "{{ 'Home'|t }}",
+                "item": "{{global.alrabtAlasasyLlmokaa}}"
+            }
+        ]
+    }
+</script>
+
+
+{% endminify %}
+    {% endcache %}
+{% endset %}
+{% block meta %}
+{{ meta|replace({'cdn.omarym.app':general.imagesCdnHostname})|raw }}
+{% endblock %}

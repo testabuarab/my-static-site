@@ -1,0 +1,12 @@
+columnSuffix: gcbrgizc
+contentColumnType: char(7)
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: lonRoabtAlmkal
+instructions: null
+name: 'لون روابط المقال'
+searchable: false
+settings:
+  defaultColor: '#0062ff'
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Color

@@ -1,0 +1,8 @@
+{% set link = link ?? '#' %}
+{% set label = label ?? '' %}
+
+<li>
+    <a class="dropdown-item"{% if link %} href="{{ link }}"{% endif %}>
+        {{ label }}
+    </a>
+</li>

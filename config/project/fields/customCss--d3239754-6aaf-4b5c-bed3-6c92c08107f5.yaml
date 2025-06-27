@@ -1,0 +1,12 @@
+columnSuffix: mhyqopqb
+contentColumnType: text
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: customCss
+instructions: null
+name: 'Custom css'
+searchable: false
+settings:
+  mode: css
+translationKeyFormat: null
+translationMethod: site
+type: luwes\codemirror\fields\CodeMirrorField

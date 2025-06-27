@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 039db95e-99b1-4a38-b655-0ae4de98723d # Global
+handle: analyticsCodes
+instructions: null
+name: 'Analytics Codes'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_analyticscodes}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: none
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

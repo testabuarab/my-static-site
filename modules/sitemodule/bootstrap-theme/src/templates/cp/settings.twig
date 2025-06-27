@@ -1,0 +1,226 @@
+{% requireAdmin %}
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% macro selectRgba(config) %}
+    {% include "bootstrap-theme/cp/_includes/selectRgba" with config only %}
+{% endmacro %}
+
+{% macro selectRgbaField(config) %}
+    {% set config = config|merge({id: config.id ?? "select#{random()}"}) %}
+    {{ forms.field(config, _self.selectRgba(config)) }}
+{% endmacro %}
+
+{% set crumbs = [
+    { label: "Settings"|t('app'), url: url('settings') },
+    { label: "Plugins"|t('app'), url: url('settings/plugins') }
+] %}
+
+{% set tabs = {
+    main: {
+        label: 'Main settings'|t('bootstrap-theme'),
+        url: '#settings-main'
+    }
+}|merge(settings.tabs) %}
+
+{% macro extraSettings(handle, settings) %}
+    {% set extraSettings = settings.getSettings(handle).definitions %}
+    {% for name, options in extraSettings %}
+        {% set value = settings.variables[name] ?? options.value ?? '' %}
+        {% set config = options.options|merge({
+            name: 'settings[variables][' ~ name ~ ']',
+            value: value,
+            fieldClass: options.options.fieldClass ?? 'width-25'
+            }) 
+        %}
+        {% if options.options.options ?? '' == '#fonts' %}
+            {% set config = config|merge({
+                options: settings.allFontsLabels
+            }) %}
+        {% elseif options.options.options ?? '' == '#colors' %}
+            {% set config = config|merge({
+                options: settings.getBaseColorsLabels(name, handle != 'colors')
+            }) %}
+        {% endif %}
+        {% switch options.type ?? 'text' %}
+            {% case "text" %}
+                {{ forms.textField(config) }}
+            {% case "date" %}
+                {{ forms.dateField(config) }}
+            {% case "time" %}
+                {{ forms.timeField(config) }}
+            {% case "color" %}
+                {{ forms.colorField(config) }}
+            {% case "dateTime" %}
+                {{ forms.dateTimeField(config) }}
+            {% case "textarea" %}
+                {{ forms.textareaField(config) }}
+            {% case "select" %}
+                {{ forms.selectField(config) }}
+            {% case "selectrgba" %}
+                {{ _self.selectRgbaField(config) }}
+            {% case "multiselect" %}
+                {{ forms.multiselectField(config) }}
+            {% case "checkbox" %}
+                {{ forms.checkboxField(config) }}
+            {% case "lightswitch" %}
+                {{ forms.lightswitchField(config) }}
+            {% case "radioGroup" %}
+                {{ forms.radioGroupField(config) }}
+            {% case "checkboxSelect" %}
+                {{ forms.checkboxSelectField(config) }}
+            {% case "checkboxGroup" %}
+                {{ forms.checkboxGroupField(config) }}
+            {% case "autosuggest" %}
+                {{ forms.autosuggestField(config) }}
+            {% default %}
+        {% endswitch %}
+    {% endfor %}
+{% endmacro %}
+
+{% set fullPageForm = true %}
+{% set title = plugin.name %}
+{% set docTitle = title ~ ' - ' ~ "Plugins"|t('app') %}
+
+{% block content %}
+    {{ actionInput('plugins/save-plugin-settings') }}
+    {{ hiddenInput('pluginHandle', plugin.handle) }}
+    {{ redirectInput('settings') }}
+
+    <div class="tab-content b-flex" id="settings-main">
+        <div class="width-33 field">
+            <div class="heading">
+                <label for="settings-logo">{{ 'Logo'|t('bootstrap-theme') }}</label>
+            </div>
+            <img src="{{ settings.logoUrl }}" class="imagery">
+            <div class="input ltr">
+                <input type="file" id="settings-logo" name="logo" accepts=".jpg,.jpeg,.gif,.png,.svg">
+                <label class="fullwidth">
+                    <input type="hidden" name="deleteLogo" value="">
+                    <input type="checkbox" name="deleteLogo" value="1">
+                    {{ 'Delete image'|t('bootstrap-theme') }}
+                </label>
+            </div>
+        </div>
+        <div class="width-33 field">
+            <div class="heading">
+                <label for="settings-favicon">{{ 'Favicon'|t('bootstrap-theme') }}</label>
+            </div>
+            <img src="{{ settings.faviconUrl }}" class="imagery">
+            <div class="input ltr">
+                <input type="file" id="settings-favicon" name="favicon" accepts=".jpg,.jpeg,.gif,.png,.ico,.svg">
+                <label class="fullwidth">
+                    <input type="hidden" name="deleteFavicon" value="">
+                    <input type="checkbox" name="deleteFavicon" value="1">
+                    {{ 'Delete image'|t('bootstrap-theme') }}
+                </label>
+            </div>
+        </div>
+        {{
+            forms.checkboxSelectField({
+                options: settings.getAllFontsLabels(false),
+                name: 'settings[fonts]',
+                values: settings.fonts,
+                label: 'Fonts enabled'|t('bootstrap-theme'),
+                fieldClass: 'width-33'
+            })
+        }}
+        <h2 class="fullwidth">{{ 'Scss compiling'|t('bootstrap-theme') }}</h2>
+        {{
+            forms.lightswitchField({
+                name: 'settings[rebuildScssOnSettings]',
+                on: settings.rebuildScssOnSettings,
+                label: 'Compile styles when settings are changed'|t('bootstrap-theme'),
+                fieldClass: 'width-50'
+            })
+        }}
+        {{
+            forms.lightswitchField({
+                name: 'settings[compileScss]',
+                on: settings.compileScss,
+                label: 'Frontend auto compiling'|t('bootstrap-theme'),
+                instructions: 'Enabling this will compile styles on page reload'|t('bootstrap-theme'),
+                tip: 'Compiling will always be off on production'|t('bootstrap-theme'),
+                fieldClass: 'width-50'
+            })
+        }}
+        {{
+            forms.textField({
+                name: 'settings[resourceFilePath]',
+                label: 'Resource file path'|t('bootstrap-theme'),
+                instructions: 'The file where the bootstrap scss variables defined in these settings will be written'|t('bootstrap-theme'),
+                warning: 'Changing this may break scss auto compiling'|t('bootstrap-theme'),
+                value: settings.resourceFilePath,
+                fieldClass: 'width-50'
+            })
+        }}
+        {{
+            forms.textField({
+                name: 'settings[scssEntryPoint]',
+                label: 'Scss entry point'|t('bootstrap-theme'),
+                instructions: 'The main scss file to compile, relative to bootstrap theme base path'|t('bootstrap-theme'),
+                warning: 'Changing this may break scss auto compiling'|t('bootstrap-theme'),
+                value: settings.scssEntryPoint,
+                fieldClass: 'width-50'
+            })
+        }}
+    </div>
+
+    {% for name, tab in settings.tabs %}
+        <div class="tab-content hidden b-flex" id="settings-{{ name }}">
+            {{ _self.extraSettings(name, settings) }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% css %}
+    label.fullwidth {
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .no-margin {
+        margin: 0;
+    }
+    .b-flex .width-25 {
+        width:  25%;
+        margin: 12px 0 !important;
+        box-sizing: border-box;
+    }
+    .b-flex .width-50 {
+        width:  50%;
+        margin: 12px 0 !important;
+        box-sizing: border-box;
+    }
+    .b-flex .width-33 {
+        width:  33.33%;
+        margin: 12px 0 !important;
+        box-sizing: border-box;
+    }
+    .b-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .b-flex .width-50, .b-flex .width-25, .b-flex .width-33 {
+        padding-right: 12px;
+    }
+    .b-flex .width-50:nth-child(2n) {
+        padding-right: 0;
+    }
+    .b-flex .width-25:nth-child(4n) {
+        padding-right: 0;
+    }
+    .b-flex .width-33:nth-child(3n) {
+        padding-right: 0;
+    }
+    .imagery {
+        max-width: 100%;
+        max-height:  100px;
+    }
+    #content-container {
+        width: 100%;
+    }
+    .input.opacity {
+        margin-top: 5px;
+        max-width: 100px;
+    }
+{% endcss %}

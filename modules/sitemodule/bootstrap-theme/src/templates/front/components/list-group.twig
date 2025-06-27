@@ -1,0 +1,13 @@
+{% set tag = tag ?? 'ul' %}
+{% set flush = flush ?? false %}
+{% set numbered = numbered ?? false %}
+{% set horizontal = horizontal ?? false %}
+{% set classes = classes ?? '' %}
+{% if numbered %}
+    {% set tag = 'ol' %}
+{% endif %}
+{% set items = items ?? block('items') ?? null %}
+
+<{{ tag }} class="list-group{% if flush %} list-group-flush{% endif %}{% if numbered %} list-group-numbered{% endif %}{% if horizontal %} list-group-horizontal{% endif %}{% if classes %} {{ classes }}{% endif %}">
+    {{ items }}
+</{{ tag }}>

@@ -1,0 +1,10 @@
+{
+	"name": "topshelfcraft/base",
+	"description": "Base metal for Top Shelf Craft modules and plugins.",
+	"version": "4.0.2",
+	"autoload": {
+		"psr-4": {
+			"TopShelfCraft\\base\\": "src/"
+		}
+	}
+}

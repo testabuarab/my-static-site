@@ -1,0 +1,35 @@
+columnSuffix: zrlcfpul
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: appType
+instructions: null
+name: 'App Type'
+searchable: false
+settings:
+  columnType: string
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Free
+        -
+          - value
+          - free
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Paid
+        -
+          - value
+          - paid
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\RadioButtons

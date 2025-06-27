@@ -1,0 +1,267 @@
+field: 1bf489cc-2fd1-4e7e-baa4-95efe35f3bba # Content Blocks
+fieldLayouts:
+  2f102ecd-d1ab-4423-9f95-bd2d08165b1f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: f1da61d8-f923-4916-b9ae-1fc70d6dc504 # Items Titel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a0fbbb2-63d9-4895-99c0-0de8ff851d45
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 63e68e9c-6d7d-40a2-ba35-ca11abdab1b9 # Item Table
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 804755bf-e4c5-451d-b1ae-e909b5f531ff
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 23affefc-61eb-4f2e-a80c-9a2147d7ed1f # Items Layout
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ee921dd9-5651-48b8-b351-91f35b44389b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3a56d10c-5d1d-4223-b8e5-5a504ff0bf82 # Items design color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0f0945bc-6c14-4d78-be3b-92c0405e2985
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d0089704-cf6f-4541-b56b-ee1bb5b7aa37 # Item Alienment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aa7af0b8-36d1-45e8-8b04-1f039225628d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ffa996b5-98a8-4dc2-a5d9-651839424963 # Design Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5eaa0184-85ee-404a-9f8a-6e7e3d4ec2f8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f18551d0-14b5-4cb7-a6ca-85317a53707d
+        userCondition: null
+fields:
+  3a56d10c-5d1d-4223-b8e5-5a504ff0bf82: # Items design color
+    columnSuffix: hzobbtec
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: itemsDesignColor
+    instructions: null
+    name: 'Items design color'
+    searchable: true
+    settings:
+      defaultColor: '#000000'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  23affefc-61eb-4f2e-a80c-9a2147d7ed1f: # Items Layout
+    columnSuffix: pvloygxx
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: itemsLayout
+    instructions: null
+    name: 'Items Layout'
+    searchable: true
+    settings:
+      decimals: 0
+      defaultValue: null
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: null
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+  63e68e9c-6d7d-40a2-ba35-ca11abdab1b9: # Item Table
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: itemTable
+    instructions: null
+    name: 'Item Table'
+    searchable: true
+    settings:
+      blockTypeFields: 0
+      changedFieldIndicator: 1592559577
+      columns:
+        __assoc__:
+          -
+            - 4dfc7abc-2710-46c7-b53f-d6c8f3866f23
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 8b84ff63-1ea1-4bec-8dd6-6b2efdf3d2b3
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 9349d674-be57-48da-87a4-08f7d82ac2c8
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - e2b3da1d-3b38-492e-b2c2-0953d7430eab
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+          -
+            - 125c76a3-ac71-49af-bb4a-0af077312a98
+            -
+              __assoc__:
+                -
+                  - width
+                  - ''
+      contentTable: '{{%stc_itemtable}}'
+      fieldLayout: table
+      maxRows: null
+      minRows: null
+      propagationKeyFormat: null
+      propagationMethod: none
+      selectionLabel: null
+      staticField: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: verbb\supertable\fields\SuperTableField
+  d0089704-cf6f-4541-b56b-ee1bb5b7aa37: # Item Alienment
+    columnSuffix: ckggdvpa
+    contentColumnType: string
+    fieldGroup: null
+    handle: itemAlienment
+    instructions: null
+    name: 'Item Alienment'
+    searchable: true
+    settings:
+      columnType: string
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - '1'
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  f1da61d8-f923-4916-b9ae-1fc70d6dc504: # Items Titel
+    columnSuffix: pdipobxu
+    contentColumnType: text
+    fieldGroup: null
+    handle: itemsTitel
+    instructions: null
+    name: 'Items Titel'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  ffa996b5-98a8-4dc2-a5d9-651839424963: # Design Type
+    columnSuffix: qobporep
+    contentColumnType: integer(10)
+    fieldGroup: null
+    handle: designType
+    instructions: null
+    name: 'Design Type'
+    searchable: true
+    settings:
+      decimals: 0
+      defaultValue: 1
+      max: null
+      min: 0
+      prefix: null
+      previewCurrency: null
+      previewFormat: decimal
+      size: null
+      suffix: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Number
+handle: items
+name: items
+sortOrder: 2

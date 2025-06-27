@@ -1,0 +1,64 @@
+{
+    "branding": false,
+    "menubar": false,
+    "contextmenu": false,
+    "extended_valid_elements": "img[src|alt|title|width|height|class|loading],+@[data-options]",
+    "forced_root_block": "p",
+    "relative_urls": false,
+    "remove_script_host": false,
+    "convert_urls": false,
+    "paste_as_text": true,
+    "plugins": "autoresize code table anchor link lists craftlink craftimage",
+    "toolbar": [
+        "styles | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist",
+        "code | craftimage | craftlink unlink anchor"
+    ],
+    "craftlink_adv_tab": false,
+    "craftlink_data_attr": [],
+    "craftlink_anker": true,
+    "link_class_list": [
+        {
+            "title": "None",
+            "value": ""
+        }
+    ],
+    "object_resizing": false,
+    "craftimage_title": true,
+    "craftimage_class_list": [
+        {
+            "title": "Default",
+            "value": "editor-img-default"
+        }
+    ],
+    "style_formats": [
+        {
+            "title": "SEO",
+            "items": [
+                {
+                    "title": "H1",
+                    "format": "h1"
+                },
+                {
+                    "title": "H2",
+                    "format": "h2"
+                },
+                {
+                    "title": "H3",
+                    "format": "h3"
+                },
+                {
+                    "title": "H4",
+                    "format": "h4"
+                },
+                {
+                    "title": "H5",
+                    "format": "h5"
+                },
+                {
+                    "title": "H6",
+                    "format": "h6"
+                }
+            ]
+        }
+    ]
+}

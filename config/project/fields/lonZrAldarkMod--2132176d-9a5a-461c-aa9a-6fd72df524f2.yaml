@@ -1,0 +1,12 @@
+columnSuffix: qwfoiktg
+contentColumnType: char(7)
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: lonZrAldarkMod
+instructions: null
+name: 'لون زر الدارك مود'
+searchable: false
+settings:
+  defaultColor: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

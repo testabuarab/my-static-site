@@ -1,0 +1,105 @@
+field: 83433aca-82b6-4312-8572-b3a3b728f9ed # Links
+fieldLayouts:
+  02875bda-bba7-4f66-9882-342c66cc1d3a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 30ef4d43-accb-4f11-9294-b8ada657d225 # Block Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 133f15f7-bc21-4a5c-870e-eca3e8cb757d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7415b618-fcd1-4f19-8410-dd747771eff5 # Block Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05c2823f-d54e-4df6-9684-d7e744078fba
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e102cc5a-196b-478a-8cfa-b2a87dc6d3b0 # New tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 02f93984-fc83-4064-b80d-37653f65a002
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 5abeafee-f1ae-4a5e-89d2-82880a84a075
+        userCondition: null
+fields:
+  30ef4d43-accb-4f11-9294-b8ada657d225: # Block Text
+    columnSuffix: ldeluluk
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockText
+    instructions: null
+    name: 'Block Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7415b618-fcd1-4f19-8410-dd747771eff5: # Block Link
+    columnSuffix: uianiwvt
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockLink
+    instructions: null
+    name: 'Block Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  e102cc5a-196b-478a-8cfa-b2a87dc6d3b0: # New tab
+    columnSuffix: vyflqorv
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: null
+    name: 'New tab'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: block
+name: Block
+sortOrder: 1

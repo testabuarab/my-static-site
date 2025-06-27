@@ -1,0 +1,358 @@
+<div id="app-details-container">{% set sssymbolss = ['whatsapp']%}{%set symbolss=""%}
+    <div class="meta-data">
+        <ul>
+            <li>
+                <label class="head"><i class="icon-certificate"></i>{{ "License"|t }}</label>
+                <label>{{ "Free"|t }}</label>
+            </li>
+            <li>
+                <label class="head"><i class="icon-desktop"></i>{{ "Operating system"|t }}</label>
+                <label>{{ nthamAltshghl}}<span style="display: none;" itemprop="operatingSystem">{{ nthamAltshghl}}</span> </label>
+
+            </li>
+            <li>
+                <label class="head"><i class="icon-folder"></i>{{ "Category"|t }}</label>
+                {% if appCategory|length %}
+                    <a href="{{global.alrabtAlasasyLlmokaa}}/{{ (appCategory[0]).uri }}">{{ appCategory[0].title }}</a>
+                    <meta itemprop="applicationCategory" content="https://schema.org/{{ (appCategory[0]).categoryType.label|replace(" ", "") }}"/>
+                {% endif %}
+            </li>
+            <li>
+                <label class="head"><i class="icon-size"></i>{{ "File size"|t }}</label>
+
+					<label>{{apksize}}</label>
+
+            </li>
+            <li>
+                <label class="head"><i class="icon-version"></i>{{ "Version"|t }}</label>
+                    <label>{{ appVersion }}</label>
+            </li>
+            <li>
+                <label class="head"><i class="icon-clock"></i>{{ "Release date"|t }}</label>
+                <label>{{ entry.dateUpdated|date("Y-m-d", locale="en-GB") }}</label>
+            </li>
+            <li>
+                <label class="head"><i class="icon-language"></i>{{ "Language"|t }}</label>
+                <label>{{ appLanguage }}</label>
+            </li>
+            {%if entry.appPublisher|length%}  <li>
+
+
+                <label class="head"><i class="icon-link"></i>{{ "Author"|t }}</label>
+                <a itemprop="publisher" itemscope itemtype="http://schema.org/Organization" href="  {%if entry.appPublisherLink|length%}{{ entry.appPublisherLink }}{% else %}#{% endif %}" rel="nofollow noopener noreferrer" target="_blank">
+                    <span itemprop="name">{{ entry.appPublisher }}</span></a>
+
+            </li>  {%endif%}
+        </ul>
+    </div>
+    <div class="meta-description" itemprop="description">
+	{%if global.aaalanBdayAlmkal|length%}
+		<div class="site-ilan-begin">
+		{{global.aaalanBdayAlmkal|raw}}
+		</div>{%endif%}
+        {%set alttitle=entry.title%}
+        {% set contentBlocks = entry.contentBlocks.all() %}
+        {%if contentBlocks|length%}
+
+        {% for block in contentBlocks %}
+
+        {%if block.hgmAlaykon%}
+            {%set blockhgmAlaykon=block.hgmAlaykon%}
+        {%endif%}
+        {%if block.type=="block"%}
+        {%set iconscontent=block.blockContent | retconOnly( [ '.fa-solid', '.fa-regular','.fa-brands' ] ) %}
+        {%if block.blockTitle|length%}
+            {%set alttitle=block.blockTitle%}
+
+        {%endif%}
+        {%if includwater and block.tmkynAlaalamAlmayy%}
+            {% set immage =global.aalamMayy.one()  %}
+            {%set blockblockContent=block.blockContent|retconTransform( {
+                watermark: { image: immage.getURL(), width: immage.width, height: immage.height, position: { right: 10, bottom: 3 }, opacity: 0.40, blendMode: 'multiply' }
+            })|retconRemove( 'ins' )|replace("download-whatsapp-gold","whatsapp-plus-gold")|replace("beta.3ssem.com","www.3ssem.com")|retconAttr( 'img', {'width' : '750', 'height' : '430' ,'alt':alttitle} )|raw |retconAttr( '.fa-regular', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconAttr( '.fa-brands', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconAttr( '.fa-solid', { style : 'color:'~block.lonAlaykon ~';font-size:'~blockhgmAlaykon} )|retconRenameAttr('iframe', {src: 'data-src'})|retconAttr('iframe', { class: 'lazyload' })|retconRenameAttr('img', {src: 'data-src'})| retcon( 'autoAlt' )| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')%}
+        {%else%}
+            {%set blockblockContent=block.blockContent|retconChange( 'ol', 'ul' )
+                |retconAttr( '.fa-regular', { style : 'color:'~block.lonAlaykon ~';'} )
+                |retconAttr( '.fa-brands', { style : 'color:'~block.lonAlaykon ~';'} )
+                |retconAttr( '.fa-solid', { style : 'color:'~block.lonAlaykon ~';' })
+            %}
+            {%set allconent=blockblockContent|retconChange( 'em', 'i' )%}
+            {% set allconent = allconent|retconAttr( 'figure', { 'style' : false} )%}
+            {% set allconent = allconent|replace('segoe ui roboto oxygen ubuntu cantarell sans neue sans-serif font-optical-sizing: inherit font-kerning: font-feature-settings: font-variation-settings: vertical-align: baseline display: block outline:','')%}
+            {% set allconent = allconent|replace('position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: none white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+            {% set allconent = allconent|replace('none position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+
+
+            {%set iconsclassess=""%}
+            {%set idd=""%}
+            {%set iconsdotclasess=""%}
+            {%set iconscontent=iconscontent|retconChange( 'em', 'i' )%}
+            {% set paragraphs = iconscontent|split('</i>') %}
+            {%set class=paragraphs|first|slice(10,paragraphs|length)|replace('"','')|replace('/','')|replace(">","")|trim%}
+            {%for icon in paragraphs%}
+                {%set class=icon|slice(10,icon|length)|replace('"','')|replace('/','')|replace(">","")|trim%}
+
+                {%set iconsdotclasess="."~class|replace({"fa-solid":"","fa-regular":"","fa-brands":""})%}
+                {%set iconsdotclasess=iconsdotclasess|replace({". ":"."})%}
+                {%set iconsnoclasess=class|replace({"fa-solid":"","fa-regular":"","fa-brands":""})%}
+                {%set iconsnoclasess=iconsnoclasess|trim%}
+                {%set iconsnoclasess=iconsnoclasess|replace({"fa-":""})%}
+                {%set iconsnoclasess=class|replace(iconsnoclasess,"")|replace({"fa-":""})|trim%}
+                {%set iconname=iconsdotclasess|replace({"fa-":""})%}
+                {#{%set iconurl='https://wazapplus.com/nicon/svgs/'~iconsnoclasess|trim~'/'~iconname|replace(".","")~'.svg'%}#}
+                {%if iconname!="."%}
+                    {%set idd=iconname|replace(".","")%}
+                    {%set idd="content-"~idd%}
+                    {%set icopath='@webroot/nicon/svgs/'~iconsnoclasess|trim~'/'~iconname|replace(".","")~'.svg'%}
+                    {%set svgicon=svg(icopath)|attr({ class: 'svg-inline--fa' ,style:'height:'~blockhgmAlaykon})%}
+                    {%set svgicon=svgicon|retconAttr( 'path', { fill : 'currentColor'} )%}
+                    icopath{{ icopath}}   {%if not (idd in sssymbolss)%}
+                        {%set viewBoxxx=svgicon  %}
+
+                        {%set viewBoxxx=viewBoxxx|retconOnly( 'svg' ) %}
+
+                        {%set viewBoxxx=viewBoxxx|parseAttr.viewBox %}
+                        {%set viewBox="0 0 512 512"%}
+                        {%if '0 0 24 24' in svgicon%}
+                            {%set viewBox="0 0 24 24"%}
+                        {%endif%}
+                        {%set symbolss=symbolss~'<symbol id="'~idd~'" viewBox="'~viewBoxxx~'">'%}
+                        {% set paragraphss = svgicon|split('</path>') %}
+                        {%for iconn in paragraphss%}
+                            {%set symbolss=symbolss~iconn|retconUnwrap( 'path' )%}
+                        {%endfor%}
+                        {%set symbolss=symbolss~'</path></symbol>'%}
+                    {%endif%}
+                    {% set sssymbolss = sssymbolss|merge([idd]) %}
+                    {% set svgicon=svgicon|retconInject( 'svg', 'usessss' )  %}
+                    {% set svgicon=svgicon|replace( {'usessss': '<use xlink-href="#'~idd~'"></use>'}  )  %}
+                    {% set svgicon=svgicon|retconRemove( 'path' )  %}
+                    {#{%set allconent=allconent|retconAttr( iconsdotclasess, { 'data-src' : icopath} )%}#}
+                    {%set allconent=allconent|retconInject( iconsdotclasess, svgicon , true )%}
+                {% endif %}
+
+            {%endfor%}
+
+        {%endif%}
+        {% set allconent=allconent|replace( {'xlink-href': 'xlink:href'}  )  %}
+        {%if  block.allLinkNofollow%}
+            {%set blockblockContent=blockblockContent|retconAttr( 'a',{'rel':'nofollow','target':'_blank'})%}
+            {%set allconent=allconent|retconAttr( 'a',{'rel':'nofollow','target':'_blank'})%}
+        {%endif%}
+
+        {%if  block.blockTitleType|length and block.blockTitle|length%}
+
+        {% set type = block.blockTitleType %}
+        {% set blockheadtitleclass= block.khlfyAlaanoan.value %}
+        {%if block.tosytAlaanoan%}
+            {% set blockheadtitleclass= blockheadtitleclass~' '~ 'align-center'%}
+        {%endif%}
+        <{{type}} id="{{block.blockTitle|replace(' ','_')}}" class="{{blockheadtitleclass}}" style="{%if block.blockTitleBackgroundColor|length%}background-color:{{block.blockTitleBackgroundColor}};    padding: 10px;{%endif%}color: {{ block.blockTitleColor|length ? block.blockTitleColor : "#000000" }};">{{ block.blockTitle }}</{{type}}>
+    {%endif%}
+    {%if block.lonAlkhlfy|length and block.lonAlkhlfy!="#ffffff"%}
+        <div class="su-note-inner" style="background-color:{{block.lonAlkhlfy}};color:#333333;">
+
+
+            {#{{ allconent|retconAutoAlt|raw}}#}
+            {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+            {% set allconent = allconent|retconWrap( 'img', 'picture')%}
+            {%if block.altTitleFromImage%}
+                {% include 'watsabplusgold/newd/apps/filtercontent2.html' with {
+                    newcontent: allconent
+                } %}
+            {%else%}
+                {% include 'watsabplusgold/newd/apps/filtercontent.html' with {
+                    newcontent: allconent,
+                    alttitle:alttitle
+                } %}
+            {%endif%}
+            {%if block.rabtAlthmyl|length%}{%if block.rabtAlthmyl[0].nsAlrabt|length%}{% for row in block.rabtAlthmyl %}	<p style="text-align:center;"><a {%if row.tfaaylAlaadad%} id="zirtashgeel" onclick="trrrigrrbtn(event,this)" {%else%}href="{{row.alrabt}}"{%endif%} {% if row.nofollow %} rel="nofollow noreferrer noopener" {%endif%} target="_blank" class="dlink" style="color:{{row.lonAlrabt}};background-color:{{row.lonAlkhlfy}}"><span style="color:{{row.lonAlrabt}}" class="fa fa-download pull-left">
+                        <i class="bicon icon-download pull-right"></i></span><span class=" dtext {{pulright}}" style="color:{{row.lonAlrabt}};">{{row.nsAlrabt}}</span></a></p>{%endfor%}{%endif%}{%endif%}
+        </div>
+    {%else%}
+        {#{{ allconent|retconAutoAlt|raw}}#}
+        {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+        {% set allconent = allconent|retconWrap( 'img', 'picture')%}
+        {%if block.altTitleFromImage%}
+            {% include 'watsabplusgold/newd/apps/filtercontent2.html' with {
+                newcontent: allconent
+            } %}
+        {%else%}
+            {% include 'watsabplusgold/newd/apps/filtercontent.html' with {
+                newcontent: allconent,
+                alttitle:alttitle
+            } %}
+        {%endif%}
+
+        {%if block.rabtAlthmyl|length%}{%if block.rabtAlthmyl[0].nsAlrabt|length%}{% for row in block.rabtAlthmyl %}	<p style="text-align:center;"><a {%if row.tfaaylAlaadad%} id="zirtashgeel" onclick="trrrigrrbtn(event,this)" {%else%}href="{{row.alrabt}}"{%endif%} {% if row.nofollow %} rel="nofollow noreferrer noopener" {%endif%} target="_blank" class="dlink" style="color:{{row.lonAlrabt}};background-color:{{row.lonAlkhlfy}}"><span style="color:{{row.lonAlrabt}}" class="fa fa-download pull-left"><i class="bicon icon-download pull-right"></i></span><span class=" dtext {{pulright}}" style="color:{{row.lonAlrabt}};">{{row.nsAlrabt}}</span></a></p>{%endfor%}{%endif%}{%endif%}
+    {% endif %}
+    {%elseif block.type == "items" and block.designType==1%}
+        {%set itemscount=block.itemTable|length%}
+        {%set cols=block.itemsLayout%}
+        {%set counter=0%}
+        {%set colsgroups=itemscount/cols%}
+        {%if block.itemsTitel|length%}<h2 class="h22" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}><span>{{block.itemsTitel}}</span></h2>{%endif%}
+        <div class="is-layout-flex wp-container-8 wp-block-columns are-vertically-aligned-center">
+            {% for i in 1..cols %}
+                <div class="is-layout-flow wp-block-column is-vertically-aligned-center">
+                    {% for j in 1..colsgroups %}
+                        <p class="text-center ff" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};"{%endif%}>
+                            {%if block.itemTable[counter].itemSvgPath|trim|length%}
+                                <i  >
+                                    {%set icopath='@webroot/'~block.itemTable[counter].itemSvgPath|trim%}
+                                    {%set filenamee= icopath|split('/')|last%}
+                                    {%set ddownloadiconid= filenamee|replace(".svg","")%}
+                                    {%set svgicon=svg(icopath)|attr({ class: 'svg-inline--fa' })%}
+                                    {%set viewBox="0 0 512 512"%}
+
+                                    {%if '0 0 24 24' in svgicon%}
+                                        {%set viewBox="0 0 24 24"%}
+                                    {%endif%}
+                                    {%set svgicon=svgicon|retconAttr( 'path', { fill : 'currentColor'} )%}
+                                    {%if not (ddownloadiconid in sssymbolss)%}
+                                        {%set symbolss=symbolss~'<symbol id="'~ddownloadiconid~'" viewBox="'~viewBox~'">'%}
+                                        {% set paragraphss = svgicon|split('</path>') %}
+                                        {%for iconn in paragraphss%}
+                                            {%set symbolss=symbolss~iconn|retconUnwrap( 'path' )%}
+                                        {%endfor%}
+                                        {%set symbolss=symbolss~'</path></symbol>'%}
+                                        {%set symbolss=symbolss| retconRemove( 'title' )%}
+                                    {%endif%}
+                                    {% set sssymbolss = sssymbolss|merge([ddownloadiconid]) %}
+
+                                    {% set svgicon=svgicon|retconInject( 'svg', 'susessss' )  %}
+                                    {% set svgicon=svgicon|replace( {'susessss': '<use xlink-href="#'~ddownloadiconid~'"></use>'}  )  %}
+                                    {% set svgicon=svgicon|retconRemove( 'path' )  %}
+                                    {% set svgicon=svgicon|replace( {'xlink-href': 'xlink:href'}  ) | retconRemove( 'title' ) %}
+                                    {{svgicon|raw}}
+                                </i>
+                            {%else%}
+                                <i class="{{block.itemTable[counter].itemIcon}}" ></i>
+                            {%endif%}
+                            {{block.itemTable[counter].itemTitle}}</p>
+                        {%set counter=counter+1%}{%endfor%}
+                </div>
+
+            {%endfor%}
+        </div>
+    {%elseif block.type == "items" and block.designType==2%}
+        {%set itemscount=block.itemTable|length%}
+        {%set cols=block.itemsLayout%}
+        {%set counter=0%}
+        {%set containernumber=12%}
+        {%set colsgroups=itemscount/cols%}
+        {%if block.itemsTitel|length%}<h2 class="h22" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}><span>{{block.itemsTitel}}</span></h2>{%endif%}
+        {% for i in 1..cols %}<div class="is-layout-flex wp-container-{{containernumber}} wp-block-columns">
+            {%set containernumber=containernumber+4%}
+            {% for j in 1..colsgroups %}
+            <div class="is-layout-flow wp-block-column yocont" {%if block.itemsDesignColor|length and block.itemsDesignColor!="000000"%}style="border-color:{{block.itemsDesignColor}};"{%endif%}>
+                <h3 class="text-center mod1" {%if block.itemsDesignColor|length and block.itemsDesignColor!="#000000"%}style="color:{{block.itemsDesignColor}};border-color:{{block.itemsDesignColor}};"{%endif%}>{{block.itemTable[counter].itemTitle}}</h3>
+                <figure class="aligncenter size-full is-resized"><img data-src="{{block.itemTable[counter].itemImage|replace('https://beta.kynews2.com',global.alrabtAlasasyLlmokaa)}}" alt="{{block.itemTable[counter].itemTitle}}" class="wp-image-144 lazyload" width="150" height="150" ></figure>
+                <p class="text-center">{{block.itemTable[counter].itemText|raw}}</p>
+                </div>{%set counter=counter+1%}
+            {%endfor%}
+            </div>
+        {%endfor%}
+    {%elseif block.type == "steps"%}
+        <section style="
+    margin: 20px auto;
+">
+            <h2 class="h22"><span>{{block.stepsTitle}}</span></h2>
+            <div class="steps" id="steps">
+                {%set counttt=1%}
+                {%for step in block.stepsTable%}
+                    <button class="stepsbtn {%if counttt==1%}active{%endif%}" data-step="{{counttt}}" >{{step.stepTitle}}</button>
+                    {%if counttt<block.stepsTable|length%} <div></div>{%endif%}
+                    {%set counttt=counttt+1%}
+                {%endfor%}
+            </div>
+
+            <div class="contents" id="contents">
+                {%set countttt=1%}
+                {%for step in block.stepsTable%}
+                    <div class="scontent {%if countttt==1%}active{%endif%}" data-step="{{countttt}}">
+                        <p class="tab-pane-title" >{{step.stepSubtitle}}</p>
+                        <img alt="{{step.stepSubtitle}}" width="750" height="430" data-src="{{step.stepImage.one().getURL()}}" class="lazyload">
+                        <div class="content__box">
+                            {{step.stepContent|retconChange( 'ol', 'ul' )|raw}}
+                        </div>
+                    </div>
+                    {%set countttt=countttt+1%}
+                {%endfor%}
+
+            </div>
+        </section>
+    {%elseif block.type == "faqs"%}
+        <div class="container">
+            <h3 class="alert success" style="padding: 20px;margin: 20px auto 10px;background: unset;border-right: 3px solid;">{{block.quiz}}</h3>
+            <div class="accordion">
+                {%for faq in block.quizTable%}
+                    <div class="accordion-item">
+                        <button id="accordion-button-{{loop.index}}" aria-expanded="false">
+                            <span class="accordion-title">{{faq.faqQuiz}}</span>
+                            <span class="icon" ></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>
+                                {{faq.faqAnswer}}
+                            </p>
+                        </div>
+                    </div>
+                {%endfor%}
+
+            </div>
+        </div>
+    {% endif %}
+    {% endfor %}
+
+    {%if global.aaalanNhayAlmkal|length%}
+		<div class="site-ilan-end">
+		{{global.aaalanNhayAlmkal|retconAttr( 'img', { 'width' : '750', 'height' : '430' } )|retconRenameAttr('img', {src: 'data-src'})| retconAttr('img', { class: 'lazyload' })|replace("h1","h2")|replace('<iframe ', '<div class="video-description-container"><iframe ')|replace('</iframe>', '</iframe></div>')|raw}}
+		</div>{%endif%}
+{% else %}
+    {%set blockblockContent=entry.mhtoKaml|retconChange( 'ol', 'ul' )                  %}
+    {%set allconent=blockblockContent|retconChange( 'em', 'i' )%}
+    {% set allconent = allconent|retconAttr( 'figure', { 'style' : false} )%}
+    {% set allconent = allconent|replace('segoe ui roboto oxygen ubuntu cantarell sans neue sans-serif font-optical-sizing: inherit font-kerning: font-feature-settings: font-variation-settings: vertical-align: baseline display: block outline:','')%}
+    {% set allconent = allconent|replace('position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: none white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+    {% set allconent = allconent|replace('none position: relative box-sizing: clear: both color: rgb letter-spacing: normal orphans: text-align: start text-indent: text-transform: white-space: widows: word-spacing: background-color: text-decoration-thickness: initial text-decoration-style: text-decoration-color:','')%}
+
+
+
+
+    {% set allconent = allconent|retconAttr( 'figure', { 'style' : false,'class':false,'id':false } )%}
+    {% set allconent = allconent|retconWrap( 'img', 'picture')%}
+    {%set alttitle=entry.title%}
+                        {% include 'watsabplusgold/newd/filteroldcontent.html' with {
+                            newcontent: allconent,
+                            alttitle:alttitle
+                        } %}
+
+{%endif%}
+    </div>
+{% if entry.downloadLinks|length %}
+		        <div class="second-download-btn">
+            <div>
+                <a href="{{ global.alrabtAlasasyLlmokaa }}/download/{{entry.slug}}/latest"  class="download-btn">
+                    <span class="bicon icon-download pull-right"></span>
+                    <p>
+                        <label>{{ "Free Download"|t }}</label>
+                        <label>{{ "Safe & Secure"|t ~ " - " ~ (apksize) }}</label>
+                    </p>
+                </a>
+            </div>
+            <div class="text-btn">
+                <a href="{{ global.alrabtAlasasyLlmokaa }}/download/{{entry.slug}}/latest" >
+				تحميل {{entry.appTitle}} {{"Direct Link"|t}}
+                </a>
+            </div>
+        </div>
+{%endif%}
+
+</div>
+{% block svvg %}
+    {{symbolss|retconAttr( 'path', { fill : 'currentColor'} )|raw}}
+    {{downloadiconsymbols|retconAttr( 'path', { fill : 'currentColor'} )|raw}}
+    {{bolticonsymbols|retconAttr( 'path', { fill : 'currentColor'} )|raw}}
+
+{% endblock %}

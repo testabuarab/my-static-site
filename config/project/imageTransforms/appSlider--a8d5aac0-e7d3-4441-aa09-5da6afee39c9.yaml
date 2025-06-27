@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: appSlider
+height: 40
+interlace: none
+mode: crop
+name: 'app Slider'
+position: center-center
+quality: 0
+upscale: true
+width: 40

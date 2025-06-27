@@ -1,0 +1,210 @@
+{% import '_includes/forms' as forms %}
+{% import 'verbb-base/_macros' as macros %}
+
+{% set type = iconSet.type ?? '' %}
+{% set apiKey = iconSet.apiKey ?? '' %}
+
+{{ forms.selectField({
+    first: true,
+    label: 'Type' | t('icon-picker'),
+    instructions: 'Select how you want to use Font Awesome.' | t('icon-picker'),
+    name: 'type',
+    value: type,
+    options: [
+        { label: 'Select an option' | t('icon-picker'), value: '' },
+        { label: 'Use A Kit' | t('icon-picker'), value: 'kit' },
+        { label: 'Use CDN' | t('icon-picker'), value: 'cdn' },
+    ],
+    warning: macros.configWarning('type', 'icon-picker'),
+    errors: iconSet.getErrors('type'),
+    toggle: true,
+    targetPrefix: 'type-',
+}) }}
+
+<div id="type-kit" class="{{ type != 'kit' ? 'hidden' }}">
+    {{ forms.autosuggestField({
+        label: 'API Key' | t('icon-picker'),
+        instructions: 'Enter your Font Awesome API Key to access your Kits. Get your API token on [fontawesome.com]({url}).' | t('icon-picker', { url: 'https://fontawesome.com/account#api-tokens' }),
+        name: 'apiKey',
+        suggestEnvVars: true,
+        value: apiKey,
+        required: true,
+        warning: macros.configWarning('apiKey', 'icon-picker'),
+        errors: iconSet.getErrors('apiKey'),
+    }) }}
+
+    {% if apiKey %}
+        {% set kitOptions = iconSet.getKitOptions() %}
+
+        {{ forms.checkboxGroupField({
+            label: 'Kits' | t('icon-picker'),
+            instructions: 'Select the kits you would like included in this icon set.' | t('icon-picker'),
+            name: 'kits',
+            options: kitOptions,
+            values: iconSet.kits ?? '',
+            warning: macros.configWarning('kits', 'icon-picker'),
+            errors: iconSet.getErrors('kits'),
+        }) }}
+
+        {% if iconSet.getApiError() %}
+            <p class="error">{{ iconSet.getApiError() }}</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+<div id="type-cdn" class="{{ type != 'cdn' ? 'hidden' }}">
+    {% set cdnLicense = iconSet.cdnLicense ?? '' %}
+    {% set cdnVersion = iconSet.cdnVersion ?? '' %}
+
+    {{ forms.selectField({
+        label: 'Version' | t('icon-picker'),
+        instructions: 'Select which version to use.' | t('icon-picker'),
+        id: 'cdn-version',
+        name: 'cdnVersion',
+        value: cdnVersion,
+        options: [
+            { label: '6.2.0' | t('icon-picker'), value: '6.2.0' },
+            { label: '5.15.4' | t('icon-picker'), value: '5.15.4' },
+        ],
+        warning: macros.configWarning('cdnVersion', 'icon-picker'),
+        errors: iconSet.getErrors('cdnVersion'),
+    }) }}
+
+    {{ forms.selectField({
+        label: 'License' | t('icon-picker'),
+        instructions: 'Select which license to use.' | t('icon-picker'),
+        id: 'cdn-license',
+        name: 'cdnLicense',
+        value: cdnLicense,
+        options: [
+            { label: 'Free' | t('icon-picker'), value: 'free' },
+            { label: 'Pro' | t('icon-picker'), value: 'pro' },
+        ],
+        warning: macros.configWarning('cdnLicense', 'icon-picker'),
+        errors: iconSet.getErrors('cdnLicense'),
+        toggle: true,
+        targetPrefix: 'license-',
+    }) }}
+
+    <div class="version-warning"></div>
+
+    {% set cdnCollections = iconSet.cdnCollections ?? [] %}
+    {% set firstCollection = cdnCollections[0] ?? null %}
+
+    {% if firstCollection == '*' %}
+        {% set cdnCollections = '*' %}
+    {% endif %}
+
+    <div id="license-free" data-container="license" class="{{ type != 'free' ? 'hidden' }}">
+        {{ forms.checkboxSelectField({
+            label: 'Collections' | t('icon-picker'),
+            instructions: 'Select which collections to include.' | t('icon-picker'),
+            id: 'cdn-cdnCollections',
+            name: 'cdnCollections',
+            values: cdnCollections,
+            options: [
+                { label: 'Solid' | t('icon-picker'), value: 'solid' },
+                { label: 'Regular' | t('icon-picker'), value: 'regular' },
+                { label: 'Brands' | t('icon-picker'), value: 'brands' },
+            ],
+            showAllOption: true,
+            warning: macros.configWarning('cdnCollections', 'icon-picker'),
+            errors: iconSet.getErrors('cdnCollections'),
+        }) }}
+    </div>
+
+    <div id="license-pro" data-container="license" class="{{ type != 'pro' ? 'hidden' }}">
+        {{ forms.checkboxSelectField({
+            label: 'Collections' | t('icon-picker'),
+            instructions: 'Select which collections to include.' | t('icon-picker'),
+            id: 'cdn-cdnCollections',
+            name: 'cdnCollections',
+            values: cdnCollections,
+            options: [
+                { label: 'Solid' | t('icon-picker'), value: 'solid' },
+                { label: 'Regular' | t('icon-picker'), value: 'regular' },
+                { label: 'Light' | t('icon-picker'), value: 'light' },
+                { label: 'Duotone' | t('icon-picker'), value: 'duotone' },
+                { label: 'Brands' | t('icon-picker'), value: 'brands' },
+            ],
+            showAllOption: true,
+            warning: macros.configWarning('cdnCollections', 'icon-picker'),
+            errors: iconSet.getErrors('cdnCollections'),
+        }) }}
+    </div>
+</div>
+
+{% js %}
+    const onChange = function(e) {
+        const $error = $('.version-warning');
+        const version = $('[data-attribute="cdn-version"] select').val();
+        const license = $('[data-attribute="cdn-license"] select').val();
+        let text = '';
+
+        if (license === 'pro') {
+            if (version.startsWith('6.')) {
+                text = '<div class="warning-text">{{ 'Pro Version 6 is not available from CDN. Please use a Kit instead.' | t('icon-picker') | md(inlineOnly=true) | raw }}</div>';
+            }
+
+            if (version.startsWith('5.')) {
+                text = '<div class="info-text">{{ 'Pro requires a Font Awesome subscription. You also need to add this site to the [allowed domains](https://fontawesome.com/account/cdn) for your CDN.' | t('icon-picker') | md(inlineOnly=true) | raw }}</div>';
+            }
+        }
+
+        $error.html(text);
+    };
+
+    $('[data-attribute="cdn-version"] select').on('change', onChange);
+    $('[data-attribute="cdn-license"] select').on('change', onChange);
+
+
+    // Toggle the disabled state of any inputs in the target, hidden container
+    $('[data-attribute="cdn-license"] select').on('change', function(e) {
+        // Wait for Craft's jQuery to trigger first
+        setTimeout(function() {
+            $('[data-container="license"]').each(function(index, element) {
+                const $container = $(element);
+
+                if ($container.hasClass('hidden')) {
+                    $container.find('input, select, textarea').prop('disabled', true);
+                    $container.find('input, select, textarea').addClass('disabled');
+                } else {
+                    $container.find('input, select, textarea').prop('disabled', false);
+                    $container.find('input, select, textarea').removeClass('disabled');
+
+                    // Annoying use-case for checkbox groups and "All", where all others are disabled
+                    // and re-enabling it turns them back as enabled when they shouldn't
+                    $container.find('input[type="checkbox"][value="*"]:checked').each(function(i, el) {
+                        // Trigger a double-click
+                        $(el).trigger('click').trigger('click');
+                    });
+                }
+            });
+        }, 50);
+    });
+
+    $('[data-attribute="cdn-license"] select').trigger('change');
+{% endjs %}
+
+{% css %}
+
+.version-warning {
+    margin-bottom: 24px;
+}
+
+.warning-text,
+.info-text {
+    padding: 10px;
+}
+
+.warning-text {
+    background: #fff8db;
+    border: 1px #eee6c5 solid;
+}
+
+.info-text {
+    background: #e4f5ff;
+    border: 1px #c6dcea solid;
+}
+
+{% endcss %}

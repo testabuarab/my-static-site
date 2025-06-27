@@ -1,0 +1,7 @@
+2024-08-17 00:56:28 [ERROR] Error getting file content for https://watsabplus.gold/nicon/regular-sprites.svg: cURL error 6: Could not resolve host: watsabplus.gold (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://watsabplus.gold/nicon/regular-sprites.svg
+2024-08-17 00:56:28 [INFO] Request context:
+$_GET = [
+    'p' => 'call-us'
+]
+
+$_POST = []

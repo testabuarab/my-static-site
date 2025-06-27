@@ -1,0 +1,16 @@
+columnSuffix: qijgizge
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: awesomIcons
+instructions: null
+name: 'awesom icons'
+searchable: false
+settings:
+  columnType: text
+  iconSets:
+    - dd432c98-a7b6-4ffa-814b-daf6f6f44b0a
+  renderId: null
+  showLabels: true
+translationKeyFormat: null
+translationMethod: none
+type: verbb\iconpicker\fields\IconPickerField

@@ -1,0 +1,101 @@
+{% import "_includes/forms" as forms %}
+
+{% set handle = value.handle ?? '' %}
+{% set custom = value.custom ?? '' %}
+{% set opacity = value.opacity ?? 100 %}
+
+<div id="{{ id }}" class="colorit--palette flex">
+
+	{% if field.palette|length %}
+
+		<div>
+			{% if field.fieldDescriptions %}
+				<p class="colorit--palette-description">{{ 'Palette'|t('colorit') }}</p>
+			{% endif %}
+
+			<ul class="colorit--palette-colors" data-colors>
+
+				{% for paletteColor in field.palette %}
+
+					{% set class = [
+						'colorit--palette-color',
+						craft.colorit.colors.hexIsTransparent(paletteColor.color) ? 'colorit--palette-colorIsTransparent' : null,
+						handle == paletteColor.handle ? 'colorit--palette-colorIsSelected' : null,
+					]|filter|join(' ') %}
+
+					{% set processedColor = field.allowOpacity and opacity < 100 ? craft.colorit.colors.hexToRgba(paletteColor.color, opacity) : '#' ~ paletteColor.color %}
+
+					<li class="{{ class }}" title="{{ paletteColor.label }}" data-handle="{{ paletteColor.handle }}" data-color="{{ paletteColor.color }}" style="background:{{ processedColor }};" data-color>
+					</li>
+
+				{% endfor %}
+
+			</ul>
+			<input id="{{ id }}-handle" type="hidden" name="{{ name }}[handle]" value="{{ handle }}">
+		</div>
+
+	{% else %}
+
+		<input id="{{ id }}-handle" type="hidden" name="{{ name }}[handle]" value="{{ handle }}">
+
+	{% endif %}
+
+
+	{% if field.allowCustomColor %}
+
+		{% set processedColor = custom and field.allowOpacity and opacity < 100 ? craft.colorit.colors.hexToRgba(custom, opacity) : custom %}
+
+		<div class="colorit--palette-customColor{{ processedColor ? ' colorit--palette-colorIsSelected' }}{{ field.allowCustomColorPicker ? ' colorit--palette-customColorWithPicker' }}" data-custom>
+			{% if field.fieldDescriptions %}
+				<p class="colorit--custom-description">{{ 'Custom HEX'|t('colorit') }}</p>
+			{% endif %}
+			{% if field.allowCustomColorPicker %}
+				<input type="color" style="opacity:0; width:0px; position:absolute;" data-custom-color-picker>
+			{% endif %}
+			{{ forms.text({
+				id: id~'-custom',
+				name: name~'[custom]',
+				placeholder: '#HEX',
+				value: custom
+			}) }}
+			<div class="colorit--palette-customColorSwatch" data-color="{{ custom }}" style="background:{{ processedColor }};" data-custom-color></div>
+
+			{% if field.allowCustomColorPicker %}
+				<a href="#" data-custom-color-picker-trigger>
+					<img src="data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjQ2OXB4IiBoZWlnaHQ9IjQ2OXB4IiB2aWV3Qm94PSIwIDAgNDY5IDQ2OSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDxnIGlkPSJjbHIiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIG9wYWNpdHk9IjAuOTY5Ij4KICAgICAgICA8cGF0aCBkPSJNMzczLDIuODQyMTcwOTRlLTE0IEM0MjIuMDEzLDMuNTIzIDQ1My4xNzksMjguODU2IDQ2Ni41LDc2IEM0NzIuNDUyLDEwNy44NiA0NjUuMTE5LDEzNi4xOTQgNDQ0LjUsMTYxIEM0MjIuODMyNjI1LDE4Mi40OTk5MzYgNDAxLjMzMTk4MSwyMDQuMTY3MjUxIDM4MCwyMjYgQzM5NS4xNTIsMjU5Ljk0NyAzODguODE5LDI4OS4xMTQgMzYxLDMxMy41IEMzMzMuNjU2LDMzMS40NDEgMzA2LjMyMywzMzEuNDQxIDI3OSwzMTMuNSBDMjc0Ljg1NDc2OCwzMTAuMzU3NjgxIDI3MS4wMDU0MjMsMzA2Ljg0MzA2MiAyNjcuNSwzMDMgQzIxOC45OTk0MzksMzUxLjgzMzkxNCAxNzAuMTY0OTYsNDAwLjMzNTA1MiAxMjEsNDQ4LjUgQzg4LjE3NzU2NTksNDU2LjE2NDQyNCA1NS4xNjcwNzMyLDQ2Mi45OTk5MzEgMjIsNDY5IEM4Ljc2Niw0NjcuMjY2IDEuNDMzLDQ1OS43NjYgMi44NDIxNzA5NGUtMTQsNDQ2LjUgTDE4LjUsMzU0IEMxOS4yMjE4NjM4LDM1MS41NTcwMzQgMjAuMjI4NzkyNCwzNDkuMjA3NTMzIDIxLjUsMzQ3IEM2OS4zMzEyNTA4LDI5OC4xNjgwMzcgMTE3LjQ5OTA2NSwyNDkuNjY2ODgxIDE2NiwyMDEuNSBDMTQyLjI4LDE3OC4yMzYgMTM2LjQ0NywxNTEuMDcgMTQ4LjUsMTIwIEMxNjYuMjc2LDg4LjM4OSAxOTMuMTEsNzYuMjIyIDIyOSw4My41IEMyMzMuODQ2ODgzLDg0LjgzNjU0MzkgMjM4LjUzOTQ1NCw4Ni42ODAwNTM3IDI0Myw4OSBDMjY2LjE2NzgyNiw2NS45OTgxNDU2IDI4OS41MDE3Nyw0My4xNjQyMTQ2IDMxMywyMC41IEMzMzAuODY1LDcuMjA2IDM1MC44NjUsMC4zNzMgMzczLDIuODQyMTcwOTRlLTE0IFogTTE5NywyMzMgQzE1MS42NjcwMTksMjc4LjgzMjc3MiAxMDYuMTY2NzE1LDMyNC40OTk3NDQgNjAuNSwzNzAgQzU2LjgxLDM4NS45NDcgNTMuMzEsNDAxLjk0NyA1MCw0MTggQzY2LjMzLDQxNS44MzUgODIuNjYzLDQxMi42NjkgOTksNDA4LjUgTDk5LDQwOC41IEwyMzYsMjcxLjUgQzIyMy4xNjY2ODUsMjU4LjQ5ODkwNiAyMTAuMTY1NTk2LDI0NS42NjQ0OTggMTk3LDIzMyBaIiBpZD0iY2xyLXNocCIgZmlsbD0iIzkyOUJBMyI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4K">
+				</a>
+			{% endif %}
+
+		</div>
+
+	{% else %}
+
+		<input id="{{ id }}-custom"  type="hidden" name="{{ name }}[custom]" value="" />
+
+	{% endif %}
+
+
+	{% if field.allowOpacity %}
+
+		<div class="colorit--palette-opacity" data-opacity>
+			{% if field.fieldDescriptions %}
+				<p class="colorit--opacity-description">{{ 'Opacity'|t('colorit') }}</p>
+			{% endif %}
+			<input id="{{ id }}-opacity" class="text" type="number" name="{{ name }}[opacity]" value="{{ opacity }}" min="1" max="100" novalidate/>
+		</div>
+
+
+
+	{% else %}
+
+		<input id="{{ id }}-opacity" type="hidden" name="{{ name }}[opacity]" value="100" />
+
+	{% endif %}
+
+</div>
+
+{% if value and value.hasErrors() %}
+	{% for error in value.getErrors() %}
+		{{ forms.errorList(error) }}
+	{% endfor %}
+{% endif %}

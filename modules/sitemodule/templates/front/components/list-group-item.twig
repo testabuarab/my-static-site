@@ -1,0 +1,8 @@
+{% set tag = tag ?? 'li' %}
+{% set disabled = disabled ?? false %}
+{% set classes = classes ?? '' %}
+{% set body = body ?? block('body') ?? null %}
+
+<{{ tag }} class="list-group-item{% if disabled %} disabled{% endif %}{% if classes %} {{ classes }}{% endif %}" {% if disabled %} aria-disabled="true"{% endif %}>
+    {{ body }}
+</{{ tag }}>

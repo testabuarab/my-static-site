@@ -1,0 +1,29 @@
+{
+  "name": "ryssbowh/bootstrap-theme",
+  "description": "Theme for Craft CMS based on Bootstrap 5",
+  "license": "MIT",
+  "type": "craft-plugin",
+  "keywords": [
+      "cms",
+      "craftcms",
+      "theme",
+      "themes",
+      "bootstrap"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ryssbowh\\BootstrapTheme\\": "src/"
+    }
+  },
+  "require": {
+    "ryssbowh/craft-themes": "^4.0"
+  },
+  "extra": {
+    "name": "Bootstrap Theme",
+    "handle": "bootstrap-theme",
+    "developer": "The Web Puzzlers",
+    "developerUrl": "https://github.com/ryssbowh",
+    "documentationUrl": "https://github.com/ryssbowh/bootstrap-theme",
+    "class": "Ryssbowh\\BootstrapTheme\\Theme"
+  }
+}

@@ -1,0 +1,72 @@
+{% header "Cache-Control: max-age=0"%}
+{% header "x-powered-by: AM" %}
+
+{% set expiry = now|date_modify('+0 Hours') %}
+{% header "Content-Type: application/json; charset=utf-8" %}{% header "Access-Control-Allow-Origin: *" %}
+{% header "Cache-Control: max-age=0" %}
+{% header "Pragma: no-cache" %}
+{% header "Expires: " ~ expiry|httpdate %}
+{% set entries=craft.entries().section('applications').all()  %}
+[
+{%for entry in entries%}
+{#
+    {% set url="http://betheeb.test/wagoldlinks" %}
+#}
+    {% set url="https://wa.gold/"~entry.uri~"/" %}
+ {#   {% set url="http://betheeb.test/wagoldd.html" %}#}
+{#
+    {{ url }}
+#}
+    {#{% set url=url|replace('https://omarym.app','http://localhost/ultimate-web-scraper/kynews2/www.kynews2.com') %}#}
+    {%if url|length%}
+
+        {% set crawler = craft.scraper.using('simplehtmldom').get(url) %}
+
+        {%if crawler|length%}
+            {%set apprates=crawler.find('span[class=users-count]')[0].innertext()%}
+            {%set appversion=crawler.find('div[class=software-infos soft-slider line-title clearfix info-top]')[0].childNodes(0).childNodes(0).childNodes(1).childNodes(0).childNodes(1).innertext()|trim%}
+            {%set appsize=crawler.find('div[class=software-infos soft-slider line-title clearfix info-top]')[0].childNodes(0).childNodes(0).childNodes(5).childNodes(0).childNodes(1).innertext()|trim%}
+            {%set appdate=crawler.find('div[class=software-infos soft-slider line-title clearfix info-top]')[0].childNodes(0).childNodes(0).childNodes(4).childNodes(0).childNodes(1).innertext()|trim%}
+            {%set appname=crawler.find('div[class=software-infos soft-slider line-title clearfix info-top]')[0].childNodes(0).childNodes(0).childNodes(0).childNodes(0).childNodes(1).innertext()|trim%}
+            {% set sssymbolss = []%}
+            {%set appimages=crawler.find('div[class=px-carousel-item]')%}
+{#{%for image in appimages%}
+{%if loop.index< appimages|length%}
+{%set appimage=crawler.find('div[class=px-carousel-item]')[loop.index].childNodes(0).getAttribute('data-src')%}
+
+{% set sssymbolss = sssymbolss|merge([appimage]) %}
+{%endif%}
+{%endfor%}#}
+{#
+{%set appdownloads=crawler.find('div[class=box-data-app]')[0].childNodes(0).childNodes(4).innertext()%}
+{%set appdgoogle=crawler.find('div[class=box-data-app]')[0].childNodes(0).childNodes(5).childNodes(2).getAttribute('href')%}
+#}
+
+{#
+{%set applang=crawler.find('div[class=image-single lazyload]')[0].getAttribute('data-bgsrc')|replace("-150x150.",".")%}
+#}
+            {%set title%}
+                {% for node in crawler.find('h1') %}
+                    {{ node.innertext() }}
+                {% endfor %}
+            {%endset%}
+            {%set dlinksss=crawler.find('div[id=more-links]')%}
+
+                {%set dlinks=crawler.find('div[id=more-links]')[0].childNodes%}
+                {%set ddlinks=[]%}
+
+                {
+                "title":"{{entry.title|raw}}",
+                "slug":"{{entry.slug}}",
+                "appversion":"{{appversion|striptags|replace("Version","")}}",
+                "apprates":"{{apprates|striptags|replace("Votes:","")|trim}}",
+                "appsize":"{{appsize|striptags|replace("Votes:","")|trim}}",
+                "appdate":"{{appdate|striptags|replace("Votes:","")|trim}}",
+                "appname":"{{appname|striptags|replace("Votes:","")|trim}}"
+                }{%if loop.index<entries|length%},{%endif%}
+
+        {%endif%}
+    {%endif%}
+{%endfor%}
+]
+

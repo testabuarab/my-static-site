@@ -1,0 +1,43 @@
+{
+  "name": "trendyminds/craft-palette",
+  "description": "A command palette to easily jump to specific areas within Craft",
+  "type": "craft-plugin",
+  "version": "3.2.2",
+  "keywords": ["palette", "craft", "craft cms", "cmdk", "spotlight", "craft plugin"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "TrendyMinds",
+      "homepage": "https://trendyminds.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/trendyminds/craft-palette/issues?state=open",
+    "source": "https://github.com/trendyminds/craft-palette",
+    "docs": "https://github.com/trendyminds/craft-palette/blob/master/README.md"
+  },
+  "require": {
+		"php": "^8.0.2",
+    "craftcms/cms": "^4.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "trendyminds\\palette\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Palette",
+    "handle": "palette",
+    "class": "trendyminds\\palette\\Palette",
+    "changelogUrl": "https://raw.githubusercontent.com/trendyminds/craft-palette/main/CHANGELOG.md"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": false,
+      "craftcms/plugin-installer": false
+    }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.3"
+  }
+}

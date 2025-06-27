@@ -1,0 +1,12 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: d8d4af19-ec79-4aaf-a8dd-ee46154d05e0 # Applications
+handle: totalDownloads
+instructions: null
+name: 'Total Downloads'
+searchable: false
+settings:
+  viewKey: tDownloads
+translationKeyFormat: null
+translationMethod: none
+type: doublesecretagency\viewcount\fields\TotalViews

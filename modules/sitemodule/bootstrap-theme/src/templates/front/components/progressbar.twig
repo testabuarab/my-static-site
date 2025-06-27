@@ -1,0 +1,17 @@
+{% set current = current ?? 0 %}
+{% set min = min ?? 0 %}
+{% set max = max ?? 100 %}
+{% set color = 'primary' %}
+{% set height = height ?? false %}
+{% set content = content ?? '' %}
+{% set style = ((current / max) * 100)|round(0) %}
+
+<div class="progress"{% if height %} style="height: {{ height }}"{% endif %}>
+    <div class="progress-bar bg-{{ color }}"
+        role="progressbar"
+        aria-valuenow="{{ current }}"
+        aria-valuemin="{{ min }}"
+        aria-valuemax="{{ max }}"
+        style="width:{{ style }}%"
+    >{{ content|raw }}</div>
+</div>

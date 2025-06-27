@@ -1,0 +1,29 @@
+{% set viewMode = viewMode ?? null %}
+{% set headerDisplaysUids = headerDisplaysUids ?? [] %}
+{% set contentDisplaysUids = contentDisplaysUids ?? [] %}
+{% set accordion_id = accordion_id ?? random(100000, 999999) %}
+{% set element = element ?? null %}
+{% set index = index ?? 0 %}
+{% set show = show ?? (index == 0) %}
+{% set keepOpen = keepOpen ?? false %}
+
+{% if viewMode %}
+    {% set header_displays = viewMode.getDisplaysByUids(headerDisplaysUids) %}
+    {% set content_displays = viewMode.getDisplaysByUids(contentDisplaysUids) %}
+    <div class="accordion-item">
+        <div class="accordion-header" id="{{ accordion_id }}-header-{{ index }}">
+            {% do viewMode.setDisplays(header_displays) %}
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ accordion_id }}-collapse-{{ index }}" aria-expanded="true" aria-controls="{{ accordion_id }}-collapse-{{ index }}">
+                {{ viewMode.layout.render(element, viewMode)|raw }}
+            </button>
+        </div>
+        <div id="{{ accordion_id }}-collapse-{{ index }}" class="accordion-collapse collapse {{ show ? 'show' : '' }}" aria-labelledby="{{ accordion_id }}-header-{{ index }}" {% if not keepOpen %}data-bs-parent="#{{ accordion_id }}"{% endif %}>
+            <div class="accordion-body">
+                {% do viewMode.setDisplays(content_displays) %}
+                {{ viewMode.layout.render(element, viewMode)|raw }}
+            </div>
+        </div>
+    </div>
+    {# Reset internal cache #}
+    {% do viewMode.setDisplays(null) %}
+{% endif %}

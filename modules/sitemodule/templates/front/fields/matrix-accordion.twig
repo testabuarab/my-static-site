@@ -1,0 +1,27 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    {% set accordion_id = 'accordion-' ~ field.id %}
+    <div class="accordion" id="{{ accordion_id }}">
+        {% for index, matrixBlock in value %}
+            {% set header_fields = field.getFieldsByUids(matrixBlock, options['disposition-' ~ matrixBlock.type.uid]['header'] ?? []) %}
+            {% set content_fields = field.getFieldsByUids(matrixBlock, options['disposition-' ~ matrixBlock.type.uid]['content'] ?? []) %}
+            <div class="accordion-item">
+                <div class="accordion-header" id="{{ accordion_id }}-header-{{ index }}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{ accordion_id }}-collapse-{{ index }}" aria-expanded="true" aria-controls="{{ accordion_id }}-collapse-{{ index }}">
+                        {% for header_field in header_fields %}
+                            {{ header_field.render(matrixBlock[header_field.handle])|raw }}
+                        {% endfor %}
+                    </button>
+                </div>
+                <div id="{{ accordion_id }}-collapse-{{ index }}" class="accordion-collapse collapse {{ (options.allOpen or index == 0) ? 'show' : '' }}" aria-labelledby="{{ accordion_id }}-header-{{ index }}" {% if not options.keepOpen %}data-bs-parent="#{{ accordion_id }}"{% endif %}>
+                    <div class="accordion-body">
+                        {% for content_field in content_fields %}
+                            {{ content_field.render(matrixBlock[content_field.handle])|raw }}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

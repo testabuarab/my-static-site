@@ -1,0 +1,19 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    {% set accordion_id = 'accordion-' ~ field.id %}
+    <div class="accordion" id="{{ accordion_id }}">
+        {% for index, entry in value %}
+            {% set viewMode = options.getViewMode(entry) %}
+            {% include "_includes/accordion_item" with {
+                viewMode: viewMode,
+                headerDisplaysUids: options['disposition-' ~ entry.type.uid]['header'] ?? [],
+                contentDisplaysUids: options['disposition-' ~ entry.type.uid]['content'] ?? [],
+                element: entry,
+                accordion_id: accordion_id,
+                keepOpen: options.keepOpen,
+                show: options.allOpen ? true : (index == 0)
+            } only %}
+        {% endfor %}
+    </div>
+{% endblock %}

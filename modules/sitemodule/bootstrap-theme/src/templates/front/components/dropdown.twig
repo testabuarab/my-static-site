@@ -1,0 +1,24 @@
+{% set tag = tag ?? 'a' %}
+{% set classes = classes ?? 'btn btn-primary' %}
+{% set items = items ?? block('items') ?? null %}
+{% set id = id ?? 'dropdown-' ~ random(10000, 99999) %}
+{% set link = link ?? '#' %}
+{% set label = label ?? '' %}
+{% set split = split ?? false %}
+{% set dark = dark ?? false %}
+{% set drop = drop ?? false %} {# up start or end #}
+{% set splitHiddenMessage = splitHiddenMessage ?? 'Toggle Dropdown' %}
+
+<div class="{{ split ? 'btn-group' : 'dropdown' }}{% if drop %} drop{{ drop }}{% endif %}">
+    <{{ tag }} class="{% if classes %} {{ classes }}{% endif %}{% if not split %} dropdown-toggle{% endif %}" {% if link %} href="{{ link }}"{% endif %} role="button" {% if id %} id="{{ id }}"{% endif %}{% if not split %} data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>
+        {{ label }}
+    </{{ tag }}>
+    {% if split %}
+        <{{ tag }} class="{% if classes %} {{ classes }}{% endif %} dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">{{ splitHiddenMessage }}</span>
+        </{{ tag }}>
+    {% endif %}
+    <ul class="dropdown-menu{% if dark %} dropdown-menu-dark{% endif %}"{% if id %} aria-labelledby="{{ id }}"{% endif %}>
+        {{ items|raw }}
+    </ul>
+</div>

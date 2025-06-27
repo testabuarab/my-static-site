@@ -1,0 +1,7 @@
+{% set aligment = aligment ?? 'start' %} {# start, center or end #}
+{% set size = size ?? false %} {# sm or lg #}
+{% set items = (items ?? block('items') ?? '')|trim %}
+
+<ul class="pagination justify-content-{{ aligment }}{% if size %} pagination-{{ size }}{% endif %}">
+    {{ items|raw }}
+</ul>

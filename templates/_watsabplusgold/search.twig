@@ -1,0 +1,100 @@
+{% extends 'watsabplusgold/wagold/_layout' %}
+{%set disableCategorisAds=0%}
+{% if  global.taatylAlaaalanatFyAlbhth%}
+    {%set disableCategorisAds=1%}
+{% endif %}
+{% set withSlash = "" %}
+{% if general.withSlash %}
+    {% set withSlash = "/" %}
+{% endif %}
+{% set q = craft.app.request.getQueryParam("query")%}
+{% if q|length <= 0 %} {% redirect '/' %} {% endif %}
+{% if q=="سكس" %} {% redirect global.alrabtAlasasyLlmokaa ~"/404" %} {% endif %}
+
+{% set title = "Search: "|t ~ q %}
+{% set badwords = global.klmatMmnoaa|split(',') %}
+
+{% if q in  badwords%}
+    {% exit 404%}
+{% endif %}
+{% for badword in badwords%}
+    {% if badword in q %}
+        {%exit 404 %}
+    {% endif %}
+{%endfor%}
+{% block content %}
+    <div class="main-wrapper">
+        <main class="f-col-12">
+            <section class="block" id="articles">
+                <div class="block-header f-row-auto col-12">
+                    <span class="icon icon-search"></span>
+                    <h1 class="title">{{ "Search Results"|t }}</h1>
+{#
+                    <p>{{ "Search results for: {q}"|t({q: q}) }}</p>
+#}
+                </div>
+                <div class="apps-list search-list">
+                    {% set final = craft.entries.section("applications").search("*" ~ q ~ "*"	).orderBy("score asc").limit(24) %}
+                    {% paginate final as queryInfo, apps  %}
+                    <div class="app-list-wrapper">
+                        {% for app in apps %}
+                            {% set appNamee = app.appTitle|replace(".html","")|replace("-"," ")%}
+                            {%if app.asmAlttbykAarby%}
+                                {% set appNamee = app.asmAlttbykAarby|replace(".html","") %}
+                            {%endif%}
+                            {% set apksize = '50MB'|t %}
+                            {%if app.hgmAlmlf%}
+                                {% set apksize = app.hgmAlmlf %}
+                            {%endif%}
+                            {% set appVersion = '2024' %}
+                            {%if app.appVersion%}
+                                {% set appVersion = app.appVersion %}
+                            {%endif%}
+                            <div class="app medium square">
+                                <a class="soft-target" href="{{alrabtAlasasyLlmokaa}}/{{ app.uri }}{{ withSlash }}" title="{{ app.title }}"><span class="hideable">{{ appNamee }}</span></a>
+                                <div class="app-wrap">
+                                    <img class="cover lazyload" src="{{ lazyloadImage }}"  data-src="{{ app.appIcon|length ? app.appIcon[0].getUrl(appthumb) }}" width="80" height="80" alt="{{ appNamee }}">
+
+                                    <div class="app-info my-20">
+                                        <h3 class="ellipsis name">
+                                            {{ appNamee }}
+                                        </h3>
+                                        <p class="excerpt mt-10">{{ app.title }}</p>
+                                    </div>
+                                    <div class="app-meta">
+			<span class="spec version">
+				<i class="icon-spin3"></i>
+				<span>{{ appVersion }}</span>
+			</span>
+                                        <div class="sparator"></div>
+                                        <span class="spec size">
+				<i class="icon-download"></i>
+				<span>{{ apksize }}</span>
+			</span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+{% endblock %}
+{% block meta %}
+    <meta name="robots" content="noindex">
+{#    <script>
+        (function() {
+            var cx = '31d375db949564811';
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>#}
+{% endblock%}

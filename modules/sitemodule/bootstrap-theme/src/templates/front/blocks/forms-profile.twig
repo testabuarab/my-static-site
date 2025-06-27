@@ -1,0 +1,122 @@
+{% extends "blocks/block" %}
+
+{% macro errorList(errors) %}
+    {% if errors %}
+        {% for error in errors %}
+            <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    {# If there were any validation errors, a `user` variable will be passed to the
+    template, which contains the posted values and validation errors. If that’s not
+    set, we’ll default to the current user. #}
+    {% set user = user ?? currentUser %}
+
+    <form method="post" accept-charset="UTF-8" enctype="multipart/form-data" class="profile-form">
+        {{ csrfInput() }}
+        {{ actionInput('users/save-user') }}
+        {{ hiddenInput('userId', user.id) }}
+
+        <div class="mb-3 form-floating">
+            {{ input('text', 'firstName', user.firstName, {
+                id: 'first-name',
+                class: user.hasErrors('firstName') ? 'is-invalid form-control' : 'form-control',
+                autocomplete: 'given-name',
+                placeholder: 'First Name'|t('site'),
+                required: true
+            }) }}
+            <label for="first-name" class="form-label">{{ 'First Name'|t('site') }}</label>
+            {{ _self.errorList(user.getErrors('firstName')) }}
+        </div>
+
+        <div class="mb-3 form-floating">
+            {{ input('text', 'lastName', user.lastName, {
+                id: 'last-name',
+                class: user.hasErrors('lastName') ? 'is-invalid form-control' : 'form-control',
+                autocomplete: 'family-name',
+            }) }}
+            <label for="last-name" class="form-label">{{ 'Last Name'|t('site') }}</label>
+            {{ _self.errorList(user.getErrors('lastName')) }}
+        </div>
+
+        <div class="mb-3 input-photo-group">
+            <label for="photo" class="form-label">{{ 'Upload a new photo'|t('site') }}</label>
+            <div class="input-group">
+                <span class="input-group-text p-0">
+                    {% if user.photo %}
+                        <a href="{{ user.photo.getUrl() }}" target="_blank">
+                            {{ user.photo.getImg({height: 56})|attr({
+                                id: 'user-photo',
+                                alt: user.friendlyName,
+                            }) }}
+                        </a>
+                    {% endif %}
+                </span>
+                {{ input('file', 'photo', null, {
+                    id: 'photo',
+                    accept: 'image/png,image/jpeg',
+                    class: 'form-control',
+                }) }}
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="deletePhoto" value="1" id="delete-photo">
+                <label class="form-check-label" for="delete-photo">{{ 'Delete Photo'|t('site') }}</label>
+            </div>
+        </div>
+
+        {% if not craft.app.config.general.useEmailAsUsername %}
+            <div class="mb-3 form-floating">
+                {{ input('text', 'username', user.username, {
+                    id: 'username',
+                    class: user.hasErrors('username') ? 'is-invalid form-control' : 'form-control',
+                    autocomplete: 'username',
+                    placeholder: 'Username'|t('site')
+                }) }}
+                <label for="username" class="form-label">{{ 'Username'|t('site') }}</label>
+                {{ _self.errorList(user.getErrors('username')) }}
+            </div>
+        {% endif %}
+
+        <div class="mb-3 form-floating">
+            {{ input('text', 'email', user.unverifiedEmail ?? user.email, {
+                id: 'email',
+                class: user.hasErrors('email') ? 'is-invalid form-control' : 'form-control',
+                autocomplete: 'email',
+                placeholder: 'Email'|t('site')
+            }) }}
+            <label for="email" class="form-label">{{ 'Email'|t('site') }}</label>
+            {{ _self.errorList(user.getErrors('username')) }}
+
+            {% if craft.app.projectConfig.get('users.requireEmailVerification') %}
+                <div class="form-text">{{ 'New email addresses need to be verified.'|t('site') }}</div>
+            {% endif %}
+        </div>
+
+        <div class="mb-3 form-floating">
+            {{ input('password', 'newPassword', null, {
+                id: 'new-password',
+                class: user.hasErrors('newPassword') ? 'is-invalid form-control' : 'form-control',
+                autocomplete: 'new-password',
+                placeholder: 'New Password'|t('site')
+            }) }}
+            <label for="new-password" class="form-label">{{ 'New Password'|t('site') }}</label>
+            {{ _self.errorList(user.getErrors('newPassword')) }}
+        </div>
+
+        <div class="mb-3 form-floating">
+            {{ input('password', 'password', null, {
+                id: 'current-password',
+                class: user.hasErrors('currentPassword') ? 'is-invalid form-control' : 'form-control',
+                autocomplete: 'current-password',
+                placeholder: 'Current Password'|t('site')
+            }) }}
+            <label for="current-password" class="form-label">{{ 'Current Password'|t('site') }}</label>
+            {{ _self.errorList(user.getErrors('currentPassword')) }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">{{ 'Save Profile'|t('site') }}</button>
+    </form>
+
+{% endblock %}

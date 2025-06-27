@@ -1,0 +1,11 @@
+fill: null
+format: jpg
+handle: x2048
+height: 0
+interlace: none
+mode: crop
+name: 2048x2048
+position: center-center
+quality: 0
+upscale: true
+width: 2048

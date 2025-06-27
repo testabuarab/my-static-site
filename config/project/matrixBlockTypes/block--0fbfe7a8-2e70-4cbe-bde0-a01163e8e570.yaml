@@ -1,0 +1,128 @@
+field: 3999637d-1389-4aff-9610-a18f36161364 # Related Videos
+fieldLayouts:
+  4bf6c656-c946-4199-a93b-83b44b0be574:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: b5b47b47-8983-4a60-a9c9-d572f20df9e4 # Video Cover
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d54d5184-2d32-4cf2-bfc2-cffe3ea26e45
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 26404b47-a1e5-4643-968e-0ea033b0ae79 # Video Title
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de3f81a2-69dd-40b1-b3fd-562d683509ea
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9c5213f0-9c95-4dd8-828c-61d48d24d512 # Video Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 405392d2-5443-467c-a49b-b94204d3fe2b
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8f339dc2-b76b-4e6d-a83b-318717477a47
+        userCondition: null
+fields:
+  9c5213f0-9c95-4dd8-828c-61d48d24d512: # Video Link
+    columnSuffix: sxhfweyn
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoLink
+    instructions: null
+    name: 'Video Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 5
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  26404b47-a1e5-4643-968e-0ea033b0ae79: # Video Title
+    columnSuffix: dqzqeiun
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoTitle
+    instructions: null
+    name: 'Video Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  b5b47b47-8983-4a60-a9c9-d572f20df9e4: # Video Cover
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: videoCover
+    instructions: null
+    name: 'Video Cover'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:apps'
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: block
+name: Block
+sortOrder: 1

@@ -1,0 +1,183 @@
+field: 22915390-7ec5-4947-b636-a2ead8de04d7 # App Previous Versions
+fieldLayouts:
+  40ca00ba-4aa6-4462-a66b-6da8cbce88a2:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: bdde1175-a77f-4dc5-9931-af348b28e7ef # Version File
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5483baa3-df39-4e1a-b9de-606c75b01956
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c00c2afb-5629-41ac-9489-b09ab804f5c1 # Version Number
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b6331aff-248c-4c41-9861-601daa06996a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b99f780c-8dd2-4ca5-b89e-3197618e4bf5 # Version File Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9e4f09b0-88ac-4360-b0b4-41229d0b4e13
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b4696630-2196-4391-9744-f7972a8c401d # Version Info
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0fa3bf1a-a1c6-4863-ace7-2a97241582f7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 6dfeed67-615b-4405-9671-f9e284afb145
+        userCondition: null
+fields:
+  b99f780c-8dd2-4ca5-b89e-3197618e4bf5: # Version File Type
+    columnSuffix: gasmdski
+    contentColumnType: string
+    fieldGroup: null
+    handle: versionFileType
+    instructions: null
+    name: 'Version File Type'
+    searchable: true
+    settings:
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - APKS
+            -
+              - value
+              - apks
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - XAPK
+            -
+              - value
+              - xapk
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Checkboxes
+  b4696630-2196-4391-9744-f7972a8c401d: # Version Info
+    columnSuffix: kgyqpmql
+    contentColumnType: text
+    fieldGroup: null
+    handle: versionInfo
+    instructions: null
+    name: 'Version Info'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes:
+        - 'volume:apps'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: null
+      purifyHtml: true
+      redactorConfig: Standard.json
+      removeEmptyTags: false
+      removeInlineStyles: false
+      removeNbsp: true
+      showHtmlButtonForNonAdmins: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  bdde1175-a77f-4dc5-9931-af348b28e7ef: # Version File
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: versionFile
+    instructions: null
+    name: 'Version File'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:apps'
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  c00c2afb-5629-41ac-9489-b09ab804f5c1: # Version Number
+    columnSuffix: imefvjgj
+    contentColumnType: text
+    fieldGroup: null
+    handle: versionNumber
+    instructions: null
+    name: 'Version Number'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: block
+name: Block
+sortOrder: 1

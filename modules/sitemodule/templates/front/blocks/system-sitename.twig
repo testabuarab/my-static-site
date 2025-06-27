@@ -1,0 +1,7 @@
+{% extends "blocks/block" %}
+
+{% block content %}
+    <a href="{{ currentSite.getBaseUrl }}" class="h3 text-white">
+        <img width="50" src="{{ craft.app.plugins.getPlugin('bootstrap-theme').settings.logoUrl }}"> {{ currentSite.name }}
+    </a>
+{% endblock %}

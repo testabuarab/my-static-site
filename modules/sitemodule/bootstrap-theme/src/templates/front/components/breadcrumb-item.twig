@@ -1,0 +1,8 @@
+{% set active = active ?? false %}
+{% set link = link ?? '#' %}
+{% set label = label ?? '' %}
+{% set include_link = include_link ?? true %}
+
+<li class="breadcrumb-item{% if active %} active{% endif %}"{% if active %} aria-current="page"{% endif %}>
+    {% if include_link %}<a href="{{ link }}">{% endif %}{{ label }}{% if include_link %}</a>{% endif %}
+</li>

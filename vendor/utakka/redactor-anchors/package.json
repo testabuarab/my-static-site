@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "name": "redactor-anchors",
+    "scripts": {
+        "dev": "npm run watch",
+        "watch": "esbuild src/js/index.js --bundle --minify --outfile=dist/assets/redactoranchors.js --watch",
+        "prod": "npm run build",
+        "build": "esbuild src/js/index.js --bundle --minify --outfile=dist/assets/redactoranchors.js",
+        "lint": "npx eslint src/**/*.js",
+        "lint:fix": "npx eslint src/**/*.js --fix"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "esbuild": "^0.20.0",
+        "eslint": "^8.56.0"
+    }
+}

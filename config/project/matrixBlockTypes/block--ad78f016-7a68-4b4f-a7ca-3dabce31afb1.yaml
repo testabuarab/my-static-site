@@ -1,0 +1,110 @@
+field: 0c970e96-e13b-4487-bdf6-9d3b2f2e34c9 # Block Sub Menu 
+fieldLayouts:
+  4036ff9d-0fbb-496d-8c5e-51460d31a1cd:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 62f4961a-253c-4102-a142-1f93b56793b3 # Block Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b1b611b4-0fde-4abe-b48b-b40e42df209c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 861abc90-4f49-42e3-9644-131295655fd5 # Block Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a1d1d12d-e716-4aa4-8675-e4d87edf88d3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5289f50a-cdf6-4568-817a-9fcc7f5962c6 # Block Sub Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e9358329-d21d-42ad-af8e-daa65d500926
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0dd6e2dc-05b1-4fad-97f7-08c9bf3230bc
+        userCondition: null
+fields:
+  62f4961a-253c-4102-a142-1f93b56793b3: # Block Text
+    columnSuffix: qiesdsjf
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockText
+    instructions: null
+    name: 'Block Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  861abc90-4f49-42e3-9644-131295655fd5: # Block Link
+    columnSuffix: bsylkcgj
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockLink
+    instructions: null
+    name: 'Block Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  5289f50a-cdf6-4568-817a-9fcc7f5962c6: # Block Sub Text
+    columnSuffix: kxueavpt
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockSubText
+    instructions: null
+    name: 'Block Sub Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: block
+name: Block
+sortOrder: 1

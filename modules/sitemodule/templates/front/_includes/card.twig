@@ -1,0 +1,31 @@
+{% set headerDisplaysUids = headerDisplaysUids ?? [] %}
+{% set footerDisplaysUids = footerDisplaysUids ?? [] %}
+{% set contentDisplaysUids = contentDisplaysUids ?? [] %}
+
+{% if viewMode %}
+    {% set header_displays = viewMode.getDisplaysByUids(headerDisplaysUids) %}
+    {% set footer_displays = viewMode.getDisplaysByUids(footerDisplaysUids) %}
+    {% set content_displays = viewMode.getDisplaysByUids(contentDisplaysUids) %}
+    <div class="card">
+        {% if headerDisplaysUids %}
+            <div class="card-header">
+                {% do viewMode.setDisplays(header_displays) %}
+                {{ viewMode.layout.render(element, viewMode)|raw }}
+            </div>
+        {% endif %}
+        {% if headerDisplaysUids %}
+            <div class="card-body">
+                {% do viewMode.setDisplays(content_displays) %}
+                {{ viewMode.layout.render(element, viewMode)|raw }}
+            </div>
+        {% endif %}
+        {% if footerDisplaysUids %}
+            <div class="card-footer">
+                {% do viewMode.setDisplays(footer_displays) %}
+                {{ viewMode.layout.render(element, viewMode)|raw }}
+            </div>
+        {% endif %}
+    </div>
+    {# Reset internal cache #}
+    {% do viewMode.setDisplays(null) %}
+{% endif %}

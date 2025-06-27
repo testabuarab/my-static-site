@@ -1,0 +1,37 @@
+<h1>{{ "Globals"|t('app') }}</h1>
+<table class="data fullwidth collapsible">
+    <thead>
+    <tr>
+        <th>
+            <div class="field checkboxglobal">
+                <input type="checkbox" id="allGlobals" class="checkbox" name="allGlobals" value="all"><label
+                        for="allGlobals">&zwnj;</label>
+                {{ "Name"|t('app') }}
+            </div>
+        </th>
+        <th>{{ "Handle"|t('app') }}</th>
+    </tr>
+    </thead>
+    <tbody class="globals">
+    {% for global in craft.app.globals.getAllSets() %}
+        {% set utilizedFields = {} %}
+        {% for globalTab in global.getFieldLayout().getTabs() %}
+            {% for tabField in globalTab.getElements() %}
+                {% if tabField.className == 'craft\\fieldlayoutelements\\CustomField' %}
+                    {% set utilizedFields = utilizedFields | merge([tabField.getField.id]) %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        <tr class="global" data-id="{{ global.id }}" data-name="{{ global }}"
+            data-fields="{% for id in utilizedFields %}{{ id }} {% endfor %}">
+            <th scope="row">
+                <input type="checkbox" id="global{{ global.id }}" class="checkbox" name="globalSelection[]"
+                       value="{{ global.id }}"> <label for="global{{ global.id }}">{{ global }}</label>
+            </th>
+            <td>
+                <code>{{ global.handle }}</code>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

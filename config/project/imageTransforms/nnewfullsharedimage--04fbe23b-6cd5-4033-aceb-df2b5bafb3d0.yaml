@@ -1,0 +1,11 @@
+fill: null
+format: webp
+handle: nnewfullsharedimage
+height: 360
+interlace: none
+mode: crop
+name: newfullsharedimage
+position: center-center
+quality: 0
+upscale: true
+width: 360

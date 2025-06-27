@@ -1,0 +1,298 @@
+changedFieldIndicator: 1768982639
+field: a4921af6-af51-4ced-81f2-cfd44738b2fd # Header Navigation
+fieldLayouts:
+  0a88a2c9-0199-4846-8ff8-3c8a8f778c5d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 1f0a8304-055a-4ef3-b546-e4500e28d01b # icons Picker
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8ef0f3f3-1f11-4b12-a0bf-11fecde7e058
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2a046f6a-0895-4a0c-9694-61e45190f503 # Block Sub Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7c157792-4470-44a0-8642-5ef7a3c36418
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 99e061b8-737f-4cfe-87a3-8f7b2f9e14b7 # Block Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7639d7d7-52d5-4040-93f9-dc98a242d976
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a29ffc8a-2f65-48cf-9e66-b2947aed15c2 # رمز الايقونة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84e31210-23e1-42f4-ba82-fe7c748b5571
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 45812caf-96a9-4155-8d40-b8b9282537ab # لون الشادو
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 883a9c28-48ed-4a77-90a9-347afce38349
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0c970e96-e13b-4487-bdf6-9d3b2f2e34c9 # Block Sub Menu 
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e3602e1c-0908-40f8-a5f3-fc4b5551cada
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 33ff4f3d-439e-426b-ac44-88d113b25a68 # لون العنصر
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e85cfca0-aa81-45cc-ba1f-ac31781b8348
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 302d4233-55fe-46b5-8ca7-8f6982a527ff # Block Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b5f6099e-b5b2-4d72-8784-228bae97e0a5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 94c62cbb-5ed8-474c-a1bc-d4613a2ccae6 # Block Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7fb69f3d-b197-41c7-bb59-abb015f3e056
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 82cff23e-d091-4c71-9f17-1374bfbac57c
+        userCondition: null
+fields:
+  0c970e96-e13b-4487-bdf6-9d3b2f2e34c9: # Block Sub Menu 
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockSubMenu
+    instructions: null
+    name: 'Block Sub Menu '
+    searchable: true
+    settings:
+      contentTable: '{{%matrixcontent_blocksubmenu}}'
+      maxBlocks: null
+      minBlocks: null
+      propagationKeyFormat: null
+      propagationMethod: all
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  1f0a8304-055a-4ef3-b546-e4500e28d01b: # icons Picker
+    columnSuffix: trhgmazm
+    contentColumnType: string
+    fieldGroup: null
+    handle: iconsPicker
+    instructions: null
+    name: 'icons Picker'
+    searchable: true
+    settings:
+      columnType: text
+      iconSets:
+        - 6eb8d696-5939-4285-a10a-b87effe3f89e
+      renderId: null
+      showLabels: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: verbb\iconpicker\fields\IconPickerField
+  2a046f6a-0895-4a0c-9694-61e45190f503: # Block Sub Text
+    columnSuffix: qezesfvg
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockSubText
+    instructions: null
+    name: 'Block Sub Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  33ff4f3d-439e-426b-ac44-88d113b25a68: # لون العنصر
+    columnSuffix: hmtzwzuh
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: lonAlaansr
+    instructions: null
+    name: 'لون العنصر'
+    searchable: true
+    settings:
+      defaultColor: '#949494'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  94c62cbb-5ed8-474c-a1bc-d4613a2ccae6: # Block Text
+    columnSuffix: nuvnwemt
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockText
+    instructions: null
+    name: 'Block Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  99e061b8-737f-4cfe-87a3-8f7b2f9e14b7: # Block Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockIcon
+    instructions: null
+    name: 'Block Icon'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  302d4233-55fe-46b5-8ca7-8f6982a527ff: # Block Link
+    columnSuffix: dxbhelwa
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockLink
+    instructions: null
+    name: 'Block Link'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  45812caf-96a9-4155-8d40-b8b9282537ab: # لون الشادو
+    columnSuffix: xkqhvolp
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: lonAlshado
+    instructions: null
+    name: 'لون الشادو'
+    searchable: true
+    settings:
+      defaultColor: '#ababab'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  a29ffc8a-2f65-48cf-9e66-b2947aed15c2: # رمز الايقونة
+    columnSuffix: pfuvupyq
+    contentColumnType: text
+    fieldGroup: null
+    handle: rmzAlaykon
+    instructions: null
+    name: 'رمز الايقونة'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText

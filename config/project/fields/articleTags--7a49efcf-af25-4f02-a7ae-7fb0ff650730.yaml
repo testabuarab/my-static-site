@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 5b2622ea-6477-40f1-ae8b-a6e0feac8329 # Articles
+handle: articleTags
+instructions: 'Can be either tags for applications or other articles'
+name: 'Article Tags'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_articletags}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: none
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

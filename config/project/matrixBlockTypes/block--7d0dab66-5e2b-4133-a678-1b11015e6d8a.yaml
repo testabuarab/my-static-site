@@ -1,0 +1,206 @@
+field: fffa4d0a-945a-4ad5-9966-5466a847fac7 # Download Links
+fieldLayouts:
+  42c601f8-131f-45df-b9f6-660f4f7b8ee4:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 433835da-c824-48a6-ac2c-d54b75b22492 # Block Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5476b8d-e17c-4a1e-a20f-f61c40458027
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 160f66ef-1f64-4f99-aba3-ed74bbe8736f # Block Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40ee6132-68ec-44f2-bdd5-10d32255da50
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f6202c1f-2808-4540-8773-b88385d2138d # رابط التحميل الخارجي
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 49062965-8151-4316-a169-68eecca5dd60
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d7973103-cfaa-4d2a-a8a2-7d6a31366b90 # nofollow
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c154b835-0c1a-4c3d-869c-e88a4784cd00
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7707f964-1f2b-469d-81a4-8baf5d18ed49 # لون الرابط
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 451afdaa-638d-4d44-b742-b978bdcf904b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 17e6b6d9-d89d-4589-a193-847eb4c3b50a # New Tab
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 14626627-b51d-461f-a07a-ebccae01aa4c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 9866e842-f19f-43ce-afde-3f72856e953f
+        userCondition: null
+fields:
+  17e6b6d9-d89d-4589-a193-847eb4c3b50a: # New Tab
+    columnSuffix: pjdlbnpk
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: newTab
+    instructions: null
+    name: 'New Tab'
+    searchable: true
+    settings:
+      default: false
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  160f66ef-1f64-4f99-aba3-ed74bbe8736f: # Block Link
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: blockLink
+    instructions: null
+    name: 'Block Link'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowSubfolders: false
+      allowUploads: true
+      allowedKinds: null
+      branchLimit: null
+      defaultUploadLocationSource: 'volume:ceec9069-bfa4-402f-b38e-af0697ec8d89' # Uploads
+      defaultUploadLocationSubpath: null
+      localizeRelations: false
+      maintainHierarchy: false
+      maxRelations: 1
+      minRelations: null
+      previewMode: full
+      restrictFiles: false
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: null
+      restrictedLocationSubpath: null
+      selectionLabel: null
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      sources: '*'
+      targetSiteId: null
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  7707f964-1f2b-469d-81a4-8baf5d18ed49: # لون الرابط
+    columnSuffix: rtchexbo
+    contentColumnType: char(7)
+    fieldGroup: null
+    handle: lonAlrabt
+    instructions: null
+    name: 'لون الرابط'
+    searchable: true
+    settings:
+      defaultColor: '#f4a900'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Color
+  433835da-c824-48a6-ac2c-d54b75b22492: # Block Text
+    columnSuffix: zxikoibu
+    contentColumnType: text
+    fieldGroup: null
+    handle: blockText
+    instructions: null
+    name: 'Block Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\PlainText
+  d7973103-cfaa-4d2a-a8a2-7d6a31366b90: # nofollow
+    columnSuffix: fvcojnpl
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: nofollow
+    instructions: null
+    name: nofollow
+    searchable: true
+    settings:
+      default: true
+      offLabel: null
+      onLabel: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+  f6202c1f-2808-4540-8773-b88385d2138d: # رابط التحميل الخارجي
+    columnSuffix: gnxojyjo
+    contentColumnType: text
+    fieldGroup: null
+    handle: rabtAlthmylAlkhargy
+    instructions: null
+    name: 'رابط التحميل الخارجي'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: block
+name: Block
+sortOrder: 1

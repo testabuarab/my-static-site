@@ -1,0 +1,14 @@
+{% extends "fields/_field" %}
+
+{% block content %}
+    {% for index, asset in value %}
+        {% set viewMode = options.getViewMode(asset) %}
+        {% include "_includes/card" with {
+            viewMode: viewMode,
+            headerDisplaysUids: options['disposition-' ~ asset.volume.uid]['header'] ?? [],
+            footerDisplaysUids: options['disposition-' ~ asset.volume.uid]['footer'] ?? [],
+            contentDisplaysUids: options['disposition-' ~ asset.volume.uid]['content'] ?? [],
+            element: asset
+        } only %}
+    {% endfor %}
+{% endblock %}

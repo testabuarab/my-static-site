@@ -1,0 +1,56 @@
+fieldLayouts:
+  10bc95e8-42f5-403d-aa58-8117c834505e:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 284c77e1-b7f2-4498-8e1c-a7e4399297dd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 18bbc401-044f-48ca-afc2-040e94808f2e # fontello Icons
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0be0bf62-f1de-4cb0-b5ac-a2556b79dc85
+            userCondition: null
+            warning: null
+            width: 100
+        name: المحتوى
+        uid: 0b01f6cf-d7d3-45dc-9735-cc8c3c0e7eef
+        userCondition: null
+fs: icons
+handle: icons
+name: Icons
+sortOrder: 2
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: null
+transformSubpath: ''

@@ -1,0 +1,9 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Web Puzzlers <blondin.boris@gmx.com>",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
+}

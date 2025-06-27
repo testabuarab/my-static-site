@@ -1,0 +1,108 @@
+fieldLayouts:
+  c73e36d3-f8e1-4fa0-a3c7-4023c5e7c122:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 4471ed81-02c5-4106-bd84-47cc329be896 # Images cdn hostname
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aeadcdc0-99e5-4757-948d-0a03560fc4a3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ee2aae32-68a2-4755-80eb-dfb1da9fbf87 # font cdn
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 875f1433-c105-4163-9968-67fb3d861a3d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 31d18237-52a1-4a12-b35d-d2c9d50822ef # font cdn name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d43c0f04-0607-459f-945d-0ae5e1a57e73
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 26818240-46ec-472c-beb9-0610f3062cc5 # font Cdn Name Bold
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d486bb0-c2dc-4773-91d4-ffdeb25d33cb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b53f1f8f-4a70-4a14-b700-2bb2358d3a96 # font cdn typ
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8e5991dd-22a0-411f-a3bb-6ff5044cfd6f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e70f461-37e5-4eed-8ad8-a20e6e4bf370 # with Slash
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bbe16f4d-494a-46f4-a49f-9fa71821842f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f05261d0-1ac4-4dfb-abee-b589c2e9be6b # تفعيل التصويت على الروابط
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 71442f6e-c900-4cc9-be6f-4d22c7e71b26
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2a8e6fab-a9ef-4bbf-a578-96f9370411ea # اخفاء تطبيقات ذات صلة
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8aacec8a-7a1a-4353-a54f-72d65bc6ff45
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Site General'
+        uid: 67a12182-7d78-44ee-9ae7-5a26e02e4768
+        userCondition: null
+handle: general
+name: General
+sortOrder: 2

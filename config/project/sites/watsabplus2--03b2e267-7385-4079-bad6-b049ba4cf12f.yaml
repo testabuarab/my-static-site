@@ -1,0 +1,9 @@
+baseUrl: 'https://test2.watsabplus.gold/'
+enabled: '1'
+handle: watsabplus2
+hasUrls: true
+language: ar
+name: test2.watsabplus.gold
+primary: false
+siteGroup: 799d3aa9-07a5-445f-8ce0-b39b011a1021 # cmsweb
+sortOrder: 1

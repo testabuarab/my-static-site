@@ -1,0 +1,21 @@
+{% if  currentUser or craft.app.getPlugins.isPluginEnabled('blitz')%}
+    {%if entry.pageType=='app'%}
+        {% include "watsabplusgold/wagold/apps/homeapp"%}
+    {%elseif entry.pageType=='article'%}
+        {% include "watsabplusgold/wagold/apps/homearticle" %}
+    {% else %}
+        {% include "watsabplusgold/wagold/index" %}
+    {%endif%}
+    {% else %}
+{% header "Cache-Control: max-age=3600" %}
+{% cache  %}
+    {%if entry.pageType=='app'%}
+    {% include "watsabplusgold/wagold/apps/homeapp"%}
+{%elseif entry.pageType=='article'%}
+    {% include "watsabplusgold/wagold/apps/homearticle" %}
+{% else %}
+    {% include "watsabplusgold/wagold/index" %}
+{%endif%}
+{% endcache %}
+{%endif%}
+

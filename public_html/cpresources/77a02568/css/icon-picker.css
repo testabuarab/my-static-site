@@ -1,0 +1,48 @@
+.verbb.icon.icon-picker::before {
+    display: block;
+    content: ' ';
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjguMiIgaGVpZ2h0PSIyMjgiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIyOC4yIDIyOCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZD0iTTE2MC41IDE3NC4zYzMuNiAwIDcuMS0xLjQgOS43LTQgMi42LTIuNiA0LjEtNiA0LjItOS42LjEtMy43LTEuMy03LjItMy45LTkuOS0uMy0uMy0uNi0uNi0xLS44bC0xOC4zLTE4LjNjNi4yLTEwLjkgOC4zLTIzLjYgNS44LTM1LjktMi43LTEzLjYtMTAuNS0yNS40LTIyLjEtMzMuMS0xMS42LTcuOC0yNS41LTEwLjUtMzkuMS03LjhDODIuMiA1Ny42IDcwLjQgNjUuNCA2Mi43IDc3Yy03LjggMTEuNi0xMC41IDI1LjUtNy44IDM5LjEgMi43IDEzLjYgMTAuNSAyNS40IDIyLjEgMzMuMSAxNi40IDExIDM3LjYgMTEuNyA1NC44IDIuMWwxOSAxOWMyLjYgMi42IDYuMSA0IDkuNyA0ek0xMDYgMTM1Yy0xNiAwLTI5LTEzLTI5LTI5czEzLTI5IDI5LTI5YzE1LjkgMCAyOSAxMyAyOSAyOXMtMTMgMjktMjkgMjl6TTE2NC4yIDI3LjRoMzYuNXYzNi41YzAgNy42IDYuMSAxMy43IDEzLjcgMTMuN3MxMy43LTYuMSAxMy43LTEzLjdoLS4xVjIyLjhDMjI4IDEwLjIgMjE3LjggMCAyMDUuMiAwaC00MWMtNy42IDAtMTMuNyA2LjEtMTMuNyAxMy43czYuMSAxMy43IDEzLjcgMTMuN3pNNjQgMjAwLjdIMjcuNnYtMzYuNWMwLTcuNi02LjEtMTMuNy0xMy43LTEzLjdTLjIgMTU2LjYuMiAxNjQuMnY0MUMuMiAyMTcuOCAxMC40IDIyOCAyMyAyMjhoNDFjNy41IDAgMTMuNy02IDEzLjctMTMuNnMtNi4xLTEzLjctMTMuNy0xMy43ek0yMTQuNSAxNTAuNGMtNy42IDAtMTMuNyA2LjEtMTMuNyAxMy43djM2LjVoLTM2LjVjLTcuNiAwLTEzLjcgNi4xLTEzLjcgMTMuN3M2LjEgMTMuNyAxMy43IDEzLjdoNDFjMTIuNiAwIDIyLjgtMTAuMiAyMi44LTIyLjhoLjF2LTQxLjFjMC03LjYtNi4xLTEzLjctMTMuNy0xMy43ek0xMy43IDc3LjZjNy42IDAgMTMuNy02LjEgMTMuNy0xMy43VjI3LjRoMzYuNWM3LjYgMCAxMy43LTYuMSAxMy43LTEzLjdTNzEuNSAwIDYzLjkgMGgtNDFDMTAuMyAwIC4xIDEwLjIuMSAyMi44SDB2NDEuMWMwIDcuNiA2LjEgMTMuNyAxMy43IDEzLjd6Ii8+PC9zdmc+");
+    background-size: 16px 16px;
+    height: 16px;
+    width: 16px;
+}
+
+.icon-picker-redactor-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    line-height: 20px;
+    display: inline-block;
+}
+
+.icon-picker-redactor-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+#icon-picker-modal {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#icon-picker-modal .main-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#icon-picker-modal button.ipui-icon-input-delete {
+    color: #666;
+    border: none;
+    padding: 0;
+    min-height: 0;
+}
+
+#icon-picker-modal .ipui-icon-input input:hover,
+#icon-picker-modal .ipui-icon-input select:hover,
+#icon-picker-modal .ipui-icon-input textarea:hover {
+    background: transparent !important;
+}
+
